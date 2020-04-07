@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Controller : MonoBehaviour {
 
-    public Transform pov;
+    public Transform pov, povHolder;
     [HideInInspector] public Rigidbody rigid;
 
     public bool hideCursorOnStart;
@@ -52,27 +52,27 @@ public class Controller : MonoBehaviour {
         xRotationAxisClamp += mouseY;
         yRotationAxisClamp += mouseX;
 
-        if (xRotationAxisClamp > viewAngle) {
-            xRotationAxisClamp = viewAngle;
-            mouseY = 0f;
-            ClampXRotationAxisRotationToValue(-viewAngle);
-        } else if (xRotationAxisClamp < -viewAngle) {
-            xRotationAxisClamp = -viewAngle;
-            mouseY = 0f;
-            ClampXRotationAxisRotationToValue(viewAngle);
-        }
-
-        //if (xRotationAxisClamp > -topLock) {
-        //    xRotationAxisClamp = -topLock;
+        //if (xRotationAxisClamp > viewAngle) {
+        //    xRotationAxisClamp = viewAngle;
         //    mouseY = 0f;
-        //    ClampXRotationAxisRotationToValue(topLock);
-        //} else if (xRotationAxisClamp < -bottomLock) {
-        //    xRotationAxisClamp = -bottomLock;
+        //    ClampXRotationAxisRotationToValue(-viewAngle);
+        //} else if (xRotationAxisClamp < -viewAngle) {
+        //    xRotationAxisClamp = -viewAngle;
         //    mouseY = 0f;
-        //    ClampXRotationAxisRotationToValue(bottomLock);
+        //    ClampXRotationAxisRotationToValue(viewAngle);
         //}
-        print(Vector3.left);
-        pov.Rotate(Vector3.left * mouseY);
+
+        if (yRotationAxisClamp > -leftLock) {
+            yRotationAxisClamp = -leftLock;
+            mouseX = 0f;
+            ClampYRotationAxisRotationToValue(-leftLock);
+        } else if (yRotationAxisClamp < -rightLock) {
+            yRotationAxisClamp = -rightLock;
+            mouseX = 0f;
+            ClampYRotationAxisRotationToValue(-rightLock);
+        }
+        Vector3 temp = new Vector3(0.1f * mouseY, 0.1f * mouseX, 0);
+        //pov.Rotate(Vector3.left * mouseY);
         //pov.Rotate(Vector3.up * mouseX);
     }
 
