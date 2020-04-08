@@ -8,17 +8,22 @@ public class Controller : MonoBehaviour {
     public Transform pov, povHolder;
     [HideInInspector] public Rigidbody rigid;
 
-    public bool hideCursorOnStart;
+    public bool hideCursorOnStart, useTestController;
     [Space]
     public float walkSpeed = 5;
     public float mouseSensitivity = 100, cartRotationSpeed;
 
-    public float leftLock;
-    public float rightLock;
+    public enum ClampType {
+        Rectangular,
+        Circular
+    }
+    [Space]
+    public ClampType clampType;
     [Range(0, 90)]
-    public float viewAngle = 30;
+    public float maxVerticalViewAngle = 30, maxHorizontalViewAngle = 80;
+    public Vector3 center;
 
-    float xRotationAxisClamp, yRotationAxisClamp;
+    public float xRotationAxisAngle, yRotationAxisAngle;
 
     private void Start() {
         if (!pov) {
@@ -37,55 +42,56 @@ public class Controller : MonoBehaviour {
         }
     }
 
+    private void Update() {
+        rigid.centerOfMass = center;
+    }
+
     private void FixedUpdate() {
         //body rotation
-        float vertical = Input.GetAxis("Vertical");
-        float horizontal = Input.GetAxis("Horizontal");
+        if (!useTestController) {
+            float vertical = Input.GetAxis("Vertical");
+            float horizontal = Input.GetAxis("Horizontal");
 
-        transform.Translate(new Vector3(0, 0, vertical) * walkSpeed * Time.deltaTime);
-        transform.Rotate(Vector3.up * horizontal * cartRotationSpeed * Time.deltaTime);
+            transform.Translate(new Vector3(0, 0, vertical) * walkSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.up * horizontal * cartRotationSpeed * Time.deltaTime);
+        }
 
         //camera rotation
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        xRotationAxisClamp += mouseY;
-        yRotationAxisClamp += mouseX;
+        if (clampType == ClampType.Rectangular) {
+            xRotationAxisAngle += mouseY;
+            yRotationAxisAngle += mouseX;
 
-        //if (xRotationAxisClamp > viewAngle) {
-        //    xRotationAxisClamp = viewAngle;
-        //    mouseY = 0f;
-        //    ClampXRotationAxisRotationToValue(-viewAngle);
-        //} else if (xRotationAxisClamp < -viewAngle) {
-        //    xRotationAxisClamp = -viewAngle;
-        //    mouseY = 0f;
-        //    ClampXRotationAxisRotationToValue(viewAngle);
-        //}
+            if (xRotationAxisAngle > maxVerticalViewAngle) {
+                xRotationAxisAngle = maxVerticalViewAngle;
+                mouseY = 0f;
+                ClampRotationAxisRotationToValue(pov, -maxVerticalViewAngle);
+            } else if (xRotationAxisAngle < -maxVerticalViewAngle) {
+                xRotationAxisAngle = -maxVerticalViewAngle;
+                mouseY = 0f;
+                ClampRotationAxisRotationToValue(pov, maxVerticalViewAngle);
+            }
 
-        if (yRotationAxisClamp > -leftLock) {
-            yRotationAxisClamp = -leftLock;
-            mouseX = 0f;
-            ClampYRotationAxisRotationToValue(-leftLock);
-        } else if (yRotationAxisClamp < -rightLock) {
-            yRotationAxisClamp = -rightLock;
-            mouseX = 0f;
-            ClampYRotationAxisRotationToValue(-rightLock);
+            if (yRotationAxisAngle > maxHorizontalViewAngle) {
+                yRotationAxisAngle = maxHorizontalViewAngle;
+                mouseX = 0f;
+                ClampRotationAxisRotationToValue(povHolder, maxHorizontalViewAngle);
+            } else if (yRotationAxisAngle < -maxHorizontalViewAngle) {
+                yRotationAxisAngle = -maxHorizontalViewAngle;
+                mouseX = 0f;
+                ClampRotationAxisRotationToValue(povHolder, -maxHorizontalViewAngle);
+            }
+            pov.Rotate(Vector3.left * mouseY);
+            povHolder.Rotate(Vector3.up * mouseX);
         }
-        Vector3 temp = new Vector3(0.1f * mouseY, 0.1f * mouseX, 0);
-        //pov.Rotate(Vector3.left * mouseY);
-        //pov.Rotate(Vector3.up * mouseX);
     }
 
-    private void ClampXRotationAxisRotationToValue(float value) {
-        Vector3 eulerRotation = pov.localEulerAngles;
+    private void ClampRotationAxisRotationToValue(Transform transform_, float value) {
+        Vector3 eulerRotation = transform_.localEulerAngles;
         eulerRotation.x = value;
-        pov.localEulerAngles = eulerRotation;
-    }
-    
-    private void ClampYRotationAxisRotationToValue(float value) {
-        Vector3 eulerRotation = pov.localEulerAngles;
-        eulerRotation.y = value;
-        pov.localEulerAngles = eulerRotation;
+        transform_.localEulerAngles = eulerRotation;
     }
 }
 
