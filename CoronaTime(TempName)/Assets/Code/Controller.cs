@@ -67,30 +67,36 @@ public class Controller : MonoBehaviour {
             if (xRotationAxisAngle > maxVerticalViewAngle) {
                 xRotationAxisAngle = maxVerticalViewAngle;
                 mouseY = 0f;
-                ClampRotationAxisRotationToValue(pov, -maxVerticalViewAngle);
+                ClampXRotationAxisToValue(pov, -maxVerticalViewAngle);
             } else if (xRotationAxisAngle < -maxVerticalViewAngle) {
                 xRotationAxisAngle = -maxVerticalViewAngle;
                 mouseY = 0f;
-                ClampRotationAxisRotationToValue(pov, maxVerticalViewAngle);
+                ClampXRotationAxisToValue(pov, maxVerticalViewAngle);
             }
 
             if (yRotationAxisAngle > maxHorizontalViewAngle) {
                 yRotationAxisAngle = maxHorizontalViewAngle;
                 mouseX = 0f;
-                ClampRotationAxisRotationToValue(povHolder, maxHorizontalViewAngle);
+                ClampYRotationAxisToValue(povHolder, maxHorizontalViewAngle);
             } else if (yRotationAxisAngle < -maxHorizontalViewAngle) {
                 yRotationAxisAngle = -maxHorizontalViewAngle;
                 mouseX = 0f;
-                ClampRotationAxisRotationToValue(povHolder, -maxHorizontalViewAngle);
+                ClampYRotationAxisToValue(povHolder, -maxHorizontalViewAngle);
             }
             pov.Rotate(Vector3.left * mouseY);
             povHolder.Rotate(Vector3.up * mouseX);
         }
     }
 
-    private void ClampRotationAxisRotationToValue(Transform transform_, float value) {
+    private void ClampXRotationAxisToValue(Transform transform_, float value) {
         Vector3 eulerRotation = transform_.localEulerAngles;
         eulerRotation.x = value;
+        transform_.localEulerAngles = eulerRotation;
+    }
+
+    private void ClampYRotationAxisToValue(Transform transform_, float value) {
+        Vector3 eulerRotation = transform_.localEulerAngles;
+        eulerRotation.y = value;
         transform_.localEulerAngles = eulerRotation;
     }
 }
