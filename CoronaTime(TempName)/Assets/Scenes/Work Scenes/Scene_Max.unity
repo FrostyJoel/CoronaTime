@@ -1228,20 +1228,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pov: {fileID: 534669905}
   povHolder: {fileID: 637307177}
-  rigid: {fileID: 0}
+  rigid: {fileID: 1354806440}
   hideCursorOnStart: 1
   useTestController: 0
   walkSpeed: 5
   mouseSensitivity: 100
-  keyboardCartRotationSpeed: 100
-  camCartRotationSpeed: 20
+  keyboardCartRotationSpeed: 50
+  camCartRotationSpeed: 25
   clampType: 0
   maxVerticalViewAngle: 30
   maxHorizontalViewAngle: 30
-  camInrangeForRotationDegree: 1
+  camInrangeForRotationDegree: 2
   center: {x: 0, y: 0, z: 1}
-  xRotationAxisAngle: 0
-  yRotationAxisAngle: 0
 --- !u!54 &1354806440
 Rigidbody:
   m_ObjectHideFlags: 0
