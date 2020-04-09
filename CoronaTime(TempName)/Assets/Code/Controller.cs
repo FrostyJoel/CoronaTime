@@ -11,7 +11,7 @@ public class Controller : MonoBehaviour {
     public bool hideCursorOnStart, useTestController;
     [Space]
     public float walkSpeed = 5;
-    public float mouseSensitivity = 100, cartRotationSpeed;
+    public float mouseSensitivity = 100, keyboardCartRotationSpeed = 100, camCartRotationSpeed;
 
     public enum ClampType {
         Rectangular,
@@ -21,9 +21,11 @@ public class Controller : MonoBehaviour {
     public ClampType clampType;
     [Range(0, 90)]
     public float maxVerticalViewAngle = 30, maxHorizontalViewAngle = 80;
+    [Space][Range(0, 90)]
+    public float camInrangeForRotationDegree;
     public Vector3 center;
 
-    public float xRotationAxisAngle, yRotationAxisAngle;
+    float xRotationAxisAngle, yRotationAxisAngle;
 
     private void Start() {
         if (!pov) {
@@ -47,18 +49,11 @@ public class Controller : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        //body rotation
-        if (!useTestController) {
-            float vertical = Input.GetAxis("Vertical");
-            float horizontal = Input.GetAxis("Horizontal");
-
-            transform.Translate(new Vector3(0, 0, vertical) * walkSpeed * Time.deltaTime);
-            transform.Rotate(Vector3.up * horizontal * cartRotationSpeed * Time.deltaTime);
-        }
-
         //camera rotation
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        float currentRotationSpeed = 0;
 
         if (clampType == ClampType.Rectangular) {
             xRotationAxisAngle += mouseY;
@@ -83,8 +78,26 @@ public class Controller : MonoBehaviour {
                 mouseX = 0f;
                 ClampYRotationAxisToValue(povHolder, -maxHorizontalViewAngle);
             }
+
+            if(yRotationAxisAngle > maxHorizontalViewAngle - camInrangeForRotationDegree) {
+                currentRotationSpeed = camCartRotationSpeed;
+            } else if (yRotationAxisAngle < -maxHorizontalViewAngle + camInrangeForRotationDegree) {
+                currentRotationSpeed = -camCartRotationSpeed;
+            }
+
             pov.Rotate(Vector3.left * mouseY);
             povHolder.Rotate(Vector3.up * mouseX);
+        }
+
+        //body rotation
+        if (!useTestController) {
+            float vertical = Input.GetAxis("Vertical") * walkSpeed;
+            if(Input.GetAxis("Horizontal") != 0) {
+                currentRotationSpeed = Input.GetAxis("Horizontal") * keyboardCartRotationSpeed;
+            }
+
+            transform.Translate(new Vector3(0, 0, vertical) * Time.deltaTime);
+            transform.Rotate(Vector3.up * currentRotationSpeed * Time.deltaTime);
         }
     }
 

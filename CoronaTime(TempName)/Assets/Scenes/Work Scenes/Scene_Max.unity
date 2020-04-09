@@ -1229,14 +1229,16 @@ MonoBehaviour:
   pov: {fileID: 534669905}
   povHolder: {fileID: 637307177}
   rigid: {fileID: 0}
-  hideCursorOnStart: 0
+  hideCursorOnStart: 1
   useTestController: 0
   walkSpeed: 5
   mouseSensitivity: 100
-  cartRotationSpeed: 100
+  keyboardCartRotationSpeed: 100
+  camCartRotationSpeed: 20
   clampType: 0
   maxVerticalViewAngle: 30
   maxHorizontalViewAngle: 30
+  camInrangeForRotationDegree: 1
   center: {x: 0, y: 0, z: 1}
   xRotationAxisAngle: 0
   yRotationAxisAngle: 0
