@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - InvisiWall
+  - Beam
+  - SpawnLocaties
   layers:
   - Default
   - TransparentFX

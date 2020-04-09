@@ -5,26 +5,16 @@ using UnityEngine.UI;
 
 public class PhotonButtons : MonoBehaviour
 {
-    public MenuLogic mLogic;
+    public PhotonMenuHandler pMenuHandler;
     public InputField createRoomInput, joinRoomInput;
 
     public void OnClickCreateRoom()
     {
-        if(createRoomInput.text.Length >= 1)
-        {
-            PhotonNetwork.CreateRoom(createRoomInput.text, new RoomOptions() { MaxPlayers = 4 }, null);
-        }
+        pMenuHandler.CreateNewRoom();
     }
 
     public void OnClickJoinRoom()
     {
-        PhotonNetwork.JoinRoom(joinRoomInput.text);
+        pMenuHandler.JoinOrCreateRoom();
     }
-
-    private void OnJoinedRoom()
-    {
-        mLogic.DisableMenuUI();
-        Debug.Log("We are connected to the room!");
-    }
-    
 }
