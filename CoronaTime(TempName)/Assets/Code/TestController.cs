@@ -65,7 +65,6 @@ public class TestController : MonoBehaviour {
                 wheels[i].model.transform.position = position;
                 wheels[i].model.transform.rotation = rotation;
             }
-
         }
     }
 

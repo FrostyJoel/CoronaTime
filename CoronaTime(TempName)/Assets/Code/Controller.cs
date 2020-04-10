@@ -58,8 +58,8 @@ public class Controller : MonoBehaviour {
     private void FixedUpdate() {
         if (playerviewCheck.photonView.isMine || playerviewCheck.devTesting) {
             //camera rotation
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
             float currentRotationSpeed = 0;
 
@@ -146,8 +146,8 @@ public class Controller : MonoBehaviour {
                     currentRotationSpeed = Input.GetAxis("Horizontal") * keyboardCartRotationSpeed;
                 }
 
-                transform.Translate(new Vector3(0, 0, vertical) * Time.deltaTime);
-                transform.Rotate(Vector3.up * currentRotationSpeed * Time.deltaTime);
+                transform.Translate(new Vector3(0, 0, vertical));
+                transform.Rotate(Vector3.up * currentRotationSpeed);
             }
         }
     }
