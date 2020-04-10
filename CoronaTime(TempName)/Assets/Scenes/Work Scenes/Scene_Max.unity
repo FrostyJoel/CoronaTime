@@ -294,7 +294,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671075127}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b07f62b5f556fb24aa60d72b8937cff1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -596,9 +596,11 @@ MonoBehaviour:
   camCartRotationSpeed: 25
   clampType: 0
   maxVerticalViewAngle: 30
-  maxHorizontalViewAngle: 30
-  camInrangeForRotationDegree: 2
-  center: {x: 0, y: 0, z: 1}
+  maxHorizontalViewAngle: 60
+  camInrangeForRotationDegree: 10
+  centerOfMass: {x: 0, y: -1, z: 1}
+  xRotationAxisAngle: 0
+  yRotationAxisAngle: 0
 --- !u!54 &1354806440
 Rigidbody:
   m_ObjectHideFlags: 0

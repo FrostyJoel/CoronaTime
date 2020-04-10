@@ -23,9 +23,9 @@ public class Controller : MonoBehaviour {
     public float maxVerticalViewAngle = 30, maxHorizontalViewAngle = 80;
     [Space][Range(0, 90)]
     public float camInrangeForRotationDegree;
-    public Vector3 center;
+    public Vector3 centerOfMass;
 
-    float xRotationAxisAngle, yRotationAxisAngle;
+    public float xRotationAxisAngle, yRotationAxisAngle;
 
     private void Start() {
         if (!pov) {
@@ -44,8 +44,13 @@ public class Controller : MonoBehaviour {
         }
     }
 
+
+    //float Cos(float )
+
+    //180 - 90 
+    //A + B = C 
     private void Update() {
-        rigid.centerOfMass = center;
+        rigid.centerOfMass = centerOfMass;
     }
 
     private void FixedUpdate() {
@@ -87,6 +92,48 @@ public class Controller : MonoBehaviour {
 
             pov.Rotate(Vector3.left * mouseY);
             povHolder.Rotate(Vector3.up * mouseX);
+        } else {
+
+            xRotationAxisAngle += mouseY;
+            yRotationAxisAngle += mouseX;
+
+            //if (xRotationAxisAngle > maxVerticalViewAngle) {
+            //    xRotationAxisAngle = maxVerticalViewAngle;
+            //    mouseY = 0f;
+            //    ClampXRotationAxisToValue(pov, -maxVerticalViewAngle);
+            //} else if (xRotationAxisAngle < -maxVerticalViewAngle) {
+            //    xRotationAxisAngle = -maxVerticalViewAngle;
+            //    mouseY = 0f;
+            //    ClampXRotationAxisToValue(pov, maxVerticalViewAngle);
+            //}
+
+            float alpha = Mathf.Atan(xRotationAxisAngle / yRotationAxisAngle) * Mathf.Rad2Deg;
+            float test1 = maxVerticalViewAngle * Mathf.Cos(alpha) - maxVerticalViewAngle * (Mathf.Sin(alpha) * Mathf.Cos(alpha)) + maxHorizontalViewAngle * (Mathf.Sin(alpha) * Mathf.Cos(alpha));
+            float test2 = maxVerticalViewAngle * Mathf.Sin(alpha) - maxVerticalViewAngle * (Mathf.Sin(alpha) * Mathf.Sin(alpha)) + maxHorizontalViewAngle * (Mathf.Sin(alpha) * Mathf.Sin(alpha));
+
+            print(alpha + " " + test2);
+            if (xRotationAxisAngle > test2) {
+                xRotationAxisAngle = test2;
+                mouseY = 0f;
+                ClampXRotationAxisToValue(pov, test2);
+            } else if (xRotationAxisAngle < -test2) {
+                xRotationAxisAngle = -test2;
+                mouseY = 0f;
+                ClampXRotationAxisToValue(pov, -test2);
+            }
+
+            if (yRotationAxisAngle > maxHorizontalViewAngle) {
+                yRotationAxisAngle = maxHorizontalViewAngle;
+                mouseX = 0f;
+                ClampYRotationAxisToValue(povHolder, maxHorizontalViewAngle);
+            } else if (yRotationAxisAngle < -maxHorizontalViewAngle) {
+                yRotationAxisAngle = -maxHorizontalViewAngle;
+                mouseX = 0f;
+                ClampYRotationAxisToValue(povHolder, -maxHorizontalViewAngle);
+            }
+
+            pov.Rotate(Vector3.left * mouseY);
+            povHolder.Rotate(Vector3.up * mouseX);
         }
 
         //body rotation
@@ -112,5 +159,6 @@ public class Controller : MonoBehaviour {
         eulerRotation.y = value;
         transform_.localEulerAngles = eulerRotation;
     }
+
 }
 
