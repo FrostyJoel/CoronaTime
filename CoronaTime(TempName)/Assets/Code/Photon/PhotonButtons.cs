@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PhotonButtons : MonoBehaviour
 {
     public PhotonMenuHandler pMenuHandler;
-    public InputField createRoomInput, joinRoomInput;
+    public InputField createRoomInput, joinRoomInput,playerNameInput;
 
     public void OnClickCreateRoom()
     {

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PhotonMenuHandler : MonoBehaviour
 {
     public PhotonButtons photonB;
-
+    public string sceneName;
     public GameObject mainPlayer;
     public List<GameObject> spawnPoints = new List<GameObject>();
 
@@ -19,7 +19,7 @@ public class PhotonMenuHandler : MonoBehaviour
 
     public void MoveScene()
     {
-        PhotonNetwork.LoadLevel("Scene_Joël");
+        PhotonNetwork.LoadLevel(sceneName);
     }
 
     public void CreateNewRoom()
@@ -44,7 +44,7 @@ public class PhotonMenuHandler : MonoBehaviour
 
     private void OnSceneFinishedLoading(Scene scene,LoadSceneMode mode)
     {
-        if (scene.name == "Scene_Joël")
+        if (scene.name == sceneName)
         {
             SpawnPlayer();
         }
@@ -59,7 +59,8 @@ public class PhotonMenuHandler : MonoBehaviour
             if (!spawnPoints.Contains(spawnLocations[i]))
             {
                 spawnPoints.Add(spawnLocations[i]);
-                PhotonNetwork.Instantiate(mainPlayer.name, spawnPoints[i].transform.position, mainPlayer.transform.rotation, 0);
+                GameObject player = PhotonNetwork.Instantiate(mainPlayer.name, spawnPoints[i].transform.position, mainPlayer.transform.rotation, 0);
+                player.GetComponent<PlayerviewCheck>().plNameText.text = photonB.playerNameInput.text;
                 break;
             }
         }
