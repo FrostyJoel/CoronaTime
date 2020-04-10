@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8f9145132f86a419ab67f388610620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  photonview: {fileID: 0}
+  photonview: {fileID: 114598681487842586}
   plCam: {fileID: 7749347821182278292}
   smoothness: 8
   devTesting: 0
