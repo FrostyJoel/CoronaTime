@@ -146,7 +146,7 @@ public class Controller : MonoBehaviour {
                     currentRotationSpeed = Input.GetAxis("Horizontal") * keyboardCartRotationSpeed;
                 }
 
-                transform.Translate(new Vector3(0, 0, vertical));
+                transform.Translate(Vector3.forward * vertical);
                 transform.Rotate(Vector3.up * currentRotationSpeed);
             }
         }

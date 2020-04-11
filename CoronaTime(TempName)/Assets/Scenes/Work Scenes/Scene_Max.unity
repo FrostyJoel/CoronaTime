@@ -125,16 +125,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BillyThePrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 5992604071259634002, guid: d0ce1991985240943935fc20c4faf789,
-        type: 3}
-      propertyPath: keyboardCartRotationSpeed
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5992604071259634002, guid: d0ce1991985240943935fc20c4faf789,
-        type: 3}
-      propertyPath: camCartRotationSpeed
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 5992604071259634003, guid: d0ce1991985240943935fc20c4faf789,
         type: 3}
       propertyPath: m_LocalPosition.x

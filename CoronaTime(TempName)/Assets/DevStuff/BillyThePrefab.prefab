@@ -85,10 +85,10 @@ MonoBehaviour:
   playerviewCheck: {fileID: 0}
   hideCursorOnStart: 1
   useTestController: 0
-  walkSpeed: 5
-  mouseSensitivity: 100
-  keyboardCartRotationSpeed: 50
-  camCartRotationSpeed: 25
+  walkSpeed: 0.08
+  mouseSensitivity: 1
+  keyboardCartRotationSpeed: 1.5
+  camCartRotationSpeed: 1
   clampType: 0
   maxVerticalViewAngle: 30
   maxHorizontalViewAngle: 60
