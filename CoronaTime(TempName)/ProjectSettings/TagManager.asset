@@ -8,6 +8,7 @@ TagManager:
   - InvisiWall
   - Beam
   - SpawnLocaties
+  - Interact
   layers:
   - Default
   - TransparentFX

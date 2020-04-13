@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1875595674931122884}
   - component: {fileID: 1875595674933990116}
   - component: {fileID: 1875595674932891684}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SHC achterwiel houder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 1875595674931122886}
   - component: {fileID: 1875595674933990118}
   - component: {fileID: 1875595674932891686}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SHC handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,8 +251,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1875595674931122888}
-  m_Layer: 9
-  m_Name: Shopping Cart
+  m_Layer: 0
+  m_Name: Racing Cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 1875595674931122890}
   - component: {fileID: 1875595674933990120}
   - component: {fileID: 1875595674932891688}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: 'Shoppingcart '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3775638075551772419}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.2, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6524083392470424257}
@@ -711,7 +711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7103781147658207702}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wielen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,11 +747,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SHC Wiel (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5444280934380819964, guid: 32bd415ac79e0f842a70b784604902ae,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5444280934380915164, guid: 32bd415ac79e0f842a70b784604902ae,
         type: 3}
@@ -821,11 +816,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SHC vlag
-      objectReference: {fileID: 0}
-    - target: {fileID: 6303921932714813814, guid: 5640bb2eeff62a54f8c84181619bb45a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6303921932714980694, guid: 5640bb2eeff62a54f8c84181619bb45a,
         type: 3}
@@ -902,11 +892,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SHC Wiel
       objectReference: {fileID: 0}
-    - target: {fileID: 5444280934380819964, guid: 32bd415ac79e0f842a70b784604902ae,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 5444280934380915164, guid: 32bd415ac79e0f842a70b784604902ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -981,11 +966,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SHC Voorwiel houder (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8508388405941982171, guid: b651afc07b0953e4cbe2b79a92718093,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8508388405942341627, guid: b651afc07b0953e4cbe2b79a92718093,
         type: 3}
@@ -1062,11 +1042,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'SHC Voorwiel houder '
       objectReference: {fileID: 0}
-    - target: {fileID: 8508388405941982171, guid: b651afc07b0953e4cbe2b79a92718093,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 8508388405942341627, guid: b651afc07b0953e4cbe2b79a92718093,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1142,11 +1117,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SHC Wiel (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 5444280934380819964, guid: 32bd415ac79e0f842a70b784604902ae,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 5444280934380915164, guid: 32bd415ac79e0f842a70b784604902ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1221,11 +1191,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SHC Wiel (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5444280934380819964, guid: 32bd415ac79e0f842a70b784604902ae,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5444280934380915164, guid: 32bd415ac79e0f842a70b784604902ae,
         type: 3}

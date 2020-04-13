@@ -147,7 +147,10 @@ public class Controller : MonoBehaviour {
                 }
 
                 transform.Translate(Vector3.forward * vertical);
+                //rigid.MovePosition(transform.position + transform.forward * vertical);
                 transform.Rotate(Vector3.up * currentRotationSpeed);
+                //Quaternion rot = Quaternion.Euler(transform.rotation.eulerAngles + transform.up * currentRotationSpeed);
+                //rigid.MoveRotation(rot);
             }
         }
     }
