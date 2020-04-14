@@ -24,11 +24,13 @@ public class CartStorage : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetButtonDown("Interact")) {
-            RaycastHit hit;
-            if (Physics.Raycast(controller.pov.position, controller.pov.forward, out hit, interactRange)) {
-                if (hit.transform.CompareTag("Interact")) {
-                    hit.transform.GetComponent<Interactable>().Interact(this);
+        if (controller.playerviewCheck.photonView.isMine || controller.playerviewCheck.devTesting) {
+            if (Input.GetButtonDown("Interact")) {
+                RaycastHit hit;
+                if (Physics.Raycast(controller.pov.position, controller.pov.forward, out hit, interactRange)) {
+                    if (hit.transform.CompareTag("Interact")) {
+                        hit.transform.GetComponent<Interactable>().Interact(this);
+                    }
                 }
             }
         }
@@ -55,9 +57,10 @@ public class CartStorage : MonoBehaviour {
                 if (index >= 0) {
                     soldProducts[index].amountSold += 1;
                 } else {
-                    SoldProduct soldProduct_ = new SoldProduct();
-                    soldProduct_.parentProduct = heldProducts[i];
-                    soldProduct_.amountSold = 1;
+                    SoldProduct soldProduct_ = new SoldProduct() {
+                        parentProduct = heldProducts[i],
+                        amountSold = 1
+                    };
                     soldProducts.Add(soldProduct_);
                 }
                 Destroy(heldProductModels[i]);

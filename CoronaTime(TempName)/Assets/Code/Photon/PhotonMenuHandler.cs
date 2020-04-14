@@ -67,7 +67,9 @@ public class PhotonMenuHandler : MonoBehaviour
                 {
                     PhotonNetwork.playerName = "Guest";
                 }
+
                 player.GetComponent<PlayerviewCheck>().plNameText.text = PhotonNetwork.playerName;
+
                 spawnPoints[i].SetActive(false);
                 spawnPoints.Remove(spawnPoints[i]);
                 break;

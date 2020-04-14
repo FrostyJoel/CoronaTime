@@ -1766,8 +1766,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   photonB: {fileID: 1001239331}
-  sceneName: "Scene_Jo\xEBl"
-  mainPlayer: {fileID: 1712468100203122546, guid: 201d97bc39ca7824f80bbd4db1e04d67,
+  sceneName: Scene_Max
+  mainPlayer: {fileID: 5992604071259634000, guid: d0ce1991985240943935fc20c4faf789,
     type: 3}
   spawnPoints: []
 --- !u!4 &1355564565

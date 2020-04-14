@@ -15,10 +15,16 @@ public class PlayerviewCheck : Photon.MonoBehaviour
 
     private void Awake()
     {
-        if(!devTesting && photonview.isMine)
-        {
-            sceneCam = GameObject.Find("Main Camera");
-            sceneCam.SetActive(false);
+        if (GetComponent<PhotonView>()) {
+            photonview = GetComponent<PhotonView>();
+        }
+        if(!devTesting && photonview.isMine) {
+            try {
+                sceneCam = GameObject.Find("Main Camera");
+                sceneCam.SetActive(false);
+            } catch {
+                print("No main camera available");
+            }
             plCam.SetActive(true);
         }
     }
