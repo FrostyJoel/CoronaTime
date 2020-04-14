@@ -52,15 +52,24 @@ public class PhotonMenuHandler : MonoBehaviour
 
     private void SpawnPlayer()
     {
-        GameObject[] spawnLocations = GameObject.FindGameObjectsWithTag("SpawnLocaties");
-        Debug.Log(spawnLocations.Length);
-        for (int i = 0; i < spawnLocations.Length; i++)
+        spawnPoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("SpawnLocaties"));
+        Debug.Log(spawnPoints.Count);
+        for (int i = 0; i < spawnPoints.Count; i++)
         {
-            if (!spawnPoints.Contains(spawnLocations[i]))
+            if (spawnPoints[i].activeSelf)
             {
-                spawnPoints.Add(spawnLocations[i]);
                 GameObject player = PhotonNetwork.Instantiate(mainPlayer.name, spawnPoints[i].transform.position, mainPlayer.transform.rotation, 0);
-                player.GetComponent<PlayerviewCheck>().plNameText.text = photonB.playerNameInput.text;
+                if(photonB.playerNameInput.text.Length > 0)
+                {
+                    PhotonNetwork.playerName = photonB.playerNameInput.text;
+                }
+                else
+                {
+                    PhotonNetwork.playerName = "Guest";
+                }
+                player.GetComponent<PlayerviewCheck>().plNameText.text = PhotonNetwork.playerName;
+                spawnPoints[i].SetActive(false);
+                spawnPoints.Remove(spawnPoints[i]);
                 break;
             }
         }
