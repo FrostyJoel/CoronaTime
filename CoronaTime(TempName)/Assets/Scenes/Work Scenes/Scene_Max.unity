@@ -1725,7 +1725,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cc322dbdd0dd84ba46f131c7b995fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioGroup: 0
   text: {fileID: 1258018928}
+  sellSound: {fileID: 8300000, guid: 9e92b45b04487b04a8ea15b7c7e669a9, type: 3}
 --- !u!65 &1646429198
 BoxCollider:
   m_ObjectHideFlags: 0
