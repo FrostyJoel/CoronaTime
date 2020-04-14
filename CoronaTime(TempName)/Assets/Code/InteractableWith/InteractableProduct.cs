@@ -5,7 +5,6 @@ using UnityEngine;
 public class InteractableProduct : Interactable {
 
     public Product scriptableProduct;
-    public AudioClip sellSound;
 
     public enum Place {
         InShelve,

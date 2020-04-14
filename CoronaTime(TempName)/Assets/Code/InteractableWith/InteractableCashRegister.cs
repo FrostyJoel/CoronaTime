@@ -6,6 +6,7 @@ using UnityEngine;
 public class InteractableCashRegister : Interactable {
 
     public Text text;
+    public AudioClip sellSound;
 
     public override void Interact(CartStorage cartStorage) {
         cartStorage.SellItems();
