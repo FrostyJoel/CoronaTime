@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour {
 
-
+    public AudioManager.AudioGroups audioGroup;
     public virtual void Interact(CartStorage cartStorage) {
 
     }
