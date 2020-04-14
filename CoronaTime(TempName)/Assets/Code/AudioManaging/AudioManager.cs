@@ -8,8 +8,9 @@ public static class AudioManager {
     public static AudioMixer audioMixer;
 
     public enum AudioGroups {
+        None,
+        Music,
         SFX,
-        Music
     }
 
     public static void PlaySound(AudioClip audioClipToPlay, AudioGroups audioGroups) {
