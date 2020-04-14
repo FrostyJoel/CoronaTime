@@ -8,7 +8,8 @@ public class Controller : MonoBehaviour {
     public Transform pov, povHolder;
     [HideInInspector] public Rigidbody rigid;
     [HideInInspector] public PlayerviewCheck playerviewCheck;
-
+    public Vector3 startPosition;
+    public Quaternion startRotation;
     public bool hideCursorOnStart, useTestController;
     [Space]
     public float walkSpeed = 5;
@@ -44,6 +45,8 @@ public class Controller : MonoBehaviour {
         if (hideCursorOnStart) {
             Cursor.lockState = CursorLockMode.Locked;
         }
+        startPosition = transform.position;
+        startRotation = transform.rotation;
     }
 
 
@@ -165,6 +168,16 @@ public class Controller : MonoBehaviour {
         Vector3 eulerRotation = transform_.localEulerAngles;
         eulerRotation.y = value;
         transform_.localEulerAngles = eulerRotation;
+    }
+
+    public void ResetAtStartPosition() {
+        transform.position = startPosition;
+        transform.rotation = startRotation;
+        pov.transform.localRotation = Quaternion.identity;
+        povHolder.transform.localRotation = Quaternion.identity;
+        xRotationAxisAngle = 0;
+        yRotationAxisAngle = 0;
+        rigid.velocity = Vector3.zero;
     }
 
 }

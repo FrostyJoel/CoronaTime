@@ -14,7 +14,7 @@ public class InteractableProduct : Interactable {
     public Place currentPlace;
 
     public override void Interact(CartStorage cartStorage) {
-        if (cartStorage.AddToCart(this)) {
+        if (currentPlace == Place.InShelve && cartStorage.AddToCart(this)) {
             currentPlace = Place.InCart;
         }
     }

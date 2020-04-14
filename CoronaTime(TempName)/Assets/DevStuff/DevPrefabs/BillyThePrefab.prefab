@@ -174,6 +174,8 @@ MonoBehaviour:
   povHolder: {fileID: 1255836579416279486}
   rigid: {fileID: 5992604071259634013}
   playerviewCheck: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  startRotation: {x: 0, y: 0, z: 0, w: 0}
   hideCursorOnStart: 1
   useTestController: 0
   walkSpeed: 0.08
@@ -358,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holder: {fileID: 339689506113196052}
-  interactRange: 5
+  interactRange: 6
   maxItemsHeld: 8
   itemHolders: []
   heldProducts: []

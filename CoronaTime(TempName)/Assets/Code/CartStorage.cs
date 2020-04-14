@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CartStorage : MonoBehaviour {
     public Transform holder;
-    Controller controller;
+    [HideInInspector] public Controller controller;
     public int interactRange, maxItemsHeld;
 
     public List<Transform> itemHolders = new List<Transform>();
@@ -28,7 +28,7 @@ public class CartStorage : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(controller.pov.position, controller.pov.forward, out hit, interactRange)) {
                 if (hit.transform.CompareTag("Interact")) {
-                    hit.transform.GetComponent<InteractableProduct>().Interact(this);
+                    hit.transform.GetComponent<Interactable>().Interact(this);
                 }
             }
         }
@@ -46,6 +46,48 @@ public class CartStorage : MonoBehaviour {
         } else {
             return false;
         }
+    }
+
+    public void SellItems() {
+        if (heldProducts.Count > 0) {
+            for (int i = 0; i < heldProducts.Count; i++) {
+                int index = AlreadySold(heldProducts[i]);
+                if (index >= 0) {
+                    soldProducts[index].amountSold += 1;
+                } else {
+                    SoldProduct soldProduct_ = new SoldProduct();
+                    soldProduct_.parentProduct = heldProducts[i];
+                    soldProduct_.amountSold = 1;
+                    soldProducts.Add(soldProduct_);
+                }
+                Destroy(heldProductModels[i]);
+            }
+            heldProducts.Clear();
+            heldProductModels.Clear();
+        }
+    }
+
+    int AlreadySold(Product product) {
+        int index = -1;
+        if (soldProducts.Count > 0) {
+            for (int i = 0; i < soldProducts.Count; i++) {
+                if(soldProducts[i].parentProduct.prefab == product.prefab) {
+                    index = i;
+                    break;
+                }
+            }
+        }
+        return index;
+    }
+
+    public int GetScore() {
+        int score = 0;
+        if(soldProducts.Count > 0) {
+            for (int i = 0; i < soldProducts.Count; i++) {
+                score = soldProducts[i].parentProduct.scoreValue * soldProducts[i].amountSold;
+            }
+        }
+        return score;
     }
 
     Product MakeDirtyNewInstance(Product product) {

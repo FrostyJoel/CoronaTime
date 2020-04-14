@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Product : ScriptableObject {
     public GameObject prefab;
-    public float scoreValue;
+    public int scoreValue;
 }
 
 public class SoldProduct : ScriptableObject {
