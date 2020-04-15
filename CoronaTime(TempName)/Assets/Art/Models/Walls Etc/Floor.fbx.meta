@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff453ab62bc94124da988229f7fcd737
+guid: c3cb2ee283f59e24fafb1a3e00e9f507
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Plint
+    4300000: Floor
   externalObjects: {}
   materials:
     importMaterials: 1
