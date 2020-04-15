@@ -38,7 +38,7 @@ public class CartStorage : MonoBehaviour {
 
     public bool AddToCart(InteractableProduct interactableProduct) {
         if (heldProducts.Count < maxItemsHeld) {
-            Product product = MakeDirtyNewInstance(interactableProduct.scriptableProduct);
+            Product product = MakeDirtyNewInstanceOfProduct(interactableProduct.scriptableProduct);
             heldProducts.Add(product);
             heldProductModels.Add(interactableProduct.gameObject);
             interactableProduct.transform.SetParent(itemHolders[heldProducts.Count - 1]);
@@ -57,10 +57,9 @@ public class CartStorage : MonoBehaviour {
                 if (index >= 0) {
                     soldProducts[index].amountSold += 1;
                 } else {
-                    SoldProduct soldProduct_ = new SoldProduct() {
-                        parentProduct = heldProducts[i],
-                        amountSold = 1
-                    };
+                    SoldProduct soldProduct_ = new SoldProduct();
+                    soldProduct_.parentProduct = heldProducts[i];
+                    soldProduct_.amountSold = 1;
                     soldProducts.Add(soldProduct_);
                 }
                 Destroy(heldProductModels[i]);
@@ -93,7 +92,7 @@ public class CartStorage : MonoBehaviour {
         return score;
     }
 
-    Product MakeDirtyNewInstance(Product product) {
+    Product MakeDirtyNewInstanceOfProduct(Product product) {
         Product tempProduct = ScriptableObject.CreateInstance(product.GetType().Name) as Product;
         tempProduct.prefab = product.prefab;
         tempProduct.scoreValue = product.scoreValue;
