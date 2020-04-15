@@ -12,7 +12,7 @@ public class MeshCombiner : MonoBehaviour
 
     public bool execute;
 
-    public List<Meshes> meshes = new List<Meshes>();
+    public List<Meshes> meshAndMatList = new List<Meshes>();
 
     void Update() {
         if (execute) {
