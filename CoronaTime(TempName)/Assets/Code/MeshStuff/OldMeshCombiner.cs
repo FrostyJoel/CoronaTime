@@ -8,9 +8,13 @@ using System.Collections.Generic;
 
 [ExecuteInEditMode]
 public class OldMeshCombiner : MonoBehaviour {
-    void Start() {
-        ActualMeshCombining();
-        DestroyImmediate(this);
+
+    public bool execute;
+    void Update() {
+        if (execute) {
+            ActualMeshCombining();
+            DestroyImmediate(this);
+        }
     }
 
     public void ActualMeshCombining() {
