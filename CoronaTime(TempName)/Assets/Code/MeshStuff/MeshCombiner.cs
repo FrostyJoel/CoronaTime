@@ -20,7 +20,7 @@ public class MeshCombiner : MonoBehaviour
         if (execute) {
             if (!transform.Find(newMeshListName))
             {
-                if(prevMeshListName.Length > 0)
+                if(prevMeshListName.Length > 0 && prevMeshListName != "")
                 {
                     print(prevMeshListName);
                     DestroyImmediate(transform.Find(prevMeshListName).gameObject);
