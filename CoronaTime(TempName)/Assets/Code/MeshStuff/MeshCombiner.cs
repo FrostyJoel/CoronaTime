@@ -23,19 +23,25 @@ public class MeshCombiner : MonoBehaviour
 
     void CombineMesh() {
         CheckForMesh(transform);
-        for (int i = 0; i < meshes.Count; i++) {
-            InstanceFilterInstance(meshes[i]);
+        for (int i = 0; i < meshAndMatList.Count; i++) {
+            InstanceFilterInstance(meshAndMatList[i]);
         }
     }
 
     void InstanceFilterInstance(Meshes ms) {
-        CombineInstance[] combine = new CombineInstance[ms.meshList.Count];
+        CombineInstance[] combine = new CombineInstance[ms.meshFilterList.Count];
+
+        for (int i = 0; i < ms.meshFilterList.Count; i++) {
+            combine[i].mesh = ms.meshFilterList[i].sharedMesh;
+            combine[i].transform = ms.meshFilterList[i].transform.localToWorldMatrix;
+            ms.meshFilterList[i].gameObject.SetActive(false);
+        }
 
         Mesh combinedMesh = new Mesh();
-        combinedMesh.name = "Material:" + ms.meshList[0].name;
+        combinedMesh.name = "Material:" + ms.meshFilterList[0].name;
         combinedMesh.CombineMeshes(combine, true, true, false);
 
-        GameObject g = new GameObject(ms.meshList[0].name);
+        GameObject g = new GameObject(ms.meshFilterList[0].name);
 
         MeshFilter filter = g.AddComponent<MeshFilter>();
         filter.mesh = combinedMesh;
@@ -47,15 +53,15 @@ public class MeshCombiner : MonoBehaviour
     void CheckForMesh(Transform t) {
         if(t.GetComponent<MeshFilter>() && t.GetComponent<MeshRenderer>()) {
             MeshFilter filter = t.GetComponent<MeshFilter>();
-            int index = MeshWhereInMeshes(filter.mesh);
+            int index = MeshWhereInMeshes(filter);
 
             if (index >= 0) {
-                meshes[index].meshList.Add(filter.mesh);
+                meshAndMatList[index].meshFilterList.Add(filter);
             } else {
-                Meshes mesh = new Meshes();
-                mesh.meshList.Add(filter.mesh);
-                mesh.material = t.GetComponent<MeshRenderer>().material;
-                meshes.Add(mesh);
+                Meshes tempMesh = new Meshes();
+                tempMesh.meshFilterList.Add(filter);
+                tempMesh.material = t.GetComponent<MeshRenderer>().sharedMaterial;
+                meshAndMatList.Add(tempMesh);
             }
         }
 
@@ -66,13 +72,13 @@ public class MeshCombiner : MonoBehaviour
         }
     }
     
-    int MeshWhereInMeshes(Mesh mesh) {
+    int MeshWhereInMeshes(MeshFilter filter) {
         int i = -1;
-        if (meshes.Count > 0) {
-            for (int iB = 0; iB < meshes.Count; iB++) {
-                if (meshes[iB].meshList.Count > 0) {
-                    for (int iC = 0; iC < meshes[iB].meshList.Count; iC++) {
-                        if (mesh.name == meshes[iB].meshList[iC].name) {
+        if (meshAndMatList.Count > 0) {
+            for (int iB = 0; iB < meshAndMatList.Count; iB++) {
+                if (meshAndMatList[iB].meshFilterList.Count > 0) {
+                    for (int iC = 0; iC < meshAndMatList[iB].meshFilterList.Count; iC++) {
+                        if (filter.sharedMesh.name == meshAndMatList[iB].meshFilterList[iC].sharedMesh.name) {
                             i = iB;
                             break;
                         }
@@ -86,6 +92,6 @@ public class MeshCombiner : MonoBehaviour
 
 [System.Serializable]
 public class Meshes {
-    public List<Mesh> meshList = new List<Mesh>();
+    public List<MeshFilter> meshFilterList = new List<MeshFilter>();
     public Material material;
 }
