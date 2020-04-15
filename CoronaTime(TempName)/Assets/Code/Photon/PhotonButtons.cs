@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PhotonButtons : MonoBehaviour
 {
     public PhotonMenuHandler pMenuHandler;
-    public InputField createRoomInput, joinRoomInput,playerNameInput;
+    public InputField createRoomInput, joinRoomInput, playerNameInput;
     public Button createRoomButton, joinRoomButton;
 
 
@@ -20,13 +20,25 @@ public class PhotonButtons : MonoBehaviour
         pMenuHandler.JoinOrCreateRoom();
     }
 
-    public void CheckForCreateRoomName(string name)
-    {
-        createRoomButton.interactable = !string.IsNullOrEmpty(name);
+    public void CheckForCreateRoomName(string name) {
+        bool state = false;
+
+        if (!string.IsNullOrEmpty(name)) {
+            if(!name.Contains(" ")) {
+                state = true;
+            }
+        }
+        createRoomButton.interactable = state;
     }
 
-    public void CheckForJoinRoomName(string name)
-    {
-        joinRoomButton.interactable = !string.IsNullOrEmpty(name);
+    public void CheckForJoinRoomName(string name) {
+        bool state = false;
+
+        if (!string.IsNullOrEmpty(name)) {
+            if (!name.Contains(" ")) {
+                state = true;
+            }
+        }
+        joinRoomButton.interactable = state;
     }
 }
