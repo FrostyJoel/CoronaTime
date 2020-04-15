@@ -11,11 +11,33 @@ public class MeshCombiner : MonoBehaviour
 {
 
     public bool execute;
+    public string newMeshListName = "InstanceEmpty";
+    private string prevMeshListName;
 
     public List<Meshes> meshAndMatList = new List<Meshes>();
 
     void Update() {
         if (execute) {
+            if (!transform.Find(newMeshListName))
+            {
+                if(prevMeshListName.Length > 0)
+                {
+                    print(prevMeshListName);
+                    DestroyImmediate(transform.Find(prevMeshListName).gameObject);
+                    meshAndMatList = new List<Meshes>();
+                    prevMeshListName = "";
+                }
+                prevMeshListName = newMeshListName;
+                GameObject intanceEmpty = new GameObject(newMeshListName);
+                intanceEmpty.transform.SetParent(transform);
+            }
+            else
+            {
+                DestroyImmediate(transform.Find(newMeshListName).gameObject);
+                GameObject intanceEmpty = new GameObject(newMeshListName);
+                intanceEmpty.transform.SetParent(transform);
+                meshAndMatList = new List<Meshes>();
+            }
             CombineMesh();
             execute = false;
         }
@@ -42,6 +64,8 @@ public class MeshCombiner : MonoBehaviour
         combinedMesh.CombineMeshes(combine, true, true, false);
 
         GameObject g = new GameObject(ms.meshFilterList[0].name);
+        g.transform.SetParent(transform.Find(newMeshListName));
+        g.isStatic = true;
 
         MeshFilter filter = g.AddComponent<MeshFilter>();
         filter.mesh = combinedMesh;
