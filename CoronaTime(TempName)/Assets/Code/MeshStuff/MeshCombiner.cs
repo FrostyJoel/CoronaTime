@@ -12,7 +12,7 @@ public class MeshCombiner : MonoBehaviour
 
     public bool execute;
     public string newMeshListName = "InstanceEmpty";
-    private string prevMeshListName;
+    private string prevMeshListName = "";
 
     public List<Meshes> meshAndMatList = new List<Meshes>();
 
@@ -56,7 +56,6 @@ public class MeshCombiner : MonoBehaviour
         for (int i = 0; i < ms.meshFilterList.Count; i++) {
             combine[i].mesh = ms.meshFilterList[i].sharedMesh;
             combine[i].transform = ms.meshFilterList[i].transform.localToWorldMatrix;
-            ms.meshFilterList[i].gameObject.SetActive(false);
         }
 
         Mesh combinedMesh = new Mesh();
@@ -77,6 +76,7 @@ public class MeshCombiner : MonoBehaviour
     void CheckForMesh(Transform t) {
         if(t.GetComponent<MeshFilter>() && t.GetComponent<MeshRenderer>()) {
             MeshFilter filter = t.GetComponent<MeshFilter>();
+            MeshRenderer render = t.GetComponent<MeshRenderer>();
             int index = MeshWhereInMeshes(filter);
 
             if (index >= 0) {
@@ -84,9 +84,10 @@ public class MeshCombiner : MonoBehaviour
             } else {
                 Meshes tempMesh = new Meshes();
                 tempMesh.meshFilterList.Add(filter);
-                tempMesh.material = t.GetComponent<MeshRenderer>().sharedMaterial;
+                tempMesh.material = render.sharedMaterial;
                 meshAndMatList.Add(tempMesh);
             }
+            DestroyImmediate(render);
         }
 
         if (t.childCount > 0) {
