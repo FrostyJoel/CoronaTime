@@ -10,7 +10,7 @@ using System.Collections.Generic;
 [ExecuteInEditMode]
 public class OldMeshCombiner : MonoBehaviour
 {
-    public UnwrapParam uWP;
+    //public UnwrapParam uWP;
     public bool execute;
     void Update()
     {
@@ -47,7 +47,7 @@ public class OldMeshCombiner : MonoBehaviour
         }
         Mesh mesh = new Mesh();
         mesh.CombineMeshes(combine, true, true, true);
-        Unwrapping.GenerateSecondaryUVSet(mesh,uWP);
+        //Unwrapping.GenerateSecondaryUVSet(mesh,uWP);
         MeshFilter mF = gameObject.AddComponent<MeshFilter>();
         mF.mesh = mesh;
         transform.gameObject.SetActive(true);

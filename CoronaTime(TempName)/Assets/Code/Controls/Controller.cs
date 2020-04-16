@@ -44,6 +44,7 @@ public class Controller : MonoBehaviour {
         playerviewCheck = GetComponent<PlayerviewCheck>();
         if (hideCursorOnStart) {
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         startPosition = transform.position;
         startRotation = transform.rotation;
