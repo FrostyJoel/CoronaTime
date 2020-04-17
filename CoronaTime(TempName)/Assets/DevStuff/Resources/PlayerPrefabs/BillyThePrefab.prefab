@@ -307,10 +307,8 @@ GameObject:
   - component: {fileID: 5992604071259634013}
   - component: {fileID: 5992604071259634002}
   - component: {fileID: 5992604071259634012}
-  - component: {fileID: 5992604071259634009}
-  - component: {fileID: 5992604071259634014}
-  - component: {fileID: 5992604071259634015}
   - component: {fileID: 8310589338671278652}
+  - component: {fileID: 7637662374916591748}
   m_Layer: 0
   m_Name: BillyThePrefab
   m_TagString: Untagged
@@ -365,7 +363,6 @@ MonoBehaviour:
   pov: {fileID: 7870492868813668520}
   povHolder: {fileID: 1255836579416279486}
   rigid: {fileID: 5992604071259634013}
-  playerviewCheck: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
   hideCursorOnStart: 1
@@ -417,128 +414,6 @@ MonoBehaviour:
   breakAxel: 0
   controller: {fileID: 5992604071259634002}
   maxSpeed: 0
---- !u!114 &5992604071259634009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5992604071259634000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa8f9145132f86a419ab67f388610620, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  photonview: {fileID: 0}
-  plCam: {fileID: 5902540763232102368}
-  smoothness: 8
-  devTesting: 0
-  plNameText: {fileID: 1645372588990679087}
---- !u!114 &5992604071259634014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5992604071259634000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ownerId: 0
-  group: 0
-  OwnerShipWasTransfered: 0
-  prefixBackup: -1
-  synchronization: 0
-  onSerializeTransformOption: 3
-  onSerializeRigidBodyOption: 2
-  ownershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
-  ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
-  currentMasterID: -1
-  isRuntimeInstantiated: 0
---- !u!114 &5992604071259634015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5992604071259634000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 0
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 1
-    InterpolateMoveTowardsAcceleration: 2
-    InterpolateMoveTowardsDeceleration: 2
-    InterpolateSpeedCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: -1
-        value: 0
-        inSlope: 0
-        outSlope: Infinity
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 4
-        value: 4
-        inSlope: 1
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-    DrawErrorGizmo: 1
-  m_RotationModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 1
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
 --- !u!114 &8310589338671278652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,6 +434,28 @@ MonoBehaviour:
   heldProducts: []
   heldProductModels: []
   soldProducts: []
+--- !u!114 &7637662374916591748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5992604071259634000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &6732143808068744098
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,12 +813,6 @@ Transform:
 --- !u!4 &1255836579416279486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4775963022018334051, guid: 47a8c557e57b90a4b804b535a117565c,
-    type: 3}
-  m_PrefabInstance: {fileID: 5992604072681751773}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5902540763232102368 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 198167362224464701, guid: 47a8c557e57b90a4b804b535a117565c,
     type: 3}
   m_PrefabInstance: {fileID: 5992604072681751773}
   m_PrefabAsset: {fileID: 0}
