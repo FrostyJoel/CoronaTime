@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))] [RequireComponent(typeof(PlayerviewCheck))]
+[RequireComponent(typeof(Rigidbody))] //[RequireComponent(typeof(PlayerviewCheck))]
 public class Controller : MonoBehaviour {
 
     public Transform pov, povHolder;
     [HideInInspector] public Rigidbody rigid;
-    [HideInInspector] public PlayerviewCheck playerviewCheck;
+    //[HideInInspector] public PlayerviewCheck playerviewCheck;
     public Vector3 startPosition;
     public Quaternion startRotation;
     public bool hideCursorOnStart, useTestController;
@@ -41,7 +41,7 @@ public class Controller : MonoBehaviour {
             }
         }
         rigid = GetComponent<Rigidbody>();
-        playerviewCheck = GetComponent<PlayerviewCheck>();
+        //playerviewCheck = GetComponent<PlayerviewCheck>();
         if (hideCursorOnStart) {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -60,7 +60,7 @@ public class Controller : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (playerviewCheck.photonView.isMine || playerviewCheck.devTesting) {
+        //if (playerviewCheck.photonView.isMine || playerviewCheck.devTesting) {
             //camera rotation
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
@@ -156,7 +156,7 @@ public class Controller : MonoBehaviour {
                 //Quaternion rot = Quaternion.Euler(transform.rotation.eulerAngles + transform.up * currentRotationSpeed);
                 //rigid.MoveRotation(rot);
             }
-        }
+        //}
     }
 
     private void ClampXRotationAxisToValue(Transform transform_, float value) {

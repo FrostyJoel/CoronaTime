@@ -24,7 +24,7 @@ public class CartStorage : MonoBehaviour {
     }
 
     private void Update() {
-        if (controller.playerviewCheck.photonView.isMine || controller.playerviewCheck.devTesting) {
+        //if (controller.playerviewCheck.photonView.isMine || controller.playerviewCheck.devTesting) {
             if (Input.GetButtonDown("Interact")) {
                 RaycastHit hit;
                 if (Physics.Raycast(controller.pov.position, controller.pov.forward, out hit, interactRange)) {
@@ -33,7 +33,7 @@ public class CartStorage : MonoBehaviour {
                     }
                 }
             }
-        }
+        //}
     }
 
     public bool AddToCart(InteractableProduct interactableProduct) {
