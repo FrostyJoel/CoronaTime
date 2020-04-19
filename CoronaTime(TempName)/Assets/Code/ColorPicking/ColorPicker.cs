@@ -9,6 +9,8 @@ public class ColorPicker : MonoBehaviour {
     public Material[] targetMaterials;
     List<Material> renderMats = new List<Material>();
     public Transform buttonParent;
+    public Color pickedColor;
+    public bool pickAColor;
 
     void Start() {
         Renderer[] rends = transform.GetComponentsInChildren<Renderer>();
@@ -46,6 +48,7 @@ public class ColorPicker : MonoBehaviour {
         if (!ColorManaging.HasColorBeenUsed(color)) {
             if (renderMats.Count > 0) {
                 ColorManaging.UseColor(renderMats.ToArray(), color);
+                pickedColor = color;
             }
         }
     }

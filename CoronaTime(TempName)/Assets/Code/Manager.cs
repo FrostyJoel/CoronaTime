@@ -35,7 +35,6 @@ public class ColorManaging {
     public int amountColorOptions;
     public Sprite colorButtonSprite;
     public static List<float> rValue = new List<float>();
-    public bool dev;
     public List<ColorPick> colorPicks = new List<ColorPick>();
 
     public static bool HasColorBeenUsed(Color color) {
