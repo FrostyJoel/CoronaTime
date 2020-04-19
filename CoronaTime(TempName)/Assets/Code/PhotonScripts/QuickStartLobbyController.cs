@@ -9,7 +9,7 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks {
     [SerializeField]
     private GameObject quickStartButton, quickCancelButton;
     [SerializeField]
-    private int roomSize;
+    private int roomSize = 4;
 
     public override void OnConnectedToMaster() {
         PhotonNetwork.AutomaticallySyncScene = true;

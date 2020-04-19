@@ -1106,3 +1106,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticInfo:
     audioMixer: {fileID: 24100000, guid: a4d9792f74e2f60448f98c825d737165, type: 2}
+  colorManaging:
+    amountColorOptions: 9
+    colorButtonSprite: {fileID: 21300000, guid: 66efb24ed46044ab8a039599cbc47d7b,
+      type: 3}
+    dev: 0
+    colorPicks: []

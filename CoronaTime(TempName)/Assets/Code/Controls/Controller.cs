@@ -151,9 +151,10 @@ public class Controller : MonoBehaviour {
                 }
 
                 transform.Translate(Vector3.forward * vertical);
-                //rigid.MovePosition(transform.position + transform.forward * vertical);
+                Vector3 newPos = transform.position + transform.forward * vertical;
+                //rigid.MovePosition(newPos);
                 transform.Rotate(Vector3.up * currentRotationSpeed);
-                //Quaternion rot = Quaternion.Euler(transform.rotation.eulerAngles + transform.up * currentRotationSpeed);
+                Quaternion rot = Quaternion.Euler(transform.rotation.eulerAngles + transform.up * currentRotationSpeed);
                 //rigid.MoveRotation(rot);
             }
         //}
@@ -180,6 +181,5 @@ public class Controller : MonoBehaviour {
         yRotationAxisAngle = 0;
         rigid.velocity = Vector3.zero;
     }
-
 }
 
