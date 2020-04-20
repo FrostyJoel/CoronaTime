@@ -85,7 +85,9 @@ public class ColorPick {
         inUse = newUseState;
         if(linkedColorButtons.Count > 0) {
             for (int i = 0; i < linkedColorButtons.Count; i++) {
-                linkedColorButtons[i].interactable = !newUseState;
+                if (linkedColorButtons[i]) {//incase of disconnect
+                    linkedColorButtons[i].interactable = !newUseState;
+                }
             }
         }
     }

@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &358437868091331657
 RectTransform:
   m_ObjectHideFlags: 0
@@ -394,7 +394,6 @@ GameObject:
   - component: {fileID: 5992604071259634002}
   - component: {fileID: 5992604071259634012}
   - component: {fileID: 8310589338671278652}
-  - component: {fileID: 7637662374916591748}
   - component: {fileID: 6388710439779865806}
   - component: {fileID: 4028992358473339146}
   - component: {fileID: 6475247200545239043}
@@ -523,28 +522,6 @@ MonoBehaviour:
   heldProducts: []
   heldProductModels: []
   soldProducts: []
---- !u!114 &7637662374916591748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5992604071259634000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 0
-  OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
-  viewIdField: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!65 &6388710439779865806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -579,7 +556,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5992604071259634000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33c3b2d8fd18f93468aba8e34aeb5170, type: 3}
   m_Name: 
@@ -587,6 +564,8 @@ MonoBehaviour:
   targetMaterials:
   - {fileID: 2100000, guid: 2832b8f7da2b5ce4a90847760f3fcee1, type: 2}
   buttonParent: {fileID: 6320633655097550129}
+  pickedColor: {r: 0, g: 0, b: 0, a: 0}
+  pickAColor: 0
 --- !u!1 &6732143808068744098
 GameObject:
   m_ObjectHideFlags: 0

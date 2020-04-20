@@ -5,15 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: "Assets/Scenes/Work Scenes/Scene_Jo\xEBl.unity"
-    guid: 672b17b4249407c4eb360bd3aa93e03b
-  - enabled: 0
-    path: Assets/Scenes/Art Scene.unity
-    guid: bfddf85ace341ba49a02535b1ddea8c1
-  - enabled: 1
-    path: Assets/Scenes/Work Scenes/Scene_PhotonNew.unity
-    guid: 51cb8e650ae910a40a95494094c35650
   - enabled: 1
     path: Assets/Scenes/Work Scenes/Scene_Max.unity
     guid: 71920f8000b260942899aad1daaed474
