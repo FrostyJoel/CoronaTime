@@ -31,6 +31,7 @@ public class Controller : MonoBehaviourPun {
     public float xRotationAxisAngle, yRotationAxisAngle;
 
     public PhotonView thisView;
+    public bool devView;
 
     private void Start() {
         thisView = GetComponent<PhotonView>();
@@ -65,7 +66,7 @@ public class Controller : MonoBehaviourPun {
     }
 
     private void FixedUpdate() {
-        if (thisView.IsMine) {
+        if (thisView.IsMine || devView) {
             //camera rotation
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
