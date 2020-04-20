@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using System;
 using UnityEngine.UI;
-using System.Collections;
 using System.Collections.Generic;
 
 public class ColorPicker : MonoBehaviour {
@@ -10,7 +8,7 @@ public class ColorPicker : MonoBehaviour {
     List<Material> renderMats = new List<Material>();
     public Transform buttonParent;
     public Color pickedColor;
-    public bool pickAColor;
+    public bool pickedAColor;
 
     void Start() {
         Renderer[] rends = transform.GetComponentsInChildren<Renderer>();
@@ -28,20 +26,21 @@ public class ColorPicker : MonoBehaviour {
             }
         }
 
-        for (int i = 0; i < Manager.staticColorManaging.amountColorOptions; i++) {
-            GameObject colorButton = Instantiate(new GameObject("Color Option " + i));
-            Image img = colorButton.AddComponent<Image>();
-            img.sprite = Manager.staticColorManaging.colorButtonSprite;
-            Color color = Manager.staticColorManaging.colorPicks[i].color;
-            img.color = color;
-            Button button = colorButton.AddComponent<Button>();
-            button.onClick.AddListener(() => SetColor(color));
-            button.interactable = !ColorManaging.HasColorBeenUsed(img.color);
-            colorButton.transform.SetParent(buttonParent);
-            Manager.staticColorManaging.colorPicks[i].linkedColorButtons.Add(button);
-        }    
-
-        SetColor(Color.white);
+        if (FindObjectOfType(typeof(Manager))) {
+            for (int i = 0; i < Manager.staticColorManaging.amountColorOptions; i++) {
+                GameObject colorButton = Instantiate(new GameObject("Color Option " + i));
+                Image img = colorButton.AddComponent<Image>();
+                img.sprite = Manager.staticColorManaging.colorButtonSprite;
+                Color color = Manager.staticColorManaging.colorPicks[i].color;
+                img.color = color;
+                Button button = colorButton.AddComponent<Button>();
+                button.onClick.AddListener(() => SetColor(color));
+                button.interactable = !ColorManaging.HasColorBeenUsed(img.color);
+                colorButton.transform.SetParent(buttonParent);
+                Manager.staticColorManaging.colorPicks[i].linkedColorButtons.Add(button);
+            }    
+            SetColor(Color.white);
+        }
     }
 
     public void SetColor(Color color) {

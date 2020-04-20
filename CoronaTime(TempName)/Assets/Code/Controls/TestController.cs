@@ -32,39 +32,33 @@ public class TestController : MonoBehaviour {
     public float maxSpeed;
 
     private void Start() {
-        if (controller.useTestController) {
-            rb = GetComponent<Rigidbody>();
-        }
+        rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate() {
-        if (controller.useTestController) {
-            inputY = Input.GetAxis("Vertical");
-            inputX = Input.GetAxis("Horizontal");
-            float turn = inputX * maxSteeringAngle;
-            for (int i = 0; i < wheels.Count; i++) {
-                if (wheels[i].axel == poweredAxel) {
-                    wheels[i].wheelCollider.motorTorque = inputY * maxAcceleration * 500 * Time.deltaTime;
-                }
-                
-                if (wheels[i].axel == steeringAxel) {
-                    Steering(wheels[i], turn);
-                } else if (inverseTurn) {
-                    Steering(wheels[i], -turn * divide);
-                }
+        inputY = Input.GetAxis("Vertical");
+        inputX = Input.GetAxis("Horizontal");
+        float turn = inputX * maxSteeringAngle;
+        for (int i = 0; i < wheels.Count; i++) {
+            if (wheels[i].axel == poweredAxel) {
+                wheels[i].wheelCollider.motorTorque = inputY * maxAcceleration * 500 * Time.deltaTime;
+            }
+
+            if (wheels[i].axel == steeringAxel) {
+                Steering(wheels[i], turn);
+            } else if (inverseTurn) {
+                Steering(wheels[i], -turn * divide);
             }
         }
     }
 
     private void LateUpdate() {
-        if (controller.useTestController) {
-            for (int i = 0; i < wheels.Count; i++) {
-                Vector3 position;
-                Quaternion rotation;
-                wheels[i].wheelCollider.GetWorldPose(out position, out rotation);
-                wheels[i].model.transform.position = position;
-                wheels[i].model.transform.rotation = rotation;
-            }
+        for (int i = 0; i < wheels.Count; i++) {
+            Vector3 position;
+            Quaternion rotation;
+            wheels[i].wheelCollider.GetWorldPose(out position, out rotation);
+            wheels[i].model.transform.position = position;
+            wheels[i].model.transform.rotation = rotation;
         }
     }
 

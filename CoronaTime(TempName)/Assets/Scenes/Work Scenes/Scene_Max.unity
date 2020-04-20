@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 779944932}
   - component: {fileID: 779944931}
   m_Layer: 0
-  m_Name: GameSetup
+  m_Name: PlayerSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -825,12 +825,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779944930}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40fd177345f624a439854b435e0b1a09, type: 3}
+  m_Script: {fileID: 11500000, guid: 19591426717286f4d9f42b4b84d4482b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabFolder: PlayerPrefabs
   prefab: {fileID: 5992604071259634000, guid: d0ce1991985240943935fc20c4faf789, type: 3}
 --- !u!4 &779944932
 Transform:

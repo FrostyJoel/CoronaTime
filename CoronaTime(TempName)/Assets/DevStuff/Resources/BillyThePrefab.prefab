@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &358437868091331657
 RectTransform:
   m_ObjectHideFlags: 0
@@ -392,11 +392,12 @@ GameObject:
   - component: {fileID: 5992604071259634003}
   - component: {fileID: 5992604071259634013}
   - component: {fileID: 5992604071259634002}
-  - component: {fileID: 5992604071259634012}
   - component: {fileID: 8310589338671278652}
   - component: {fileID: 6388710439779865806}
   - component: {fileID: 4028992358473339146}
   - component: {fileID: 6475247200545239043}
+  - component: {fileID: 114803700820047226}
+  - component: {fileID: 114723929397572236}
   m_Layer: 0
   m_Name: BillyThePrefab
   m_TagString: Untagged
@@ -454,7 +455,6 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
   hideCursorOnStart: 1
-  useTestController: 0
   walkSpeed: 0.08
   mouseSensitivity: 1
   keyboardCartRotationSpeed: 1.5
@@ -466,42 +466,7 @@ MonoBehaviour:
   centerOfMass: {x: 0, y: -1, z: 1}
   xRotationAxisAngle: 0
   yRotationAxisAngle: 0
---- !u!114 &5992604071259634012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5992604071259634000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7214151f1e8db64f8f4754f5d671b12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxAcceleration: 5
-  turnSensitivity: 1
-  maxSteeringAngle: 40
-  brakeForce: 50
-  wheels:
-  - wheelCollider: {fileID: 0}
-    model: {fileID: 0}
-    axel: 0
-  - wheelCollider: {fileID: 0}
-    model: {fileID: 0}
-    axel: 0
-  - wheelCollider: {fileID: 0}
-    model: {fileID: 0}
-    axel: 1
-  - wheelCollider: {fileID: 0}
-    model: {fileID: 0}
-    axel: 1
-  inverseTurn: 0
-  divide: 0
-  poweredAxel: 1
-  steeringAxel: 0
-  breakAxel: 0
-  controller: {fileID: 5992604071259634002}
-  maxSpeed: 0
+  thisView: {fileID: 0}
 --- !u!114 &8310589338671278652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,7 +521,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5992604071259634000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33c3b2d8fd18f93468aba8e34aeb5170, type: 3}
   m_Name: 
@@ -565,7 +530,44 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2832b8f7da2b5ce4a90847760f3fcee1, type: 2}
   buttonParent: {fileID: 6320633655097550129}
   pickedColor: {r: 0, g: 0, b: 0, a: 0}
-  pickAColor: 0
+  pickedAColor: 0
+--- !u!114 &114803700820047226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5992604071259634000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 114723929397572236}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &114723929397572236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5992604071259634000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1 &6732143808068744098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +1010,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_Billy_1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7595635516630051393, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+    - {fileID: 2380087066722093934, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
 --- !u!4 &2349137363551365804 stripped
 Transform:

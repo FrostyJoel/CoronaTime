@@ -1,16 +1,17 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))] //[RequireComponent(typeof(PlayerviewCheck))]
-public class Controller : MonoBehaviour {
+public class Controller : MonoBehaviourPun {
 
     public Transform pov, povHolder;
     [HideInInspector] public Rigidbody rigid;
     //[HideInInspector] public PlayerviewCheck playerviewCheck;
     public Vector3 startPosition;
     public Quaternion startRotation;
-    public bool hideCursorOnStart, useTestController;
+    public bool hideCursorOnStart;
     [Space]
     public float walkSpeed = 5;
     public float mouseSensitivity = 100, keyboardCartRotationSpeed = 100, camCartRotationSpeed;
@@ -29,7 +30,10 @@ public class Controller : MonoBehaviour {
 
     public float xRotationAxisAngle, yRotationAxisAngle;
 
+    public PhotonView thisView;
+
     private void Start() {
+        thisView = GetComponent<PhotonView>();
         if (!pov) {
             try {
                 pov = GetComponentInChildren<Camera>().transform;
@@ -57,10 +61,11 @@ public class Controller : MonoBehaviour {
     //A + B = C 
     private void Update() {
         rigid.centerOfMass = centerOfMass;
+        print(photonView.ViewID);
     }
 
     private void FixedUpdate() {
-        //if (playerviewCheck.photonView.isMine || playerviewCheck.devTesting) {
+        if (thisView.IsMine) {
             //camera rotation
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
@@ -144,20 +149,18 @@ public class Controller : MonoBehaviour {
             }
 
             //body rotation
-            if (!useTestController) {
-                float vertical = Input.GetAxis("Vertical") * walkSpeed;
-                if (Input.GetAxis("Horizontal") != 0) {
-                    currentRotationSpeed = Input.GetAxis("Horizontal") * keyboardCartRotationSpeed;
-                }
-
-                transform.Translate(Vector3.forward * vertical);
-                Vector3 newPos = transform.position + transform.forward * vertical;
-                //rigid.MovePosition(newPos);
-                transform.Rotate(Vector3.up * currentRotationSpeed);
-                Quaternion rot = Quaternion.Euler(transform.rotation.eulerAngles + transform.up * currentRotationSpeed);
-                //rigid.MoveRotation(rot);
+            float vertical = Input.GetAxis("Vertical") * walkSpeed;
+            if (Input.GetAxis("Horizontal") != 0) {
+                currentRotationSpeed = Input.GetAxis("Horizontal") * keyboardCartRotationSpeed;
             }
-        //}
+
+            transform.Translate(Vector3.forward * vertical);
+            Vector3 newPos = transform.position + transform.forward * vertical;
+            //rigid.MovePosition(newPos);
+            transform.Rotate(Vector3.up * currentRotationSpeed);
+            Quaternion rot = Quaternion.Euler(transform.rotation.eulerAngles + transform.up * currentRotationSpeed);
+            //rigid.MoveRotation(rot);
+        }
     }
 
     private void ClampXRotationAxisToValue(Transform transform_, float value) {
