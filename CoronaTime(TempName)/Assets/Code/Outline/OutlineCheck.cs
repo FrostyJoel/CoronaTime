@@ -11,12 +11,19 @@ public class OutlineCheck : MonoBehaviour
         Collider[] objCol = Physics.OverlapSphere(transform.position, playerCheckRad);
         for (int i = 0; i < objCol.Length; i++)
         {
-            if (objCol[i].tag == "Interact"&& objCol[i].GetComponent<Outline>())
+            if (objCol[i].tag == "Interact" && objCol[i].GetComponent<Outline>())
             {
-                Debug.Log("Interactable " + objCol[i].name);
                 Renderer render = objCol[i].GetComponent<Renderer>();
                 Outline oLine = objCol[i].GetComponent<Outline>();
+                InteractableProduct iProduct = objCol[i].GetComponent<InteractableProduct>();
 
+                if (iProduct)
+                {
+                    if(iProduct.currentPlace != InteractableProduct.Place.InShelve)
+                    {
+                        break;
+                    }
+                }
                 if (!oLines.Contains(oLine))
                 {
                     oLines.Add(oLine);
@@ -24,14 +31,12 @@ public class OutlineCheck : MonoBehaviour
                 if (render.isVisible)
                 {
                     oLine.enabled = true;
-                    Debug.Log("Outline ON");
                 }
                 else
                 {
                     if (oLine.enabled)
                     {
                         oLine.enabled = false;
-                        Debug.Log("Outline OFF");
                     }
                 }
             }

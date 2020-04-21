@@ -464,8 +464,8 @@ MonoBehaviour:
   camCartRotationSpeed: 1
   clampType: 0
   maxVerticalViewAngle: 50
-  maxHorizontalViewAngle: 60
-  camInrangeForRotationDegree: 5
+  maxHorizontalViewAngle: 90
+  camInrangeForRotationDegree: 1
   centerOfMass: {x: 0, y: -1, z: 1}
   xRotationAxisAngle: 0
   yRotationAxisAngle: 0
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6622d8f544572134bb166b75364fabc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCheckRad: 2
+  playerCheckRad: 3
   oLines: []
 --- !u!1 &6732143808068744098
 GameObject:

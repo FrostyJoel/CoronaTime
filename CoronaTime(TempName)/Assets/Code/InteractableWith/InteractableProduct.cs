@@ -16,6 +16,10 @@ public class InteractableProduct : Interactable {
     public override void Interact(CartStorage cartStorage) {
         if (currentPlace == Place.InShelve && cartStorage.AddToCart(this)) {
             currentPlace = Place.InCart;
+            if (GetComponent<Outline>())
+            {
+                GetComponent<Outline>().enabled = false;
+            }
         }
     }
 }
