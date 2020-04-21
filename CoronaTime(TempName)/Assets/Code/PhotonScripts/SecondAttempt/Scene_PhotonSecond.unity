@@ -534,10 +534,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa391da3050c874cae109f8e933a6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  findOpponentPanel: {fileID: 0}
+  findOpponentPanel: {fileID: 1381906184}
   waitingStatusPanel: {fileID: 191354956}
   waitingStatusText: {fileID: 238431619}
   sceneName: Scene_Max
+  MaxPlayerPerRoom: 2
 --- !u!1 &566604058
 GameObject:
   m_ObjectHideFlags: 0

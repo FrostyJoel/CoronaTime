@@ -62,7 +62,6 @@ public class Controller : MonoBehaviourPun {
     //A + B = C 
     private void Update() {
         rigid.centerOfMass = centerOfMass;
-        print(photonView.ViewID);
     }
 
     private void FixedUpdate() {

@@ -55,11 +55,11 @@ public class CartStorage : MonoBehaviour {
             for (int i = 0; i < heldProducts.Count; i++) {
                 int index = AlreadySold(heldProducts[i]);
                 if (index >= 0) {
-                    soldProducts[index].amountSold += 1;
+                    soldProducts[index].amount += 1;
                 } else {
                     SoldProduct soldProduct_ = new SoldProduct();
                     soldProduct_.parentProduct = heldProducts[i];
-                    soldProduct_.amountSold = 1;
+                    soldProduct_.amount = 1;
                     soldProducts.Add(soldProduct_);
                 }
                 Destroy(heldProductModels[i]);
@@ -86,7 +86,7 @@ public class CartStorage : MonoBehaviour {
         int score = 0;
         if(soldProducts.Count > 0) {
             for (int i = 0; i < soldProducts.Count; i++) {
-                score = soldProducts[i].parentProduct.scoreValue * soldProducts[i].amountSold;
+                score = soldProducts[i].parentProduct.scoreValue * soldProducts[i].amount;
             }
         }
         return score;

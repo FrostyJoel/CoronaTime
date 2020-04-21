@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2657380104445186840}
   - component: {fileID: 114966182420232150}
   m_Layer: 0
-  m_Name: DevBottle
+  m_Name: DevBananas
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3938f99bd3f59554d8218fe3f0201b85, type: 2}
+  - {fileID: 2100000, guid: 2cab33f6326fb0a49bca99b00ed1c2b9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0, g: 1, b: 1, a: 1}
+  outlineColor: {r: 1, g: 1, b: 0, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
