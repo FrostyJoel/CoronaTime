@@ -45,6 +45,11 @@ public class OutlineCheck : MonoBehaviour
         {
             for (int i = 0; i < oLines.Count; i++)
             {
+                if(oLines[i] == null)
+                {
+                    oLines.Remove(oLines[i]);
+                    return;
+                }
                 float dis = Vector3.Distance(transform.position, oLines[i].transform.position);
                 if (dis > playerCheckRad && oLines[i].enabled)
                 {
