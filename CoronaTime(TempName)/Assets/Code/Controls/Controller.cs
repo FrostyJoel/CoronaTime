@@ -1,4 +1,5 @@
 ﻿using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +33,17 @@ public class Controller : MonoBehaviourPun {
 
     public PhotonView thisView;
     public bool devView;
+    Camera[] cams;
+    AudioListener audioListeners;
+
+    private void Awake() {
+        cams = GetComponentsInChildren<Camera>();
+        for (int i = 0; i < cams.Length; i++) {
+            cams[i].enabled = false;
+        }
+        audioListeners = GetComponentInChildren<AudioListener>();
+        audioListeners.enabled = false;
+    }    
 
     private void Start() {
         thisView = GetComponent<PhotonView>();
@@ -53,6 +65,12 @@ public class Controller : MonoBehaviourPun {
         }
         startPosition = transform.position;
         startRotation = transform.rotation;
+        if (photonView.IsMine) {
+            for (int i = 0; i < cams.Length; i++) {
+                cams[i].enabled = true;
+            }
+            audioListeners.enabled = true;
+        }
     }
 
 
@@ -185,4 +203,3 @@ public class Controller : MonoBehaviourPun {
         rigid.velocity = Vector3.zero;
     }
 }
-
