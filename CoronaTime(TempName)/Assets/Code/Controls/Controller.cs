@@ -65,7 +65,7 @@ public class Controller : MonoBehaviourPun {
         }
         startPosition = transform.position;
         startRotation = transform.rotation;
-        if (photonView.IsMine) {
+        if (photonView.IsMine || devView) {
             for (int i = 0; i < cams.Length; i++) {
                 cams[i].enabled = true;
             }

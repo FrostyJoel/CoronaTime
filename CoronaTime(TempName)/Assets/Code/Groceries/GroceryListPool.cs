@@ -6,10 +6,10 @@ public class GroceryListPool : MonoBehaviour {
     public List<Product> pool = new List<Product>();
     static GroceryListPool groceryListPoolSingle;
 
-    private void Start() {
+    private void Awake() {
         groceryListPoolSingle = this;
     }
-    //
+
     public static List<Product> GetRandomizedGroceryList(int itemsNeededOnList) {
         List<Product> tempList = new List<Product>();
         if (groceryListPoolSingle.pool.Count > 0) {

@@ -4,32 +4,55 @@ using UnityEngine;
 
 public class GroceryList : MonoBehaviour {
     public int groceriesPerList;
-    public string signForMultipleProductUse;
+    public string symbolForMultipleProductUse;
     public List<Product> groceryList = new List<Product>();
+    public List<string> groceryStringList = new List<string>();
+    List<Groceries> groceries = new List<Groceries>();
+
+    private void Start() {
+        RandomizeList();
+    }
 
     private void Update() {
         if (Input.GetButtonDown("Jump")) {
-            groceryList = GroceryListPool.GetRandomizedGroceryList(groceriesPerList);
-            GroceryListStringsForUiList();
+            RandomizeList();
         }
     }
 
-    public string[] GroceryListStringsForUiList() {
-        List<string> tempGroceryList = new List<string>();
-        List<GroceryLines> tempGroceryLines = new List<GroceryLines>();
-    
+    void RandomizeList() {
+        groceryList = GroceryListPool.GetRandomizedGroceryList(groceriesPerList);
+        groceries = new List<Groceries>();
+        groceryStringList.Clear();
+        if (groceryList.Count > 0) {
+            for (int i = 0; i < groceryList.Count; i++) {
+                int index = WhereInGroceriesList(groceryList[i]);
+                if (index >= 0) {
+                    groceries[index].amount++;
+                } else {
+                    groceries.Add(new Groceries() { product = groceryList[i], amount = 1 });
+                }
+            }
 
-
-        for (int i = 0; i < tempGroceryLines.Count; i++) {
-            tempGroceryList.Add(tempGroceryLines[i].product.name + "" + signForMultipleProductUse + "" + tempGroceryLines[i].amount.ToString());
-            print(tempGroceryLines[tempGroceryLines.Count - 1]);
+            for (int i = 0; i < groceries.Count; i++) {
+                groceryStringList.Add(groceries[i].product.name + symbolForMultipleProductUse + groceries[i].amount);
+            }
         }
+    }
 
-        return tempGroceryList.ToArray();
+    int WhereInGroceriesList(Product product) {
+        int index = -1;
+        if (groceries.Count > 0) {
+            for (int iB = 0; iB < groceries.Count; iB++) {
+                if (groceries[iB].product.name == product.name) {
+                    index = iB;
+                }
+            }
+        }
+        return index;
     }
 }
-
-public class GroceryLines {
+[System.Serializable]
+public class Groceries {
     public Product product;
     public int amount;
 }
