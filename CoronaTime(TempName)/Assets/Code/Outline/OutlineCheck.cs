@@ -11,14 +11,12 @@ public class OutlineCheck : MonoBehaviour
         Collider[] objCol = Physics.OverlapSphere(transform.position, playerCheckRad);
         for (int i = 0; i < objCol.Length; i++)
         {
-            if (objCol[i].tag == "Interact")
+            if (objCol[i].tag == "Interact"&& objCol[i].GetComponent<Outline>())
             {
+                Debug.Log("Interactable " + objCol[i].name);
                 Renderer render = objCol[i].GetComponent<Renderer>();
                 Outline oLine = objCol[i].GetComponent<Outline>();
-                if (!oLine)
-                {
-                    return;
-                }
+
                 if (!oLines.Contains(oLine))
                 {
                     oLines.Add(oLine);
