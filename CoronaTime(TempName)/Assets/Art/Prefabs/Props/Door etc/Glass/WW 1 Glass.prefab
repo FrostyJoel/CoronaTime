@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 493712665709701597}
   - component: {fileID: 493712665706277373}
   - component: {fileID: 493712665707408189}
+  - component: {fileID: 65008486776262800}
   m_Layer: 0
   m_Name: WW 1 Glass
   m_TagString: Untagged
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &65008486776262800
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493712665709606397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7994992, y: 1.3, z: 0}
+  m_Center: {x: 0, y: 0.65, z: 0.00000009536742}

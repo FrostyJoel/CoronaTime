@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5325841483154125210}
   - component: {fileID: 5325841483151225274}
   - component: {fileID: 5325841483152356218}
+  - component: {fileID: 65887529852803570}
   m_Layer: 0
   m_Name: KS Screen
   m_TagString: Untagged
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &65887529852803570
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5325841483154550202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.29999998, y: 0.2867615, z: 0.16766585}
+  m_Center: {x: 0, y: 0.14323993, z: 0.045231007}
