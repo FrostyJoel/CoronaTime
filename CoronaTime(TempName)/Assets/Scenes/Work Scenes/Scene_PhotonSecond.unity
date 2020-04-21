@@ -538,7 +538,7 @@ MonoBehaviour:
   waitingStatusPanel: {fileID: 191354956}
   waitingStatusText: {fileID: 238431619}
   sceneName: Scene_Max
-  MaxPlayerPerRoom: 4
+  MaxPlayerPerRoom: 3
 --- !u!1 &566604058
 GameObject:
   m_ObjectHideFlags: 0
