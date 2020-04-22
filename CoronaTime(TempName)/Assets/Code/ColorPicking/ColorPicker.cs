@@ -27,8 +27,9 @@ public class ColorPicker : MonoBehaviour {
         }
 
         if (FindObjectOfType(typeof(Manager))) {
+            buttonParent.gameObject.SetActive(true);
             for (int i = 0; i < Manager.staticColorManaging.amountColorOptions; i++) {
-                GameObject colorButton = Instantiate(new GameObject("Color Option " + i));
+                GameObject colorButton = new GameObject("Color Option " + i);
                 Image img = colorButton.AddComponent<Image>();
                 img.sprite = Manager.staticColorManaging.colorButtonSprite;
                 Color color = Manager.staticColorManaging.colorPicks[i].color;
@@ -40,6 +41,8 @@ public class ColorPicker : MonoBehaviour {
                 Manager.staticColorManaging.colorPicks[i].linkedColorButtons.Add(button);
             }    
             SetColor(Color.white);
+        } else {
+            buttonParent.gameObject.SetActive(false);
         }
     }
 

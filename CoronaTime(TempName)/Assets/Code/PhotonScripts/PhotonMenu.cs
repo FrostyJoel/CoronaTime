@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class MainMenu : MonoBehaviourPunCallbacks {
+public class PhotonMenu : MonoBehaviourPunCallbacks {
     public GameObject findOpponentPanel = null, waitingStatusPanel = null;
     public Text waitingStatusText = null;
 
