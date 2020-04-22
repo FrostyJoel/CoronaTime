@@ -46,7 +46,11 @@ public class ColorPicker : MonoBehaviour {
         }
     }
 
-    public void SetColor(Color color) {
+    public void SaveColorAndContinue() {
+        pickedAColor = true;
+    }
+
+    void SetColor(Color color) {
         if (!ColorManaging.HasColorBeenUsed(color)) {
             if (renderMats.Count > 0) {
                 ColorManaging.UseColor(renderMats.ToArray(), color);

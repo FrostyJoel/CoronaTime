@@ -16,6 +16,7 @@ public class Controller : MonoBehaviourPun {
     [Space]
     public float walkSpeed = 5;
     public float mouseSensitivity = 100, keyboardCartRotationSpeed = 100, camCartRotationSpeed;
+    ColorPicker colorPicker;
 
     public enum ClampType {
         Rectangular,
@@ -43,6 +44,7 @@ public class Controller : MonoBehaviourPun {
         }
         audioListeners = GetComponentInChildren<AudioListener>();
         audioListeners.enabled = false;
+        colorPicker = GetComponent<ColorPicker>();
     }    
 
     private void Start() {
@@ -59,10 +61,6 @@ public class Controller : MonoBehaviourPun {
         }
         rigid = GetComponent<Rigidbody>();
         //playerviewCheck = GetComponent<PlayerviewCheck>();
-        if (hideCursorOnStart) {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
         startPosition = transform.position;
         startRotation = transform.rotation;
         if (photonView.IsMine || devView) {
@@ -83,7 +81,7 @@ public class Controller : MonoBehaviourPun {
     }
 
     private void FixedUpdate() {
-        if (thisView.IsMine || devView) {
+        if (colorPicker.pickedAColor || thisView.IsMine || devView) {
             //camera rotation
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
