@@ -81,7 +81,7 @@ public class Controller : MonoBehaviourPun {
     }
 
     private void FixedUpdate() {
-        if (colorPicker.pickedAColor || thisView.IsMine || devView) {
+        if (colorPicker.pickedAColor && (thisView.IsMine || devView)) {
             //camera rotation
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;

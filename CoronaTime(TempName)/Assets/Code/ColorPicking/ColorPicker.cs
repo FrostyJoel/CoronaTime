@@ -7,10 +7,12 @@ public class ColorPicker : MonoBehaviour {
     public Material[] targetMaterials;
     List<Material> renderMats = new List<Material>();
     public Transform buttonParent;
+    public Button continueButton;
     public Color pickedColor;
     public bool pickedAColor;
 
     void Start() {
+        continueButton.interactable = false;
         Renderer[] rends = transform.GetComponentsInChildren<Renderer>();
 
         if (targetMaterials.Length > 0 && rends.Length > 0) {
@@ -51,6 +53,7 @@ public class ColorPicker : MonoBehaviour {
     }
 
     void SetColor(Color color) {
+        continueButton.interactable = true;
         if (!ColorManaging.HasColorBeenUsed(color)) {
             if (renderMats.Count > 0) {
                 ColorManaging.UseColor(renderMats.ToArray(), color);
