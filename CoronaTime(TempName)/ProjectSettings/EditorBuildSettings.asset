@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Work Scenes/Scene_Photon.unity
     guid: 004fbe614566ff84687299b6305eac0c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Work Scenes/Scene_Max.unity
     guid: 71920f8000b260942899aad1daaed474
+  - enabled: 1
+    path: Assets/Scenes/Work Scenes/Scene_Johan.unity
+    guid: 4fceccb8058857842a50e5cce400da09
   m_configObjects: {}
