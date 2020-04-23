@@ -24,7 +24,7 @@ public class Options : MonoBehaviour
         List<Resolution> tempResolutions = new List<Resolution>();
 
         testSlider.onValueChanged.RemoveAllListeners();
-        testSlider.onValueChanged.AddListener(OnSliderValueChange);
+        //testSlider.onValueChanged.AddListener(OnSliderValueChange);
         
 
         for(int i = resolutions.Length-1; i > 0; i--)
