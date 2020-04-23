@@ -1441,12 +1441,12 @@ MonoBehaviour:
   masterSlider:
   - {fileID: 1305523156}
   - {fileID: 261285986}
-  sfxSlider:
-  - {fileID: 1250789650}
-  - {fileID: 70447804}
   musicSlider:
   - {fileID: 378566092}
   - {fileID: 2022592387}
+  sfxSlider:
+  - {fileID: 1250789650}
+  - {fileID: 70447804}
 --- !u!1 &257824080
 GameObject:
   m_ObjectHideFlags: 0

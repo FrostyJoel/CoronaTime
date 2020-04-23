@@ -8,24 +8,23 @@ public class Options : MonoBehaviour
     public Toggle fullscreenToggle;
     public Dropdown resolutionsDropdown;
     Resolution[] resolutions;
-    public Slider[] masterSlider, sfxSlider, musicSlider;
-    public Slider testSlider;
+    public Slider[] masterSlider, musicSlider, sfxSlider;
 
+    delegate void onValueChanged(float value);
 
     // Start is called before the first frame update
     void Start()
     {
+        ApplyMasterListener();
+        ApplyMusicListener();
+        ApplySFXListener();
         AssignVolumeSliderArrayValue(masterSlider, "MasterVolume", -30);
         AssignVolumeSliderArrayValue(musicSlider, "MusicVolume", -30);
         AssignVolumeSliderArrayValue(sfxSlider, "SFXVolume", -30);
         int index = 0;
         resolutions = Screen.resolutions;
         List<string> resolutionStringList = new List<string>();
-        List<Resolution> tempResolutions = new List<Resolution>();
-
-        testSlider.onValueChanged.RemoveAllListeners();
-        //testSlider.onValueChanged.AddListener(OnSliderValueChange);
-        
+        List<Resolution> tempResolutions = new List<Resolution>();        
 
         for(int i = resolutions.Length-1; i > 0; i--)
         {
@@ -46,6 +45,7 @@ public class Options : MonoBehaviour
         resolutionsDropdown.RefreshShownValue();
         //print(resolutions[resolutions.Length-1].height + " x " + resolutions[resolutions.Length-1].width);
     }
+
     public void OnResolutionDropdownChange(int index)
     {
         Screen.SetResolution(resolutions[index].width, resolutions[index].height, Screen.fullScreen);
@@ -59,6 +59,33 @@ public class Options : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    void ApplyMasterListener() {
+        if(masterSlider.Length > 0) {
+            for (int i = 0; i < masterSlider.Length; i++) {
+                masterSlider[i].onValueChanged.RemoveAllListeners();
+                masterSlider[i].onValueChanged.AddListener(OnMasterVolumeChange);
+            }
+        }
+    }
+    
+    void ApplyMusicListener() {
+        if(musicSlider.Length > 0) {
+            for (int i = 0; i < musicSlider.Length; i++) {
+                musicSlider[i].onValueChanged.RemoveAllListeners();
+                musicSlider[i].onValueChanged.AddListener(OnMusicVolumeChange);
+            }
+        }
+    }
+    
+    void ApplySFXListener() {
+        if(sfxSlider.Length > 0) {
+            for (int i = 0; i < sfxSlider.Length; i++) {
+                sfxSlider[i].onValueChanged.RemoveAllListeners();
+                sfxSlider[i].onValueChanged.AddListener(OnSFXVolumeChange);
+            }
+        }
     }
 
     public void OnMasterVolumeChange(float value)
@@ -78,24 +105,14 @@ public class Options : MonoBehaviour
         AudioManager.audioMixer.SetFloat("SFXVolume", value);
         PlayerPrefs.SetFloat("SFXVolume", value);
     }
-    public delegate void test(float f);
-    public void OnSliderValueChange(float sliderValue, test Test)
-    {
-        Test(sliderValue);
-    }
 
-    public void TestPrint(float value)
+    public void AssignVolumeSliderArrayValue(Slider[] sliders, string prefName, float fallBackValue)
     {
-        print("yes" + value); 
-    }
-
-    public void AssignVolumeSliderArrayValue(Slider[] slider, string prefName, float fallBackValue)
-    {
-        if (slider.Length > 0)
+        if (sliders.Length > 0)
         {
-            for (int i = 0; i < slider.Length; i++)
+            for (int i = 0; i < sliders.Length; i++)
             {
-                slider[i].value = PlayerPrefs.GetFloat(prefName, fallBackValue);
+                sliders[i].value = PlayerPrefs.GetFloat(prefName, fallBackValue);
             }
         }
     }
