@@ -4,12 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))] //[RequireComponent(typeof(PlayerviewCheck))]
+[RequireComponent(typeof(Rigidbody))]
 public class Controller : MonoBehaviourPun {
 
+    public PlayerView playerView;
     public Transform pov, povHolder;
     [HideInInspector] public Rigidbody rigid;
-    //[HideInInspector] public PlayerviewCheck playerviewCheck;
     public Vector3 startPosition;
     public Quaternion startRotation;
     public bool hideCursorOnStart;
@@ -18,12 +18,6 @@ public class Controller : MonoBehaviourPun {
     public float mouseSensitivity = 100, keyboardCartRotationSpeed = 100, camCartRotationSpeed;
     ColorPicker colorPicker;
 
-    public enum ClampType {
-        Rectangular,
-        Circular
-    }
-    [Space]
-    public ClampType clampType;
     [Range(0, 90)]
     public float maxVerticalViewAngle = 30, maxHorizontalViewAngle = 80;
     [Space] [Range(0, 90)]
@@ -32,7 +26,6 @@ public class Controller : MonoBehaviourPun {
 
     public float xRotationAxisAngle, yRotationAxisAngle;
 
-    public bool devView;
     Camera[] cams;
     AudioListener audioListeners;
 
@@ -44,7 +37,7 @@ public class Controller : MonoBehaviourPun {
         audioListeners = GetComponentInChildren<AudioListener>();
         audioListeners.enabled = false;
         colorPicker = GetComponent<ColorPicker>();
-        if (devView) {
+        if (playerView.devView) {
             FindObjectOfType<PlayerSpawner>().enabled = false;
         }
     }    
@@ -61,10 +54,9 @@ public class Controller : MonoBehaviourPun {
             }
         }
         rigid = GetComponent<Rigidbody>();
-        //playerviewCheck = GetComponent<PlayerviewCheck>();
         startPosition = transform.position;
         startRotation = transform.rotation;
-        if (photonView.IsMine || devView) {
+        if (photonView.IsMine || playerView.devView) {
             for (int i = 0; i < cams.Length; i++) {
                 cams[i].enabled = true;
             }
@@ -72,98 +64,49 @@ public class Controller : MonoBehaviourPun {
         }
     }
 
-
-    //float Cos(float )
-
-    //180 - 90 
-    //A + B = C 
     private void Update() {
         rigid.centerOfMass = centerOfMass;
     }
 
     private void FixedUpdate() {
-        if (colorPicker.pickedAColor && (photonView.IsMine || devView)) {
+        if (colorPicker.pickedAColor && (photonView.IsMine || playerView.devView)) {
             //camera rotation
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
             float currentRotationSpeed = 0;
 
-            if (clampType == ClampType.Rectangular) {
-                xRotationAxisAngle += mouseY;
-                yRotationAxisAngle += mouseX;
+            xRotationAxisAngle += mouseY;
+            yRotationAxisAngle += mouseX;
 
-                if (xRotationAxisAngle > maxVerticalViewAngle) {
-                    xRotationAxisAngle = maxVerticalViewAngle;
-                    mouseY = 0f;
-                    ClampXRotationAxisToValue(pov, -maxVerticalViewAngle);
-                } else if (xRotationAxisAngle < -maxVerticalViewAngle) {
-                    xRotationAxisAngle = -maxVerticalViewAngle;
-                    mouseY = 0f;
-                    ClampXRotationAxisToValue(pov, maxVerticalViewAngle);
-                }
-
-                if (yRotationAxisAngle > maxHorizontalViewAngle) {
-                    yRotationAxisAngle = maxHorizontalViewAngle;
-                    mouseX = 0f;
-                    ClampYRotationAxisToValue(povHolder, maxHorizontalViewAngle);
-                } else if (yRotationAxisAngle < -maxHorizontalViewAngle) {
-                    yRotationAxisAngle = -maxHorizontalViewAngle;
-                    mouseX = 0f;
-                    ClampYRotationAxisToValue(povHolder, -maxHorizontalViewAngle);
-                }
-
-                if(yRotationAxisAngle > maxHorizontalViewAngle - camInrangeForRotationDegree) {
-                    currentRotationSpeed = camCartRotationSpeed;
-                } else if (yRotationAxisAngle < -maxHorizontalViewAngle + camInrangeForRotationDegree) {
-                    currentRotationSpeed = -camCartRotationSpeed;
-                }
-
-                pov.Rotate(Vector3.left * mouseY);
-                povHolder.Rotate(Vector3.up * mouseX);
-            } else {
-
-                xRotationAxisAngle += mouseY;
-                yRotationAxisAngle += mouseX;
-
-                //if (xRotationAxisAngle > maxVerticalViewAngle) {
-                //    xRotationAxisAngle = maxVerticalViewAngle;
-                //    mouseY = 0f;
-                //    ClampXRotationAxisToValue(pov, -maxVerticalViewAngle);
-                //} else if (xRotationAxisAngle < -maxVerticalViewAngle) {
-                //    xRotationAxisAngle = -maxVerticalViewAngle;
-                //    mouseY = 0f;
-                //    ClampXRotationAxisToValue(pov, maxVerticalViewAngle);
-                //}
-
-                float alpha = Mathf.Atan(xRotationAxisAngle / yRotationAxisAngle) * Mathf.Rad2Deg;
-                float test1 = maxVerticalViewAngle * Mathf.Cos(alpha) - maxVerticalViewAngle * (Mathf.Sin(alpha) * Mathf.Cos(alpha)) + maxHorizontalViewAngle * (Mathf.Sin(alpha) * Mathf.Cos(alpha));
-                float test2 = maxVerticalViewAngle * Mathf.Sin(alpha) - maxVerticalViewAngle * (Mathf.Sin(alpha) * Mathf.Sin(alpha)) + maxHorizontalViewAngle * (Mathf.Sin(alpha) * Mathf.Sin(alpha));
-
-                print(alpha + " " + test2);
-                if (xRotationAxisAngle > test2) {
-                    xRotationAxisAngle = test2;
-                    mouseY = 0f;
-                    ClampXRotationAxisToValue(pov, test2);
-                } else if (xRotationAxisAngle < -test2) {
-                    xRotationAxisAngle = -test2;
-                    mouseY = 0f;
-                    ClampXRotationAxisToValue(pov, -test2);
-                }
-
-                if (yRotationAxisAngle > maxHorizontalViewAngle) {
-                    yRotationAxisAngle = maxHorizontalViewAngle;
-                    mouseX = 0f;
-                    ClampYRotationAxisToValue(povHolder, maxHorizontalViewAngle);
-                } else if (yRotationAxisAngle < -maxHorizontalViewAngle) {
-                    yRotationAxisAngle = -maxHorizontalViewAngle;
-                    mouseX = 0f;
-                    ClampYRotationAxisToValue(povHolder, -maxHorizontalViewAngle);
-                }
-
-                pov.Rotate(Vector3.left * mouseY);
-                povHolder.Rotate(Vector3.up * mouseX);
+            if (xRotationAxisAngle > maxVerticalViewAngle) {
+                xRotationAxisAngle = maxVerticalViewAngle;
+                mouseY = 0f;
+                ClampXRotationAxisToValue(pov, -maxVerticalViewAngle);
+            } else if (xRotationAxisAngle < -maxVerticalViewAngle) {
+                xRotationAxisAngle = -maxVerticalViewAngle;
+                mouseY = 0f;
+                ClampXRotationAxisToValue(pov, maxVerticalViewAngle);
             }
+
+            if (yRotationAxisAngle > maxHorizontalViewAngle) {
+                yRotationAxisAngle = maxHorizontalViewAngle;
+                mouseX = 0f;
+                ClampYRotationAxisToValue(povHolder, maxHorizontalViewAngle);
+            } else if (yRotationAxisAngle < -maxHorizontalViewAngle) {
+                yRotationAxisAngle = -maxHorizontalViewAngle;
+                mouseX = 0f;
+                ClampYRotationAxisToValue(povHolder, -maxHorizontalViewAngle);
+            }
+
+            if (yRotationAxisAngle > maxHorizontalViewAngle - camInrangeForRotationDegree) {
+                currentRotationSpeed = camCartRotationSpeed;
+            } else if (yRotationAxisAngle < -maxHorizontalViewAngle + camInrangeForRotationDegree) {
+                currentRotationSpeed = -camCartRotationSpeed;
+            }
+
+            pov.Rotate(Vector3.left * mouseY);
+            povHolder.Rotate(Vector3.up * mouseX);
 
             //body rotation
             float vertical = Input.GetAxis("Vertical") * walkSpeed;
@@ -173,10 +116,8 @@ public class Controller : MonoBehaviourPun {
 
             transform.Translate(Vector3.forward * vertical);
             Vector3 newPos = transform.position + transform.forward * vertical;
-            //rigid.MovePosition(newPos);
             transform.Rotate(Vector3.up * currentRotationSpeed);
             Quaternion rot = Quaternion.Euler(transform.rotation.eulerAngles + transform.up * currentRotationSpeed);
-            //rigid.MoveRotation(rot);
         }
     }
 

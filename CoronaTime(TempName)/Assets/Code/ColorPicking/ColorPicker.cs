@@ -18,7 +18,7 @@ public class ColorPicker : MonoBehaviourPun {
     }
 
     void Start() {
-        if (photonView.IsMine || controller.devView) {
+        if (photonView.IsMine || controller.playerView.devView) {
             continueButton.interactable = false;
             Renderer[] rends = transform.GetComponentsInChildren<Renderer>();
 
@@ -57,13 +57,13 @@ public class ColorPicker : MonoBehaviourPun {
     }
 
     public void SaveColorAndContinue() {
-        if (photonView.IsMine || controller.devView) {
+        if (photonView.IsMine || controller.playerView.devView) {
             pickedAColor = true;
         }
     }
 
     void SetColor(Color color) {
-        if (photonView.IsMine || controller.devView) {
+        if (photonView.IsMine || controller.playerView.devView) {
             continueButton.interactable = true;
             if (!ColorManaging.HasColorBeenUsed(color)) {
                 if (renderMats.Count > 0) {
