@@ -32,7 +32,6 @@ public class Controller : MonoBehaviourPun {
 
     public float xRotationAxisAngle, yRotationAxisAngle;
 
-    public PhotonView thisView;
     public bool devView;
     Camera[] cams;
     AudioListener audioListeners;
@@ -45,10 +44,12 @@ public class Controller : MonoBehaviourPun {
         audioListeners = GetComponentInChildren<AudioListener>();
         audioListeners.enabled = false;
         colorPicker = GetComponent<ColorPicker>();
+        if (devView) {
+            FindObjectOfType<PlayerSpawner>().enabled = false;
+        }
     }    
 
     private void Start() {
-        thisView = GetComponent<PhotonView>();
         if (!pov) {
             try {
                 pov = GetComponentInChildren<Camera>().transform;
@@ -81,7 +82,7 @@ public class Controller : MonoBehaviourPun {
     }
 
     private void FixedUpdate() {
-        if (colorPicker.pickedAColor && (thisView.IsMine || devView)) {
+        if (colorPicker.pickedAColor && (photonView.IsMine || devView)) {
             //camera rotation
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using System;
+using Photon.Pun;
 using UnityEngine;
 
-public class Manager : MonoBehaviour {
+public class Manager : MonoBehaviourPun {
     public StaticInformation staticInfo;
     public ColorManaging colorManaging;
     public static StaticInformation staticInformation;
@@ -30,6 +31,7 @@ public class Manager : MonoBehaviour {
         {
             allOLine.enabled = false;
         }
+        PhotonNetwork.SendRate = 10;
     }
 }
 
