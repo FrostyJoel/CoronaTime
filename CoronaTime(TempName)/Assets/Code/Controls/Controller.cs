@@ -38,7 +38,9 @@ public class Controller : MonoBehaviourPun {
         audioListeners.enabled = false;
         colorPicker = GetComponent<ColorPicker>();
         if (playerView.devView) {
-            FindObjectOfType<PlayerSpawner>().enabled = false;
+            if (FindObjectOfType<PlayerSpawner>()) {
+                FindObjectOfType<PlayerSpawner>().enabled = false;
+            }
         }
     }    
 
