@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6927780023053956741}
   - component: {fileID: 3957095074613156699}
   - component: {fileID: 6927780023053956742}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Can_Soup_Champignon
   m_TagString: Interact
   m_Icon: {fileID: 0}

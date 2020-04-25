@@ -16143,6 +16143,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1339369616197313166, guid: d0ce1991985240943935fc20c4faf789,
+        type: 3}
+      propertyPath: devView
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1497115785892438438, guid: d0ce1991985240943935fc20c4faf789,
         type: 3}
       propertyPath: m_Layer
@@ -16158,6 +16163,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1671022296782441190, guid: d0ce1991985240943935fc20c4faf789,
+        type: 3}
+      propertyPath: lastOutline
+      value: 
+      objectReference: {fileID: 1401669889}
     - target: {fileID: 2098630926803761941, guid: d0ce1991985240943935fc20c4faf789,
         type: 3}
       propertyPath: m_Layer
@@ -17809,6 +17819,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1401584886}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1401669889 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3957095074613156699, guid: 0663d4f496fc0f041a59b1ccf50a08a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 106595001314591563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1403586886 stripped
 MeshFilter:
   m_CorrespondingSourceObject: {fileID: 5066397983802743745, guid: 174dd52cb727dbe4598dd99a0da935ba,
@@ -25816,12 +25838,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1764292307}
     m_Modifications:
-    - target: {fileID: 6927780023053956742, guid: 0663d4f496fc0f041a59b1ccf50a08a4,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 11400000, guid: 3dbb8f37ead62c645aa2e92e66a8224a,
-        type: 2}
     - target: {fileID: 7016283516025072111, guid: 0663d4f496fc0f041a59b1ccf50a08a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25897,12 +25913,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1764292307}
     m_Modifications:
-    - target: {fileID: 5847635591297928030, guid: b5313b57be58ac94fb2069c430a094d7,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 11400000, guid: 9914ecdc129f0b3478d16f884e206689,
-        type: 2}
     - target: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7,
         type: 3}
       propertyPath: m_Name
@@ -25972,11 +25982,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1764292307}
     m_Modifications:
-    - target: {fileID: 70272833, guid: 5fe4ed6de7160db4d83d9c254cf546b2, type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 11400000, guid: be0323441b764864da944ec618c63826,
-        type: 2}
     - target: {fileID: 833408813864757916, guid: 5fe4ed6de7160db4d83d9c254cf546b2,
         type: 3}
       propertyPath: m_Name
@@ -26052,11 +26057,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1764292307}
     m_Modifications:
-    - target: {fileID: 1083037450, guid: b1f8fe6b585d21549b1b955e52c9024e, type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 11400000, guid: b85efd595f56d354c8b46c916d67d353,
-        type: 2}
     - target: {fileID: 887434504015363540, guid: b1f8fe6b585d21549b1b955e52c9024e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26132,11 +26132,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1764292307}
     m_Modifications:
-    - target: {fileID: 1544379418, guid: 57eab9755e620ef4f9e171546077f86f, type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 11400000, guid: 8760aba240798304fbaf93b7e9f6c0f1,
-        type: 2}
     - target: {fileID: 1109565388485376081, guid: 57eab9755e620ef4f9e171546077f86f,
         type: 3}
       propertyPath: m_Name
@@ -26272,12 +26267,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8492434832979267230, guid: 3d284131077634f47bcc31eb1d7fad94,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 11400000, guid: 987795a9e9192774c900986f7ba6f209,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
 --- !u!1001 &3187985137914795677
@@ -26356,12 +26345,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1764292307}
     m_Modifications:
-    - target: {fileID: 6203640654488981462, guid: 3df63a09c5477ba45a8e781056630c1c,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 11400000, guid: 2920be0aea6cb07448e6c59602099bac,
-        type: 2}
     - target: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c,
         type: 3}
       propertyPath: m_Name
@@ -26431,11 +26414,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1764292307}
     m_Modifications:
-    - target: {fileID: 1713932849, guid: 03ddfe8ab0118e745b946f0bed7f00d2, type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 11400000, guid: c2b4348d522a93e44891758add0a7d54,
-        type: 2}
     - target: {fileID: 3720060456919294409, guid: 03ddfe8ab0118e745b946f0bed7f00d2,
         type: 3}
       propertyPath: m_Name
@@ -26569,14 +26547,8 @@ PrefabInstance:
     - target: {fileID: 5080732008849404568, guid: 5a2ad64e030645c429687980fc966110,
         type: 3}
       propertyPath: m_Name
-      value: Bottle_Soda_7UP_Prefab
+      value: Bottle_Soda_GreenSoda_Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 9195650251791331154, guid: 5a2ad64e030645c429687980fc966110,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 11400000, guid: cb58404c88dbc1046acfa251b8e2fd7f,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2ad64e030645c429687980fc966110, type: 3}
 --- !u!4 &5580454132397032145 stripped
@@ -26604,11 +26576,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1764292307}
     m_Modifications:
-    - target: {fileID: 1726458375, guid: e8797a9fbf266bf41aa7a54e5fb63474, type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 11400000, guid: ef3e2a2c2e76a954eaf7d96194885ec7,
-        type: 2}
     - target: {fileID: 6383855755871722226, guid: e8797a9fbf266bf41aa7a54e5fb63474,
         type: 3}
       propertyPath: m_Name
@@ -26617,7 +26584,7 @@ PrefabInstance:
     - target: {fileID: 6383855755871722239, guid: e8797a9fbf266bf41aa7a54e5fb63474,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1382065
+      value: 1.074
       objectReference: {fileID: 0}
     - target: {fileID: 6383855755871722239, guid: e8797a9fbf266bf41aa7a54e5fb63474,
         type: 3}
@@ -26744,12 +26711,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle_Water_Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 5580454132397203186, guid: c9c2fc177817c5141af0a032b10cef88,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 11400000, guid: 758896ed43d306e4d9d711dab3d87390,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
 --- !u!4 &8492434832979497661 stripped

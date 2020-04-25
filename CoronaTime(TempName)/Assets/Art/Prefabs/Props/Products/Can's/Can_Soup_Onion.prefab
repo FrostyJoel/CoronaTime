@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1713932848}
   - component: {fileID: 2789703247112907882}
   - component: {fileID: 1713932849}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Can_Soup_Onion
   m_TagString: Interact
   m_Icon: {fileID: 0}

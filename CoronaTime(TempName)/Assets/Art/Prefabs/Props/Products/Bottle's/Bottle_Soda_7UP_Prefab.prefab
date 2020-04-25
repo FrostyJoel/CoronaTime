@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9195650251791331156}
   - component: {fileID: 9195650251791331155}
   - component: {fileID: 9195650251791331154}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bottle_Soda_7UP_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5847635591297928032}
   - component: {fileID: 5847635591297928031}
   - component: {fileID: 5847635591297928030}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bottle_Soda_Cassis_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

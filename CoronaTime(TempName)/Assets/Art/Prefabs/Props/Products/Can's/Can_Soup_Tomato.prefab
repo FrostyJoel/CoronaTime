@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1083037449}
   - component: {fileID: 2066239396759544829}
   - component: {fileID: 1083037450}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Can_Soup_Tomato
   m_TagString: Interact
   m_Icon: {fileID: 0}

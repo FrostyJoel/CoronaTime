@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1726458374}
   - component: {fileID: 1375882889496348471}
   - component: {fileID: 1726458375}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Can_CoffeeBeans
   m_TagString: Interact
   m_Icon: {fileID: 0}
