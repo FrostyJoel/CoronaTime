@@ -6,7 +6,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Controller : MonoBehaviourPun {
-
     public PlayerView playerView;
     public Transform pov, povHolder;
     [HideInInspector] public Rigidbody rigid;
@@ -37,11 +36,6 @@ public class Controller : MonoBehaviourPun {
         audioListeners = GetComponentInChildren<AudioListener>();
         audioListeners.enabled = false;
         colorPicker = GetComponent<ColorPicker>();
-        if (playerView.devView) {
-            if (FindObjectOfType<PlayerSpawner>()) {
-                FindObjectOfType<PlayerSpawner>().enabled = false;
-            }
-        }
     }    
 
     private void Start() {

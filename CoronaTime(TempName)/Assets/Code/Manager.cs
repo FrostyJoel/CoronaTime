@@ -31,7 +31,6 @@ public class Manager : MonoBehaviourPun {
         {
             allOLine.enabled = false;
         }
-        PhotonNetwork.SendRate = 10;
     }
 }
 
