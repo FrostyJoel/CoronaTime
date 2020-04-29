@@ -15,14 +15,13 @@ public class Controller : MonoBehaviourPun {
     [Space]
     public float walkSpeed = 5;
     public float mouseSensitivity = 100, keyboardCartRotationSpeed = 100, camCartRotationSpeed;
-    ColorPicker colorPicker;
 
     [Range(0, 90)]
     public float maxVerticalViewAngle = 30, maxHorizontalViewAngle = 80;
     [Space] [Range(0, 90)]
     public float camInrangeForRotationDegree;
     public Vector3 centerOfMass;
-
+    bool canMove;
     public float xRotationAxisAngle, yRotationAxisAngle;
 
     Camera[] cams;
@@ -35,7 +34,6 @@ public class Controller : MonoBehaviourPun {
         }
         audioListeners = GetComponentInChildren<AudioListener>();
         audioListeners.enabled = false;
-        colorPicker = GetComponent<ColorPicker>();
     }    
 
     private void Start() {
@@ -50,6 +48,14 @@ public class Controller : MonoBehaviourPun {
             }
         }
         rigid = GetComponent<Rigidbody>();
+        Init();
+        canMove = true;
+        if (playerView.devView) {
+            Init();
+        }
+    }
+
+    public void Init() {
         startPosition = transform.position;
         startRotation = transform.rotation;
         if (photonView.IsMine || playerView.devView) {
@@ -65,7 +71,7 @@ public class Controller : MonoBehaviourPun {
     }
 
     private void FixedUpdate() {
-        if (colorPicker.pickedAColor && (photonView.IsMine || playerView.devView)) {
+        if ((canMove && photonView.IsMine) || playerView.devView) {
             //camera rotation
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;

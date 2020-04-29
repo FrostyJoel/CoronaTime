@@ -1228,6 +1228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb13cb88718a34408785757370d9b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input_Nickname: {fileID: 730616729}
+  button_CreateRoom: {fileID: 721340766}
+  button_FindRoom: {fileID: 185999554}
   roomName: 
   nickName: 
   maxPlayers: 4

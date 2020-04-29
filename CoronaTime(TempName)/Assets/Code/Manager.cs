@@ -67,7 +67,7 @@ public class ColorManaging {
         }
         return index;
     }
-
+    [PunRPC]
     public static void UseColor(Material[] materials, Color color) {
         int index = WhereInList(color);
         if(index >= 0) {

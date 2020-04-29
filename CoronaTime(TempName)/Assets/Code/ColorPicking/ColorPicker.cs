@@ -13,10 +13,6 @@ public class ColorPicker : MonoBehaviourPun {
     public Color pickedColor;
     public bool pickedAColor;
 
-    private void Awake() {
-        PhotonNetwork.AutomaticallySyncScene = true;
-    }
-
     void Start() {
         if (photonView.IsMine || controller.playerView.devView) {
             continueButton.interactable = false;
@@ -64,12 +60,12 @@ public class ColorPicker : MonoBehaviourPun {
 
     void SetColor(Color color) {
         if (photonView.IsMine || controller.playerView.devView) {
-            continueButton.interactable = true;
             if (!ColorManaging.HasColorBeenUsed(color)) {
                 if (renderMats.Count > 0) {
                     ColorManaging.UseColor(renderMats.ToArray(), color);
                     pickedColor = color;
                 }
+                continueButton.interactable = true;
             }
         }
     }

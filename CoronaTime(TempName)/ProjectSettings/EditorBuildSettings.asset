@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Work Scenes/Scene_PhotonLobby.unity
     guid: 9bb75c071ee123e49abbdc65ac4064be
+  - enabled: 0
+    path: Assets/Scenes/Work Scenes/Scene_ColorPicking.unity
+    guid: 482665b0dad5ac0428c86d786f228edd
   - enabled: 1
     path: Assets/Scenes/Work Scenes/Scene_Max.unity
     guid: 71920f8000b260942899aad1daaed474

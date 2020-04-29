@@ -2,15 +2,21 @@
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCallbacks {
     public static PhotonLobbyCustomMatchMaking lobby;
 
+    public InputField input_Nickname;
+    public Button button_CreateRoom, button_FindRoom;
+
     public string roomName, nickName;
     public int maxPlayers = 4;
     public GameObject roomListingPrefab;
     public Transform roomsPanel;
+
+    bool enteredNickname, enteredRoomName, enteredRoomSize, connectedToMaster = false;
 
     private void Awake() {
         lobby = this;
@@ -19,6 +25,8 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     private void Start() {
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.AutomaticallySyncScene = true;
+        EnableDisableRelativeButtons();
+        input_Nickname.text = PlayerPrefs.GetString("NickName");
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList) {
@@ -48,6 +56,9 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     public override void OnConnectedToMaster() {
         Debug.Log("Connected to master");
         PhotonNetwork.NickName = nickName + " " + Random.Range(0, 1000);
+        connectedToMaster = true;
+        EnableDisableRelativeButtons();
+        JoinLobbyOnCLick();
     }
 
     public override void OnJoinedRoom() {
@@ -61,29 +72,46 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
 
     public override void OnCreateRoomFailed(short returnCode, string message) {
         Debug.Log("Room already exist");
-        //CreateRoom();
+    }
+
+    public void OnNickNameChange(string name) {
+        PhotonNetwork.NickName = nickName + "#" + Random.Range(0, 1000);
+        nickName = name;
+        enteredNickname = !string.IsNullOrEmpty(name);
+        PlayerPrefs.SetString("NickName", name);
+        EnableDisableRelativeButtons();
+
     }
 
     public void OnRoomNameChange(string name) {
         roomName = name;
+        enteredRoomName = !string.IsNullOrEmpty(name);
+        EnableDisableRelativeButtons();
     }
     
-    public void OnNickNameChange(string name) {
-        PhotonNetwork.NickName = nickName + " " + Random.Range(0, 1000);
-        nickName = name;
-    }
-
     public void OnRoomSizeChange(string size) {
-        try {
+        enteredRoomSize = !string.IsNullOrEmpty(size);
+        if (enteredRoomName) {
             maxPlayers = int.Parse(size);
-        } catch {
-            Debug.Log("string was empty or missing int");
+        }
+        EnableDisableRelativeButtons();
+    }
+    
+    void EnableDisableRelativeButtons() {
+        button_CreateRoom.interactable = false;
+        button_FindRoom.interactable = false;
+        if (connectedToMaster && enteredNickname) {
+            button_FindRoom.interactable = true;
+            if (enteredRoomSize && enteredRoomName) {
+                button_CreateRoom.interactable = true;
+            }
         }
     }
-    
+
     public void JoinLobbyOnCLick() {
-        if (!PhotonNetwork.InLobby) {
+        if (!PhotonNetwork.InLobby && PhotonNetwork.IsConnected) {
             PhotonNetwork.JoinLobby();
+            Debug.Log("Join");
         }
     }
 }
