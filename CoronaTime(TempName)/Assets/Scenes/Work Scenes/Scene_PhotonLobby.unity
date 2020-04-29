@@ -2375,15 +2375,12 @@ MonoBehaviour:
   playerListingPrefab: {fileID: 6615180202513496077, guid: 81d4834ab9e005f428b94746a42cf929,
     type: 3}
   startButton: {fileID: 857771230}
-  playersPanel: {fileID: 57829330}
+  playersPanel: {fileID: 509840990}
   isLoaded: 0
   currentScene: 0
   playersInRoom: 0
   myNumberInRoom: 0
   playersInGame: 0
-  readyToCount: 0
-  readyToStart: 0
-  startingTime: 0
 --- !u!4 &1734044609
 Transform:
   m_ObjectHideFlags: 0
@@ -2427,7 +2424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffca946345345ef43a81e78e50e08966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayStart: 0
   maxPlayers: 4
   menuScene: 0
   multiplayerScene: 1
