@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class UiElementSounds : MonoBehaviour {
     public List<UiElement> element = new List<UiElement>();
     private void Start() {
         if (element.Count > 0) {
-            for (int i = 0; i < element.Count; i++) {
-                element[i].AddSoundListener(this.gameObject);
+            //for (int i = 0; i < element.Count; i++) {
+            //    element[i].AddSoundListener(gameObject);
+            //}
+            foreach(UiElement uiElement in element)
+            {
+                uiElement.AddSoundListener(gameObject);
             }
         }
     }
 }
 
 [System.Serializable]
-public class UiElement : IPointerUpHandler {
+public class UiElement {
     public enum type {
         button,
         toggle,
@@ -74,10 +77,6 @@ public class UiElement : IPointerUpHandler {
 
     void OnToggleChange(bool b) {
         AudioManager.PlaySound(audioClip, audioGroup);
-    }
-
-    public void OnPointerUp(PointerEventData eventData) {
-        Debug.Log("Sliding finished");
     }
 
     public void OnDropDownChanged(int i) {
