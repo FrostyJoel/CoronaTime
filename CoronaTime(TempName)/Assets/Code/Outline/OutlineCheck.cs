@@ -15,19 +15,22 @@ public class OutlineCheck : MonoBehaviour
     }
     private void Update()
     {
-        if (Physics.Raycast(controller.pov.position, controller.pov.forward, out hit, storage.interactRange))
+        if (Physics.Raycast(controller.pov.position, controller.pov.forward, out hit, Mathf.Infinity))
         {
             Outline outlineObj = hit.transform.gameObject.GetComponent<Outline>();
             if (lastOutline != outlineObj && lastOutline != null)
             {
                 lastOutline.enabled = false;
             }
-            if (outlineObj)
+            if (hit.distance < storage.interactRange)
             {
-                if (!outlineObj.enabled)
+                if (outlineObj)
                 {
-                    lastOutline = outlineObj;
-                    outlineObj.enabled = true;
+                    if (!outlineObj.enabled)
+                    {
+                        lastOutline = outlineObj;
+                        outlineObj.enabled = true;
+                    }
                 }
             }
         }
