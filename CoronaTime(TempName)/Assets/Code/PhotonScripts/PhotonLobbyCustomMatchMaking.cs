@@ -58,7 +58,7 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
         PhotonNetwork.NickName = nickName + " " + Random.Range(0, 1000);
         connectedToMaster = true;
         EnableDisableRelativeButtons();
-        JoinLobbyOnCLick();
+        PhotonNetwork.JoinLobby();
     }
 
     public override void OnJoinedRoom() {
@@ -105,13 +105,6 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
             if (enteredRoomSize && enteredRoomName) {
                 button_CreateRoom.interactable = true;
             }
-        }
-    }
-
-    public void JoinLobbyOnCLick() {
-        if (!PhotonNetwork.InLobby && PhotonNetwork.IsConnected) {
-            PhotonNetwork.JoinLobby();
-            Debug.Log("Join");
         }
     }
 }

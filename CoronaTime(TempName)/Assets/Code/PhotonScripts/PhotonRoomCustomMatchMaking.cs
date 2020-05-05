@@ -56,8 +56,10 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         if (lobbyGameObject) {
             lobbyGameObject.SetActive(false);
         }
-        roomGameObject.SetActive(true);
-        myNumberInRoom = playersInRoom;   
+        if (roomGameObject) {
+            roomGameObject.SetActive(true);
+        }
+        myNumberInRoom = playersInRoom;
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer) {
@@ -65,10 +67,18 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         Debug.Log("player joined the room");
         CLearPlayerListings();
         ListPlayers();
-        lobbyGameObject.SetActive(false);
-        roomGameObject.SetActive(true);
-        if (PhotonNetwork.IsMasterClient) {
-            startButton.SetActive(true);
+        if (lobbyGameObject) {
+            lobbyGameObject.SetActive(false);
+        }
+        if (roomGameObject) {
+            roomGameObject.SetActive(true);
+        }
+        if (startButton) {
+            if (PhotonNetwork.IsMasterClient) {
+                startButton.SetActive(true);
+            } else {
+                startButton.SetActive(false);
+            }
         }
 
         CLearPlayerListings();
@@ -98,13 +108,15 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     public void StartGame() {
         isLoaded = true;
         PhotonNetwork.LoadLevel(currentScene + 1);
+        PhotonNetwork.CurrentRoom.IsOpen = false;
     }
 
     void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode) {
         currentScene = scene.buildIndex;
         if(currentScene == MultiplayerSetting.multiplayerSetting.multiplayerScene) {
             isLoaded = true;
-            RPC_CreatePlayer();
+            PV.RPC("RPC_LoadedGameScene", RpcTarget.MasterClient);
+            //RPC_CreatePlayer();
         }
     }
 
@@ -123,10 +135,10 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
             PV.RPC("RPC_CreatePlayer", RpcTarget.All);
         }
     }
+
     [PunRPC]
     void RPC_CreatePlayer() {
-        Vector3 pos = Vector3.zero;
-        pos.x += playersInGame;
-        GameObject g = PhotonNetwork.Instantiate(playerPrefab.name, Vector3.zero, Quaternion.identity);
+        Vector3 pos = Spawnpoints.spawnpointsSingleton.spawnpoints[playersInGame].actualSpawnpoint.position;
+        GameObject g = PhotonNetwork.Instantiate(PhotonRoomCustomMatchMaking.room.playerPrefab.name, pos, Quaternion.identity);
     }
 }

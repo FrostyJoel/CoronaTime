@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8397182058014055914}
   - component: {fileID: 8397182058014055913}
   - component: {fileID: 8397182058014055912}
+  - component: {fileID: 6557162977574533431}
   m_Layer: 0
   m_Name: DevSpawnpointPrefab
   m_TagString: Untagged
@@ -92,6 +93,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6557162977574533431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8397182058014055919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd2ba997e7d5084488c66aca6aa8571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualSpawnpoint: {fileID: 8397182058046674452}
 --- !u!1 &8397182058046674459
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,4 +4,5 @@ using UnityEngine;
 
 public class Spawnpoint : MonoBehaviour {
     public Transform actualSpawnpoint;
+    public bool inUse;
 }

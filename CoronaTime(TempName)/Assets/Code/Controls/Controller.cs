@@ -28,6 +28,8 @@ public class Controller : MonoBehaviourPun {
     AudioListener audioListeners;
 
     private void Awake() {
+        TurnCollidersOnOff(false);
+        rigid = GetComponent<Rigidbody>();
         cams = GetComponentsInChildren<Camera>();
         for (int i = 0; i < cams.Length; i++) {
             cams[i].enabled = false;
@@ -47,12 +49,9 @@ public class Controller : MonoBehaviourPun {
                 pov.localPosition = Vector3.zero;
             }
         }
-        rigid = GetComponent<Rigidbody>();
-        Init();
-        canMove = true;
         if (playerView.devView) {
             Init();
-        }
+        } 
     }
 
     public void Init() {
@@ -63,6 +62,15 @@ public class Controller : MonoBehaviourPun {
                 cams[i].enabled = true;
             }
             audioListeners.enabled = true;
+        }
+        rigid.isKinematic = false;
+        TurnCollidersOnOff(true);
+    }
+
+    void TurnCollidersOnOff(bool state) {
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+        for (int i = 0; i < colliders.Length; i++) {
+            colliders[i].enabled = state;
         }
     }
 
