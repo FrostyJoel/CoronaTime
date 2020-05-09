@@ -13,6 +13,7 @@ public class Manager : MonoBehaviourPun {
     public static ColorManaging staticColorManaging;
 
     private void Awake() {
+        DontDestroyOnLoad(gameObject);
         staticInformation = staticInfo;
 
         for (int i = 0; i < colorManaging.amountColorOptions; i++) {

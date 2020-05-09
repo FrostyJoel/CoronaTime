@@ -4,20 +4,23 @@ using System.Collections.Generic;
 using Photon.Realtime;
 using UnityEngine;
 
-public class Spawnpoints : MonoBehaviourPunCallbacks {
+public class Spawnpoints : MonoBehaviourPunCallbacks, IInRoomCallbacks {
     public static Spawnpoints spawnpointsSingleton;
     public List<Spawnpoint> spawnpoints = new List<Spawnpoint>();
     public int players = 0;
     public List<PlayerView> playerViews = new List<PlayerView>();
-    private void Awake() {
-        spawnpointsSingleton = this;
+
+    public void SetStartPosition(Transform t) {
+        t.position = spawnpoints[players].actualSpawnpoint.position;
+        spawnpoints[players].inUse = true;
+        players++;
     }
 
-    private void Update() {
-        if(playerViews.Count > 1) {
-            SetStartPositions();
-        }
-    }
+    //private void Update() {
+    //    if(playerViews.Count > 1) {
+    //        SetStartPositions();
+    //    }
+    //}
 
     public void SetStartPositions() {
         CheckPlayerViews();

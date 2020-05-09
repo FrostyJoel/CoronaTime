@@ -7,5 +7,5 @@ public class PlayerView : MonoBehaviour {
 
     public bool devView;
     public PhotonView myView;
-
+    
 }

@@ -9,14 +9,14 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     public static PhotonLobbyCustomMatchMaking lobby;
 
     public InputField input_Nickname;
-    public Button button_CreateRoom, button_FindRoom;
+    public Button button_CreateRoom;
 
     public string roomName, nickName;
     public int maxPlayers = 4;
     public GameObject roomListingPrefab;
     public Transform roomsPanel;
 
-    bool enteredNickname, enteredRoomName, enteredRoomSize, connectedToMaster = false;
+    bool enteredNickname, enteredRoomName, connectedToMaster = false;
 
     private void Awake() {
         lobby = this;
@@ -30,7 +30,7 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList) {
-        base.OnRoomListUpdate(roomList);
+        //base.OnRoomListUpdate(roomList);
         RemoveRoomListings();
         for (int i = 0; i < roomList.Count; i++) {
             ListRoom(roomList[i]);
@@ -55,7 +55,7 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
 
     public override void OnConnectedToMaster() {
         Debug.Log("Connected to master");
-        PhotonNetwork.NickName = nickName + " " + Random.Range(0, 1000);
+        //PhotonNetwork.NickName = nickName + " " + Random.Range(0, 1000);
         connectedToMaster = true;
         EnableDisableRelativeButtons();
         PhotonNetwork.JoinLobby();
@@ -75,9 +75,9 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     }
 
     public void OnNickNameChange(string name) {
-        PhotonNetwork.NickName = nickName + "#" + Random.Range(0, 1000);
-        nickName = name;
+        PhotonNetwork.NickName = name + "#" + Random.Range(0, 1000);
         enteredNickname = !string.IsNullOrEmpty(name);
+        nickName = name;
         PlayerPrefs.SetString("NickName", name);
         EnableDisableRelativeButtons();
 
@@ -89,20 +89,10 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
         EnableDisableRelativeButtons();
     }
     
-    public void OnRoomSizeChange(string size) {
-        enteredRoomSize = !string.IsNullOrEmpty(size);
-        if (enteredRoomName) {
-            maxPlayers = int.Parse(size);
-        }
-        EnableDisableRelativeButtons();
-    }
-    
     void EnableDisableRelativeButtons() {
         button_CreateRoom.interactable = false;
-        button_FindRoom.interactable = false;
         if (connectedToMaster && enteredNickname) {
-            button_FindRoom.interactable = true;
-            if (enteredRoomSize && enteredRoomName) {
+            if (enteredRoomName) {
                 button_CreateRoom.interactable = true;
             }
         }

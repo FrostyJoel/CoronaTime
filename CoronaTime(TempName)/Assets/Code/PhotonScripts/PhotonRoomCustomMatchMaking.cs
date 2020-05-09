@@ -10,7 +10,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     public static PhotonRoomCustomMatchMaking room;
     public GameObject playerPrefab, lobbyGameObject, roomGameObject, playerListingPrefab, startButton;
     public Transform playersPanel;
-    PhotonView PV;
+    public PhotonView PV;
 
     public bool isLoaded;
     public int currentScene;
@@ -98,11 +98,27 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     void ListPlayers() {
         if (PhotonNetwork.InRoom) {
             for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
-                GameObject tempObject = Instantiate(playerListingPrefab, playersPanel);
-                Text tempText = tempObject.transform.GetChild(0).GetComponent<Text>();
-                tempText.text = PhotonNetwork.PlayerList[i].NickName;
+                GameObject tempNickNameObject = Instantiate(playerListingPrefab, playersPanel);
+                Text tempNickNameText = tempNickNameObject.transform.GetChild(0).GetComponent<Text>();
+                List<char> characterList = CharArrayToList(PhotonNetwork.PlayerList[i].NickName.ToCharArray());
+                string nickName = "";
+                for (int iB = 0; iB < characterList.Count; iB++) {
+                    if (characterList[iB].ToString() == "#") {
+                        break;
+                    }
+                    nickName = nickName + characterList[iB];
+                }
+                tempNickNameText.text = nickName;
             }
         }
+    }
+
+    List<char> CharArrayToList(char[] chars) {
+        List<char> tempList = new List<char>();
+        for (int i = 0; i < chars.Length; i++) {
+            tempList.Add(chars[i]);
+        }
+        return tempList;
     }
 
     public void StartGame() {
@@ -116,7 +132,6 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         if(currentScene == MultiplayerSetting.multiplayerSetting.multiplayerScene) {
             isLoaded = true;
             PV.RPC("RPC_LoadedGameScene", RpcTarget.MasterClient);
-            //RPC_CreatePlayer();
         }
     }
 
@@ -138,7 +153,10 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
 
     [PunRPC]
     void RPC_CreatePlayer() {
-        Vector3 pos = Spawnpoints.spawnpointsSingleton.spawnpoints[playersInGame].actualSpawnpoint.position;
+        Vector3 pos = Vector3.zero;
+        pos = new Vector3(0, 1, 4);
+        //pos = Spawnpoints.spawnpointsSingleton.spawnpoints[0].actualSpawnpoint.position;
         GameObject g = PhotonNetwork.Instantiate(PhotonRoomCustomMatchMaking.room.playerPrefab.name, pos, Quaternion.identity);
+        DontDestroyOnLoad(g);
     }
 }
