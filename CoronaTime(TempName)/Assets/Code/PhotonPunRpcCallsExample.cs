@@ -4,36 +4,98 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class PhotonPunRpcCallsExample : MonoBehaviour {
+public class PhotonPunRpcCallsExample : MonoBehaviourPunCallbacks, IPunObservable {
     public static PhotonPunRpcCallsExample testSingle;
     public bool bull;
     public Text text;
-    public bool lastBull = true;
+
     private void Awake() {
-        //testSingle = this;
-        if(PhotonPunRpcCallsExample.testSingle == null) {
-            testSingle = this;
-        } else if (PhotonPunRpcCallsExample.testSingle != this) {
-            Destroy(PhotonPunRpcCallsExample.testSingle.gameObject);
+        if (!PhotonPunRpcCallsExample.testSingle) {
             PhotonPunRpcCallsExample.testSingle = this;
         }
-        DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Update() {
-        if (lastBull != PhotonPunRpcCallsExample.testSingle.bull) {
-            text.text = PhotonPunRpcCallsExample.testSingle.bull.ToString();
-            lastBull = PhotonPunRpcCallsExample.testSingle.bull;
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+        if (stream.IsWriting) {
+            stream.SendNext(PhotonPunRpcCallsExample.testSingle.bull);
+        } else if (stream.IsReading) {
+            SetBull((bool)stream.ReceiveNext());
         }
     }
 
-    [PunRPC]
-    public void TurnItOn() {
-        PhotonRoomCustomMatchMaking.room.PV.RPC("Testt", RpcTarget.All);
+    public void SetBull(bool state) {
+        Debug.Log("bulllll");
+        if (PhotonPunRpcCallsExample.testSingle.bull == state) return;
+
+        PhotonPunRpcCallsExample.testSingle.bull = state;
+        text.text = state.ToString();
     }
 
-    [PunRPC]
-    void Testt() {
-        PhotonPunRpcCallsExample.testSingle.bull = !PhotonPunRpcCallsExample.testSingle.bull;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //public static PhotonPunRpcCallsExample testSingle;
+    //public bool lastBull;
+    //private void Awake() {
+    //    //testSingle = this;
+    //    if(PhotonPunRpcCallsExample.testSingle == null) {
+    //        testSingle = this;
+    //    } else {
+    //        bull = PhotonPunRpcCallsExample.testSingle.bull;
+    //        Destroy(PhotonPunRpcCallsExample.testSingle);
+    //        PhotonPunRpcCallsExample.testSingle = this;
+    //    }
+    //    DontDestroyOnLoad(this.gameObject);
+    //    lastBull = !bull;
+    //}
+
+    //private void Update() {
+    //    if (lastBull != PhotonPunRpcCallsExample.testSingle.bull) {
+    //        text.text = PhotonPunRpcCallsExample.testSingle.bull.ToString();
+    //        lastBull = PhotonPunRpcCallsExample.testSingle.bull;
+    //    }
+    //}
+
+    //[PunRPC]
+    //public void TurnItOn() {
+    //    PhotonRoomCustomMatchMaking.room.PV.RPC("Testt", RpcTarget.All);
+    //}
+
+    //[PunRPC]
+    //void Testt() {
+    //    PhotonPunRpcCallsExample.testSingle.bull = !PhotonPunRpcCallsExample.testSingle.bull;
+    //}
 }

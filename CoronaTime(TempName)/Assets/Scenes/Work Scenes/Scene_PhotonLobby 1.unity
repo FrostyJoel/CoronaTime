@@ -1737,10 +1737,10 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 0
+  Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: 1734044610}
   viewIdField: 999
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1798,7 +1798,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bull: 0
   text: {fileID: 1085542933}
-  lastBull: 1
 --- !u!1 &1799371913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,7 +1846,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1799371913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 2109663825, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1875,12 +1874,15 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1799371916}
-  m_OnClick:
+  toggleTransition: 1
+  graphic: {fileID: 0}
+  m_Group: {fileID: 0}
+  onValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1734044610}
-        m_MethodName: TurnItOn
-        m_Mode: 1
+        m_MethodName: SetBull
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1889,6 +1891,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_IsOn: 0
 --- !u!114 &1799371916
 MonoBehaviour:
   m_ObjectHideFlags: 0
