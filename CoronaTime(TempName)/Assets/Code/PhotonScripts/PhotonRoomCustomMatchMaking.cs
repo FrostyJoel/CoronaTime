@@ -52,6 +52,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         photonPlayers = PhotonNetwork.PlayerList;
         playersInRoom = photonPlayers.Length;
         CLearPlayerListings();
+        myNumberInRoom = playersInRoom;
         ListPlayers();
         if (lobbyGameObject) {
             lobbyGameObject.SetActive(false);
@@ -59,7 +60,6 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         if (roomGameObject) {
             roomGameObject.SetActive(true);
         }
-        myNumberInRoom = playersInRoom;
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer) {
@@ -102,7 +102,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
                 ScriptPlayerListing spl = tempNickNameObject.GetComponent<ScriptPlayerListing>();
                 string nickname = RemoveIdFromNickname(CharArrayToList(PhotonNetwork.PlayerList[i].NickName.ToCharArray()));
                 spl.text_Nickname.text = nickname;
-                if (myNumberInRoom > 0/* && i == myNumberInRoom-1*/) {
+                if (myNumberInRoom > 0 && i == myNumberInRoom - 1) {
                     print("(if) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", i : " + i);
                     readyToggle.onValueChanged.AddListener(spl.SetReadyState);
                 } else if(i == playersInRoom - 1) {
