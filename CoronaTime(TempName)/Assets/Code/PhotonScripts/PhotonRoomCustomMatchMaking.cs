@@ -47,7 +47,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     }
 
     public override void OnJoinedRoom() {
-        base.OnJoinedRoom();
+        //base.OnJoinedRoom();
         Debug.Log("Joined room");
         photonPlayers = PhotonNetwork.PlayerList;
         playersInRoom = photonPlayers.Length;
@@ -63,7 +63,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer) {
-        base.OnPlayerEnteredRoom(newPlayer);
+        //base.OnPlayerEnteredRoom(newPlayer);
         Debug.Log("player joined the room");
         CLearPlayerListings();
         ListPlayers();

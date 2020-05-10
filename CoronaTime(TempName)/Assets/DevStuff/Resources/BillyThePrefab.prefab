@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   devView: 0
+  ready: 0
   myView: {fileID: 114803700820047226}
 --- !u!114 &8310589338671278652
 MonoBehaviour:

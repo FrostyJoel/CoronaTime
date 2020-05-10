@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerView : MonoBehaviour {
 
-    public bool devView;
+    public bool devView, ready;
     public PhotonView myView;
     
 }

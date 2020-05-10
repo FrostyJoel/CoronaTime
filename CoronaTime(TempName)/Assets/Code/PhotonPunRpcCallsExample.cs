@@ -4,98 +4,25 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class PhotonPunRpcCallsExample : MonoBehaviourPunCallbacks, IPunObservable {
+public class PhotonPunRpcCallsExample : MonoBehaviourPunCallbacks {
     public static PhotonPunRpcCallsExample testSingle;
     public bool bull;
     public Text text;
+    public Toggle toggle;
 
     private void Awake() {
-        if (!PhotonPunRpcCallsExample.testSingle) {
-            PhotonPunRpcCallsExample.testSingle = this;
-        }
+        PhotonPunRpcCallsExample.testSingle = this;
     }
 
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
-        if (stream.IsWriting) {
-            stream.SendNext(PhotonPunRpcCallsExample.testSingle.bull);
-        } else if (stream.IsReading) {
-            SetBull((bool)stream.ReceiveNext());
-        }
+    public void RPC_SetBool(bool state) {
+        this.photonView.RPC("Bully", RpcTarget.All, state);
     }
 
-    public void SetBull(bool state) {
-        Debug.Log("bulllll");
-        if (PhotonPunRpcCallsExample.testSingle.bull == state) return;
-
-        PhotonPunRpcCallsExample.testSingle.bull = state;
-        text.text = state.ToString();
+    [PunRPC]
+    void Bully(bool b) {
+        Debug.Log(b + " bully");
+        bull = b;
+        text.text = bull.ToString();
+        toggle.isOn = b;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //public static PhotonPunRpcCallsExample testSingle;
-    //public bool lastBull;
-    //private void Awake() {
-    //    //testSingle = this;
-    //    if(PhotonPunRpcCallsExample.testSingle == null) {
-    //        testSingle = this;
-    //    } else {
-    //        bull = PhotonPunRpcCallsExample.testSingle.bull;
-    //        Destroy(PhotonPunRpcCallsExample.testSingle);
-    //        PhotonPunRpcCallsExample.testSingle = this;
-    //    }
-    //    DontDestroyOnLoad(this.gameObject);
-    //    lastBull = !bull;
-    //}
-
-    //private void Update() {
-    //    if (lastBull != PhotonPunRpcCallsExample.testSingle.bull) {
-    //        text.text = PhotonPunRpcCallsExample.testSingle.bull.ToString();
-    //        lastBull = PhotonPunRpcCallsExample.testSingle.bull;
-    //    }
-    //}
-
-    //[PunRPC]
-    //public void TurnItOn() {
-    //    PhotonRoomCustomMatchMaking.room.PV.RPC("Testt", RpcTarget.All);
-    //}
-
-    //[PunRPC]
-    //void Testt() {
-    //    PhotonPunRpcCallsExample.testSingle.bull = !PhotonPunRpcCallsExample.testSingle.bull;
-    //}
 }
