@@ -99,7 +99,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         if (PhotonNetwork.InRoom) {
             for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
                 GameObject tempNickNameObject = Instantiate(playerListingPrefab, playersPanel);
-                Text tempNickNameText = tempNickNameObject.transform.GetChild(0).GetComponent<Text>();
+                ScriptPlayerListing spl = tempNickNameObject.GetComponent<ScriptPlayerListing>();
                 List<char> characterList = CharArrayToList(PhotonNetwork.PlayerList[i].NickName.ToCharArray());
                 string nickName = "";
                 for (int iB = 0; iB < characterList.Count; iB++) {
@@ -108,10 +108,15 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
                     }
                     nickName = nickName + characterList[iB];
                 }
-                tempNickNameText.text = nickName;
+                spl.text_Nickname.text = nickName;
+                if(i == myNumberInRoom) {
+                    readyToggle.onValueChanged.AddListener(spl.SetReadyState);
+                }
             }
         }
     }
+
+    public Toggle readyToggle;
 
     List<char> CharArrayToList(char[] chars) {
         List<char> tempList = new List<char>();
