@@ -103,10 +103,10 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
                 string nickname = RemoveIdFromNickname(CharArrayToList(PhotonNetwork.PlayerList[i].NickName.ToCharArray()));
                 spl.text_Nickname.text = nickname;
                 if (myNumberInRoom > 0 && i == myNumberInRoom-1) {
-                    print(myNumberInRoom + " " + nickname + ", players in room = " + playersInRoom);
+                    print("(if) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", i : " + i);
                     readyToggle.onValueChanged.AddListener(spl.SetReadyState);
                 } else if(i == playersInRoom - 1) {
-                    print(myNumberInRoom + " " + nickname + ", players in room = " + playersInRoom);
+                    print("(else) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", i : " + i);
                     readyToggle.onValueChanged.AddListener(spl.SetReadyState);
                 }
             }
