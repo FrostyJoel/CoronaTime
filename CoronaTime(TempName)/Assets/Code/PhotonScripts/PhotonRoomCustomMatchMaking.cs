@@ -52,8 +52,8 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         photonPlayers = PhotonNetwork.PlayerList;
         playersInRoom = photonPlayers.Length;
         CLearPlayerListings();
-        myNumberInRoom = playersInRoom;
         ListPlayers();
+        myNumberInRoom = playersInRoom;
         if (lobbyGameObject) {
             lobbyGameObject.SetActive(false);
         }
@@ -102,15 +102,19 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
                 ScriptPlayerListing spl = tempNickNameObject.GetComponent<ScriptPlayerListing>();
                 string nickname = RemoveIdFromNickname(CharArrayToList(PhotonNetwork.PlayerList[i].NickName.ToCharArray()));
                 spl.text_Nickname.text = nickname;
-                if (myNumberInRoom > 0 && i == myNumberInRoom - 1) {
+                if(myNumberInRoom == 0) {
                     print("(if) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", PhotonNetwork.PlayerList.Length : " + PhotonNetwork.PlayerList.Length + ", i : " + i);
-                    readyToggle.onValueChanged.RemoveAllListeners();
-                    readyToggle.onValueChanged.AddListener(spl.SetReadyState);
-                } else if(i == playersInRoom - 1) {
-                    print("(else) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", PhotonNetwork.PlayerList.Length : " + PhotonNetwork.PlayerList.Length + ", i : " + i);
-                    readyToggle.onValueChanged.RemoveAllListeners();
                     readyToggle.onValueChanged.AddListener(spl.SetReadyState);
                 }
+                //if (myNumberInRoom > 0 && i ==  - 1) {
+                //    print("(if) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", PhotonNetwork.PlayerList.Length : " + PhotonNetwork.PlayerList.Length + ", i : " + i);
+                //    readyToggle.onValueChanged.RemoveAllListeners();
+                //    readyToggle.onValueChanged.AddListener(spl.SetReadyState);
+                //} else if(i == playersInRoom - 1) {
+                //    print("(else) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", PhotonNetwork.PlayerList.Length : " + PhotonNetwork.PlayerList.Length + ", i : " + i);
+                //    readyToggle.onValueChanged.RemoveAllListeners();
+                //    readyToggle.onValueChanged.AddListener(spl.SetReadyState);
+                //}
             }
         }
     }
