@@ -104,9 +104,11 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
                 spl.text_Nickname.text = nickname;
                 if (myNumberInRoom > 0 && i == myNumberInRoom - 1) {
                     print("(if) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", i : " + i);
+                    readyToggle.onValueChanged.RemoveAllListeners();
                     readyToggle.onValueChanged.AddListener(spl.SetReadyState);
                 } else if(i == playersInRoom - 1) {
                     print("(else) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", i : " + i);
+                    readyToggle.onValueChanged.RemoveAllListeners();
                     readyToggle.onValueChanged.AddListener(spl.SetReadyState);
                 }
             }
