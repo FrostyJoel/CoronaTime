@@ -100,16 +100,13 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
             for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
                 GameObject tempNickNameObject = Instantiate(playerListingPrefab, playersPanel);
                 ScriptPlayerListing spl = tempNickNameObject.GetComponent<ScriptPlayerListing>();
-                List<char> characterList = CharArrayToList(PhotonNetwork.PlayerList[i].NickName.ToCharArray());
-                string nickName = "";
-                for (int iB = 0; iB < characterList.Count; iB++) {
-                    if (characterList[iB].ToString() == "#") {
-                        break;
-                    }
-                    nickName = nickName + characterList[iB];
-                }
-                spl.text_Nickname.text = nickName;
-                if(i == myNumberInRoom) {
+                string nickname = RemoveIdFromNickname(CharArrayToList(PhotonNetwork.PlayerList[i].NickName.ToCharArray()));
+                spl.text_Nickname.text = nickname;
+                if (myNumberInRoom > 0 && i == myNumberInRoom-1) {
+                    print(myNumberInRoom + " " + nickname + ", players in room = " + playersInRoom);
+                    readyToggle.onValueChanged.AddListener(spl.SetReadyState);
+                } else if(i == playersInRoom - 1) {
+                    print(myNumberInRoom + " " + nickname + ", players in room = " + playersInRoom);
                     readyToggle.onValueChanged.AddListener(spl.SetReadyState);
                 }
             }
@@ -117,6 +114,17 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     }
 
     public Toggle readyToggle;
+
+    string RemoveIdFromNickname(List<char> characterList) {
+        string nickName = "";
+        for (int iB = 0; iB < characterList.Count; iB++) {
+            if (characterList[iB].ToString() == "#") {
+                break;
+            }
+            nickName = nickName + characterList[iB];
+        }
+        return nickName;
+    }
 
     List<char> CharArrayToList(char[] chars) {
         List<char> tempList = new List<char>();
