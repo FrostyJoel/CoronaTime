@@ -45,6 +45,10 @@ MonoBehaviour:
   - Bully
   - RPC_ChangeNickname
   - RPC_ChangeReadyState
+  - SetReadyState
+  - TestBull
+  - BullyB
+  - ChangeIt
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
