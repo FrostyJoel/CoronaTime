@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Outline))]
 public class InteractableProduct : Interactable {
 
     public Product scriptableProduct;

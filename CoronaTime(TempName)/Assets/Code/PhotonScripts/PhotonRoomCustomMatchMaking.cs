@@ -107,15 +107,6 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
                     readyToggle.onValueChanged.RemoveAllListeners();
                     readyToggle.onValueChanged.AddListener(spl.SetReadyState);
                 }
-                //if (myNumberInRoom > 0 && i ==  - 1) {
-                //    print("(if) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", PhotonNetwork.PlayerList.Length : " + PhotonNetwork.PlayerList.Length + ", i : " + i);
-                //    readyToggle.onValueChanged.RemoveAllListeners();
-                //    readyToggle.onValueChanged.AddListener(spl.SetReadyState);
-                //} else if(i == playersInRoom - 1) {
-                //    print("(else) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", PhotonNetwork.PlayerList.Length : " + PhotonNetwork.PlayerList.Length + ", i : " + i);
-                //    readyToggle.onValueChanged.RemoveAllListeners();
-                //    readyToggle.onValueChanged.AddListener(spl.SetReadyState);
-                //}
             }
         }
     }
@@ -173,10 +164,6 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
 
     [PunRPC]
     void RPC_CreatePlayer() {
-        Vector3 pos = Vector3.zero;
-        pos = new Vector3(0, 1, 4);
-        //pos = Spawnpoints.spawnpointsSingleton.spawnpoints[0].actualSpawnpoint.position;
-        GameObject g = PhotonNetwork.Instantiate(PhotonRoomCustomMatchMaking.room.playerPrefab.name, pos, Quaternion.identity);
-        DontDestroyOnLoad(g);
+        PhotonNetwork.Instantiate(room.playerPrefab.name, Vector3.zero, Quaternion.identity);
     }
 }

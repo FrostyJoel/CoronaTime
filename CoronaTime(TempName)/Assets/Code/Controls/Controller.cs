@@ -49,9 +49,7 @@ public class Controller : MonoBehaviourPun {
                 pov.localPosition = Vector3.zero;
             }
         }
-        if (playerView.devView) {
-            Init();
-        } 
+        Init();
     }
 
     public void Init() {
