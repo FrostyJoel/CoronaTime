@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Toiletpaper
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 8007092001590106578, guid: 1f251a74e8876cf449a5d3e4faf5a134, type: 3}
   scoreValue: 0

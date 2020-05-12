@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1907299701643408774}
   - component: {fileID: 65065096933430542}
   - component: {fileID: 114632456872133216}
+  - component: {fileID: 114994348496919560}
   m_Layer: 9
   m_Name: Beer Bottle
   m_TagString: Interact
@@ -107,3 +108,21 @@ MonoBehaviour:
   audioGroup: 0
   scriptableProduct: {fileID: 11400000, guid: 1ee676bfedaff6e498283afcff6b6a44, type: 2}
   currentPlace: 0
+--- !u!114 &114994348496919560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907299701641407302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8666193312797307702}
   - component: {fileID: 114828996870586570}
   - component: {fileID: 65907362338912610}
+  - component: {fileID: 114300655487689198}
   m_Layer: 9
   m_Name: Green Chips
   m_TagString: Interact
@@ -107,3 +108,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.15445322, y: 0.07500962, z: 0.24554995}
   m_Center: {x: 0.0028234534, y: 0.036992263, z: 0.0007528104}
+--- !u!114 &114300655487689198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666193312795110902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
