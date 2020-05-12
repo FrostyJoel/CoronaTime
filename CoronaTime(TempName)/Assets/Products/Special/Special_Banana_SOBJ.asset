@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Banana
+  m_Name: Special_Banana_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 5982649758753860676, guid: 07421592736ce8344974ad22403e72ce, type: 3}
   scoreValue: 0

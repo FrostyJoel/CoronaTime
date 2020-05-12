@@ -8,9 +8,10 @@ using UnityEngine;
 public class Controller : MonoBehaviourPun {
     public PlayerView playerView;
     public Transform pov, povHolder;
+    public GameObject localInGameHud;
     [HideInInspector] public Rigidbody rigid;
-    public Vector3 startPosition;
-    public Quaternion startRotation;
+    [HideInInspector] public Vector3 startPosition;
+    [HideInInspector] public Quaternion startRotation;
     public bool hideCursorOnStart;
     [Space]
     public float walkSpeed = 5;
@@ -49,7 +50,12 @@ public class Controller : MonoBehaviourPun {
                 pov.localPosition = Vector3.zero;
             }
         }
+        if (hideCursorOnStart) {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
         Init();
+        canMove = true; Debug.LogWarning("(int)canMove WAS ACCESSED BY A DEV FUNCTION, TAKE OUT FOR RELEASE");
     }
 
     public void Init() {

@@ -19,7 +19,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     public int playersInRoom, myNumberInRoom;
     [Space]
     public int playersInGame;
-
+    public bool dev;
     private void Awake() {
         if (PhotonRoomCustomMatchMaking.room == null) {
             room = this;
@@ -59,6 +59,13 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         }
         if (roomGameObject) {
             roomGameObject.SetActive(true);
+        }
+        if (startButton && dev) {
+            if (PhotonNetwork.IsMasterClient) {
+                startButton.SetActive(true);
+            } else {
+                startButton.SetActive(false);
+            }
         }
     }
 

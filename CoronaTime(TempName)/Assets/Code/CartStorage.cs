@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CartStorage : MonoBehaviour {
+public class CartStorage : MonoBehaviourPun {
     public Transform holder;
     [HideInInspector] public Controller controller;
     public int interactRange, maxItemsHeld;
@@ -41,13 +42,18 @@ public class CartStorage : MonoBehaviour {
             Product product = MakeDirtyNewInstanceOfProduct(interactableProduct.scriptableProduct);
             heldProducts.Add(product);
             heldProductModels.Add(interactableProduct.gameObject);
-            interactableProduct.transform.SetParent(itemHolders[heldProducts.Count - 1]);
-            interactableProduct.transform.localPosition = Vector3.zero;
-            interactableProduct.transform.localRotation = Quaternion.Euler(Vector3.zero);
+            photonView.RPC("RPC_AddToCart", RpcTarget.All, heldProductModels.Count-1);
             return true;
         } else {
             return false;
         }
+    }
+    GameObject ob = null;
+    [PunRPC]
+    void RPC_AddToCart(int i) {
+        heldProductModels[i].transform.SetParent(itemHolders[heldProducts.Count - 1]);
+        heldProductModels[i].transform.localPosition = Vector3.zero;
+        heldProductModels[i].transform.localRotation = Quaternion.Euler(Vector3.zero);
     }
 
     public void SellItems() {

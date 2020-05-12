@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Energy Can
+  m_Name: Can_Drink_Energy_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 4342928221171545824, guid: 5f1bf070faeaa67479059ec53c0189bb, type: 3}
   scoreValue: 0

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Butter
+  m_Name: Special_Butter_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 9209311751208136049, guid: 7dfe71d51703e654bb5240b1804a365f, type: 3}
   scoreValue: 0

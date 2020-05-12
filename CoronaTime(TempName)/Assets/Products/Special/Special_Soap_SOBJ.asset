@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Soap
+  m_Name: Special_Soap_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 7403732695686226202, guid: b7dc8fdb35727d34b87d1523d1702d32, type: 3}
   scoreValue: 0

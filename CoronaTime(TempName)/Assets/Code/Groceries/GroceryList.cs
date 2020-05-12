@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GroceryList : MonoBehaviour {
-    public int groceriesPerList;
+    public int groceriesPerList, differentGroceriesPerList;
     public string symbolForMultipleProductUse;
     public List<Product> groceryList = new List<Product>();
     public List<string> groceryStringList = new List<string>();
@@ -20,7 +20,7 @@ public class GroceryList : MonoBehaviour {
     }
 
     void RandomizeList() {
-        groceryList = GroceryListPool.GetRandomizedGroceryList(groceriesPerList);
+        groceryList = GroceryListPool.GetRandomizedGroceryList(groceriesPerList, differentGroceriesPerList);
         groceries = new List<Groceries>();
         groceryStringList.Clear();
         if (groceryList.Count > 0) {

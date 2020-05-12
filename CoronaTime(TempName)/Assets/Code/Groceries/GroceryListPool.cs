@@ -10,10 +10,10 @@ public class GroceryListPool : MonoBehaviour {
         groceryListPoolSingle = this;
     }
 
-    public static List<Product> GetRandomizedGroceryList(int itemsNeededOnList) {
+    public static List<Product> GetRandomizedGroceryList(int groceriesPerList, int differentGroceriesPerList) {
         List<Product> tempList = new List<Product>();
         if (groceryListPoolSingle.pool.Count > 0) {
-            for (int i = 0; i < itemsNeededOnList; i++) {
+            for (int i = 0; i < groceriesPerList; i++) {
                 int iB = Random.Range(0, groceryListPoolSingle.pool.Count - 1);
                 tempList.Add(Product.MakeProductInstance(groceryListPoolSingle.pool[iB]));
             }

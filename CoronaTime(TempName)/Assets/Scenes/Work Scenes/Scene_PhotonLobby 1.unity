@@ -1788,6 +1788,7 @@ MonoBehaviour:
   playersInRoom: 0
   myNumberInRoom: 0
   playersInGame: 0
+  dev: 1
   readyToggle: {fileID: 1799371915}
 --- !u!4 &1734044609
 Transform:

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Blue Chips
+  m_Name: Bag_Chips_Blue_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 2887482787335050402, guid: 166b8ecaf2b99eb4dbb53d3a6eb47127, type: 3}
   scoreValue: 0
