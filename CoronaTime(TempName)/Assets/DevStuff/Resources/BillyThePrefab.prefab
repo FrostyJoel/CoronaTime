@@ -934,6 +934,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5992604071259634003}
     m_Modifications:
+    - target: {fileID: 136795261700113802, guid: 47a8c557e57b90a4b804b535a117565c,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136795261700113802, guid: 47a8c557e57b90a4b804b535a117565c,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 136795261700113802, guid: 47a8c557e57b90a4b804b535a117565c,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.0019312203
+      objectReference: {fileID: 0}
+    - target: {fileID: 136795261700113802, guid: 47a8c557e57b90a4b804b535a117565c,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.45804444
+      objectReference: {fileID: 0}
+    - target: {fileID: 136795261700113802, guid: 47a8c557e57b90a4b804b535a117565c,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 824830033968155610, guid: 47a8c557e57b90a4b804b535a117565c,
         type: 3}
       propertyPath: topLock
@@ -999,6 +1024,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_Billy_1
       objectReference: {fileID: 0}
+    - target: {fileID: 8337234225512492625, guid: 47a8c557e57b90a4b804b535a117565c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 4dd58ff0af9933f489dc3667e37761c7, type: 3}
+    - target: {fileID: 8337234225513622673, guid: 47a8c557e57b90a4b804b535a117565c,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337234225513622673, guid: 47a8c557e57b90a4b804b535a117565c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b584be956c7b300449f7bda77862e48d, type: 2}
+    - target: {fileID: 8337234225513622673, guid: 47a8c557e57b90a4b804b535a117565c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 132ab042a8c33a24aa76a596841e936f, type: 2}
     m_RemovedComponents:
     - {fileID: 7595635516630051393, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
     - {fileID: 2380087066722093934, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
