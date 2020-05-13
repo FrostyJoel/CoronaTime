@@ -31,6 +31,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 RaycastHit hit;
                 if (Physics.Raycast(controller.pov.position, controller.pov.forward, out hit, interactRange)) {
                     if (hit.transform.CompareTag("Interact")) {
+                        Debug.Log("Index " + hit.transform.GetComponent<InteractableProduct>().index);
                         hit.transform.GetComponent<Interactable>().Interact(this);
                     }
                 }
@@ -38,12 +39,11 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         //}
     }
 
-    public bool AddToCart(InteractableProduct interactableProduct) {
+    public bool AddToCart(int index) {
         if (heldProducts.Count < maxItemsHeld) {
-            //Product product = MakeDirtyNewInstanceOfProduct(interactableProduct.scriptableProduct);
-            heldProducts.Add(interactableProduct.scriptableProduct);
-            heldProductModels.Add(interactableProduct.gameObject);
-            photonView.RPC("RPC_AddToCart", RpcTarget.All, heldProductModels[heldProductModels.Count-1].transform);
+            heldProducts.Add(PhotonProductList.staticProductList[index].scriptableProduct);
+            heldProductModels.Add(PhotonProductList.staticProductList[index].gameObject);
+            photonView.RPC("RPC_AddToCart", RpcTarget.All, index);
             return true;
         } else {
             return false;
@@ -51,10 +51,11 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     [PunRPC]
-    void RPC_AddToCart(Transform t) {
-        t.SetParent(itemHolders[heldProducts.Count - 1]);
-        t.localPosition = Vector3.zero;
-        t.localRotation = Quaternion.Euler(Vector3.zero);
+    void RPC_AddToCart(int index) {
+        Transform productTransform = PhotonProductList.staticProductList[index].transform;
+        productTransform.SetParent(itemHolders[heldProducts.Count - 1]);
+        productTransform.localPosition = Vector3.zero;
+        productTransform.localRotation = Quaternion.Euler(Vector3.zero);
     }
 
     public void SellItems() {
