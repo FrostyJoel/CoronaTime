@@ -1,26 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-[RequireComponent(typeof(SetProductList))]
 public class PhotonProductList : MonoBehaviour {
-    [Tooltip("Only works in edit mode")]public bool setProductList;
-    [HideInInspector] public SetProductList spl;
     public List<InteractableProduct> productList = new List<InteractableProduct>();
     public static List<InteractableProduct> staticProductList = new List<InteractableProduct>();
-
+    [HideInInspector] public bool play;
     private void Awake() {
-        if (setProductList) {
-            setProductList = false;
-        }
-        spl.enabled = false;
-        staticProductList = productList;
+        play = true;
+        //staticProductList = productList;
     }
+}
 
-    private void Update() {
-        if (setProductList) {
-            Debug.LogWarning("Can not be used in playmode");
-            setProductList = false;
+#if UNITY_EDITOR
+[CustomEditor(typeof(PhotonProductList))]
+public class PhotonProductListEditor : Editor {
+    PhotonProductList photonProductList;
+    public void OnEnable() {
+        photonProductList = (PhotonProductList)target;
+    }
+    public override void OnInspectorGUI() {
+        DrawDefaultInspector();
+
+        if (GUILayout.Button("Set product list")) {
+            InteractableProduct[] interactableProductArray = FindObjectsOfType<InteractableProduct>();
+            List<InteractableProduct> ipList = new List<InteractableProduct>();
+            photonProductList.productList.Clear();
+            for (int i = 0; i < interactableProductArray.Length; i++) {
+                InteractableProduct tempProduct = interactableProductArray[i];
+                ipList.Add(tempProduct);
+                tempProduct.index = i;
+                EditorUtility.SetDirty(tempProduct);
+            }
+            photonProductList.productList = ipList;
         }
     }
 }
+#endif
