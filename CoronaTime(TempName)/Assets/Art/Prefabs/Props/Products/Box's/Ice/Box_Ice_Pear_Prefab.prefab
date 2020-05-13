@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8053357905084204040}
   - component: {fileID: 7743611773312392110}
   - component: {fileID: 1717314197887268444}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Box_Ice_Pear_Prefab
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0.9528302, g: 0.8549411, b: 0.049439307, a: 1}
+  outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
   outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
