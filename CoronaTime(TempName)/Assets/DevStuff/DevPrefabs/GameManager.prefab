@@ -271,8 +271,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6082168589429124985}
+  - component: {fileID: 7091157567290249982}
   - component: {fileID: 6069729228489387231}
   - component: {fileID: 95240884139918891}
+  - component: {fileID: 2032483278977199689}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -296,6 +298,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7091157567290249982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6669633781740802333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!114 &6069729228489387231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,3 +352,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonParent: {fileID: 8473807781090312568}
+--- !u!114 &2032483278977199689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6669633781740802333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2363f00d8109e8946a9960c4edffbead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

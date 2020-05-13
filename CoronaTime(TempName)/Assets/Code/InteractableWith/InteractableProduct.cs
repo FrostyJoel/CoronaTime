@@ -15,6 +15,10 @@ public class InteractableProduct : Interactable {
 
     public Place currentPlace;
 
+    private void Awake() {
+        scriptableProduct = Product.MakeProductInstance(scriptableProduct);
+    }
+
     public override void Interact(CartStorage cartStorage) {
         if (currentPlace == Place.InShelve && cartStorage.AddToCart(this)) {
             currentPlace = Place.InCart;

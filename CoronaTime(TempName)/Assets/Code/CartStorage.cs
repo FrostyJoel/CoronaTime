@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CartStorage : MonoBehaviourPun {
+public class CartStorage : MonoBehaviourPunCallbacks {
     public Transform holder;
     [HideInInspector] public Controller controller;
     public int interactRange, maxItemsHeld;
@@ -14,7 +14,7 @@ public class CartStorage : MonoBehaviourPun {
     public List<GameObject> heldProductModels = new List<GameObject>();
 
     public List<SoldProduct> soldProducts = new List<SoldProduct>();
-
+    public static CartStorage scSingle;
     private void Awake() {
         if (holder) {
             for (int i = 0; i < holder.childCount; i++) {
@@ -22,6 +22,7 @@ public class CartStorage : MonoBehaviourPun {
             }
         }
         controller = GetComponent<Controller>();
+        scSingle = this;
     }
 
     private void Update() {
@@ -39,21 +40,21 @@ public class CartStorage : MonoBehaviourPun {
 
     public bool AddToCart(InteractableProduct interactableProduct) {
         if (heldProducts.Count < maxItemsHeld) {
-            Product product = MakeDirtyNewInstanceOfProduct(interactableProduct.scriptableProduct);
-            heldProducts.Add(product);
+            //Product product = MakeDirtyNewInstanceOfProduct(interactableProduct.scriptableProduct);
+            heldProducts.Add(interactableProduct.scriptableProduct);
             heldProductModels.Add(interactableProduct.gameObject);
-            photonView.RPC("RPC_AddToCart", RpcTarget.All, heldProductModels.Count-1);
+            photonView.RPC("RPC_AddToCart", RpcTarget.All, heldProductModels[heldProductModels.Count-1].transform);
             return true;
         } else {
             return false;
         }
     }
-    GameObject ob = null;
+
     [PunRPC]
-    void RPC_AddToCart(int i) {
-        heldProductModels[i].transform.SetParent(itemHolders[heldProducts.Count - 1]);
-        heldProductModels[i].transform.localPosition = Vector3.zero;
-        heldProductModels[i].transform.localRotation = Quaternion.Euler(Vector3.zero);
+    void RPC_AddToCart(Transform t) {
+        t.SetParent(itemHolders[heldProducts.Count - 1]);
+        t.localPosition = Vector3.zero;
+        t.localRotation = Quaternion.Euler(Vector3.zero);
     }
 
     public void SellItems() {

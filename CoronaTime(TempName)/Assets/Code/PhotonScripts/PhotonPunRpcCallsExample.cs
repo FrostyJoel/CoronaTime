@@ -15,12 +15,12 @@ public class PhotonPunRpcCallsExample : MonoBehaviourPunCallbacks {
     }
 
     public void RPC_SetBool(bool state) {
-        this.photonView.RPC("Bully", RpcTarget.All, state);
+        this.photonView.RPC("ExampleSetBool", RpcTarget.All, state);
     }
 
     [PunRPC]
-    void Bully(bool b) {
-        Debug.Log(b + " bully");
+    void ExampleSetBool(bool b) {
+        Debug.Log(b + " SetBool");
         bull = b;
         text.text = bull.ToString();
         toggle.isOn = b;

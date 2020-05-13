@@ -54,6 +54,8 @@ MonoBehaviour:
   - CLearPlayerListings
   - ListPlayers
   - RPC_AddToCart
+  - AddToCart
+  - ExampleSetBool
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
