@@ -31,7 +31,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 RaycastHit hit;
                 if (Physics.Raycast(controller.pov.position, controller.pov.forward, out hit, interactRange)) {
                     if (hit.transform.CompareTag("Interact")) {
-                        Debug.Log("Index " + hit.transform.GetComponent<InteractableProduct>().index);
                         hit.transform.GetComponent<Interactable>().Interact(this);
                     }
                 }
@@ -50,7 +49,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     void RPC_AddToCart(int productListIndex, int id) {
-        //Transform productTransform = PhotonProductList.staticProductList[productListIndex].transform;
         if(photonView.ViewID == id) {
             GameObject productObject = PhotonProductList.staticProductList[productListIndex].gameObject;
             heldProducts.Add(PhotonProductList.staticProductList[productListIndex].scriptableProduct);
@@ -59,9 +57,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             productObject.transform.localPosition = Vector3.zero;
             productObject.transform.localRotation = Quaternion.Euler(Vector3.zero);
         }
-        //Debug.Log("Index ");
-        //productTransform.localPosition = Vector3.zero;
-        //productTransform.localRotation = Quaternion.Euler(Vector3.zero);
         Debug.Log(PhotonView.Find(id).Owner.NickName);
     }
 

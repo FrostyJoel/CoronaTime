@@ -4,11 +4,9 @@ using UnityEditor;
 using UnityEngine;
 
 public class PhotonProductList : MonoBehaviour {
-    public List<InteractableProduct> productList = new List<InteractableProduct>();
+    [HideInInspector] public List<InteractableProduct> productList = new List<InteractableProduct>();
     public static List<InteractableProduct> staticProductList = new List<InteractableProduct>();
-    [HideInInspector] public bool play;
     private void Awake() {
-        play = true;
         staticProductList = productList;
     }
 }
@@ -34,6 +32,7 @@ public class PhotonProductListEditor : Editor {
                 EditorUtility.SetDirty(tempProduct);
             }
             photonProductList.productList = ipList;
+            Debug.Log("Successfully set productlist, don't forget to save!");
         }
     }
 }

@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Work Scenes/Scene_Johan.unity
     guid: 4fceccb8058857842a50e5cce400da09
-  - enabled: 0
-    path: Assets/Scenes/Work Scenes/Scene_PhotonLobby.unity
-    guid: 9bb75c071ee123e49abbdc65ac4064be
   - enabled: 1
     path: Assets/Scenes/Work Scenes/Scene_PhotonLobby.unity
     guid: 33f35014f476ca6488aee4240876847e

@@ -171,6 +171,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
 
     [PunRPC]
     void RPC_CreatePlayer() {
-        PhotonNetwork.Instantiate(room.playerPrefab.name, Vector3.zero, Quaternion.identity);
+        Vector3 pos = new Vector3(playersInGame, 0, 0);
+        PhotonNetwork.Instantiate(room.playerPrefab.name, pos, Quaternion.identity);
     }
 }
