@@ -9,7 +9,7 @@ public class PhotonProductList : MonoBehaviour {
     [HideInInspector] public bool play;
     private void Awake() {
         play = true;
-        //staticProductList = productList;
+        staticProductList = productList;
     }
 }
 

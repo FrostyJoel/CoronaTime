@@ -41,9 +41,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     public bool AddToCart(int index) {
         if (heldProducts.Count < maxItemsHeld) {
-            heldProducts.Add(PhotonProductList.staticProductList[index].scriptableProduct);
-            heldProductModels.Add(PhotonProductList.staticProductList[index].gameObject);
-            photonView.RPC("RPC_AddToCart", RpcTarget.All, index);
+            photonView.RPC("RPC_AddToCart", RpcTarget.All, index, photonView.ViewID);
             return true;
         } else {
             return false;
@@ -51,11 +49,20 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     [PunRPC]
-    void RPC_AddToCart(int index) {
-        Transform productTransform = PhotonProductList.staticProductList[index].transform;
-        productTransform.SetParent(itemHolders[heldProducts.Count - 1]);
-        productTransform.localPosition = Vector3.zero;
-        productTransform.localRotation = Quaternion.Euler(Vector3.zero);
+    void RPC_AddToCart(int productListIndex, int id) {
+        //Transform productTransform = PhotonProductList.staticProductList[productListIndex].transform;
+        if(photonView.ViewID == id) {
+            GameObject productObject = PhotonProductList.staticProductList[productListIndex].gameObject;
+            heldProducts.Add(PhotonProductList.staticProductList[productListIndex].scriptableProduct);
+            heldProductModels.Add(productObject);
+            productObject.transform.SetParent(itemHolders[heldProducts.Count - 1]);
+            productObject.transform.localPosition = Vector3.zero;
+            productObject.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        }
+        //Debug.Log("Index ");
+        //productTransform.localPosition = Vector3.zero;
+        //productTransform.localRotation = Quaternion.Euler(Vector3.zero);
+        Debug.Log(PhotonView.Find(id).Owner.NickName);
     }
 
     public void SellItems() {
