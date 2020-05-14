@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5102384251968754424}
   - component: {fileID: 4574226575296903268}
   - component: {fileID: 194037438260526201}
-  - component: {fileID: 155511373}
   - component: {fileID: 114598681487842586}
   m_Layer: 0
   m_Name: Player
@@ -113,23 +112,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &155511373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712468100203122546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa8f9145132f86a419ab67f388610620, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  photonview: {fileID: 114598681487842586}
-  plCam: {fileID: 7749347821182278292}
-  smoothness: 8
-  devTesting: 0
-  plNameText: {fileID: 1648950765283058761}
 --- !u!114 &114598681487842586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,20 +124,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownerId: 0
-  group: 0
-  OwnerShipWasTransfered: 0
-  prefixBackup: -1
-  synchronization: 3
-  onSerializeTransformOption: 3
-  onSerializeRigidBodyOption: 2
-  ownershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 155511373}
   ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
   viewIdField: 0
-  instantiationId: -1
-  currentMasterID: -1
+  InstantiationId: -1
   isRuntimeInstantiated: 0
 --- !u!1 &5503757710420356490
 GameObject:
