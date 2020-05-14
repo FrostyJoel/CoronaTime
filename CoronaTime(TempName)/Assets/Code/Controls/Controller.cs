@@ -2,12 +2,15 @@
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Controller : MonoBehaviourPun {
     public PlayerView playerView;
     public Transform pov, povHolder;
+    public Text text_Nickname;
+    public Transform localPlayerTarget;
     public GameObject localInGameHud;
     [HideInInspector] public Rigidbody rigid;
     [HideInInspector] public Vector3 startPosition;
@@ -37,6 +40,7 @@ public class Controller : MonoBehaviourPun {
         }
         audioListeners = GetComponentInChildren<AudioListener>();
         audioListeners.enabled = false;
+        photonView.RPC("RPC_SetMyNickname", RpcTarget.All);
     }    
 
     private void Start() {
@@ -55,7 +59,25 @@ public class Controller : MonoBehaviourPun {
             Cursor.visible = false;
         }
         Init();
-        canMove = true; Debug.LogWarning("(int)canMove WAS ACCESSED BY A DEV FUNCTION, TAKE OUT FOR RELEASE");
+        canMove = true; Debug.LogWarning("(bool)canMove WAS ACCESSED BY A DEV FUNCTION, TAKE OUT FOR RELEASE");
+        Controller[] controllersInScene = FindObjectsOfType<Controller>();
+        for (int i = 0; i < controllersInScene.Length; i++) {
+        }
+    }
+
+    [PunRPC]
+    void RPC_SetMyNickname() {
+        if (photonView.IsMine) {
+            text_Nickname.text = PhotonNetwork.NickName;
+        }
+    }
+
+    public void SetAllNicknames(Controller controllerInScene) {
+        if (controllerInScene != this) {
+            controllerInScene.localPlayerTarget = pov;
+        } else if (!photonView.IsMine) {
+            text_Nickname.gameObject.SetActive(false);
+        }
     }
 
     public void Init() {
@@ -132,6 +154,9 @@ public class Controller : MonoBehaviourPun {
             Vector3 newPos = transform.position + transform.forward * vertical;
             transform.Rotate(Vector3.up * currentRotationSpeed);
             Quaternion rot = Quaternion.Euler(transform.rotation.eulerAngles + transform.up * currentRotationSpeed);
+        }
+        if (localPlayerTarget) {
+            text_Nickname.transform.LookAt(localPlayerTarget);
         }
     }
 
