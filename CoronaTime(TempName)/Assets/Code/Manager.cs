@@ -25,14 +25,6 @@ public class Manager : MonoBehaviourPun {
         staticColorManaging = colorManaging;
         AudioManager.audioMixer = staticInformation.audioMixer;
     }
-    private void Start()
-    {
-        Outline[] allOutlines = FindObjectsOfType<Outline>();
-        foreach (Outline allOLine in allOutlines)
-        {
-            allOLine.enabled = false;
-        }
-    }
 }
 
 [Serializable]
