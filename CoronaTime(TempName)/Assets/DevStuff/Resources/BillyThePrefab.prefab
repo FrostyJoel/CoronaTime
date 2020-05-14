@@ -455,7 +455,7 @@ MonoBehaviour:
   playerView: {fileID: 1339369616197313166}
   pov: {fileID: 7870492868813668520}
   povHolder: {fileID: 1255836579416279486}
-  nicknameHolder: {fileID: 6492505983798519238}
+  text_Nickname: {fileID: 0}
   localPlayerTarget: {fileID: 0}
   localInGameHud: {fileID: 0}
   rigid: {fileID: 5992604071259634013}
