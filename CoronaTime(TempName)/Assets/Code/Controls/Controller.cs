@@ -42,6 +42,9 @@ public class Controller : MonoBehaviourPun {
         audioListeners.enabled = false;
         //photonView.RPC("RPC_SetMyNickname", RpcTarget.All);
         photonView.RPC("RPC_SetNicknameTargets", RpcTarget.All);
+        if (photonView.IsMine) {
+            text_Nickname.gameObject.SetActive(false);
+        }
     }    
 
     private void Start() {

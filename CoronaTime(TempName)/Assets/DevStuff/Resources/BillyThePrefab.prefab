@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 1645372588990679087}
   - component: {fileID: 4667141236043405218}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text_Nickname
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
   playerView: {fileID: 1339369616197313166}
   pov: {fileID: 7870492868813668520}
   povHolder: {fileID: 1255836579416279486}
-  text_Nickname: {fileID: 0}
+  text_Nickname: {fileID: 1645372588990679087}
   localPlayerTarget: {fileID: 0}
   localInGameHud: {fileID: 0}
   rigid: {fileID: 5992604071259634013}
