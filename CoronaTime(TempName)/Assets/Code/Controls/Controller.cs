@@ -40,7 +40,8 @@ public class Controller : MonoBehaviourPun {
         }
         audioListeners = GetComponentInChildren<AudioListener>();
         audioListeners.enabled = false;
-        photonView.RPC("RPC_SetMyNickname", RpcTarget.All);
+        //photonView.RPC("RPC_SetMyNickname", RpcTarget.All);
+        photonView.RPC("RPC_SetNicknameTargets", RpcTarget.All);
     }    
 
     private void Start() {
@@ -60,23 +61,21 @@ public class Controller : MonoBehaviourPun {
         }
         Init();
         canMove = true; Debug.LogWarning("(bool)canMove WAS ACCESSED BY A DEV FUNCTION, TAKE OUT FOR RELEASE");
-        Controller[] controllersInScene = FindObjectsOfType<Controller>();
-        for (int i = 0; i < controllersInScene.Length; i++) {
-        }
     }
 
     [PunRPC]
     void RPC_SetMyNickname() {
-        if (photonView.IsMine) {
-            text_Nickname.text = PhotonNetwork.NickName;
-        }
+        text_Nickname.text = PhotonLobbyCustomMatchMaking.lobby.nickName;
     }
 
-    public void SetAllNicknames(Controller controllerInScene) {
-        if (controllerInScene != this) {
-            controllerInScene.localPlayerTarget = pov;
-        } else if (!photonView.IsMine) {
-            text_Nickname.gameObject.SetActive(false);
+    [PunRPC]
+    void RPC_SetNicknameTargets() {
+        if (photonView.IsMine) {
+            Controller[] controllers = FindObjectsOfType<Controller>();
+            for (int i = 0; i < controllers.Length; i++) {
+                controllers[i].localPlayerTarget = pov;
+                controllers[i].text_Nickname.text = controllers[i].photonView.name;
+            }
         }
     }
 
