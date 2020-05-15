@@ -18,7 +18,7 @@ public class Controller : MonoBehaviourPun {
     public bool hideCursorOnStart;
     [Space]
     public float walkSpeed = 5;
-    public float mouseSensitivity = 100, keyboardCartRotationSpeed = 100, camCartRotationSpeed;
+    public float sprintMultiplier, timeForMaxSprint, mouseSensitivity = 100, keyboardCartRotationSpeed = 100, camCartRotationSpeed;
 
     [Range(0, 90)]
     public float maxVerticalViewAngle = 30, maxHorizontalViewAngle = 80;
@@ -62,7 +62,7 @@ public class Controller : MonoBehaviourPun {
             Cursor.visible = false;
         }
         Init();
-        canMove = true; Debug.LogWarning("(bool)canMove WAS ACCESSED BY A DEV FUNCTION, TAKE OUT FOR RELEASE");
+        canMove = true; Debug.LogWarning("(bool)canMove WAS ACCESSED BY A DEV FUNCTION, CHANGE TO ALTERNATIVE WHEN READY");
     }
 
     [PunRPC]
@@ -148,7 +148,7 @@ public class Controller : MonoBehaviourPun {
             povHolder.Rotate(Vector3.up * mouseX);
 
             //body rotation
-            float vertical = Input.GetAxis("Vertical") * walkSpeed;
+            float vertical = Input.GetAxis("Vertical") * walkSpeed * SprintCheck();
             if (Input.GetAxis("Horizontal") != 0) {
                 currentRotationSpeed = Input.GetAxis("Horizontal") * keyboardCartRotationSpeed;
             }
@@ -162,6 +162,14 @@ public class Controller : MonoBehaviourPun {
             text_Nickname.transform.LookAt(localPlayerTarget);
             text_Nickname.transform.Rotate(0, 180, 0);
         }
+    }
+
+    float SprintCheck() {
+        float sprintValue = 1;
+        if (Input.GetButton("Fire3")) {
+            sprintValue = sprintMultiplier;
+        }
+        return sprintValue;
     }
 
     private void ClampXRotationAxisToValue(Transform transform_, float value) {
