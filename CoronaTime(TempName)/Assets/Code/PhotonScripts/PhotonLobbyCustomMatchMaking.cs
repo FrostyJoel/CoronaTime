@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCallbacks {
-    public static PhotonLobbyCustomMatchMaking lobby;
+    public static PhotonLobbyCustomMatchMaking lobbySingle;
 
     public InputField input_Nickname;
     public Button button_CreateRoom;
@@ -19,7 +19,7 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     bool enteredNickname, enteredRoomName, connectedToMaster = false;
 
     private void Awake() {
-        lobby = this;
+        lobbySingle = this;
     }
 
     private void Start() {

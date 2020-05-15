@@ -461,7 +461,7 @@ MonoBehaviour:
   rigid: {fileID: 5992604071259634013}
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
-  hideCursorOnStart: 0
+  hideCursorOnStart: 1
   walkSpeed: 0.08
   mouseSensitivity: 1
   keyboardCartRotationSpeed: 1.5

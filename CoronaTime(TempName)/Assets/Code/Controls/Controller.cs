@@ -40,7 +40,6 @@ public class Controller : MonoBehaviourPun {
         }
         audioListeners = GetComponentInChildren<AudioListener>();
         audioListeners.enabled = false;
-        //photonView.RPC("RPC_SetMyNickname", RpcTarget.All);
         photonView.RPC("RPC_SetNicknameTargets", RpcTarget.All);
         if (photonView.IsMine) {
             text_Nickname.gameObject.SetActive(false);
@@ -68,7 +67,9 @@ public class Controller : MonoBehaviourPun {
 
     [PunRPC]
     void RPC_SetMyNickname() {
-        text_Nickname.text = PhotonLobbyCustomMatchMaking.lobby.nickName;
+        if (photonView.IsMine) {
+            text_Nickname.text = PhotonLobbyCustomMatchMaking.lobbySingle.nickName;
+        }
     }
 
     [PunRPC]
@@ -77,7 +78,7 @@ public class Controller : MonoBehaviourPun {
             Controller[] controllers = FindObjectsOfType<Controller>();
             for (int i = 0; i < controllers.Length; i++) {
                 controllers[i].localPlayerTarget = pov;
-                controllers[i].text_Nickname.text = controllers[i].photonView.name;
+                controllers[i].text_Nickname.text = PhotonRoomCustomMatchMaking.roomSingle.RemoveIdFromNickname(controllers[i].photonView.Owner.NickName);
             }
         }
     }
@@ -159,6 +160,7 @@ public class Controller : MonoBehaviourPun {
         }
         if (localPlayerTarget) {
             text_Nickname.transform.LookAt(localPlayerTarget);
+            text_Nickname.transform.Rotate(0, 180, 0);
         }
     }
 

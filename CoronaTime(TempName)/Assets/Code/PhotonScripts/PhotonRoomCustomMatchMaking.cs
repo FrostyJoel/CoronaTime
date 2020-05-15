@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCallbacks {
-    public static PhotonRoomCustomMatchMaking room;
+    public static PhotonRoomCustomMatchMaking roomSingle;
     public GameObject playerPrefab, lobbyGameObject, roomGameObject, playerListingPrefab, startButton;
     public Transform playersPanel;
     public PhotonView PV;
@@ -21,12 +21,12 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     public int playersInGame;
     public bool dev;
     private void Awake() {
-        if (PhotonRoomCustomMatchMaking.room == null) {
-            room = this;
+        if (PhotonRoomCustomMatchMaking.roomSingle == null) {
+            roomSingle = this;
         } else {
-            if(PhotonRoomCustomMatchMaking.room != this) {
-                Destroy(PhotonRoomCustomMatchMaking.room.gameObject);
-                PhotonRoomCustomMatchMaking.room = this;
+            if(PhotonRoomCustomMatchMaking.roomSingle != this) {
+                Destroy(PhotonRoomCustomMatchMaking.roomSingle.gameObject);
+                PhotonRoomCustomMatchMaking.roomSingle = this;
             }
         }
         DontDestroyOnLoad(this.gameObject);
@@ -107,7 +107,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
             for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
                 GameObject tempNickNameObject = Instantiate(playerListingPrefab, playersPanel);
                 ScriptPlayerListing spl = tempNickNameObject.GetComponent<ScriptPlayerListing>();
-                string nickname = RemoveIdFromNickname(CharArrayToList(PhotonNetwork.PlayerList[i].NickName.ToCharArray()));
+                string nickname = RemoveIdFromNickname(PhotonNetwork.PlayerList[i].NickName);
                 spl.text_Nickname.text = nickname;
                 if(i == myNumberInRoom-1) {
                     print("(if) my number in room : " + myNumberInRoom + ", players in room = " + playersInRoom + ", PhotonNetwork.PlayerList.Length : " + PhotonNetwork.PlayerList.Length + ", i : " + i);
@@ -120,7 +120,11 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
 
     public Toggle readyToggle;
 
-    string RemoveIdFromNickname(List<char> characterList) {
+    public string RemoveIdFromNickname(string nickname) {
+        return RemoveIdFromNickname(CharArrayToList(nickname.ToCharArray()));
+    }
+
+    public string RemoveIdFromNickname(List<char> characterList) {
         string nickName = "";
         for (int iB = 0; iB < characterList.Count; iB++) {
             if (characterList[iB].ToString() == "#") {
@@ -172,7 +176,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     [PunRPC]
     void RPC_CreatePlayer() {
         Vector3 pos = new Vector3(playersInGame, 0, 0);
-        PhotonNetwork.Instantiate(room.playerPrefab.name, pos, Quaternion.identity);
+        PhotonNetwork.Instantiate(roomSingle.playerPrefab.name, pos, Quaternion.identity);
         Outline[] allOutlines = FindObjectsOfType<Outline>();
         foreach (Outline allOLine in allOutlines) {
             allOLine.enabled = false;
