@@ -21,7 +21,7 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine || pView.devView)
         {
-            if (Physics.Raycast(controller.pov.position, controller.pov.forward, out hit, Mathf.Infinity))
+            if (Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, Mathf.Infinity))
             {
                 Outline outlineObj = hit.transform.gameObject.GetComponent<Outline>();
                 if (lastOutline != outlineObj && lastOutline != null)

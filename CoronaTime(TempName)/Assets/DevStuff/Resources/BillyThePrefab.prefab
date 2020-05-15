@@ -453,9 +453,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerView: {fileID: 1339369616197313166}
-  pov: {fileID: 7870492868813668520}
-  povHolder: {fileID: 1255836579416279486}
+  transform_Pov: {fileID: 7870492868813668520}
+  transform_PovHolder: {fileID: 1255836579416279486}
   text_Nickname: {fileID: 1645372588990679087}
+  meshRenderersToDisableLocally:
+  - {fileID: 2349137363553658956}
   localPlayerTarget: {fileID: 0}
   localInGameHud: {fileID: 0}
   rigid: {fileID: 5992604071259634013}
@@ -463,16 +465,22 @@ MonoBehaviour:
   startRotation: {x: 0, y: 0, z: 0, w: 0}
   hideCursorOnStart: 1
   walkSpeed: 0.08
-  sprintMultiplier: 1.2
-  mouseSensitivity: 1
+  sprintMultiplier: 1.3
+  sprintSpeedWindUpDivider: 60
+  sprintSpeedWindDownDivider: 20
+  sprintFov: 62
+  sprintFovWindUpDivider: 500
+  sprintFovWindDownDivider: 500
   keyboardCartRotationSpeed: 1.5
+  mouseSensitivity: 1
   camCartRotationSpeed: 1
   maxVerticalViewAngle: 50
   maxHorizontalViewAngle: 90
   camInrangeForRotationDegree: 1
   centerOfMass: {x: 0, y: -1, z: 1}
-  xRotationAxisAngle: 0
-  yRotationAxisAngle: 0
+  defaultFov: 0
+  currentSprintValue: 0
+  currentFovValue: 0
 --- !u!114 &1339369616197313166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,6 +1063,12 @@ PrefabInstance:
 --- !u!4 &2349137363551365804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8337234225511198321, guid: 47a8c557e57b90a4b804b535a117565c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5992604072681751773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2349137363553658956 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8337234225513622673, guid: 47a8c557e57b90a4b804b535a117565c,
     type: 3}
   m_PrefabInstance: {fileID: 5992604072681751773}
   m_PrefabAsset: {fileID: 0}

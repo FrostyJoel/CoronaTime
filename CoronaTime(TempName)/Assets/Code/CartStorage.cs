@@ -29,7 +29,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         //if (controller.playerviewCheck.photonView.isMine || controller.playerviewCheck.devTesting) {
             if (Input.GetButtonDown("Interact")) {
                 RaycastHit hit;
-                if (Physics.Raycast(controller.pov.position, controller.pov.forward, out hit, interactRange)) {
+                if (Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, interactRange)) {
                     if (hit.transform.CompareTag("Interact")) {
                         hit.transform.GetComponent<Interactable>().Interact(this);
                     }
