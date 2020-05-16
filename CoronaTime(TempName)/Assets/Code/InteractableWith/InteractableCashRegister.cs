@@ -47,6 +47,10 @@ public class InteractableCashRegister : Interactable {
 
     [PunRPC]
     void RPC_DestroyProduct(int index) {
-        Destroy(PhotonProductList.staticProductList[index].gameObject);
+        try
+        {
+            Destroy(PhotonProductList.staticProductList[index].gameObject);
+        }
+        catch { }
     }
 }
