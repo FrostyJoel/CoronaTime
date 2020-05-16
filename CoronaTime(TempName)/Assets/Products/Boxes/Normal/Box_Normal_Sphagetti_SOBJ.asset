@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Box_Normal_Sphagetti_SOBJ
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  scoreValue: 55
+  prefab: {fileID: 6702411801817232648, guid: aea73670313c91848903d4e05c300e92, type: 3}
+  scoreValue: 20
+  index: 0

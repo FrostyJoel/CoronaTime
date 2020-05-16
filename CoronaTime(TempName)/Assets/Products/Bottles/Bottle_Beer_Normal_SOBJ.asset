@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bottle_Beer_Normal_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 1907299701641407302, guid: cd35d3ad1f262bc4c933b3a4a8f1c5ff, type: 3}
-  scoreValue: 0
+  scoreValue: 15
+  index: 0

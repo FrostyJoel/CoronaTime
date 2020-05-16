@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bottle_BrownSoda_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
-  scoreValue: 5
+  scoreValue: 20
+  index: 0

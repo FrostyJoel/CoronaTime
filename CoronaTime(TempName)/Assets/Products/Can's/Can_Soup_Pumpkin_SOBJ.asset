@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Can_Soup_Pumpkin_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 6107652725900363958, guid: e3713fee75524b8479d0b4d605a4e4aa, type: 3}
-  scoreValue: 5
+  scoreValue: 45
+  index: 0

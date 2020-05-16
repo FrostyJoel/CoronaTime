@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Can_Soup_Chicken_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 1109565388485376081, guid: 57eab9755e620ef4f9e171546077f86f, type: 3}
-  scoreValue: 5
+  scoreValue: 45
+  index: 0

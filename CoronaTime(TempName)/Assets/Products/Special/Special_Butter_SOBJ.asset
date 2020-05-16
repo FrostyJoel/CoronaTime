@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Special_Butter_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 9209311751208136049, guid: 7dfe71d51703e654bb5240b1804a365f, type: 3}
-  scoreValue: 0
+  scoreValue: 35
+  index: 0

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Can_Soup_Tomato_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 887434504015363543, guid: b1f8fe6b585d21549b1b955e52c9024e, type: 3}
-  scoreValue: 5
+  scoreValue: 45
+  index: 0

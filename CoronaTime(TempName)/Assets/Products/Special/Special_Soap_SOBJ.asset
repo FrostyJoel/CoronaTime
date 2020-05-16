@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Special_Soap_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 7403732695686226202, guid: b7dc8fdb35727d34b87d1523d1702d32, type: 3}
-  scoreValue: 0
+  scoreValue: 50
+  index: 0

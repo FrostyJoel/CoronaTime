@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bottle_Juice_Orange_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 3202480593377063772, guid: c32cb983c4dddb548b48bd669235dc69, type: 3}
-  scoreValue: 0
+  scoreValue: 20
+  index: 0

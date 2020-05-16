@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Can_Soup_Champignon_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 6383855755871722226, guid: e8797a9fbf266bf41aa7a54e5fb63474, type: 3}
-  scoreValue: 5
+  scoreValue: 45
+  index: 0

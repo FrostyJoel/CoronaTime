@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Can_Soup_Onion_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 3720060456919294409, guid: 03ddfe8ab0118e745b946f0bed7f00d2, type: 3}
-  scoreValue: 5
+  scoreValue: 45
+  index: 0

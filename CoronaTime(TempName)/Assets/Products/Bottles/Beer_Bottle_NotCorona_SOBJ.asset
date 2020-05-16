@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Beer_Bottle_NotCorona_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 7324169118529522527, guid: 1de12d308eae4ef4cb513ae49c4268d0, type: 3}
-  scoreValue: 0
+  scoreValue: 15
+  index: 0

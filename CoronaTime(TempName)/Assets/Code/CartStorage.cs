@@ -76,6 +76,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     public bool AddToCart(int index) {
         if (heldProducts.Count < maxItemsHeld) {
+            Debug.Log("Adding");
             photonView.RPC("RPC_AddToCart", RpcTarget.All, index, photonView.ViewID);
             return true;
         } else {

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Can_Drink_Energy_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 4342928221171545824, guid: 5f1bf070faeaa67479059ec53c0189bb, type: 3}
-  scoreValue: 0
+  scoreValue: 45
+  index: 0

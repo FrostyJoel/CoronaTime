@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bottle_Water_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 3393707373797263123, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
-  scoreValue: 5
+  scoreValue: 25
+  index: 0

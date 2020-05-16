@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bottle_Juice_Purple_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 637299059771989016, guid: 25d6e02d3f1cfa548a5423e80d658f1b, type: 3}
-  scoreValue: 0
+  scoreValue: 20
+  index: 0

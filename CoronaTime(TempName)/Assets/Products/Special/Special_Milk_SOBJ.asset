@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Special_Milk_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 7992957640195213242, guid: c9a4dbcce326d834c9c9fc95e6aaa65b, type: 3}
-  scoreValue: 0
+  scoreValue: 20
+  index: 0

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Special_Banana_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 5982649758753860676, guid: 07421592736ce8344974ad22403e72ce, type: 3}
-  scoreValue: 0
+  scoreValue: 10
+  index: 0

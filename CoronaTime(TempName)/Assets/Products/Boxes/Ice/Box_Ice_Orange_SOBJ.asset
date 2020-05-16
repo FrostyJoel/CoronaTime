@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Box_Ice_Orange_SOBJ
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  scoreValue: 50
+  prefab: {fileID: 4037901075068876372, guid: a6cfc13d89a598b418a5e9f80985e921, type: 3}
+  scoreValue: 30
+  index: 0

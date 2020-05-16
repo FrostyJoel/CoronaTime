@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7796676360800813566, guid: 2251343cd61a99741a538a59f370d695, type: 3}
   scoreValue: 10
+  index: 0

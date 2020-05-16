@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Box_Ice_Banana_SOBJ
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  scoreValue: 50
+  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
+  scoreValue: 30
+  index: 0

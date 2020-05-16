@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Box_Normal_Rice_SOBJ
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  scoreValue: 55
+  prefab: {fileID: 6500953611685769899, guid: b077b8ef9b9584442bbec6c59abe363b, type: 3}
+  scoreValue: 20
+  index: 0

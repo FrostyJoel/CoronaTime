@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Box_Pizza_Hawaii_SOBJ
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  scoreValue: 60
+  prefab: {fileID: 5015372774678779854, guid: a84cbd022dcb640478e031c9c62ff757, type: 3}
+  scoreValue: 50
+  index: 0

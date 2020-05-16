@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Bag_Chips_Green_SOBJ
   m_EditorClassIdentifier: 
   prefab: {fileID: 8666193312795110902, guid: 169d6bace92819a418a1adf09a97fc2b, type: 3}
-  scoreValue: 0
+  scoreValue: 10
+  index: 0
