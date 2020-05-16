@@ -112,6 +112,16 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         return tempProduct;
     }
 
+    public void ClearProducts() {
+        photonView.RPC("RPC_ClearProducts", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RPC_ClearProducts() {
+        heldProducts.Clear();
+        heldProductModels.Clear();
+    }
+
     [PunRPC]
     void RPC_AddToCart(int productListIndex, int id) {
         if(photonView.ViewID == id) {

@@ -29,8 +29,7 @@ public class InteractableCashRegister : Interactable {
                 }
                 photonView.RPC("RPC_DestroyProduct", RpcTarget.All, cartStorage.heldProducts[i].index);
             }
-            cartStorage.heldProducts.Clear();
-            cartStorage.heldProductModels.Clear();
+            cartStorage.ClearProducts();
             cartStorage.UpdateScore();
         }
     }
