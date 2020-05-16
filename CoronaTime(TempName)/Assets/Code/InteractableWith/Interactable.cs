@@ -6,6 +6,11 @@ using UnityEngine;
 public class Interactable : MonoBehaviourPun {
 
     public AudioManager.AudioGroups audioGroup;
+    
+    private void OnEnable() {
+        transform.tag = "Interact";
+    }
+
     public virtual void Interact(CartStorage cartStorage) {
 
     }
