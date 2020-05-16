@@ -63,6 +63,7 @@ MonoBehaviour:
   - RPC_SetScoreboardListings
   - RPC_DestroyProduct
   - RPC_UpdateScoreboardScore
+  - RPC_ClearProducts
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
