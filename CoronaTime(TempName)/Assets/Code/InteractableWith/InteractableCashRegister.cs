@@ -19,10 +19,13 @@ public class InteractableCashRegister : Interactable {
                 if (index >= 0) {
                     cartStorage.soldProducts[index].amount += 1;
                 } else {
-                    SoldProduct soldProduct_ = ScriptableObject.CreateInstance("SoldProduct") as SoldProduct;
-                    soldProduct_.parentProduct = cartStorage.heldProducts[i];
-                    soldProduct_.amount = 1;
+                    SoldProduct soldProduct_ = new SoldProduct() {
+                        parentProduct = cartStorage.heldProducts[i],
+                        amount = 1};
                     cartStorage.soldProducts.Add(soldProduct_);
+                    //soldProduct_.parentProduct = cartStorage.heldProducts[i];
+                    //soldProduct_.amount = 1;
+                    //cartStorage.soldProducts.Add(soldProduct_);
                 }
                 photonView.RPC("RPC_DestroyProduct", RpcTarget.All, cartStorage.heldProducts[i].index);
             }
