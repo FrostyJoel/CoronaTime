@@ -9,12 +9,17 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     public int interactRange, maxItemsHeld;
 
     public List<Transform> itemHolders = new List<Transform>();
+    [HideInInspector] public List<Product> heldProducts = new List<Product>();
+    [HideInInspector] public List<GameObject> heldProductModels = new List<GameObject>();
+    [HideInInspector] public List<SoldProduct> soldProducts = new List<SoldProduct>();
 
-    public List<Product> heldProducts = new List<Product>();
-    public List<GameObject> heldProductModels = new List<GameObject>();
+    [Header("Scoreboard")]
+    public Transform transform_Scoreboard;
+    public GameObject prefab_ScoreboardListing;
 
-    public List<SoldProduct> soldProducts = new List<SoldProduct>();
-    public static CartStorage scSingle;
+    [Header("HideInInspector")]
+    public List<ScriptScoreboardListing> sbListingsList = new List<ScriptScoreboardListing>();
+
     private void Awake() {
         if (holder) {
             for (int i = 0; i < holder.childCount; i++) {
@@ -22,11 +27,43 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             }
         }
         controller = GetComponent<Controller>();
-        scSingle = this;
+    }
+
+    private void Start() {
+        photonView.RPC("RPC_SetScoreboardListings", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RPC_SetScoreboardListings() {
+        ClearListing();
+        if (photonView.IsMine) {
+            CartStorage[] storages = FindObjectsOfType<CartStorage>();
+            for (int i = 0; i < storages.Length; i++) {
+                GameObject sbListingObject = Instantiate(prefab_ScoreboardListing, transform_Scoreboard);
+                ScriptScoreboardListing sbListing = sbListingObject.GetComponent<ScriptScoreboardListing>();
+                PhotonView pv = storages[i].photonView;
+                sbListingsList.Add(sbListing);
+                sbListing.text_Username.text = PhotonRoomCustomMatchMaking.roomSingle.RemoveIdFromNickname(pv.Owner.NickName);
+                sbListing.text_Score.text = "0";
+                sbListing.id = pv.ViewID;
+            }
+        }
+    }
+
+    void ClearListing() {
+        if (photonView.IsMine) {
+            if (sbListingsList.Count > 0) {
+                for (int i = 0; i < sbListingsList.Count; i++) {
+                    try {
+                        Destroy(sbListingsList[i].gameObject);
+                    } catch { }
+                }
+            }
+        }
     }
 
     private void Update() {
-        //if (controller.playerviewCheck.photonView.isMine || controller.playerviewCheck.devTesting) {
+        if (photonView.IsMine || controller.playerView.devView) {
             if (Input.GetButtonDown("Interact")) {
                 RaycastHit hit;
                 if (Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, interactRange)) {
@@ -35,7 +72,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                     }
                 }
             }
-        //}
+        }
     }
 
     public bool AddToCart(int index) {
@@ -57,36 +94,14 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             productObject.transform.localPosition = Vector3.zero;
             productObject.transform.localRotation = Quaternion.Euler(Vector3.zero);
         }
-        Debug.Log(PhotonView.Find(id).Owner.NickName);
     }
 
-    public void SellItems() {
-        if (heldProducts.Count > 0) {
-            for (int i = 0; i < heldProducts.Count; i++) {
-                int index = AlreadySold(heldProducts[i]);
-                if (index >= 0) {
-                    soldProducts[index].amount += 1;
-                } else {
-                    SoldProduct soldProduct_ = new SoldProduct();
-                    soldProduct_.parentProduct = heldProducts[i];
-                    soldProduct_.amount = 1;
-                    soldProducts.Add(soldProduct_);
-                }
-                Destroy(heldProductModels[i]);
-            }
-            heldProducts.Clear();
-            heldProductModels.Clear();
-        }
-    }
-
-    int AlreadySold(Product product) {
+    public int GetCorrespondingSbListing(int id) {
         int index = -1;
-        if (soldProducts.Count > 0) {
-            for (int i = 0; i < soldProducts.Count; i++) {
-                if(soldProducts[i].parentProduct.prefab == product.prefab) {
-                    index = i;
-                    break;
-                }
+        for (int i = 0; i < sbListingsList.Count; i++) {
+            if(sbListingsList[i].id == id) {
+                index = i;
+                break;
             }
         }
         return index;

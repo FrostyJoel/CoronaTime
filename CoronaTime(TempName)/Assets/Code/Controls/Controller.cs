@@ -5,37 +5,42 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))][RequireComponent(typeof(CartStorage))]
 public class Controller : MonoBehaviourPun {
     public PlayerView playerView;
     public Transform transform_Pov, transform_PovHolder;
     public Text text_Nickname;
     public MeshRenderer[] meshRenderersToDisableLocally;
-    public Transform localPlayerTarget;
     public GameObject localInGameHud;
-    [HideInInspector] public Rigidbody rigid;
-    [HideInInspector] public Vector3 startPosition;
-    [HideInInspector] public Quaternion startRotation;
     public bool hideCursorOnStart;
+
     [Header("Keyboard Movement")]
     public float walkSpeed = 0.1f;
     public float sprintMultiplier = 1.2f, sprintSpeedWindUpDivider, sprintSpeedWindDownDivider, sprintFov = 62,
         sprintFovWindUpDivider, sprintFovWindDownDivider, keyboardCartRotationSpeed = 1.5f;
+
     [Header("Mouse Movement")]
     public float mouseSensitivity = 1;
     public float camCartRotationSpeed = 1;
+
     [Range(0, 90)]
     public float maxVerticalViewAngle = 30, maxHorizontalViewAngle = 80;
+
     [Space] [Range(0, 90)]
     public float camInrangeForRotationDegree;
     public Vector3 centerOfMass;
     bool canMove;
     float xRotationAxisAngle, yRotationAxisAngle;
 
+    [HideInInspector] public Transform localPlayerTarget;
+    [HideInInspector] public Rigidbody rigid;
+    [HideInInspector] public Vector3 startPosition;
+    [HideInInspector] public Quaternion startRotation;
+    [HideInInspector] public CartStorage cartStorage;
+
     Camera[] cams;
     AudioListener audioListeners;
-    [Header("HideInInspector")]
-    public float defaultFov, currentSprintValue, currentFovValue;
+    float defaultFov, currentSprintValue, currentFovValue;
 
     private void Awake() {
         TurnCollidersOnOff(false);
@@ -57,7 +62,8 @@ public class Controller : MonoBehaviourPun {
                 }
             }
         }
-    }    
+        cartStorage = GetComponent<CartStorage>();
+    }
 
     private void Start() {
         if (!transform_Pov) {
@@ -77,13 +83,6 @@ public class Controller : MonoBehaviourPun {
         Init();
         rigid.centerOfMass = centerOfMass;
         canMove = true; Debug.LogWarning("(bool)canMove WAS ACCESSED BY A DEV FUNCTION, CHANGE TO ALTERNATIVE WHEN READY");
-    }
-
-    [PunRPC]
-    void RPC_SetMyNickname() {
-        if (photonView.IsMine) {
-            text_Nickname.text = PhotonLobbyCustomMatchMaking.lobbySingle.nickName;
-        }
     }
 
     [PunRPC]

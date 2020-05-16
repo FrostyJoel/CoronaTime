@@ -2,21 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using Photon.Pun;
 
 public class InteractableCashRegister : Interactable {
 
-    public Text text;
     public AudioClip sellSound;
 
     public override void Interact(CartStorage cartStorage) {
-        cartStorage.SellItems();
-        cartStorage.controller.ResetAtStartPosition();
+        //cartStorage.controller.ResetAtStartPosition();
         if (sellSound) {
-            AudioManager.PlaySound(sellSound, audioGroup);
+            AudioManager.PlaySound(sellSound, audioGroup, transform.position);
         }
-        if (text) {
-            text.text = cartStorage.GetScore().ToString();
+        if (cartStorage.heldProducts.Count > 0) {
+            for (int i = cartStorage.heldProducts.Count-1; i >= 0; i--) {
+                int index = AlreadySold(cartStorage.heldProducts[i], cartStorage);
+                if (index >= 0) {
+                    cartStorage.soldProducts[index].amount += 1;
+                } else {
+                    SoldProduct soldProduct_ = new SoldProduct();
+                    soldProduct_.parentProduct = cartStorage.heldProducts[i];
+                    soldProduct_.amount = 1;
+                    cartStorage.soldProducts.Add(soldProduct_);
+                }
+                photonView.RPC("RPC_DestroyProduct", RpcTarget.All, cartStorage.heldProducts[i].index);
+            }
+            cartStorage.heldProducts.Clear();
+            cartStorage.heldProductModels.Clear();
+            ListScore(cartStorage);
         }
-        print(cartStorage.GetScore());
+    }
+
+    void ListScore(CartStorage cartStorage) {
+        cartStorage.sbListingsList[cartStorage.GetCorrespondingSbListing(cartStorage.photonView.ViewID)].text_Score.text = cartStorage.GetScore().ToString();
+    }
+    
+    int AlreadySold(Product product, CartStorage cartStorage) {
+        int index = -1;
+        if (cartStorage.soldProducts.Count > 0) {
+            for (int i = 0; i < cartStorage.soldProducts.Count; i++) {
+                if (cartStorage.soldProducts[i].parentProduct.prefab == product.prefab) {
+                    index = i;
+                    break;
+                }
+            }
+        }
+        return index;
+    }
+
+    [PunRPC]
+    void RPC_DestroyProduct(int index) {
+        Destroy(PhotonProductList.staticProductList[index].gameObject);
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Outline))]
 public class InteractableProduct : Interactable {
 
+    [SerializeField]
     public Product scriptableProduct;
     public int index;
 
@@ -16,9 +17,9 @@ public class InteractableProduct : Interactable {
 
     public Place currentPlace;
 
-    private void Awake() {
-        scriptableProduct = Product.MakeProductInstance(scriptableProduct);
-    }
+    //private void Awake() {
+    //    scriptableProduct = Product.MakeProductInstance(scriptableProduct);
+    //}
 
     public override void Interact(CartStorage cartStorage) {
         //Debug.Log(index + " interact");

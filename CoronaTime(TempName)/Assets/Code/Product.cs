@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu][System.Serializable]
 public class Product : ScriptableObject {
     public GameObject prefab;
-    public int scoreValue;
+    public int scoreValue, index;
 
     public static Product MakeProductInstance(Product product) {
         Product product1 = ScriptableObject.CreateInstance("Product") as Product;

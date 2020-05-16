@@ -29,6 +29,8 @@ public class PhotonProductListEditor : Editor {
                 InteractableProduct tempProduct = interactableProductArray[i];
                 ipList.Add(tempProduct);
                 tempProduct.index = i;
+                tempProduct.scriptableProduct = Product.MakeProductInstance(tempProduct.scriptableProduct);
+                tempProduct.scriptableProduct.index = i;
                 EditorUtility.SetDirty(tempProduct);
             }
             photonProductList.productList = ipList;

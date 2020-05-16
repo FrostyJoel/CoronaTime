@@ -58,6 +58,10 @@ MonoBehaviour:
   - ExampleSetBool
   - RPC_SetMyNickname
   - RPC_SetNicknameTargets
+  - RPC_AddScoreboardListing
+  - RPC_GlobalInit
+  - RPC_SetScoreboardListings
+  - RPC_DestroyProduct
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

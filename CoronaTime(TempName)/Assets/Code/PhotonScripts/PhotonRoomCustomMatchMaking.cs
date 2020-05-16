@@ -176,7 +176,8 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     [PunRPC]
     void RPC_CreatePlayer() {
         Vector3 pos = new Vector3(playersInGame, 0, 0);
-        PhotonNetwork.Instantiate(roomSingle.playerPrefab.name, pos, Quaternion.identity);
+        PhotonNetwork.Instantiate(playerPrefab.name, pos, Quaternion.identity);
+
         Outline[] allOutlines = FindObjectsOfType<Outline>();
         foreach (Outline allOLine in allOutlines) {
             allOLine.enabled = false;
