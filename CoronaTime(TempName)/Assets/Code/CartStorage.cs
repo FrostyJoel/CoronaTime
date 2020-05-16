@@ -6,7 +6,7 @@ using UnityEngine;
 public class CartStorage : MonoBehaviourPunCallbacks {
     public Transform holder;
     [HideInInspector] public Controller controller;
-    public int interactRange, maxItemsHeld;
+    public int interactRange, maxItemsHeld, score;
 
     public List<Transform> itemHolders = new List<Transform>();
     [HideInInspector] public List<Product> heldProducts = new List<Product>();
@@ -33,35 +33,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         photonView.RPC("RPC_SetScoreboardListings", RpcTarget.All);
     }
 
-    [PunRPC]
-    void RPC_SetScoreboardListings() {
-        ClearListing();
-        if (photonView.IsMine) {
-            CartStorage[] storages = FindObjectsOfType<CartStorage>();
-            for (int i = 0; i < storages.Length; i++) {
-                GameObject sbListingObject = Instantiate(prefab_ScoreboardListing, transform_Scoreboard);
-                ScriptScoreboardListing sbListing = sbListingObject.GetComponent<ScriptScoreboardListing>();
-                PhotonView pv = storages[i].photonView;
-                sbListingsList.Add(sbListing);
-                sbListing.text_Username.text = PhotonRoomCustomMatchMaking.roomSingle.RemoveIdFromNickname(pv.Owner.NickName);
-                sbListing.text_Score.text = "0";
-                sbListing.id = pv.ViewID;
-            }
-        }
-    }
-
-    void ClearListing() {
-        if (photonView.IsMine) {
-            if (sbListingsList.Count > 0) {
-                for (int i = 0; i < sbListingsList.Count; i++) {
-                    try {
-                        Destroy(sbListingsList[i].gameObject);
-                    } catch { }
-                }
-            }
-        }
-    }
-
     private void Update() {
         if (photonView.IsMine || controller.playerView.devView) {
             if (Input.GetButtonDown("Interact")) {
@@ -75,24 +46,41 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         }
     }
 
+    public void UpdateScore() {
+        score = GetScore();
+        photonView.RPC("RPC_UpdateScoreboardScore", RpcTarget.All, photonView.ViewID, score);
+    }
+
+    [PunRPC]
+    void RPC_UpdateScoreboardScore(int id, int newScore) {
+        CartStorage[] storages = FindObjectsOfType<CartStorage>();
+        for (int iB = 0; iB < storages.Length; iB ++) {
+            for (int i = 0; i < storages[iB].sbListingsList.Count; i++) {
+                if (storages[iB].sbListingsList[i].id == id) {
+                    storages[iB].sbListingsList[i].text_Score.text = newScore.ToString();
+                }
+                Debug.Log("ID :" + id + ", NewScore :" + newScore + ", sbListingList index :" + i);
+            }
+        }
+    }
+
+    void ClearListing() {
+        if (sbListingsList.Count > 0) {
+            for (int i = 0; i < sbListingsList.Count; i++) {
+                try {
+                    Destroy(sbListingsList[i].gameObject);
+                } catch { }
+            }
+        }
+        sbListingsList.Clear();
+    }
+
     public bool AddToCart(int index) {
         if (heldProducts.Count < maxItemsHeld) {
             photonView.RPC("RPC_AddToCart", RpcTarget.All, index, photonView.ViewID);
             return true;
         } else {
             return false;
-        }
-    }
-
-    [PunRPC]
-    void RPC_AddToCart(int productListIndex, int id) {
-        if(photonView.ViewID == id) {
-            GameObject productObject = PhotonProductList.staticProductList[productListIndex].gameObject;
-            heldProducts.Add(PhotonProductList.staticProductList[productListIndex].scriptableProduct);
-            heldProductModels.Add(productObject);
-            productObject.transform.SetParent(itemHolders[heldProducts.Count - 1]);
-            productObject.transform.localPosition = Vector3.zero;
-            productObject.transform.localRotation = Quaternion.Euler(Vector3.zero);
         }
     }
 
@@ -107,7 +95,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         return index;
     }
 
-    public int GetScore() {
+    int GetScore() {
         int score = 0;
         if(soldProducts.Count > 0) {
             for (int i = 0; i < soldProducts.Count; i++) {
@@ -122,5 +110,32 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         tempProduct.prefab = product.prefab;
         tempProduct.scoreValue = product.scoreValue;
         return tempProduct;
+    }
+
+    [PunRPC]
+    void RPC_AddToCart(int productListIndex, int id) {
+        if(photonView.ViewID == id) {
+            GameObject productObject = PhotonProductList.staticProductList[productListIndex].gameObject;
+            heldProducts.Add(PhotonProductList.staticProductList[productListIndex].scriptableProduct);
+            heldProductModels.Add(productObject);
+            productObject.transform.SetParent(itemHolders[heldProducts.Count - 1]);
+            productObject.transform.localPosition = Vector3.zero;
+            productObject.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        }
+    }
+
+    [PunRPC]
+    void RPC_SetScoreboardListings() {
+        ClearListing();
+        CartStorage[] storages = FindObjectsOfType<CartStorage>();
+        for (int i = 0; i < storages.Length; i++) {
+            GameObject sbListingObject = Instantiate(prefab_ScoreboardListing, transform_Scoreboard);
+            ScriptScoreboardListing sbListing = sbListingObject.GetComponent<ScriptScoreboardListing>();
+            PhotonView pv = storages[i].photonView;
+            sbListingsList.Add(sbListing);
+            sbListing.text_Username.text = PhotonRoomCustomMatchMaking.roomSingle.RemoveIdFromNickname(pv.Owner.NickName);
+            sbListing.text_Score.text = "0";
+            sbListing.id = pv.ViewID;
+        }
     }
 }

@@ -28,14 +28,10 @@ public class InteractableCashRegister : Interactable {
             }
             cartStorage.heldProducts.Clear();
             cartStorage.heldProductModels.Clear();
-            ListScore(cartStorage);
+            cartStorage.UpdateScore();
         }
     }
 
-    void ListScore(CartStorage cartStorage) {
-        cartStorage.sbListingsList[cartStorage.GetCorrespondingSbListing(cartStorage.photonView.ViewID)].text_Score.text = cartStorage.GetScore().ToString();
-    }
-    
     int AlreadySold(Product product, CartStorage cartStorage) {
         int index = -1;
         if (cartStorage.soldProducts.Count > 0) {

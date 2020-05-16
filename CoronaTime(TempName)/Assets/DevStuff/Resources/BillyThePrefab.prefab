@@ -733,6 +733,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   interactRange: 6
   maxItemsHeld: 8
+  score: 0
   itemHolders: []
   heldProducts: []
   heldProductModels: []
