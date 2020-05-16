@@ -96,7 +96,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     int GetScore() {
-        int scoreB = score;
+        int scoreB = 0;
         if(soldProducts.Count > 0) {
             for (int i = 0; i < soldProducts.Count; i++) {
                 scoreB += soldProducts[i].parentProduct.scoreValue * soldProducts[i].amount;
