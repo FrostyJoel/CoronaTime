@@ -59,7 +59,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 if (storages[iB].sbListingsList[i].id == id) {
                     storages[iB].sbListingsList[i].text_Score.text = newScore.ToString();
                 }
-                Debug.Log("ID :" + id + ", NewScore :" + newScore + ", sbListingList index :" + i);
             }
         }
     }
