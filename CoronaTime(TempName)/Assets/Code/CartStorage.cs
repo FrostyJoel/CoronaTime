@@ -96,13 +96,13 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     int GetScore() {
-        int score = 0;
+        int scoreB = score;
         if(soldProducts.Count > 0) {
             for (int i = 0; i < soldProducts.Count; i++) {
-                score = soldProducts[i].parentProduct.scoreValue * soldProducts[i].amount;
+                scoreB += soldProducts[i].parentProduct.scoreValue * soldProducts[i].amount;
             }
         }
-        return score;
+        return scoreB;
     }
 
     Product MakeDirtyNewInstanceOfProduct(Product product) {
