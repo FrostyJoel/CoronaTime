@@ -22,13 +22,11 @@ public class InteractableProduct : Interactable {
     //}
 
     public override void Interact(CartStorage cartStorage) {
-        //Debug.Log(index + " interact");
         if (currentPlace == Place.InShelve && cartStorage.AddToCart(index)) {
-            //currentPlace = Place.InCart;
-            //if (GetComponent<Outline>())
-            //{
-            //    GetComponent<Outline>().enabled = false;
-            //}
+            currentPlace = Place.InCart;
+            if (GetComponent<Outline>()) {
+                GetComponent<Outline>().enabled = false;
+            }
         }
     }
 }
