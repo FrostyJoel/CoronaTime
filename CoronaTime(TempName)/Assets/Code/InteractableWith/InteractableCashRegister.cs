@@ -36,7 +36,7 @@ public class InteractableCashRegister : Interactable {
         int index = -1;
         if (cartStorage.soldProducts.Count > 0) {
             for (int i = 0; i < cartStorage.soldProducts.Count; i++) {
-                if (cartStorage.soldProducts[i].parentProduct.prefab == product.prefab) {
+                if (cartStorage.soldProducts[i].parentProduct.index == product.index) {
                     index = i;
                     break;
                 }
