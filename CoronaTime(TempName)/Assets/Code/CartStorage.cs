@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CartStorage : MonoBehaviourPunCallbacks {
+    public static CartStorage cartStorageSingle;
     public Transform holder;
     [HideInInspector] public Controller controller;
     public int interactRange, maxItemsHeld, score;
@@ -19,7 +20,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     [Header("HideInInspector")]
     public List<ScriptScoreboardListing> sbListingsList = new List<ScriptScoreboardListing>();
-
+    public CartStorage[] storages;
     private void Awake() {
         if (holder) {
             for (int i = 0; i < holder.childCount; i++) {
@@ -47,20 +48,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     public void UpdateScore() {
-        score = GetScore();
-        photonView.RPC("RPC_UpdateScoreboardScore", RpcTarget.All, photonView.ViewID, score);
-    }
-
-    [PunRPC]
-    void RPC_UpdateScoreboardScore(int id, int newScore) {
-        CartStorage[] storages = FindObjectsOfType<CartStorage>();
-        for (int iB = 0; iB < storages.Length; iB ++) {
-            for (int i = 0; i < storages[iB].sbListingsList.Count; i++) {
-                if (storages[iB].sbListingsList[i].id == id) {
-                    storages[iB].sbListingsList[i].text_Score.text = newScore.ToString();
-                }
-            }
-        }
+        photonView.RPC("RPC_UpdateScoreboardScore", RpcTarget.All, photonView.ViewID, GetScore());
     }
 
     void ClearListing() {
@@ -76,7 +64,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     public bool AddToCart(int index) {
         if (heldProducts.Count < maxItemsHeld) {
-            Debug.Log("Adding");
             photonView.RPC("RPC_AddToCart", RpcTarget.All, index, photonView.ViewID);
             return true;
         } else {
@@ -117,6 +104,21 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     [PunRPC]
+    void RPC_UpdateScoreboardScore(int id, int newScore) {
+        for (int iB = 0; iB < storages.Length; iB ++) {
+            if (storages[iB].photonView.ViewID == id) {
+                score = newScore;
+                MaxScoreForPresentationCheck.maxScoreFpsSingle.CheckScore(photonView.ViewID);
+            } 
+            for (int i = 0; i < storages[iB].sbListingsList.Count; i++) {
+                if (storages[iB].sbListingsList[i].id == id) {
+                    storages[iB].sbListingsList[i].text_Score.text = newScore.ToString();
+                }
+            }
+        }
+    }
+
+    [PunRPC]
     void RPC_ClearProducts() {
         heldProducts.Clear();
         heldProductModels.Clear();
@@ -137,7 +139,8 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     [PunRPC]
     void RPC_SetScoreboardListings() {
         ClearListing();
-        CartStorage[] storages = FindObjectsOfType<CartStorage>();
+        storages = FindObjectsOfType<CartStorage>();
+        MaxScoreForPresentationCheck.maxScoreFpsSingle.SetStoragesList(storages);
         for (int i = 0; i < storages.Length; i++) {
             GameObject sbListingObject = Instantiate(prefab_ScoreboardListing, transform_Scoreboard);
             ScriptScoreboardListing sbListing = sbListingObject.GetComponent<ScriptScoreboardListing>();

@@ -51,7 +51,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         Debug.Log("Joined room");
         photonPlayers = PhotonNetwork.PlayerList;
         playersInRoom = photonPlayers.Length;
-        CLearPlayerListings();
+        ClearPlayerListings();
         myNumberInRoom = playersInRoom;
         ListPlayers();
         if (lobbyGameObject) {
@@ -88,13 +88,13 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
             }
         }
 
-        CLearPlayerListings();
+        ClearPlayerListings();
         ListPlayers();
 
         playersInRoom++;
     }
 
-    void CLearPlayerListings() {
+    void ClearPlayerListings() {
         if (playersPanel) {
             for (int i = playersPanel.childCount - 1; i >= 0; i--) {
                 Destroy(playersPanel.GetChild(i).gameObject);
@@ -161,7 +161,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         base.OnPlayerLeftRoom(otherPlayer);
         Debug.Log(otherPlayer.NickName + " left the game");
         playersInRoom--;
-        CLearPlayerListings();
+        ClearPlayerListings();
         ListPlayers();
     }
 
@@ -175,7 +175,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
 
     [PunRPC]
     void RPC_CreatePlayer() {
-        Vector3 pos = new Vector3(playersInGame, 0, 0);
+        Vector3 pos = new Vector3(playersInGame * -2, 0, -1);
         PhotonNetwork.Instantiate(playerPrefab.name, pos, Quaternion.identity);
 
         Outline[] allOutlines = FindObjectsOfType<Outline>();

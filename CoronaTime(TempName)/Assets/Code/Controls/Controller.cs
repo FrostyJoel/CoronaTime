@@ -8,9 +8,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))][RequireComponent(typeof(CartStorage))]
 public class Controller : MonoBehaviourPun {
     public PlayerView playerView;
-    public Transform transform_Pov, transform_PovHolder;
+    public Transform transform_Pov, transform_PovHolder, transform_Head;
     public Text text_Nickname;
     public MeshRenderer[] meshRenderersToDisableLocally;
+    
+    [Space]
     public GameObject localInGameHud;
     public bool hideCursorOnStart;
 
@@ -29,9 +31,9 @@ public class Controller : MonoBehaviourPun {
     [Space] [Range(0, 90)]
     public float camInrangeForRotationDegree;
     public Vector3 centerOfMass;
-    bool canMove;
     float xRotationAxisAngle, yRotationAxisAngle;
 
+    [HideInInspector] public bool canMove;
     [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Rigidbody rigid;
     [HideInInspector] public Vector3 startPosition;
@@ -66,16 +68,6 @@ public class Controller : MonoBehaviourPun {
     }
 
     private void Start() {
-        if (!transform_Pov) {
-            try {
-                transform_Pov = GetComponentInChildren<Camera>().transform;
-            } catch {
-                transform_Pov = new GameObject("POV").transform;
-                transform_Pov.gameObject.AddComponent<Camera>();
-                transform_Pov.SetParent(transform);
-                transform_Pov.localPosition = Vector3.zero;
-            }
-        }
         if (hideCursorOnStart) {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -83,17 +75,6 @@ public class Controller : MonoBehaviourPun {
         Init();
         rigid.centerOfMass = centerOfMass;
         canMove = true; Debug.LogWarning("(bool)canMove WAS ACCESSED BY A DEV FUNCTION, CHANGE TO ALTERNATIVE WHEN READY");
-    }
-
-    [PunRPC]
-    void RPC_SetNicknameTargets() {
-        if (photonView.IsMine) {
-            Controller[] controllers = FindObjectsOfType<Controller>();
-            for (int i = 0; i < controllers.Length; i++) {
-                controllers[i].localPlayerTarget = transform_Pov;
-                controllers[i].text_Nickname.text = PhotonRoomCustomMatchMaking.roomSingle.RemoveIdFromNickname(controllers[i].photonView.Owner.NickName);
-            }
-        }
     }
 
     public void Init() {
@@ -153,6 +134,8 @@ public class Controller : MonoBehaviourPun {
             }
 
             transform_Pov.Rotate(Vector3.left * mouseY);
+            Vector3 headRot = new Vector3(0, transform_Pov.rotation.eulerAngles.y, 0);
+            transform_Head.rotation = Quaternion.Euler(headRot);
             transform_PovHolder.Rotate(Vector3.up * mouseX);
 
             SprintCheck();
@@ -244,5 +227,16 @@ public class Controller : MonoBehaviourPun {
         xRotationAxisAngle = 0;
         yRotationAxisAngle = 0;
         rigid.velocity = Vector3.zero;
+    }
+
+    [PunRPC]
+    void RPC_SetNicknameTargets() {
+        if (photonView.IsMine) {
+            Controller[] controllers = FindObjectsOfType<Controller>();
+            for (int i = 0; i < controllers.Length; i++) {
+                controllers[i].localPlayerTarget = transform_Pov;
+                controllers[i].text_Nickname.text = PhotonRoomCustomMatchMaking.roomSingle.RemoveIdFromNickname(controllers[i].photonView.Owner.NickName);
+            }
+        }
     }
 }
