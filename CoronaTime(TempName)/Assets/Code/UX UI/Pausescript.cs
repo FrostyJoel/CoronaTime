@@ -18,9 +18,5 @@ public class Pausescript : MonoBehaviour
         {
             pauseMenu.SetActive(true);
         }
-        if (pauseMenu == true)
-        {
-           
-        }
     }
 }
