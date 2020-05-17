@@ -140,7 +140,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     void RPC_SetScoreboardListings() {
         ClearListing();
         storages = FindObjectsOfType<CartStorage>();
-        MaxScoreForPresentationCheck.maxScoreFpsSingle.SetStoragesList(storages);
         for (int i = 0; i < storages.Length; i++) {
             GameObject sbListingObject = Instantiate(prefab_ScoreboardListing, transform_Scoreboard);
             ScriptScoreboardListing sbListing = sbListingObject.GetComponent<ScriptScoreboardListing>();

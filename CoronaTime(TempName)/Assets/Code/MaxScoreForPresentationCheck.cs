@@ -10,7 +10,7 @@ public class MaxScoreForPresentationCheck : MonoBehaviourPun {
     public GameObject go_VictoryScreen;
     public VictoryScreenListing[] victoryScreenSlots;
 
-    public List<CartStorage> lstorages = new List<CartStorage>();
+    public CartStorage[] storages;
 
     private void Awake() {
         maxScoreFpsSingle = this;
@@ -22,26 +22,24 @@ public class MaxScoreForPresentationCheck : MonoBehaviourPun {
     }
 
     public void CheckScore(int id) {
-        CartStorage[] storages = FindObjectsOfType<CartStorage>();
-        if (PhotonNetwork.GetPhotonView(id).Owner.IsLocal) {
-            List<int> scores = new List<int>();
-            for (int i = 0; i < storages.Length; i++) {
-                scores.Add(storages[i].score);
-            }
-            scores.Sort();
-            scores.Reverse();
-            for (int i = 0; i < scores.Count; i++) {
-                for (int iB = 0; iB < storages.Length; iB++) {
-                    if (storages[iB].score == scores[i]) {                        
-                        victoryScreenSlots[i].text_Name.text = PhotonRoomCustomMatchMaking.roomSingle.RemoveIdFromNickname(storages[iB].photonView.Owner.NickName);
-                        victoryScreenSlots[i].text_Score.text = scores[i].ToString();
-                        break;
-                    }
+        storages = FindObjectsOfType<CartStorage>();
+        List<int> scores = new List<int>();
+        for (int i = 0; i < storages.Length; i++) {
+            scores.Add(storages[i].score);
+        }
+        scores.Sort();
+        scores.Reverse();
+        for (int i = 0; i < scores.Count; i++) {
+            for (int iB = 0; iB < storages.Length; iB++) {
+                if (storages[iB].score == scores[i]) {
+                    victoryScreenSlots[i].text_Name.text = PhotonRoomCustomMatchMaking.roomSingle.RemoveIdFromNickname(storages[iB].photonView.Owner.NickName);
+                    victoryScreenSlots[i].text_Score.text = scores[i].ToString();
+                    break;
                 }
             }
-            if (scores[0] >= int_MaxRequiredScore) {
-                photonView.RPC("RPC_EndGame", RpcTarget.All);
-            }
+        }
+        if (scores[0] >= int_MaxRequiredScore) {
+            photonView.RPC("RPC_EndGame", RpcTarget.All);
         }
     }
 
@@ -55,12 +53,6 @@ public class MaxScoreForPresentationCheck : MonoBehaviourPun {
         }
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-    }
-
-    public void SetStoragesList(CartStorage[] array_Storages) {
-        for (int i = 0; i < array_Storages.Length; i++) {
-            lstorages.Add(array_Storages[i]);
-        }
     }
 }
 
