@@ -70,10 +70,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer) {
-        //base.OnPlayerEnteredRoom(newPlayer);
         Debug.Log("player joined the room");
-        //CLearPlayerListings();
-        //ListPlayers();
         if (lobbyGameObject) {
             lobbyGameObject.SetActive(false);
         }

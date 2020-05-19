@@ -5086,22 +5086,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneTypes:
-  - zone1: {fileID: 1436494550}
-    zone2: {fileID: 1806921256}
-    zone3: {fileID: 230583622}
-    zone4: {fileID: 1727550540}
-  - zone1: {fileID: 0}
-    zone2: {fileID: 0}
-    zone3: {fileID: 0}
-    zone4: {fileID: 0}
-  - zone1: {fileID: 0}
-    zone2: {fileID: 0}
-    zone3: {fileID: 0}
-    zone4: {fileID: 0}
-  - zone1: {fileID: 0}
-    zone2: {fileID: 0}
-    zone3: {fileID: 0}
-    zone4: {fileID: 0}
+  - zones:
+    - {fileID: 1436494550}
+    - {fileID: 1806921256}
+    - {fileID: 230583622}
+    - {fileID: 1727550540}
+  - zones:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - zones:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - zones:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   order: 
 --- !u!4 &1322241909
 Transform:
