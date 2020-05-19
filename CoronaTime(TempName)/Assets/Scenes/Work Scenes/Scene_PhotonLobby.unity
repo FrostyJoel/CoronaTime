@@ -831,13 +831,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input_Nickname: {fileID: 730616729}
+  input_Roomname: {fileID: 1317728595}
   button_CreateRoom: {fileID: 721340766}
   roomName: 
   nickName: 
   maxPlayers: 4
   roomListingPrefab: {fileID: 642785749550148679, guid: cf50fda99fe2f834a97fdcfd297707ac,
     type: 3}
+  go_MultiplayerPanel: {fileID: 0}
   roomsPanel: {fileID: 725162886}
+  devLobby:
+    dev: 1
 --- !u!4 &750264133
 Transform:
   m_ObjectHideFlags: 0

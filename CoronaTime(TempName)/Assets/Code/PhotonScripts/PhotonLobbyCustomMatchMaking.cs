@@ -8,7 +8,7 @@ using UnityEngine;
 public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCallbacks {
     public static PhotonLobbyCustomMatchMaking lobbySingle;
 
-    public InputField input_Nickname;
+    public InputField input_Nickname, input_Roomname;
     public Button button_CreateRoom;
 
     public string roomName, nickName;
@@ -18,8 +18,17 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
 
     bool enteredNickname, enteredRoomName, connectedToMaster = false;
 
+    public DevLobby devLobby;
+
     private void Awake() {
         lobbySingle = this;
+    }
+
+    private void Start() {
+        if (devLobby.dev) {
+            OpenMultiplayer();
+            input_Roomname.text = PlayerPrefs.GetString("Roomname");
+        }
     }
 
     public void OpenMultiplayer() {
@@ -27,7 +36,9 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
         PhotonNetwork.AutomaticallySyncScene = true;
         EnableDisableRelativeButtons();
         input_Nickname.text = PlayerPrefs.GetString("NickName");
-        go_MultiplayerPanel.SetActive(true);
+        if (go_MultiplayerPanel) {
+            go_MultiplayerPanel.SetActive(true);
+        }
     }
 
     public void LeaveMultiplayer() {
@@ -92,6 +103,7 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     public void OnRoomNameChange(string name) {
         roomName = name;
         enteredRoomName = !string.IsNullOrEmpty(name);
+        PlayerPrefs.SetString("Roomname", name);
         EnableDisableRelativeButtons();
     }
     
@@ -103,4 +115,9 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
             }
         }
     }
+}
+
+[System.Serializable]
+public class DevLobby {
+    public bool dev;
 }

@@ -33,7 +33,7 @@ public class Options : MonoBehaviour
             resolutionStringList.Add(option);
             if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
             {
-                index = i;
+                index = resolutions.Length - 1 - i;
             }
         }
 

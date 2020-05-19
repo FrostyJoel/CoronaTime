@@ -66,6 +66,7 @@ MonoBehaviour:
   - RPC_ClearProducts
   - RPC_RotateHead
   - RPC_EndGame
+  - RPC_UpdateScoreboardListings
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
