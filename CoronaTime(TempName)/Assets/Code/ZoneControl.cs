@@ -4,11 +4,11 @@ using UnityEngine;
 using System.Linq;
 
 public class ZoneControl : MonoBehaviour {
-    public ZoneType[] zoneTypes;
+    public ZoneType[] zoneTypes = new ZoneType[4];
 }
 
-[System.Serializable][CreateAssetMenu]
-public class ZoneType : ScriptableObject {
+[System.Serializable]
+public class ZoneType {
 
     public GameObject zone1;
     public GameObject zone2;
