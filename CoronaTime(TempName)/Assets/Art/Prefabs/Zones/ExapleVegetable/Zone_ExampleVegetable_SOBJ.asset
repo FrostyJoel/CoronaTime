@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Zone_ExampleVegetable_SOBJ
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneType
+  zone1: {fileID: 6886143251573009599, guid: 0df2c4b31cbcdec4fb508c956c6c1260, type: 3}
+  zone2: {fileID: 6763217776327060436, guid: 868a7db13ebd3e043869a4124e53eb10, type: 3}
+  zone3: {fileID: 138416384863996821, guid: a5faae32c9f36ad4490ec4d59beacd9c, type: 3}
+  zone4: {fileID: 3970963395476103972, guid: 2faa1097ac9531c4997447448a741ab5, type: 3}

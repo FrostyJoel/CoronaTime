@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
-public class ZoneControl : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class ZoneControl : MonoBehaviour {
+    public ZoneType[] zoneTypes;
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[System.Serializable][CreateAssetMenu]
+public class ZoneType : ScriptableObject {
+
+    public GameObject zone1;
+    public GameObject zone2;
+    public GameObject zone3;
+    public GameObject zone4;
 }
