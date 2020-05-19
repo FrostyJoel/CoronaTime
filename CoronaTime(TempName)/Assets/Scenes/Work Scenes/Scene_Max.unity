@@ -574,12 +574,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230583622}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.5, y: 5, z: -12.5}
+  m_LocalPosition: {x: 12.499998, y: 5, z: -12.5}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children:
   - {fileID: 1010836537}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 491147663}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &232034968
 PrefabInstance:
@@ -1606,6 +1606,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &491147662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 491147663}
+  m_Layer: 0
+  m_Name: Zone_ExampleVegetables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &491147663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491147662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1436494551}
+  - {fileID: 1806921257}
+  - {fileID: 230583623}
+  - {fileID: 1727550541}
+  m_Father: {fileID: 1322241909}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &515420747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5031,8 +5065,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1322241909}
   - component: {fileID: 1322241908}
+  - component: {fileID: 1322241910}
   m_Layer: 0
-  m_Name: ZoneControl
+  m_Name: Zones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5051,6 +5086,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoneTypes:
+  - zone1: {fileID: 1436494550}
+    zone2: {fileID: 1806921256}
+    zone3: {fileID: 230583622}
+    zone4: {fileID: 1727550540}
   - zone1: {fileID: 0}
     zone2: {fileID: 0}
     zone3: {fileID: 0}
@@ -5063,10 +5102,7 @@ MonoBehaviour:
     zone2: {fileID: 0}
     zone3: {fileID: 0}
     zone4: {fileID: 0}
-  - zone1: {fileID: 0}
-    zone2: {fileID: 0}
-    zone3: {fileID: 0}
-    zone4: {fileID: 0}
+  order: 
 --- !u!4 &1322241909
 Transform:
   m_ObjectHideFlags: 0
@@ -5077,10 +5113,33 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 491147663}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1322241910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322241907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 995
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!114 &1324753493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5760,8 +5819,8 @@ Transform:
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children:
   - {fileID: 209090922}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 491147663}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1456703510
 PrefabInstance:
@@ -6893,12 +6952,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727550540}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.5, y: 5, z: 12.5}
+  m_LocalPosition: {x: 12.499998, y: 5, z: 12.5}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children:
   - {fileID: 1677730659}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 491147663}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1729502324
 MonoBehaviour:
@@ -7211,8 +7270,8 @@ Transform:
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children:
   - {fileID: 2135068153}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 491147663}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1807455136
 MonoBehaviour:
