@@ -68,6 +68,7 @@ MonoBehaviour:
   - RPC_EndGame
   - RPC_UpdateScoreboardListings
   - RandomizeOrder
+  - TurnOnRandomizedZones
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

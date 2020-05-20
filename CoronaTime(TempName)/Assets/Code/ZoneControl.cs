@@ -6,7 +6,6 @@ using UnityEngine;
 public class ZoneControl : MonoBehaviourPun {
     public static ZoneControl zcSingle;
     public List<ZoneType> zoneTypes = new List<ZoneType>();
-    [HideInInspector] public List<int> order = new List<int>();
 
     private void Awake() {
         zcSingle = this;
@@ -21,20 +20,21 @@ public class ZoneControl : MonoBehaviourPun {
 
     [PunRPC]
     void RandomizeOrder() {
-        order.Clear();
+        List<int> newOrder = new List<int>();
         for (int i = 0; i < zoneTypes.Count; i++) {
-            order.Add(i);
+            newOrder.Add(i);
         }
-        for (int i = 0; i < order.Count; i++) {
-            int temp = order[i];
-            int randomIndex = Random.Range(i, order.Count);
-            order[i] = order[randomIndex];
-            order[randomIndex] = temp;
+        for (int i = 0; i < newOrder.Count; i++) {
+            int temp = newOrder[i];
+            int randomIndex = Random.Range(i, newOrder.Count);
+            newOrder[i] = newOrder[randomIndex];
+            newOrder[randomIndex] = temp;
         }
-        TurnRandomizedZonesOn();
+        photonView.RPC("TurnOnRandomizedZones", RpcTarget.All, newOrder.ToArray());
     }
 
-    void TurnRandomizedZonesOn() {
+    [PunRPC]
+    void TurnOnRandomizedZones(int[] newOrder) {
         for (int i = 0; i < zoneTypes.Count; i++) {
             for (int iB = 0; iB < zoneTypes[i].zones.Length; iB++) {
                 if (zoneTypes[i].zones[iB]) {
@@ -42,9 +42,9 @@ public class ZoneControl : MonoBehaviourPun {
                 }
             }
         }
-        for (int i = 0; i < order.Count; i++) {
-            if (zoneTypes[i].zones[order[i]]) {
-                zoneTypes[i].zones[order[i]].SetActive(true);
+        for (int i = 0; i < newOrder.Length; i++) {
+            if (zoneTypes[i].zones[newOrder[i]]) {
+                zoneTypes[i].zones[newOrder[i]].SetActive(true);
             }
         }
     }

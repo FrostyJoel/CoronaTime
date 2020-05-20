@@ -63,6 +63,9 @@ public class Controller : MonoBehaviourPun {
                     meshRenderersToDisableLocally[i].enabled = false;
                 }
             }
+            if (photonView.Owner.IsMasterClient) {
+                ZoneControl.zcSingle.photonView.RPC("RandomizeOrder", RpcTarget.MasterClient);
+            }
         }
         cartStorage = GetComponent<CartStorage>();
     }
