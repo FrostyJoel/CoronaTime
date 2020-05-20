@@ -64,7 +64,9 @@ public class Controller : MonoBehaviourPun {
                 }
             }
             if (photonView.Owner.IsMasterClient) {
-                ZoneControl.zcSingle.photonView.RPC("RandomizeOrder", RpcTarget.MasterClient);
+                if (FindObjectOfType<ZoneControl>()) {
+                    ZoneControl.zcSingle.photonView.RPC("RandomizeOrder", RpcTarget.MasterClient);
+                }
             }
         }
         cartStorage = GetComponent<CartStorage>();
