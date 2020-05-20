@@ -1553,6 +1553,11 @@ PrefabInstance:
       propertyPath: m_CharacterValidation
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6314721557560584622, guid: 16a0aa75df24f1f4291bf58a024e1ddb,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6314721557560584625, guid: 16a0aa75df24f1f4291bf58a024e1ddb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4918,6 +4923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input_Nickname: {fileID: 555217908}
+  input_Roomname: {fileID: 0}
   button_CreateRoom: {fileID: 555217907}
   roomName: 
   nickName: 
@@ -4926,6 +4932,8 @@ MonoBehaviour:
     type: 3}
   go_MultiplayerPanel: {fileID: 555217904}
   roomsPanel: {fileID: 555217906}
+  devLobby:
+    dev: 0
 --- !u!4 &2122416256072817013
 Transform:
   m_ObjectHideFlags: 0
