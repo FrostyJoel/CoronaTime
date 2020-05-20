@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1445595739166596345}
   - component: {fileID: 1445595739166596342}
   m_Layer: 5
-  m_Name: Text_ScoreboardScore
+  m_Name: Text_ScoreboardItemsInCart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,10 +74,10 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5/6
+  m_Text: 0 / 0
 --- !u!114 &1445595739166596342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PLayername
+  m_Text: Max
 --- !u!114 &1445595739476851061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 5606955456577684208}
   - component: {fileID: 1445595738474726242}
   - component: {fileID: 7497183585226781934}
+  - component: {fileID: 114370661601943514}
   m_Layer: 5
   m_Name: Prefab_ScoreboardListing
   m_TagString: Untagged
@@ -301,6 +302,22 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!114 &114370661601943514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263856385427521299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c83474149b2ed4da39f3665c4c085e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  text_Username: {fileID: 1445595739476851059}
+  text_ItemsInCart: {fileID: 1445595739166596345}
+  text_Score: {fileID: 8329858043861140576}
 --- !u!1 &8329858043861140573
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +331,7 @@ GameObject:
   - component: {fileID: 8329858043861140576}
   - component: {fileID: 8329858043861140579}
   m_Layer: 5
-  m_Name: Text_ScoreboardScore (1)
+  m_Name: Text_ScoreboardScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -337,7 +354,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 118.55, y: 100}
+  m_SizeDelta: {x: 111.85, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8329858043861140577
 CanvasRenderer:
@@ -372,13 +389,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 30
-    m_Alignment: 5
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 999999
+  m_Text: 0
 --- !u!114 &8329858043861140579
 MonoBehaviour:
   m_ObjectHideFlags: 0
