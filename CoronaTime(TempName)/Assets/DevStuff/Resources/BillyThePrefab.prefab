@@ -461,7 +461,7 @@ MonoBehaviour:
   - {fileID: 6794843178031516315}
   localInGameHud: {fileID: 1152332192926536214}
   hideCursorOnStart: 1
-  walkSpeed: 0.08
+  defaultWalkSpeed: 0.08
   sprintMultiplier: 1.3
   sprintSpeedWindUpDivider: 60
   sprintSpeedWindDownDivider: 20
@@ -522,6 +522,8 @@ MonoBehaviour:
     type: 3}
   sbListingsList: []
   storages: []
+  currentPowerUp: {fileID: 0}
+  affectingMe: []
 --- !u!65 &6388710439779865806
 BoxCollider:
   m_ObjectHideFlags: 0

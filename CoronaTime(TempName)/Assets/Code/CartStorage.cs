@@ -13,7 +13,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     [HideInInspector] public List<Product> heldProducts = new List<Product>();
     [HideInInspector] public List<GameObject> heldProductModels = new List<GameObject>();
     [HideInInspector] public List<SoldProduct> soldProducts = new List<SoldProduct>();
-
+    
     [Header("Scoreboard")]
     public Transform transform_Scoreboard;
     public GameObject prefab_ScoreboardListing;
@@ -21,6 +21,8 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     [Header("HideInInspector")]
     public List<ScriptScoreboardListing> sbListingsList = new List<ScriptScoreboardListing>();
     public CartStorage[] storages;
+    public PowerUp currentPowerUp;
+
     private void Awake() {
         if (holder) {
             for (int i = 0; i < holder.childCount; i++) {
@@ -60,6 +62,15 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             }
         }
         sbListingsList.Clear();
+    }
+
+    public bool SetPowerUp(int index) {
+        if (heldProducts.Count < maxItemsHeld) {
+            photonView.RPC("RPC_SetPowerUp", RpcTarget.All, index, photonView.ViewID);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public bool AddToCart(int index) {
@@ -125,10 +136,22 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     [PunRPC]
-    void RPC_AddToCart(int productListIndex, int id) {
+    void RPC_SetPowerUp(int index, int id) {
+        if (photonView.ViewID == id) {
+            GameObject productObject = PhotonProductList.staticProductList[index].gameObject;
+            heldProducts.Add(PhotonProductList.staticProductList[index].scriptableProduct);
+            heldProductModels.Add(productObject);
+            productObject.transform.SetParent(itemHolders[heldProducts.Count - 1]);
+            productObject.transform.localPosition = Vector3.zero;
+            productObject.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        }
+    }
+
+    [PunRPC]
+    void RPC_AddToCart(int index, int id) {
         if(photonView.ViewID == id) {
-            GameObject productObject = PhotonProductList.staticProductList[productListIndex].gameObject;
-            heldProducts.Add(PhotonProductList.staticProductList[productListIndex].scriptableProduct);
+            GameObject productObject = PhotonProductList.staticProductList[index].gameObject;
+            heldProducts.Add(PhotonProductList.staticProductList[index].scriptableProduct);
             heldProductModels.Add(productObject);
             productObject.transform.SetParent(itemHolders[heldProducts.Count - 1]);
             productObject.transform.localPosition = Vector3.zero;

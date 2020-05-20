@@ -17,7 +17,7 @@ public class Controller : MonoBehaviourPun {
     public bool hideCursorOnStart;
 
     [Header("Keyboard Movement")]
-    public float walkSpeed = 0.1f;
+    public float defaultWalkSpeed;
     public float sprintMultiplier = 1.2f, sprintSpeedWindUpDivider, sprintSpeedWindDownDivider, sprintFov = 62,
         sprintFovWindUpDivider, sprintFovWindDownDivider, keyboardCartRotationSpeed = 1.5f;
 
@@ -39,10 +39,13 @@ public class Controller : MonoBehaviourPun {
     [HideInInspector] public Vector3 startPosition;
     [HideInInspector] public Quaternion startRotation;
     [HideInInspector] public CartStorage cartStorage;
+    [HideInInspector] public float currentWalkSpeed;
 
     Camera[] cams;
     AudioListener audioListeners;
     float defaultFov, currentSprintValue, currentFovValue;
+    [Header("HideInInspector")]
+    public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
 
     private void Awake() {
         TurnCollidersOnOff(false);
@@ -82,6 +85,10 @@ public class Controller : MonoBehaviourPun {
         canMove = true; Debug.LogWarning("(bool)canMove WAS ACCESSED BY A DEV FUNCTION, CHANGE TO ALTERNATIVE WHEN READY");
     }
 
+    private void Update() {
+        CheckAndApplyBuffs();
+    }
+
     public void Init() {
         startPosition = transform.position;
         startRotation = transform.rotation;
@@ -99,6 +106,14 @@ public class Controller : MonoBehaviourPun {
         Collider[] colliders = GetComponentsInChildren<Collider>();
         for (int i = 0; i < colliders.Length; i++) {
             colliders[i].enabled = state;
+        }
+    }
+
+    void CheckAndApplyBuffs() {
+        if (powerups_AffectingMe.Count > 0) {
+            for (int i = 0; i < powerups_AffectingMe.Count; i++) {
+                powerups_AffectingMe[i].Effect(this, cartStorage);
+            }
         }
     }
 
@@ -144,7 +159,7 @@ public class Controller : MonoBehaviourPun {
             transform_PovHolder.Rotate(Vector3.up * mouseX);
 
             SprintCheck();
-            float vertical = Input.GetAxis("Vertical") * walkSpeed * currentSprintValue;
+            float vertical = Input.GetAxis("Vertical") * currentWalkSpeed * currentSprintValue;
 
             if (Input.GetAxis("Horizontal") != 0) {
                 currentRotationSpeed = Input.GetAxis("Horizontal") * keyboardCartRotationSpeed;

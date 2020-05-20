@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 public class PhotonProductList : MonoBehaviour {
-    [HideInInspector] public List<InteractableProduct> productList = new List<InteractableProduct>();
+    /*[HideInInspector]*/public List<InteractableProduct> productList = new List<InteractableProduct>();
     public static List<InteractableProduct> staticProductList = new List<InteractableProduct>();
     private void Awake() {
         staticProductList = productList;
@@ -29,8 +29,10 @@ public class PhotonProductListEditor : Editor {
                 InteractableProduct tempProduct = interactableProductArray[i];
                 ipList.Add(tempProduct);
                 tempProduct.index = i;
-                tempProduct.scriptableProduct = Product.MakeProductInstance(tempProduct.scriptableProduct);
-                tempProduct.scriptableProduct.index = i;
+                if (tempProduct.scriptableProduct) {
+                    tempProduct.scriptableProduct = Product.MakeProductInstance(tempProduct.scriptableProduct);
+                    tempProduct.scriptableProduct.index = i;
+                }
                 EditorUtility.SetDirty(tempProduct);
             }
             photonProductList.productList = ipList;
