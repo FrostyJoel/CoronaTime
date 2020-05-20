@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4106070567913228994}
   - component: {fileID: 4106070567911934690}
   - component: {fileID: 4106070567910803490}
-  - component: {fileID: 1740680997525273131}
+  - component: {fileID: 6692467282464858167}
   m_Layer: 0
   m_Name: BD Bordje
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1740680997525273131
+--- !u!65 &6692467282464858167
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

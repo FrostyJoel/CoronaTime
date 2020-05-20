@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6361884557749937014}
   m_Layer: 0
-  m_Name: Full Kassa
+  m_Name: Full Kassa(L)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,16 +174,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6373972089572418635, guid: 2b3ccd9c219e5d84987198e6c8501716,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6373972089572418635, guid: 2b3ccd9c219e5d84987198e6c8501716,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b3ccd9c219e5d84987198e6c8501716, type: 3}

@@ -63,7 +63,7 @@ public class Controller : MonoBehaviourPun {
                     meshRenderersToDisableLocally[i].enabled = false;
                 }
             }
-            if (photonView.Owner.IsMasterClient) {
+            if (PhotonNetwork.IsConnected && photonView.Owner.IsMasterClient) {
                 if (FindObjectOfType<ZoneControl>()) {
                     ZoneControl.zcSingle.photonView.RPC("RandomizeOrder", RpcTarget.MasterClient);
                 }
