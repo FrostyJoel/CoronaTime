@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class PhotonProductList : MonoBehaviour {
     /*[HideInInspector]*/ public List<InteractableProduct> interactableProductList = new List<InteractableProduct>();
-    /*[HideInInspector]*/ public List<UseableProduct> useableProductList = new List<UseableProduct>();
+    /*[HideInInspector]*/ public List<PowerUp> useableProductList = new List<PowerUp>();
     public static List<InteractableProduct> staticInteratableProductList = new List<InteractableProduct>();
-    public static List<UseableProduct> staticUseableProductList = new List<UseableProduct>();
+    public static List<PowerUp> staticUseableProductList = new List<PowerUp>();
     private void Awake() {
         staticInteratableProductList = interactableProductList;
         staticUseableProductList = useableProductList;
@@ -49,17 +49,13 @@ public class PhotonProductListEditor : Editor {
     }
 
     void SetPowerUpList() {
-        UseableProduct[] useableProductArray = FindObjectsOfType<UseableProduct>();
-        List<UseableProduct> upList = new List<UseableProduct>();
+        PowerUp[] useableProductArray = FindObjectsOfType<PowerUp>();
+        List<PowerUp> upList = new List<PowerUp>();
         photonProductList.useableProductList.Clear();
         for (int i = 0; i < useableProductArray.Length; i++) {
-            UseableProduct tempProduct = useableProductArray[i];
+            PowerUp tempProduct = useableProductArray[i];
             upList.Add(tempProduct);
             tempProduct.index = i;
-            if (tempProduct.scriptablePowerUp) {
-                tempProduct.scriptablePowerUp = PowerUp.MakeInstance(tempProduct.scriptablePowerUp);
-                tempProduct.scriptablePowerUp.index = i;
-            }
             EditorUtility.SetDirty(tempProduct);
         }
         photonProductList.useableProductList = upList;

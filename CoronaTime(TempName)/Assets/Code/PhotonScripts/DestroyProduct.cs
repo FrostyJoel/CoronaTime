@@ -1,7 +1,4 @@
 ﻿using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class DestroyProduct : MonoBehaviourPun {
     public static DestroyProduct destroyProduct;
@@ -14,6 +11,13 @@ public class DestroyProduct : MonoBehaviourPun {
     void RPC_DestroyProduct(int index) {
         try {
             Destroy(PhotonProductList.staticInteratableProductList[index].gameObject);
+        } catch { }
+    }
+
+    [PunRPC]
+    void RPC_DestroyUseAbleProduct (int index) {
+        try {
+            Destroy(PhotonProductList.staticUseableProductList[index].gameObject);
         } catch { }
     }
 }

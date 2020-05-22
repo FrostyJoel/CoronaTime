@@ -1,9 +1,7 @@
 ﻿using Photon.Pun;
-using Photon.Realtime;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))][RequireComponent(typeof(CartStorage))]
 public class Controller : MonoBehaviourPun {
@@ -41,7 +39,7 @@ public class Controller : MonoBehaviourPun {
     [HideInInspector] public Quaternion startRotation;
     [HideInInspector] public CartStorage cartStorage;
     /*[HideInInspector]*/ public float currentWalkSpeed;
-    /*HideInInspector]*/ public UseableProduct useableProduct;
+    /*HideInInspector]*/ public PowerUp useableProduct;
     public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
 
     Camera[] cams;
@@ -90,7 +88,9 @@ public class Controller : MonoBehaviourPun {
     }
 
     private void Update() {
-        CheckAndApplyBuffs();
+        if (photonView.IsMine) {
+            CheckAndApplyPowerUpFX();
+        }
     }
 
     public void Init() {
@@ -113,7 +113,7 @@ public class Controller : MonoBehaviourPun {
         }
     }
 
-    void CheckAndApplyBuffs() {
+    void CheckAndApplyPowerUpFX() {
         currentWalkSpeed = defaultWalkSpeed;
         if (powerups_AffectingMe.Count > 0) {
             for (int i = 0; i < powerups_AffectingMe.Count; i++) {

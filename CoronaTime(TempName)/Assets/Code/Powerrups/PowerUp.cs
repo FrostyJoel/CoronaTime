@@ -1,29 +1,27 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 
-public class PowerUp : ScriptableObject {
-
-    public GameObject prefab;
-    public float newValueDuringFX, durationInSeconds, durationSpentInSeconds, index;
+public class PowerUp : Interactable {
+    public float newValueDuringFX, durationInSeconds;
+    [Header("HideInInspector")]
+    public int index;
     public Controller affectedController;
     public CartStorage affectedCartStorage;
     public bool inUse;
+    public float durationSpentInSeconds;
 
-    public static PowerUp MakeInstance(PowerUp pu) {
-        PowerUp pu1 = ScriptableObject.CreateInstance("PowerUp") as PowerUp;
-
-        pu1.name = pu.name;
-        pu1.prefab = pu.prefab;
-        pu1.newValueDuringFX = pu.newValueDuringFX;
-        pu1.durationInSeconds = pu.durationInSeconds;
-        pu1.index = pu.index;
-
-        return pu1;
+    private void Update() {
+        if (currentPlace == Place.InCart) {
+            if (Input.GetButtonDown("UsePowerUp")) {
+                if (!inUse) {
+                    Use();
+                }
+            }
+        }
     }
 
-    public virtual void Use(Controller controller, CartStorage storage) {
+    public virtual void Use() {
         if (!inUse) {
-            affectedController = controller;
-            affectedCartStorage = storage;
             affectedController.powerups_AffectingMe.Add(this);
             inUse = true;
         }
@@ -33,21 +31,19 @@ public class PowerUp : ScriptableObject {
 
     }
 
+    public override void Interact(CartStorage cartStorage) {
+        if (currentPlace == Place.InShelve && cartStorage.SetPowerUp(index)) {
+            currentPlace = Place.InCart;
+            affectedCartStorage = cartStorage;
+            affectedController = cartStorage.controller;
+            if (GetComponent<Outline>()) {
+                GetComponent<Outline>().enabled = false;
+            }
+        }
+    }
+
     public virtual void StopUsing() {
         affectedController.powerups_AffectingMe.Remove(this);
-    }
-}
-
-[CreateAssetMenu]
-public class SpeedUp : PowerUp {
-    
-    public override void Effect() {
-        if (durationSpentInSeconds < durationInSeconds) {
-            affectedController.currentWalkSpeed = newValueDuringFX;
-            durationSpentInSeconds += Time.deltaTime;
-        } else {
-            affectedController.currentWalkSpeed = affectedController.defaultWalkSpeed;
-            StopUsing();
-        }
+        DestroyProduct.destroyProduct.photonView.RPC("RPC_DestroyUseAbleProduct", RpcTarget.All, index);
     }
 }
