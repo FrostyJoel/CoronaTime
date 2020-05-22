@@ -5,7 +5,7 @@ public class Product : ScriptableObject {
     public GameObject prefab;
     public int scoreValue, index;
 
-    public static Product MakeProductInstance(Product product) {
+    public static Product MakeInstance(Product product) {
         Product product1 = ScriptableObject.CreateInstance("Product") as Product;
 
         product1.name = product.name;

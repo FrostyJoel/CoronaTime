@@ -107,8 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioGroup: 0
-  scriptableProduct: {fileID: 11400000, guid: 8eeefae8157276245a395f4cd49f168a, type: 2}
   currentPlace: 0
+  scriptableProduct: {fileID: 11400000, guid: 8eeefae8157276245a395f4cd49f168a, type: 2}
+  index: 0
 --- !u!114 &114966182420232150
 MonoBehaviour:
   m_ObjectHideFlags: 0

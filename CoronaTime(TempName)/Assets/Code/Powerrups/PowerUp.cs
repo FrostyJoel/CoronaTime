@@ -1,29 +1,53 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PowerUp : Product {
+public class PowerUp : ScriptableObject {
 
-    public float durationInSeconds;
-    public float durationSpentInSeconds;
+    public GameObject prefab;
+    public float newValueDuringFX, durationInSeconds, durationSpentInSeconds, index;
+    public Controller affectedController;
+    public CartStorage affectedCartStorage;
+    public bool inUse;
 
-    public virtual void SpecialBehaviour() { }
+    public static PowerUp MakeInstance(PowerUp pu) {
+        PowerUp pu1 = ScriptableObject.CreateInstance("PowerUp") as PowerUp;
 
-    public virtual void Effect(Controller affectedController, CartStorage affectedCartStorage) {
+        pu1.name = pu.name;
+        pu1.prefab = pu.prefab;
+        pu1.newValueDuringFX = pu.newValueDuringFX;
+        pu1.durationInSeconds = pu.durationInSeconds;
+        pu1.index = pu.index;
 
+        return pu1;
+    }
+
+    public virtual void Use(Controller controller, CartStorage storage) {
+        if (!inUse) {
+            affectedController = controller;
+            affectedCartStorage = storage;
+            affectedController.powerups_AffectingMe.Add(this);
+            inUse = true;
+        }
+    }
+
+    public virtual void Effect() {
+
+    }
+
+    public virtual void StopUsing() {
+        affectedController.powerups_AffectingMe.Remove(this);
     }
 }
 
 [CreateAssetMenu]
-public class PU_SpeedUpUser : PowerUp {
-
-    public override void SpecialBehaviour() {
-
-    }
-
-    public override void Effect(Controller affectedController, CartStorage affectedCartStorage) {
-        if(durationSpentInSeconds < durationInSeconds) {
-        }
+public class SpeedUp : PowerUp {
+    
+    public override void Effect() {
+        if (durationSpentInSeconds < durationInSeconds) {
+            affectedController.currentWalkSpeed = newValueDuringFX;
             durationSpentInSeconds += Time.deltaTime;
+        } else {
+            affectedController.currentWalkSpeed = affectedController.defaultWalkSpeed;
+            StopUsing();
+        }
     }
 }

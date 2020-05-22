@@ -33,19 +33,20 @@ public class Controller : MonoBehaviourPun {
     public Vector3 centerOfMass;
     float xRotationAxisAngle, yRotationAxisAngle;
 
+    [Header("HideInInspector")]
     [HideInInspector] public bool canMove;
     [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Rigidbody rigid;
     [HideInInspector] public Vector3 startPosition;
     [HideInInspector] public Quaternion startRotation;
     [HideInInspector] public CartStorage cartStorage;
-    [HideInInspector] public float currentWalkSpeed;
+    /*[HideInInspector]*/ public float currentWalkSpeed;
+    /*HideInInspector]*/ public UseableProduct useableProduct;
+    public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
 
     Camera[] cams;
     AudioListener audioListeners;
     float defaultFov, currentSprintValue, currentFovValue;
-    [Header("HideInInspector")]
-    public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
 
     private void Awake() {
         TurnCollidersOnOff(false);
@@ -58,7 +59,6 @@ public class Controller : MonoBehaviourPun {
         SetCameraFOVS();
         audioListeners = GetComponentInChildren<AudioListener>();
         audioListeners.enabled = false;
-        photonView.RPC("RPC_SetNicknameTargets", RpcTarget.All);
         if (photonView.IsMine || playerView.devView) {
             text_Nickname.gameObject.SetActive(false);
             if (meshRenderersToDisableLocally.Length > 0) {
@@ -66,7 +66,11 @@ public class Controller : MonoBehaviourPun {
                     meshRenderersToDisableLocally[i].enabled = false;
                 }
             }
-            if (PhotonNetwork.IsConnected && photonView.Owner.IsMasterClient) {
+        }
+        if (PhotonNetwork.IsConnected) {
+            photonView.RPC("RPC_SetNicknameTargets", RpcTarget.All);
+
+            if (photonView.Owner.IsMasterClient) {
                 if (FindObjectOfType<ZoneControl>()) {
                     ZoneControl.zcSingle.photonView.RPC("RandomizeOrder", RpcTarget.MasterClient);
                 }
@@ -110,9 +114,10 @@ public class Controller : MonoBehaviourPun {
     }
 
     void CheckAndApplyBuffs() {
+        currentWalkSpeed = defaultWalkSpeed;
         if (powerups_AffectingMe.Count > 0) {
             for (int i = 0; i < powerups_AffectingMe.Count; i++) {
-                powerups_AffectingMe[i].Effect(this, cartStorage);
+                powerups_AffectingMe[i].Effect();
             }
         }
     }

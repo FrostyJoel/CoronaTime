@@ -4,7 +4,7 @@ public class SoldProduct : ScriptableObject {
     public Product parentProduct;
     public int amount;
 
-    public static SoldProduct MakeSoldProductInstance(SoldProduct soldProduct) {
+    public static SoldProduct MakeInstance(SoldProduct soldProduct) {
         SoldProduct soldProduct1 = ScriptableObject.CreateInstance("SoldProduct") as SoldProduct;
 
         soldProduct1.name = soldProduct.name;

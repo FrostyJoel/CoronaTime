@@ -23,11 +23,8 @@ public class InteractableCashRegister : Interactable {
                         parentProduct = cartStorage.heldProducts[i],
                         amount = 1};
                     cartStorage.soldProducts.Add(soldProduct_);
-                    //soldProduct_.parentProduct = cartStorage.heldProducts[i];
-                    //soldProduct_.amount = 1;
-                    //cartStorage.soldProducts.Add(soldProduct_);
                 }
-                photonView.RPC("RPC_DestroyProduct", RpcTarget.All, cartStorage.heldProducts[i].index);
+                DestroyProduct.destroyProduct.photonView.RPC("RPC_DestroyProduct", RpcTarget.All, cartStorage.heldProducts[i].index);
             }
             cartStorage.ClearProducts();
             cartStorage.UpdateScore();
@@ -45,14 +42,5 @@ public class InteractableCashRegister : Interactable {
             }
         }
         return index;
-    }
-
-    [PunRPC]
-    void RPC_DestroyProduct(int index) {
-        try
-        {
-            Destroy(PhotonProductList.staticProductList[index].gameObject);
-        }
-        catch { }
     }
 }

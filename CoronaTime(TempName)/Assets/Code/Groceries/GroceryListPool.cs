@@ -15,7 +15,7 @@ public class GroceryListPool : MonoBehaviour {
         if (groceryListPoolSingle.pool.Count > 0) {
             for (int i = 0; i < groceriesPerList; i++) {
                 int iB = Random.Range(0, groceryListPoolSingle.pool.Count - 1);
-                tempList.Add(Product.MakeProductInstance(groceryListPoolSingle.pool[iB]));
+                tempList.Add(Product.MakeInstance(groceryListPoolSingle.pool[iB]));
             }
         }
         return tempList;
