@@ -70,6 +70,8 @@ MonoBehaviour:
   - RandomizeOrder
   - TurnOnRandomizedZones
   - RPC_SetPowerUp
+  - RPC_DestroyPowerUp
+  - RPC_DestroyUseAbleProduct
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

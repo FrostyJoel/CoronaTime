@@ -23,6 +23,7 @@ public class PowerUp : Interactable {
     public virtual void Use() {
         if (!inUse) {
             affectedController.powerups_AffectingMe.Add(this);
+            affectedController.useableProduct = null;
             inUse = true;
         }
     }

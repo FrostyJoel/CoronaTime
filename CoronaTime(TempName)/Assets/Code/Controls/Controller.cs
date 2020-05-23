@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))][RequireComponent(typeof(CartStorage))]
 public class Controller : MonoBehaviourPun {
     public PlayerView playerView;
-    public Transform transform_Pov, transform_PovHolder, transform_Head;
+    public Transform transform_Pov, transform_PovHolder, transform_Head, transform_ThrowFromPoint;
     public Text text_Nickname;
     public MeshRenderer[] meshRenderersToDisableLocally;
     
@@ -88,7 +88,7 @@ public class Controller : MonoBehaviourPun {
     }
 
     private void Update() {
-        if (photonView.IsMine) {
+        if (photonView.IsMine || playerView.devView) {
             CheckAndApplyPowerUpFX();
         }
     }

@@ -20,7 +20,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     [Header("HideInInspector")]
     public List<ScriptScoreboardListing> sbListingsList = new List<ScriptScoreboardListing>();
     public CartStorage[] storages;
-    public PowerUp currentPowerUp;
 
     private void Awake() {
         if (holder) {
