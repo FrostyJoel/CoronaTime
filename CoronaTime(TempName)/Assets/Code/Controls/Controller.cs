@@ -38,9 +38,10 @@ public class Controller : MonoBehaviourPun {
     [HideInInspector] public Vector3 startPosition;
     [HideInInspector] public Quaternion startRotation;
     [HideInInspector] public CartStorage cartStorage;
-    /*[HideInInspector]*/ public float currentWalkSpeed;
-    /*HideInInspector]*/ public PowerUp useableProduct;
+    public float currentWalkSpeed;
+    public PowerUp useableProduct;
     public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
+    public Collider[] colliders;
 
     Camera[] cams;
     AudioListener audioListeners;
@@ -90,6 +91,12 @@ public class Controller : MonoBehaviourPun {
     private void Update() {
         if (photonView.IsMine || playerView.devView) {
             CheckAndApplyPowerUpFX();
+
+            if (Input.GetButtonDown("UsePowerUp")) {
+                if (useableProduct) {
+                    useableProduct.Use();
+                }
+            }
         }
     }
 
@@ -107,7 +114,7 @@ public class Controller : MonoBehaviourPun {
     }
 
     void TurnCollidersOnOff(bool state) {
-        Collider[] colliders = GetComponentsInChildren<Collider>();
+        colliders = GetComponentsInChildren<Collider>();
         for (int i = 0; i < colliders.Length; i++) {
             colliders[i].enabled = state;
         }
@@ -175,9 +182,16 @@ public class Controller : MonoBehaviourPun {
             transform.Rotate(Vector3.up * currentRotationSpeed);
             Quaternion rot = Quaternion.Euler(transform.rotation.eulerAngles + transform.up * currentRotationSpeed);
         }
+
         if (localPlayerTarget) {
             text_Nickname.transform.LookAt(localPlayerTarget);
             text_Nickname.transform.Rotate(0, 180, 0);
+        }
+
+        if (Input.GetButtonDown("UsePowerUp")) {
+            if (useableProduct) {
+                useableProduct.Use();
+            }
         }
     }
 

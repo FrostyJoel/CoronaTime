@@ -7,25 +7,11 @@ public class PowerUp : Interactable {
     public int index;
     public Controller affectedController;
     public CartStorage affectedCartStorage;
-    public bool inUse;
     public float durationSpentInSeconds;
 
-    private void Update() {
-        if (currentPlace == Place.InCart) {
-            if (Input.GetButtonDown("UsePowerUp")) {
-                if (!inUse) {
-                    Use();
-                }
-            }
-        }
-    }
-
     public virtual void Use() {
-        if (!inUse) {
-            affectedController.powerups_AffectingMe.Add(this);
-            affectedController.useableProduct = null;
-            inUse = true;
-        }
+        affectedController.powerups_AffectingMe.Add(this);
+        affectedController.useableProduct = null;
     }
 
     public virtual void Effect() {
@@ -34,6 +20,7 @@ public class PowerUp : Interactable {
 
     public override void Interact(CartStorage cartStorage) {
         if (currentPlace == Place.InShelve && cartStorage.SetPowerUp(index)) {
+            print("Interact");
             currentPlace = Place.InCart;
             affectedCartStorage = cartStorage;
             affectedController = cartStorage.controller;

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6872486316231730080}
   - component: {fileID: 6872486316228862848}
   - component: {fileID: 6872486316229828928}
-  - component: {fileID: 6872486316331269275}
   - component: {fileID: 6872486316331269274}
   - component: {fileID: 6872486316331269272}
+  - component: {fileID: 54606761320332776}
   m_Layer: 0
   m_Name: Prefab_DevThrowStar
   m_TagString: Untagged
@@ -80,22 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &6872486316331269275
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6872486316232032128}
-  serializedVersion: 2
-  m_Mass: 0.15
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6872486316331269274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107,7 +91,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.034398455, y: 0.26, z: 0.26121986}
+  m_Size: {x: 0.034398455, y: 0.4, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6872486316331269272
 MonoBehaviour:
@@ -123,13 +107,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioGroup: 2
   currentPlace: 0
-  newValueDuringFX: 100
+  newValueDuringFX: 1
   durationInSeconds: 0
   index: 1
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}
-  inUse: 0
   durationSpentInSeconds: 0
-  rigid: {fileID: 0}
   coll: {fileID: 0}
-  angleup: 45
+  rigid: {fileID: 0}
+  throwForce: 200
+  angleUp: 90
+  inAir: 0
+  extends: {x: 0.04, y: 0.28, z: 0.28}
+--- !u!54 &54606761320332776
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872486316232032128}
+  serializedVersion: 2
+  m_Mass: 0.2
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

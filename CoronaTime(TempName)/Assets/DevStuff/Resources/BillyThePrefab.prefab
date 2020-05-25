@@ -486,6 +486,7 @@ MonoBehaviour:
   currentWalkSpeed: 0
   useableProduct: {fileID: 0}
   powerups_AffectingMe: []
+  colliders: []
 --- !u!114 &1339369616197313166
 MonoBehaviour:
   m_ObjectHideFlags: 0
