@@ -32,8 +32,6 @@ public class ThrowPU : PowerUp {
             rot.x += angleUp;
             transform.rotation = Quaternion.Euler(rot);
             rigid.AddForce(affectedController.transform_Pov.forward * throwForce);
-            //affectedController = null;
-            //affectedCartStorage = null;
             currentPlace = Place.None;
             inAir = true;
         }
@@ -68,16 +66,4 @@ public class ThrowPU : PowerUp {
     public virtual void Hit() {
         inAir = false;
     }
-
-    //private void OnTriggerEnter(Collider other) {
-    //    if (currentPlace == Place.None && !CheckControllerColliders(other)) {
-    //        Destroy(rigid);
-    //        print("collision" + gameObject.name);   
-    //    }
-    //}
-
-    private void OnDrawGizmos() {
-       // Gizmos.
-    }
-
 }
