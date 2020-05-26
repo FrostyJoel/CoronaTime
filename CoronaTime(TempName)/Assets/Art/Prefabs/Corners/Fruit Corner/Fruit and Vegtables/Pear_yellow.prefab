@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8325024369492806439}
   - component: {fileID: 8325024369491806695}
   - component: {fileID: 9077928505620523486}
+  - component: {fileID: 114331422166252436}
+  - component: {fileID: 114434490027696748}
   m_Layer: 0
   m_Name: Pear_yellow
   m_TagString: Untagged
@@ -92,3 +94,37 @@ CapsuleCollider:
   m_Height: 0.22845659
   m_Direction: 1
   m_Center: {x: -0.00039401278, y: 0.11422829, z: 0.0013432093}
+--- !u!114 &114331422166252436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325024369493743399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0.8396226, g: 0.7717859, b: 0.17030083, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &114434490027696748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325024369493743399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioGroup: 2
+  scriptableProduct: {fileID: 0}
+  index: 0
+  currentPlace: 0

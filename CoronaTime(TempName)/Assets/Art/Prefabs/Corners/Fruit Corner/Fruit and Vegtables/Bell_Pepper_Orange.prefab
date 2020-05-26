@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6510165760452203512}
   - component: {fileID: 6510165760451433432}
   - component: {fileID: 6510165760450433304}
+  - component: {fileID: 114640987212738744}
+  - component: {fileID: 114427151408070598}
   m_Layer: 0
   m_Name: Bell_Pepper_Orange
   m_TagString: Untagged
@@ -78,6 +80,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &114640987212738744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6510165760452431832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0.8396226, g: 0.7717859, b: 0.17030083, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &114427151408070598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6510165760452431832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioGroup: 2
+  scriptableProduct: {fileID: 0}
+  index: 0
+  currentPlace: 0
 --- !u!1 &8835201520399477545
 GameObject:
   m_ObjectHideFlags: 0

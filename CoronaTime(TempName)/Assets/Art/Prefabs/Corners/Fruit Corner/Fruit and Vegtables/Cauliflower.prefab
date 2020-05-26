@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 4435004535167777193}
   - component: {fileID: 4435004535168744297}
   - component: {fileID: 5436696448100348436}
+  - component: {fileID: 114633229379039736}
+  - component: {fileID: 114344952337427386}
   m_Layer: 0
   m_Name: Cauliflower
   m_TagString: Untagged
@@ -122,3 +124,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.30054545, y: 0.19849195, z: 0.30799916}
   m_Center: {x: 0.0069456175, y: 0.09744721, z: 0.0052711368}
+--- !u!114 &114633229379039736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4435004535166477737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0.8396226, g: 0.7717859, b: 0.17030083, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &114344952337427386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4435004535166477737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioGroup: 2
+  scriptableProduct: {fileID: 0}
+  index: 0
+  currentPlace: 0
