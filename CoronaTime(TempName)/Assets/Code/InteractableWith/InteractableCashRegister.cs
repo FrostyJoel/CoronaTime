@@ -6,13 +6,8 @@ using Photon.Pun;
 
 public class InteractableCashRegister : Interactable {
 
-    public AudioClip sellSound;
-
     public override void Interact(CartStorage cartStorage) {
-        //cartStorage.controller.ResetAtStartPosition();
-        if (sellSound) {
-            AudioManager.PlaySound(sellSound, audioGroup, transform.position);
-        }
+        PlaySound();
         if (cartStorage.heldProducts.Count > 0) {
             for (int i = cartStorage.heldProducts.Count-1; i >= 0; i--) {
                 int index = AlreadySold(cartStorage.heldProducts[i], cartStorage);
@@ -24,7 +19,7 @@ public class InteractableCashRegister : Interactable {
                         amount = 1};
                     cartStorage.soldProducts.Add(soldProduct_);
                 }
-                DestroyProduct.destroyProduct.photonView.RPC("RPC_DestroyProduct", RpcTarget.All, cartStorage.heldProducts[i].index);
+                ProductInteractions.pi_Single.DestroyProduct(cartStorage.heldProducts[i].index, RpcTarget.All);
             }
             cartStorage.ClearProducts();
             cartStorage.UpdateScore();

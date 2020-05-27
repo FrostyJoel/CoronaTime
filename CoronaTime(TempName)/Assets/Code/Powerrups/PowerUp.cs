@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class PowerUp : Interactable {
     public float newValueDuringFX, durationInSeconds;
+    
     [Header("HideInInspector")]
     public int index;
-    public Controller affectedController;
-    public CartStorage affectedCartStorage;
-    public float durationSpentInSeconds;
+    [HideInInspector] public Controller affectedController;
+    [HideInInspector] public CartStorage affectedCartStorage;
+    [HideInInspector] public float durationSpentInSeconds;
 
     public virtual void Use() {
         affectedController.powerups_AffectingMe.Add(this);
@@ -32,6 +33,6 @@ public class PowerUp : Interactable {
 
     public virtual void StopUsing() {
         affectedController.powerups_AffectingMe.Remove(this);
-        DestroyProduct.destroyProduct.photonView.RPC("RPC_DestroyUseAbleProduct", RpcTarget.All, index);
+        ProductInteractions.pi_Single.DestroyUseAbleProduct(index, RpcTarget.All);
     }
 }

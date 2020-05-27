@@ -72,6 +72,7 @@ MonoBehaviour:
   - RPC_SetPowerUp
   - RPC_DestroyPowerUp
   - RPC_DestroyUseAbleProduct
+  - RPC_DestroyAllProductColliders
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

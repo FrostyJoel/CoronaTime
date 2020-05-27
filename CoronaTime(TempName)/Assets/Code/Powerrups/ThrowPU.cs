@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class ThrowPU : PowerUp {
 
-    public Collider coll;
-    public Rigidbody rigid;
+    [HideInInspector] public Collider thisCollider;
+    [HideInInspector] public Rigidbody rigid;
     public float throwForce, angleUp;
-    public bool inAir;
+    [HideInInspector] public bool inAir;
     public Vector3 extends;
+    public Collider[] collidersHit;
     private void Awake() {
         rigid = GetComponent<Rigidbody>();
+        rigid.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
         rigid.isKinematic = true;
         rigid.velocity = Vector3.zero;
-        coll = GetComponent<Collider>();
+        thisCollider = GetComponent<Collider>();
     }
 
     public override void Interact(CartStorage cartStorage) {
         base.Interact(cartStorage);
-        coll.isTrigger = true;
+        thisCollider.isTrigger = true;
     }
 
     public override void Use() {
         if (!inAir) {
-            print("Use");
             rigid.isKinematic = false;
             affectedController.useableProduct = null;
             transform.SetParent(null);
@@ -39,13 +40,17 @@ public class ThrowPU : PowerUp {
 
     private void Update() {
         if (inAir) {
-            Collider[] colliders = Physics.OverlapBox(transform.position, extends, transform.rotation);
-            if(colliders.Length > 0) {
-                for (int i = 0; i < colliders.Length; i++) {
-                    if (!CheckControllerColliders(colliders[i]) && colliders[i] != coll) {
-                        print(colliders[i].gameObject.name);
-                        Hit();
-                        Destroy(rigid);
+            collidersHit = Physics.OverlapBox(transform.position, extends, transform.rotation);
+            if(collidersHit.Length > 0) {
+                for (int i = 0; i < collidersHit.Length; i++) {
+                    if (!CheckControllerColliders(collidersHit[i])) {
+                        if (collidersHit[i] != thisCollider) {
+                            Destroy(rigid);
+                            Hit();
+                            SetPositionAndRotationToHit();
+                        }
+                    } else {
+                        collidersHit[i] = null;
                     }
                 }
             }
@@ -65,5 +70,32 @@ public class ThrowPU : PowerUp {
 
     public virtual void Hit() {
         inAir = false;
+        print("Hit");
     }
+
+    public void SetPositionAndRotationToHit() {
+        float closestDistance = 1000;
+        for (int i = 0; i < collidersHit.Length; i++) {
+            if (collidersHit[i]) {
+                RaycastHit hit;
+                Vector3 direction = -(transform.position - collidersHit[i].transform.position).normalized;
+                if (Physics.Raycast(transform.position, direction, out hit, Mathf.Infinity)) {
+                    float distance = Vector3.Distance(transform.position, hit.point);
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestIndex = i;
+                        closestHit = hit;
+                        //closestRotation = Quaternion.FromToRotation(Vector3.up, closestHit.normal);
+                    }
+                }
+            }
+        }
+        print(closestHit.transform.gameObject.name);
+        transform.position = closestHit.point;
+        transform.rotation = Quaternion.FromToRotation(Vector3.up, closestHit.normal);
+    }
+    int closestIndex = -1;
+    RaycastHit closestHit;
+    Vector3 closestPoint;
+    Quaternion closestRotation;
 }

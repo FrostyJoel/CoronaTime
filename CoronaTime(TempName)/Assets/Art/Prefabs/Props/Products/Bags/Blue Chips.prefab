@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2887482787334113442}
   - component: {fileID: 2887482787333114466}
   - component: {fileID: 65039321046337094}
-  - component: {fileID: 114022042622414346}
   - component: {fileID: 114025253425412838}
+  - component: {fileID: 1546156900}
+  - component: {fileID: 1546156899}
   m_Layer: 0
   m_Name: Blue Chips
   m_TagString: Interact
@@ -93,22 +94,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.15445322, y: 0.07500962, z: 0.24554995}
   m_Center: {x: 0.0028234534, y: 0.036992263, z: 0.0007528104}
---- !u!114 &114022042622414346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2887482787335050402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioGroup: 2
-  currentPlace: 0
-  scriptableProduct: {fileID: 11400000, guid: 7d99c6291c2f80e44bb933c962f74910, type: 2}
-  index: 0
 --- !u!114 &114025253425412838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,3 +112,48 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!54 &1546156900
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887482787335050402}
+  serializedVersion: 2
+  m_Mass: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1546156899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887482787335050402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b83f5f972af572347878cfed778742d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 0}
+  audioGroup: 2
+  currentPlace: 0
+  newValueDuringFX: 0
+  durationInSeconds: 0
+  index: 14
+  affectedController: {fileID: 0}
+  affectedCartStorage: {fileID: 0}
+  durationSpentInSeconds: 0
+  thisCollider: {fileID: 0}
+  rigid: {fileID: 0}
+  throwForce: 100
+  angleUp: 0
+  inAir: 0
+  extends: {x: 0.15, y: 0.075, z: 0.2}
+  collidersHit: []
+  test: {fileID: 0}
