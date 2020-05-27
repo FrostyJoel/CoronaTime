@@ -67,7 +67,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     public bool SetPowerUp(int index) {
         if (!controller.useableProduct) {
             controller.useableProduct = PhotonProductList.staticUseableProductList[index];
-            photonView.RPC("RPC_SetPowerUp", RpcTarget.All, index, photonView.ViewID);
+            ProductInteractions.pi_Single.SetPowerUp(index, photonView.ViewID, RpcTarget.All);
             return true;
         } else {
             return false;
@@ -76,7 +76,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     public bool AddToCart(int index) {
         if (heldProducts.Count < maxItemsHeld) {
-            photonView.RPC("RPC_AddToCart", RpcTarget.All, index, photonView.ViewID);
+            ProductInteractions.pi_Single.AddToCart(index, photonView.ViewID, RpcTarget.All);
             return true;
         } else {
             return false;
@@ -134,28 +134,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     void RPC_ClearProducts() {
         heldProducts.Clear();
         heldProductModels.Clear();
-    }
-
-    [PunRPC]
-    void RPC_SetPowerUp(int index, int id) {
-        if (photonView.ViewID == id) {
-            GameObject productObject = PhotonProductList.staticUseableProductList[index].gameObject;
-            productObject.transform.SetParent(transform_PowerUpHolder);
-            productObject.transform.localPosition = Vector3.zero;
-            productObject.transform.localRotation = Quaternion.Euler(Vector3.zero);
-        }
-    }
-
-    [PunRPC]
-    void RPC_AddToCart(int index, int id) {
-        if(photonView.ViewID == id) {
-            GameObject productObject = PhotonProductList.staticInteratableProductList[index].gameObject;
-            heldProducts.Add(PhotonProductList.staticInteratableProductList[index].scriptableProduct);
-            heldProductModels.Add(productObject);
-            productObject.transform.SetParent(itemHolders[heldProducts.Count - 1]);
-            productObject.transform.localPosition = Vector3.zero;
-            productObject.transform.localRotation = Quaternion.Euler(Vector3.zero);
-        }
     }
 
     [PunRPC]

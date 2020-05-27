@@ -154,6 +154,6 @@ MonoBehaviour:
   throwForce: 100
   angleUp: 0
   inAir: 0
-  extends: {x: 0.15, y: 0.075, z: 0.2}
+  extends: {x: 0.2, y: 0.1, z: 0.3}
   collidersHit: []
-  test: {fileID: 0}
+  closestIndex: -1
