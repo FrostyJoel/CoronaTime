@@ -31,7 +31,7 @@ public class ThrowPU : PowerUp {
         if (!inAir) {
             rigid.isKinematic = false;
             affectedController.useableProduct = null;
-            transform.SetParent(null);
+            ProductInteractions.pi_Single.UnParentProduct(index, RpcTarget.All);
             transform.position = affectedController.transform_ThrowFromPoint.position;
             Vector3 rot = affectedController.transform_ThrowFromPoint.rotation.eulerAngles;
             rot.x += angleUp;
@@ -44,7 +44,7 @@ public class ThrowPU : PowerUp {
     
     private void Update() {
         if (inAir) {
-            ProductInteractions.pi_Single.SetProductPosition(index, transform.position, RpcTarget.All);
+            ProductInteractions.pi_Single.SetProductPosition(index, transform.position, transform.rotation, RpcTarget.All);
             collidersHit = Physics.OverlapBox(transform.position, extends, transform.rotation);
             if(collidersHit.Length > 0) {
                 for (int i = 0; i < collidersHit.Length; i++) {
@@ -56,12 +56,6 @@ public class ThrowPU : PowerUp {
                     }
                 }
             }
-        }
-    }
-
-    private void FixedUpdate() {
-        if (inAir) {
-            //ProductInteractions.pi_Single.SetProductPosition(index, transform.position, RpcTarget.All);
         }
     }
 
@@ -97,9 +91,7 @@ public class ThrowPU : PowerUp {
             }
         }
         if (closestIndex >= 0) {
-            transform.position = closestHit.point;
-            transform.rotation = Quaternion.FromToRotation(Vector3.up, closestHit.normal);
-            transform.SetParent(closestHit.transform);
+            ProductInteractions.pi_Single.SetProductPosition(index, closestHit.point, Quaternion.FromToRotation(Vector3.up, closestHit.normal), RpcTarget.All);
             if (closestHit.transform.GetComponent<Controller>()) {
                 affectedController = closestHit.transform.GetComponent<Controller>();
                 affectedCartStorage = affectedController.cartStorage;

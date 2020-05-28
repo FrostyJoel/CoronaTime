@@ -28,8 +28,12 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_SetPowerUp", selectedTarget, index, id);
     }
 
-    public void SetProductPosition(int index, Vector3 pos, RpcTarget selectedTarget) { 
-        photonView.RPC("RPC_SetProductPosition", selectedTarget, index, pos);
+    public void SetProductPosition(int index, Vector3 pos, Quaternion rot, RpcTarget selectedTarget) { 
+        photonView.RPC("RPC_SetProductPosition", selectedTarget, index, pos, rot);
+    }
+
+    public void UnParentProduct(int index, RpcTarget selectedTarget) {
+        photonView.RPC("RPC_UnParentProduct", selectedTarget, index);
     }
 
     [PunRPC]
@@ -77,7 +81,13 @@ public class ProductInteractions : MonoBehaviourPun {
     }
 
     [PunRPC]
-    void RPC_SetProductPosition(int index, Vector3 pos) {
+    void RPC_SetProductPosition(int index, Vector3 pos, Quaternion rot) {
         PhotonProductList.staticUseableProductList[index].transform.position = pos;
+        PhotonProductList.staticUseableProductList[index].transform.rotation = rot;
+    }
+
+    [PunRPC]
+    void RPC_UnParentProduct(int index) {
+        PhotonProductList.staticUseableProductList[index].transform.SetParent(null);
     }
 }
