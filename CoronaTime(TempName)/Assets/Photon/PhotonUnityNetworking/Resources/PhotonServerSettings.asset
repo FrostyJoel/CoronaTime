@@ -76,6 +76,7 @@ MonoBehaviour:
   - RPC_EnableDisableTransformView
   - RPC_SetProductPostion
   - RPC_SetProductPosition
+  - RPC_UnParentProduct
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

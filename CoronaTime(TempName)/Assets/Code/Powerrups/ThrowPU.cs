@@ -24,7 +24,7 @@ public class ThrowPU : PowerUp {
 
     public override void Interact(CartStorage cartStorage) {
         base.Interact(cartStorage);
-        Destroy(thisCollider);
+        ProductInteractions.pi_Single.DestroyAllProductColliders(index, RpcTarget.All);
     }
 
     public override void Use() {
