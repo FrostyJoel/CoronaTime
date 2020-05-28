@@ -31,7 +31,7 @@ public class ThrowPU : PowerUp {
         if (!inAir) {
             rigid.isKinematic = false;
             affectedController.useableProduct = null;
-            ProductInteractions.pi_Single.UnParentProduct(index, RpcTarget.All);
+            ProductInteractions.pi_Single.SetParentToPhotonView(index, -1, RpcTarget.All);
             transform.position = affectedController.transform_ThrowFromPoint.position;
             Vector3 rot = affectedController.transform_ThrowFromPoint.rotation.eulerAngles;
             rot.x += angleUp;
@@ -94,6 +94,8 @@ public class ThrowPU : PowerUp {
             ProductInteractions.pi_Single.SetProductPosition(index, closestHit.point, Quaternion.FromToRotation(Vector3.up, closestHit.normal), RpcTarget.All);
             if (closestHit.transform.GetComponent<Controller>()) {
                 affectedController = closestHit.transform.GetComponent<Controller>();
+                ProductInteractions.pi_Single.SetParentToPhotonView(index, affectedController.photonView.ViewID, RpcTarget.All);
+                affectedController.powerups_AffectingMe.Add(this);
                 affectedCartStorage = affectedController.cartStorage;
             } else {
                 affectedCartStorage = null;

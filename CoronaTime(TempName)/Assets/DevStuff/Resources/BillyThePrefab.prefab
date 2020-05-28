@@ -258,6 +258,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!136 &2982017591210460827
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349137363551401612}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.45804444
+  m_Height: 1.7486774
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8743387, z: -0.0019309819}
 --- !u!114 &4390916545185533044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,20 +291,6 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!136 &2982017591210460827
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2349137363551401612}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.45804444
-  m_Height: 1.7486774
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8743387, z: -0.0019309819}
 --- !u!1 &4120993011183288670
 GameObject:
   m_ObjectHideFlags: 0

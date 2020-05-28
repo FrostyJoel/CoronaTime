@@ -32,8 +32,8 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_SetProductPosition", selectedTarget, index, pos, rot);
     }
 
-    public void UnParentProduct(int index, RpcTarget selectedTarget) {
-        photonView.RPC("RPC_UnParentProduct", selectedTarget, index);
+    public void SetParentToPhotonView(int index, int id, RpcTarget selectedTarget) {
+        photonView.RPC("RPC_SetParentToPhotonView", selectedTarget, index, id);
     }
 
     [PunRPC]
@@ -87,7 +87,11 @@ public class ProductInteractions : MonoBehaviourPun {
     }
 
     [PunRPC]
-    void RPC_UnParentProduct(int index) {
-        PhotonProductList.staticUseableProductList[index].transform.SetParent(null);
+    void RPC_SetParentToPhotonView(int index, int id) {
+        Transform parentTransform = null;
+        if(id >= 0) {
+            parentTransform = PhotonNetwork.GetPhotonView(id).transform;
+        }
+        PhotonProductList.staticUseableProductList[index].transform.SetParent(parentTransform);
     }
 }
