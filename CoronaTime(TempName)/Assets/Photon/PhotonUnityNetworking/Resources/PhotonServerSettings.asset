@@ -78,6 +78,10 @@ MonoBehaviour:
   - RPC_SetProductPosition
   - RPC_UnParentProduct
   - RPC_SetParentToPhotonView
+  - RPC_DisableLocalVisibility
+  - RPC_EnableDisableAllProductColliders
+  - RPC_ChangePowerUpPlace
+  - RPC_ChangeProductPlace
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

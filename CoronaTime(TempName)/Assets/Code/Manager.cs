@@ -30,6 +30,7 @@ public class Manager : MonoBehaviourPun {
 [Serializable]
 public class StaticInformation {
     public AudioMixer audioMixer;
+    public LayerMask dontShowTheseLayersLocal;
 }
 
 [Serializable]

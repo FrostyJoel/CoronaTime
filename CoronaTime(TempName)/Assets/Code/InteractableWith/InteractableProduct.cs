@@ -11,7 +11,7 @@ public class InteractableProduct : Interactable {
 
     public override void Interact(CartStorage cartStorage) {
         if (currentPlace == Place.InShelve && cartStorage.AddToCart(index)) {
-            currentPlace = Place.InCart;
+            ProductInteractions.pi_Single.ChangeProductPlace(index, (int)Place.InCart, RpcTarget.All);
             if (GetComponent<Outline>()) {
                 GetComponent<Outline>().enabled = false;
             }

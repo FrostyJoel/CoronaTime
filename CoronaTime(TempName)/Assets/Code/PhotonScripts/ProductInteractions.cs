@@ -20,6 +20,10 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_DestroyAllProductColliders", selectedTarget, index);
     }
 
+    public void EnableDisableAllProductColliders(int index, bool state, RpcTarget selectedTarget) {
+        photonView.RPC("RPC_EnableDisableAllProductColliders", selectedTarget, index, state);
+    }
+
     public void AddToCart(int index, int id, RpcTarget selectedTarget) {
         photonView.RPC("RPC_AddToCart", selectedTarget, index, id);
     }
@@ -34,6 +38,18 @@ public class ProductInteractions : MonoBehaviourPun {
 
     public void SetParentToPhotonView(int index, int id, RpcTarget selectedTarget) {
         photonView.RPC("RPC_SetParentToPhotonView", selectedTarget, index, id);
+    }
+
+    public void DisableLocalVisibility(int index, int id, RpcTarget selectedTarget) {
+        photonView.RPC("RPC_DisableLocalVisibility", selectedTarget, index, id);
+    }
+
+    public void ChangeProductPlace(int index, int placeIndex, RpcTarget selectedTarget) {
+        photonView.RPC("RPC_ChangeProductPlace", selectedTarget, index, placeIndex);        
+    }
+
+    public void ChangePowerUpPlace(int index, int placeIndex, RpcTarget selectedTarget) {
+        photonView.RPC("RPC_ChangePowerUpPlace", selectedTarget, index, placeIndex);        
     }
 
     [PunRPC]
@@ -56,6 +72,16 @@ public class ProductInteractions : MonoBehaviourPun {
             Collider[] colliders = PhotonProductList.staticUseableProductList[index].gameObject.GetComponentsInChildren<Collider>();
             for (int i = colliders.Length - 1; i >= 0; i--) {
                 Destroy(colliders[i]);
+            }
+        } catch { }
+    }
+
+    [PunRPC]
+    void RPC_EnableDisableAllProductColliders(int index, bool state) {
+        try {
+            Collider[] colliders = PhotonProductList.staticUseableProductList[index].gameObject.GetComponentsInChildren<Collider>();
+            for (int i = colliders.Length - 1; i >= 0; i--) {
+                colliders[i].enabled = state;
             }
         } catch { }
     }
@@ -93,5 +119,22 @@ public class ProductInteractions : MonoBehaviourPun {
             parentTransform = PhotonNetwork.GetPhotonView(id).transform;
         }
         PhotonProductList.staticUseableProductList[index].transform.SetParent(parentTransform);
+    }
+
+    [PunRPC]
+    void RPC_DisableLocalVisibility(int index, int id) {
+        if (PhotonNetwork.GetPhotonView(id).Owner.IsLocal) {
+            PhotonProductList.staticUseableProductList[index].gameObject.layer = (int)Mathf.Sqrt(Manager.staticInformation.dontShowTheseLayersLocal.value) / 4;
+        }
+    }
+
+    [PunRPC]
+    void RPC_ChangeProductPlace(int index, int placeIndex) {
+        PhotonProductList.staticInteratableProductList[index].currentPlace = (Interactable.Place)placeIndex;
+    }
+
+    [PunRPC]
+    void RPC_ChangePowerUpPlace(int index, int placeIndex) {
+        PhotonProductList.staticUseableProductList[index].currentPlace = (Interactable.Place)placeIndex;
     }
 }

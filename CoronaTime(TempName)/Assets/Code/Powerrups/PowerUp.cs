@@ -15,14 +15,22 @@ public class PowerUp : Interactable {
         affectedController.useableProduct = null;
     }
 
+    public virtual void UseEffect() {
+        if (durationSpentInSeconds < durationInSeconds) {
+            Effect();
+            durationSpentInSeconds += Time.deltaTime;
+        } else {
+            StopUsing();
+        }
+    }
+
     public virtual void Effect() {
 
     }
 
     public override void Interact(CartStorage cartStorage) {
         if (currentPlace == Place.InShelve && cartStorage.SetPowerUp(index)) {
-            print("Interact");
-            currentPlace = Place.InCart;
+            ProductInteractions.pi_Single.ChangePowerUpPlace(index, (int)Place.InCart, RpcTarget.All);
             affectedCartStorage = cartStorage;
             affectedController = cartStorage.controller;
             if (GetComponent<Outline>()) {

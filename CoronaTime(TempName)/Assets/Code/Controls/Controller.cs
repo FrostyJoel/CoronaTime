@@ -124,7 +124,7 @@ public class Controller : MonoBehaviourPun {
         currentWalkSpeed = defaultWalkSpeed;
         if (powerups_AffectingMe.Count > 0) {
             for (int i = 0; i < powerups_AffectingMe.Count; i++) {
-                powerups_AffectingMe[i].Effect();
+                powerups_AffectingMe[i].UseEffect();
             }
         }
     }

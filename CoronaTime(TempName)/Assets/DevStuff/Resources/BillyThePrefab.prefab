@@ -258,20 +258,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!136 &2982017591210460827
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2349137363551401612}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.45804444
-  m_Height: 1.7486774
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8743387, z: -0.0019309819}
 --- !u!114 &4390916545185533044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +417,8 @@ GameObject:
   - component: {fileID: 114803700820047226}
   - component: {fileID: 114723929397572236}
   - component: {fileID: 1671022296782441190}
-  m_Layer: 0
+  - component: {fileID: 842007689598229669}
+  m_Layer: 9
   m_Name: BillyThePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,6 +612,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastOutline: {fileID: 0}
+--- !u!136 &842007689598229669
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5992604071259634000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.41
+  m_Height: 1.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8743387, z: -0.0019309819}
 --- !u!1 &6683707629751005608
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,16 +966,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5992604071259634003}
     m_Modifications:
-    - target: {fileID: 2968051387284754305, guid: 47a8c557e57b90a4b804b535a117565c,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998806454690408625, guid: 47a8c557e57b90a4b804b535a117565c,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 8337234225511198321, guid: 47a8c557e57b90a4b804b535a117565c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1037,9 +1028,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
---- !u!4 &2349137363551365804 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8337234225511198321, guid: 47a8c557e57b90a4b804b535a117565c,
+--- !u!23 &2349137363553658956 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8337234225513622673, guid: 47a8c557e57b90a4b804b535a117565c,
     type: 3}
   m_PrefabInstance: {fileID: 5992604072681751773}
   m_PrefabAsset: {fileID: 0}
@@ -1073,9 +1064,9 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 5992604072681751773}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &2349137363553658956 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 8337234225513622673, guid: 47a8c557e57b90a4b804b535a117565c,
+--- !u!4 &2349137363551365804 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8337234225511198321, guid: 47a8c557e57b90a4b804b535a117565c,
     type: 3}
   m_PrefabInstance: {fileID: 5992604072681751773}
   m_PrefabAsset: {fileID: 0}

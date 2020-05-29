@@ -19,7 +19,7 @@ public class Interactable : MonoBehaviourPun {
     }
 
     public virtual void Interact(CartStorage cartStorage) {
-
+        
     }
 
     public void PlaySound() {

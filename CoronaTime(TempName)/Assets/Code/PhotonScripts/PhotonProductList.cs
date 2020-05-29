@@ -10,6 +10,7 @@ public class PhotonProductList : MonoBehaviour {
     /*[HideInInspector]*/ public List<PowerUp> useableProductList = new List<PowerUp>();
     public static List<InteractableProduct> staticInteratableProductList = new List<InteractableProduct>();
     public static List<PowerUp> staticUseableProductList = new List<PowerUp>();
+    public LayerMask productLayer;
     private void Awake() {
         staticInteratableProductList = interactableProductList;
         staticUseableProductList = useableProductList;
@@ -43,6 +44,7 @@ public class PhotonProductListEditor : Editor {
             if (tempProduct.scriptableProduct) {
                 tempProduct.scriptableProduct = Product.MakeInstance(tempProduct.scriptableProduct);
                 tempProduct.scriptableProduct.index = i;
+                tempProduct.gameObject.layer = (int)Mathf.Sqrt(photonProductList.productLayer.value) / 4;
             }
             EditorUtility.SetDirty(tempProduct);
         }
@@ -57,6 +59,7 @@ public class PhotonProductListEditor : Editor {
             PowerUp tempProduct = useableProductArray[i];
             upList.Add(tempProduct);
             tempProduct.index = i;
+            tempProduct.gameObject.layer = (int)Mathf.Sqrt(photonProductList.productLayer.value) / 4;
             EditorUtility.SetDirty(tempProduct);
         }
         photonProductList.useableProductList = upList;

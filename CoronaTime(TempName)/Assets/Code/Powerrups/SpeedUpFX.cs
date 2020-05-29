@@ -3,12 +3,11 @@
 public class SpeedUpFX : PowerUp {
 
     public override void Effect() {
-        if (durationSpentInSeconds < durationInSeconds) {
-            affectedController.currentWalkSpeed = newValueDuringFX;
-            durationSpentInSeconds += Time.deltaTime;
-        } else {
-            affectedController.currentWalkSpeed = affectedController.defaultWalkSpeed;
-            StopUsing();
-        }
+        affectedController.currentWalkSpeed = newValueDuringFX;
+    }
+
+    public override void StopUsing() {
+        affectedController.currentWalkSpeed = affectedController.defaultWalkSpeed;
+        base.StopUsing();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
+[RequireComponent(typeof(PhotonTransformView))]
 public class ThrowPU : PowerUp {
 
     [HideInInspector] public Collider thisCollider;
@@ -13,6 +14,7 @@ public class ThrowPU : PowerUp {
     public Collider[] collidersHit;
     public int closestIndex = -1;
     public RaycastHit closestHit;
+    public PhotonTransformView photonTransformView;
 
     private void Awake() {
         rigid = GetComponent<Rigidbody>();
@@ -20,11 +22,13 @@ public class ThrowPU : PowerUp {
         rigid.isKinematic = true;
         rigid.velocity = Vector3.zero;
         thisCollider = GetComponent<Collider>();
+        photonTransformView = GetComponent<PhotonTransformView>();
+        photonTransformView.m_SynchronizePosition = false;
     }
 
     public override void Interact(CartStorage cartStorage) {
         base.Interact(cartStorage);
-        ProductInteractions.pi_Single.DestroyAllProductColliders(index, RpcTarget.All);
+        ProductInteractions.pi_Single.EnableDisableAllProductColliders(index, false, RpcTarget.All);
     }
 
     public override void Use() {
@@ -37,19 +41,18 @@ public class ThrowPU : PowerUp {
             rot.x += angleUp;
             transform.rotation = Quaternion.Euler(rot);
             rigid.AddForce(affectedController.transform_Pov.forward * throwForce);
-            currentPlace = Place.None;
+            ProductInteractions.pi_Single.ChangePowerUpPlace(index, (int)Place.None, RpcTarget.All);
             inAir = true;
         }
     }
     
     private void Update() {
         if (inAir) {
-            ProductInteractions.pi_Single.SetProductPosition(index, transform.position, transform.rotation, RpcTarget.All);
+            //ProductInteractions.pi_Single.SetProductPosition(index, transform.position, transform.rotation, RpcTarget.All);
             collidersHit = Physics.OverlapBox(transform.position, extends, transform.rotation);
             if(collidersHit.Length > 0) {
                 for (int i = 0; i < collidersHit.Length; i++) {
                     if (!CheckControllerColliders(collidersHit[i])) {
-                        rigid.isKinematic = true;
                         Hit();
                     } else {
                         collidersHit[i] = null;
@@ -61,10 +64,12 @@ public class ThrowPU : PowerUp {
 
     bool CheckControllerColliders(Collider collider) {
         bool collision = false;
-        for (int i = 0; i < affectedController.colliders.Length; i++) {
-            if (affectedController.colliders[i] == collider) {
-                collision = true;
-                break;
+        if (affectedController) {
+            for (int i = 0; i < affectedController.colliders.Length; i++) {
+                if (affectedController.colliders[i] == collider) {
+                    collision = true;
+                    break;
+                }
             }
         }
         return collision;
@@ -97,9 +102,11 @@ public class ThrowPU : PowerUp {
                 ProductInteractions.pi_Single.SetParentToPhotonView(index, affectedController.photonView.ViewID, RpcTarget.All);
                 affectedController.powerups_AffectingMe.Add(this);
                 affectedCartStorage = affectedController.cartStorage;
+                rigid.isKinematic = true;
             } else {
                 affectedCartStorage = null;
                 affectedController = null;
+                ProductInteractions.pi_Single.EnableDisableAllProductColliders(index, true, RpcTarget.All);
             }
         }
     }
