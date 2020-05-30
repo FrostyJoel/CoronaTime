@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class StunFX : ThrowPU {
     public override void UseEffect() {
-        
+        affectedController.currentWalkSpeed *= newValueDuringFX;
     }
 }

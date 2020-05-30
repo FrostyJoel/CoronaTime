@@ -5,21 +5,21 @@ using UnityEngine;
 public class CartStorage : MonoBehaviourPunCallbacks {
     public static CartStorage cartStorageSingle;
     public Transform holder, transform_PowerUpHolder;
-    [HideInInspector] public Controller controller;
-    public int interactRange, maxItemsHeld, score;
+    public int interactRange, maxItemsHeld;
 
     public List<Transform> itemHolders = new List<Transform>();
-    [HideInInspector] public List<Product> heldProducts = new List<Product>();
-    [HideInInspector] public List<GameObject> heldProductModels = new List<GameObject>();
-    [HideInInspector] public List<SoldProduct> soldProducts = new List<SoldProduct>();
     
     [Header("Scoreboard")]
     public Transform transform_Scoreboard;
     public GameObject prefab_ScoreboardListing;
 
-    [Header("HideInInspector")]
-    public List<ScriptScoreboardListing> sbListingsList = new List<ScriptScoreboardListing>();
-    public CartStorage[] storages;
+    [HideInInspector] public int score;
+    [HideInInspector] public Controller controller;
+    [HideInInspector] public CartStorage[] storages;
+    [HideInInspector] public List<Product> heldProducts = new List<Product>();
+    [HideInInspector] public List<GameObject> heldProductModels = new List<GameObject>();
+    [HideInInspector] public List<SoldProduct> soldProducts = new List<SoldProduct>();
+    [HideInInspector] public List<ScriptScoreboardListing> sbListingsList = new List<ScriptScoreboardListing>();
 
     private void Awake() {
         if (holder) {

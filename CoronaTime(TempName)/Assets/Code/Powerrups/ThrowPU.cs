@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-[RequireComponent(typeof(PhotonTransformView))]
 public class ThrowPU : PowerUp {
 
     [HideInInspector] public Collider thisCollider;
-    [HideInInspector] public Rigidbody rigid;
     public float throwForce, angleUp;
-    [HideInInspector] public bool inAir;
+    public bool inAir, masterThrown;
     public Vector3 extends;
     public Collider[] collidersHit;
     public int closestIndex = -1;
     public RaycastHit closestHit;
-    public PhotonTransformView photonTransformView;
 
     private void Awake() {
         rigid = GetComponent<Rigidbody>();
@@ -22,33 +19,29 @@ public class ThrowPU : PowerUp {
         rigid.isKinematic = true;
         rigid.velocity = Vector3.zero;
         thisCollider = GetComponent<Collider>();
-        photonTransformView = GetComponent<PhotonTransformView>();
-        photonTransformView.m_SynchronizePosition = false;
     }
 
     public override void Interact(CartStorage cartStorage) {
         base.Interact(cartStorage);
-        ProductInteractions.pi_Single.EnableDisableAllProductColliders(index, false, RpcTarget.All);
+        if(currentPlace == Place.InShelve) {
+            ProductInteractions.pi_Single.EnableDisableAllProductColliders(index, false, RpcTarget.All);
+        }
     }
 
     public override void Use() {
-        if (!inAir) {
-            rigid.isKinematic = false;
-            affectedController.useableProduct = null;
-            ProductInteractions.pi_Single.SetParentToPhotonView(index, -1, RpcTarget.All);
-            transform.position = affectedController.transform_ThrowFromPoint.position;
-            Vector3 rot = affectedController.transform_ThrowFromPoint.rotation.eulerAngles;
-            rot.x += angleUp;
-            transform.rotation = Quaternion.Euler(rot);
-            rigid.AddForce(affectedController.transform_Pov.forward * throwForce);
-            ProductInteractions.pi_Single.ChangePowerUpPlace(index, (int)Place.None, RpcTarget.All);
-            inAir = true;
-        }
+        ProductInteractions.pi_Single.ChangePowerUpPlace(index, (int)Place.None, RpcTarget.All);
+        affectedController.useableProduct = null;
+        ProductInteractions.pi_Single.SetParentToPhotonView(index, -1, RpcTarget.All);
+        Vector3 pos = affectedController.transform_ThrowFromPoint.position;
+        Quaternion rot = affectedController.transform_ThrowFromPoint.rotation;
+        Vector3 force = affectedController.transform_Pov.forward * throwForce;
+        ProductInteractions.pi_Single.SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic(index, pos, force, 0, rot, RpcTarget.All);
+        inAir = true;
+        masterThrown = true;
     }
     
     private void Update() {
-        if (inAir) {
-            //ProductInteractions.pi_Single.SetProductPosition(index, transform.position, transform.rotation, RpcTarget.All);
+        if (inAir && masterThrown) {
             collidersHit = Physics.OverlapBox(transform.position, extends, transform.rotation);
             if(collidersHit.Length > 0) {
                 for (int i = 0; i < collidersHit.Length; i++) {
@@ -95,11 +88,14 @@ public class ThrowPU : PowerUp {
                 }
             }
         }
-        if (closestIndex >= 0) {
-            ProductInteractions.pi_Single.SetProductPosition(index, closestHit.point, Quaternion.FromToRotation(Vector3.up, closestHit.normal), RpcTarget.All);
+        if (closestIndex >= 0) { 
             if (closestHit.transform.GetComponent<Controller>()) {
                 affectedController = closestHit.transform.GetComponent<Controller>();
                 ProductInteractions.pi_Single.SetParentToPhotonView(index, affectedController.photonView.ViewID, RpcTarget.All);
+                Vector3 pos = transform.localPosition;
+                Vector3 force = Vector3.zero;
+                Quaternion rot = transform.localRotation;
+                ProductInteractions.pi_Single.SetLocalUseableProductPositionAndRotationAddForceAndSetKinematic(index, pos, force, 1, rot, RpcTarget.All);
                 affectedController.powerups_AffectingMe.Add(this);
                 affectedCartStorage = affectedController.cartStorage;
                 rigid.isKinematic = true;

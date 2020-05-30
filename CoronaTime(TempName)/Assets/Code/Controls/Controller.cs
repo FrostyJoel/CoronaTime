@@ -28,20 +28,19 @@ public class Controller : MonoBehaviourPun {
 
     [Space] [Range(0, 90)]
     public float camInrangeForRotationDegree;
-    public Vector3 centerOfMass;
     float xRotationAxisAngle, yRotationAxisAngle;
 
-    [Header("HideInInspector")]
+    [HideInInspector] public float currentWalkSpeed;
     [HideInInspector] public bool canMove;
-    [HideInInspector] public Transform localPlayerTarget;
-    [HideInInspector] public Rigidbody rigid;
     [HideInInspector] public Vector3 startPosition;
+    [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Quaternion startRotation;
+    [HideInInspector] public Rigidbody rigid;
     [HideInInspector] public CartStorage cartStorage;
-    public float currentWalkSpeed;
-    public PowerUp useableProduct;
-    public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
-    public Collider[] colliders;
+    [HideInInspector] public Outline myOutline;
+    [HideInInspector] public PowerUp useableProduct;
+    [HideInInspector] public Collider[] colliders;
+    [HideInInspector] public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
 
     Camera[] cams;
     AudioListener audioListeners;
@@ -84,7 +83,6 @@ public class Controller : MonoBehaviourPun {
             Cursor.visible = false;
         }
         Init();
-        rigid.centerOfMass = centerOfMass;
         canMove = true; Debug.LogWarning("(bool)canMove WAS ACCESSED BY A DEV FUNCTION, CHANGE TO ALTERNATIVE WHEN READY");
     }
 

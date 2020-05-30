@@ -82,6 +82,15 @@ MonoBehaviour:
   - RPC_EnableDisableAllProductColliders
   - RPC_ChangePowerUpPlace
   - RPC_ChangeProductPlace
+  - RPC_SetGlobalUseableProductPosition
+  - RPC_SetLocalUseableProductPosition
+  - RPC_SyncUnSyncPosition
+  - RPC_SyncUnSyncUseableProductPosition
+  - RPC_SetGlobalUseableProductPositionAndRotation
+  - RPC_SetLocalUseableProductPositionAndRotation
+  - RPC_SetGlobalUseableProductPositionAndRotationAddForce
+  - RPC_SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic
+  - RPC_SetLocalUseableProductPositionAndRotationAddForceAndSetKinematic
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

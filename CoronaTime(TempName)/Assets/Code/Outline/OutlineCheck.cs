@@ -24,6 +24,7 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
             if (Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, Mathf.Infinity))
             {
                 Outline outlineObj = hit.transform.gameObject.GetComponent<Outline>();
+
                 if (lastOutline != outlineObj && lastOutline != null)
                 {
                     lastOutline.enabled = false;
@@ -35,12 +36,15 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
 
     private void DistanceCheck(Outline outlineObj)
     {
-        if (hit.distance < storage.interactRange)
-        {
+        if (hit.distance < storage.interactRange) {
             if (outlineObj)
             {
-                if (!outlineObj.enabled)
-                {
+                PowerUp pu = hit.transform.gameObject.GetComponent<PowerUp>();
+                bool canShow = true;
+                if (pu && pu.currentPlace != Interactable.Place.InShelve) {
+                    canShow = false;
+                }
+                if (!outlineObj.enabled && canShow) {
                     lastOutline = outlineObj;
                     outlineObj.enabled = true;
                 }

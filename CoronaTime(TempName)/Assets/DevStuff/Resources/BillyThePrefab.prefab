@@ -497,16 +497,17 @@ MonoBehaviour:
   maxHorizontalViewAngle: 90
   camInrangeForRotationDegree: 1
   centerOfMass: {x: 0, y: 0, z: 0}
-  canMove: 0
-  localPlayerTarget: {fileID: 0}
-  rigid: {fileID: 5992604071259634013}
-  startPosition: {x: 0, y: 0, z: 0}
-  startRotation: {x: 0, y: 0, z: 0, w: 0}
-  cartStorage: {fileID: 0}
   currentWalkSpeed: 0
+  canMove: 0
+  startPosition: {x: 0, y: 0, z: 0}
+  localPlayerTarget: {fileID: 0}
+  startRotation: {x: 0, y: 0, z: 0, w: 0}
+  rigid: {fileID: 5992604071259634013}
+  cartStorage: {fileID: 0}
+  myOutline: {fileID: 0}
   useableProduct: {fileID: 0}
-  powerups_AffectingMe: []
   colliders: []
+  powerups_AffectingMe: []
 --- !u!114 &1339369616197313166
 MonoBehaviour:
   m_ObjectHideFlags: 0

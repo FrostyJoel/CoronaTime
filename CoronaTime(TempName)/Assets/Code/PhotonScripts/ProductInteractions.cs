@@ -32,8 +32,20 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_SetPowerUp", selectedTarget, index, id);
     }
 
-    public void SetProductPosition(int index, Vector3 pos, Quaternion rot, RpcTarget selectedTarget) { 
-        photonView.RPC("RPC_SetProductPosition", selectedTarget, index, pos, rot);
+    public void SetGlobalUseableProductPositionAndRotation(int index, Vector3 pos, Quaternion rot, RpcTarget selectedTarget) { 
+        photonView.RPC("RPC_SetGlobalUseableProductPositionAndRotation", selectedTarget, index, pos, rot);
+    }
+
+    public void SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic(int index, Vector3 pos, Vector3 force, int kinematicState, Quaternion rot, RpcTarget selectedTarget) { 
+        photonView.RPC("RPC_SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic", selectedTarget, index, pos, force, kinematicState, rot);
+    }
+
+    public void SetLocalUseableProductPositionAndRotationAddForceAndSetKinematic(int index, Vector3 pos, Vector3 force, int kinematicState, Quaternion rot, RpcTarget selectedTarget) { 
+        photonView.RPC("RPC_SetLocalUseableProductPositionAndRotationAddForceAndSetKinematic", selectedTarget, index, pos, force, kinematicState, rot);
+    }
+
+    public void SetLocalUseableProductPositionAndRotation(int index, Vector3 pos, Quaternion rot, RpcTarget selectedTarget) { 
+        photonView.RPC("RPC_SetLocalUseableProductPositionAndRotation", selectedTarget, index, pos, rot);
     }
 
     public void SetParentToPhotonView(int index, int id, RpcTarget selectedTarget) {
@@ -107,9 +119,41 @@ public class ProductInteractions : MonoBehaviourPun {
     }
 
     [PunRPC]
-    void RPC_SetProductPosition(int index, Vector3 pos, Quaternion rot) {
+    void RPC_SetGlobalUseableProductPositionAndRotation(int index, Vector3 pos, Quaternion rot) {
         PhotonProductList.staticUseableProductList[index].transform.position = pos;
         PhotonProductList.staticUseableProductList[index].transform.rotation = rot;
+    }
+
+    [PunRPC]
+    void RPC_SetLocalUseableProductPositionAndRotation(int index, Vector3 pos, Quaternion rot) {
+        PhotonProductList.staticUseableProductList[index].transform.localPosition = pos;
+        PhotonProductList.staticUseableProductList[index].transform.localRotation = rot;
+    }
+
+    [PunRPC]
+    void RPC_SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic(int index, Vector3 pos, Vector3 force, int kinematicState, Quaternion rot) {
+        bool makeKinematic = false;
+        if(kinematicState == 1) {
+            makeKinematic = true;
+        }
+
+        PhotonProductList.staticUseableProductList[index].transform.position = pos;
+        PhotonProductList.staticUseableProductList[index].transform.rotation = rot;
+        PhotonProductList.staticUseableProductList[index].rigid.isKinematic = makeKinematic;
+        PhotonProductList.staticUseableProductList[index].rigid.AddForce(force);
+    }
+
+    [PunRPC]
+    void RPC_SetLocalUseableProductPositionAndRotationAddForceAndSetKinematic(int index, Vector3 pos, Vector3 force, int kinematicState, Quaternion rot) {
+        bool makeKinematic = false;
+        if(kinematicState == 1) {
+            makeKinematic = true;
+        }
+
+        PhotonProductList.staticUseableProductList[index].transform.localPosition = pos;
+        PhotonProductList.staticUseableProductList[index].transform.localRotation = rot;
+        PhotonProductList.staticUseableProductList[index].rigid.isKinematic = makeKinematic;
+        PhotonProductList.staticUseableProductList[index].rigid.AddForce(force);
     }
 
     [PunRPC]

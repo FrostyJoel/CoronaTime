@@ -9,6 +9,7 @@ public class PowerUp : Interactable {
     [HideInInspector] public Controller affectedController;
     [HideInInspector] public CartStorage affectedCartStorage;
     [HideInInspector] public float durationSpentInSeconds;
+    [HideInInspector] public Rigidbody rigid;
 
     public virtual void Use() {
         affectedController.powerups_AffectingMe.Add(this);
