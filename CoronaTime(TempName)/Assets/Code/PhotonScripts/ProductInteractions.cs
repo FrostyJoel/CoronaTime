@@ -64,6 +64,14 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_ChangePowerUpPlace", selectedTarget, index, placeIndex);        
     }
 
+    public void SetAffectedController(int index, int id, bool capsuleHit, RpcTarget selectedTarget) {
+        int wasCapsuleHit = 0;
+        if (capsuleHit) {
+            wasCapsuleHit = 1;
+        }
+        photonView.RPC("RPC_SetAffectedController", selectedTarget, index, id, wasCapsuleHit);        
+    }
+
     [PunRPC]
     void RPC_DestroyProduct(int index) {
         try {
@@ -180,5 +188,19 @@ public class ProductInteractions : MonoBehaviourPun {
     [PunRPC]
     void RPC_ChangePowerUpPlace(int index, int placeIndex) {
         PhotonProductList.staticUseableProductList[index].currentPlace = (Interactable.Place)placeIndex;
+    }
+
+    [PunRPC]
+    void RPC_SetAffectedController(int index, int id, int capsuleHit) {
+        PhotonView pv = PhotonNetwork.GetPhotonView(id);
+        if (pv.Owner.IsLocal) {
+            PowerUp pu = PhotonProductList.staticUseableProductList[index];
+            pu.affectedController = pv.GetComponent<Controller>();
+            pu.affectedController.powerups_AffectingMe.Add(pu);
+            pu.affectedCartStorage = pu.affectedController.cartStorage;
+            if (capsuleHit == 1) {
+                pu.gameObject.layer = Manager.staticInformation.int_DontShowTheseLayersLocal;
+            }
+        }
     }
 }

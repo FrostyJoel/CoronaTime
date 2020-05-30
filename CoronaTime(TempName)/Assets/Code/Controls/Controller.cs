@@ -28,7 +28,9 @@ public class Controller : MonoBehaviourPun {
 
     [Space][Range(0, 90)]
     public float camInrangeForRotationDegree;
-    float xRotationAxisAngle, yRotationAxisAngle;
+
+    [Header("Particles")]
+    public ParticleDurations[] particles;
 
     [HideInInspector] public bool canMove;
     [HideInInspector] public float currentWalkSpeed;
@@ -44,7 +46,7 @@ public class Controller : MonoBehaviourPun {
 
     Camera[] cams;
     AudioListener audioListeners;
-    float defaultFov, currentSprintValue, currentFovValue;
+    float defaultFov, currentSprintValue, currentFovValue, xRotationAxisAngle, yRotationAxisAngle;
 
     private void Awake() {
         TurnCollidersOnOff(false);
@@ -84,7 +86,8 @@ public class Controller : MonoBehaviourPun {
             Cursor.visible = false;
         }
         Init();
-        canMove = true; Debug.LogWarning("(bool)canMove WAS ACCESSED BY A DEV FUNCTION, CHANGE TO ALTERNATIVE WHEN READY");
+        canMove = true; 
+        Debug.LogWarning("(bool)canMove WAS ACCESSED BY A DEV FUNCTION, CHANGE TO ALTERNATIVE WHEN READY");
     }
 
     private void Update() {
@@ -122,6 +125,9 @@ public class Controller : MonoBehaviourPun {
     void CheckAndApplyPowerUpFX() {
         currentWalkSpeed = defaultWalkSpeed;
         if (powerups_AffectingMe.Count > 0) {
+            if (photonView.IsMine) {
+                print("Count > 0");
+            }
             for (int i = 0; i < powerups_AffectingMe.Count; i++) {
                 powerups_AffectingMe[i].UseEffect();
             }

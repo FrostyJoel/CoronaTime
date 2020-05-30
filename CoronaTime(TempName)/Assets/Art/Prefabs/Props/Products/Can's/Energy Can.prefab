@@ -108,6 +108,7 @@ MonoBehaviour:
   outlineMode: 1
   outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
   outlineWidth: 2
+  outlineChild: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -123,12 +124,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5449fa3cc7dfe4a8a4df3d8ea4edae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
   audioGroup: 2
   currentPlace: 0
   newValueDuringFX: 0.12
   durationInSeconds: 10
+  whatParticleToUse: 2
   index: 0
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}
-  inUse: 0
   durationSpentInSeconds: 0
+  rigid: {fileID: 0}
+  inUse: 0

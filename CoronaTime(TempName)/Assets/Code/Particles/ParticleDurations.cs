@@ -8,15 +8,9 @@ public class ParticleDurations : MonoBehaviour
     public bool play = false;
     private ParticleSystem[] ps;
 
-    // Start is called before the first frame update
     void Start()
     {
         ps = GetComponentsInChildren<ParticleSystem>();
-        foreach (ParticleSystem party in ps)
-        {
-            ParticleSystem.MainModule nPS = party.main;
-            nPS.duration = dur;   
-        }
     }
     private void Update()
     {
@@ -25,6 +19,8 @@ public class ParticleDurations : MonoBehaviour
             foreach (ParticleSystem party in ps)
             {
                 party.Stop();
+                ParticleSystem.MainModule nPS = party.main;
+                nPS.duration = dur;
                 party.Play();
             }
             play = false;

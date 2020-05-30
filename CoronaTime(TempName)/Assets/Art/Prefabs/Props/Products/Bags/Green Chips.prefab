@@ -144,17 +144,21 @@ MonoBehaviour:
   clip: {fileID: 0}
   audioGroup: 2
   currentPlace: 0
-  newValueDuringFX: 0
-  durationInSeconds: 0
+  newValueDuringFX: 0.5
+  durationInSeconds: 4
   index: 0
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}
   durationSpentInSeconds: 0
-  thisCollider: {fileID: 0}
   rigid: {fileID: 0}
+  thisCollider: {fileID: 0}
   throwForce: 100
   angleUp: 0
-  inAir: 0
+  throwChecks: 0
+  masterThrown: 0
   extends: {x: 0.2, y: 0.1, z: 0.3}
   collidersHit: []
   closestIndex: -1
+  onlyCollisionOverlapWith:
+    serializedVersion: 2
+    m_Bits: 512

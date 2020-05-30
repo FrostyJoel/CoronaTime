@@ -58,28 +58,21 @@ public class ThrowPU : PowerUp {
         RaycastHit hit, closestHit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, 1f)) {
             closestHit = hit;//for possible change
-            if (closestHit.transform.GetComponent<Controller>()) {
-                Debug.Log("HIT CONTROLLER");
+            Controller hitController = closestHit.transform.GetComponent<Controller>();
+            if (hitController) {
                 transform.position = closestHit.point;
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, closestHit.normal);
-                affectedController = closestHit.transform.GetComponent<Controller>();
-                ProductInteractions.pi_Single.SetParentToPhotonView(index, affectedController.photonView.ViewID, RpcTarget.All);
+                ProductInteractions.pi_Single.SetParentToPhotonView(index, hitController.photonView.ViewID, RpcTarget.All);
                 Vector3 pos = transform.localPosition;
                 Vector3 force = Vector3.zero;
                 Quaternion rot = transform.localRotation;
                 ProductInteractions.pi_Single.SetLocalUseableProductPositionAndRotationAddForceAndSetKinematic(index, pos, force, 1, rot, RpcTarget.All);
-                affectedController.powerups_AffectingMe.Add(this);
-                if(closestHit.collider.GetType() == typeof(CapsuleCollider)) {
-                    gameObject.layer = Manager.staticInformation.int_DontShowTheseLayersLocal;
+                bool capsuleHit = false;
+                if (closestHit.collider.GetType() == typeof(CapsuleCollider)) {
+                    capsuleHit = true;
                 }
-                affectedCartStorage = affectedController.cartStorage;
-                rigid.isKinematic = true;
+                ProductInteractions.pi_Single.SetAffectedController(index, hitController.photonView.ViewID, capsuleHit, RpcTarget.All);                
             }
         }
-    }
-
-    private void OnDrawGizmos() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, transform.forward);
     }
 }

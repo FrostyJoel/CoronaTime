@@ -7,7 +7,7 @@ using UnityEngine;
 public class InteractableProduct : Interactable {
 
     public Product scriptableProduct;
-    public int index;
+    [HideInInspector] public int index;
 
     public override void Interact(CartStorage cartStorage) {
         if (currentPlace == Place.InShelve && cartStorage.AddToCart(index)) {
