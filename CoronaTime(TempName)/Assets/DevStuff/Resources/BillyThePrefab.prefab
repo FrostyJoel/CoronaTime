@@ -496,16 +496,15 @@ MonoBehaviour:
   maxVerticalViewAngle: 50
   maxHorizontalViewAngle: 90
   camInrangeForRotationDegree: 1
-  centerOfMass: {x: 0, y: 0, z: 0}
-  currentWalkSpeed: 0
   canMove: 0
+  currentWalkSpeed: 0
   startPosition: {x: 0, y: 0, z: 0}
-  localPlayerTarget: {fileID: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
   rigid: {fileID: 5992604071259634013}
-  cartStorage: {fileID: 0}
   myOutline: {fileID: 0}
   useableProduct: {fileID: 0}
+  cartStorage: {fileID: 0}
+  localPlayerTarget: {fileID: 0}
   colliders: []
   powerups_AffectingMe: []
 --- !u!114 &1339369616197313166
@@ -537,19 +536,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holder: {fileID: 339689506113196052}
   transform_PowerUpHolder: {fileID: 2891051539034649692}
-  controller: {fileID: 0}
   interactRange: 6
   maxItemsHeld: 8
-  score: 0
   itemHolders: []
-  heldProducts: []
-  heldProductModels: []
-  soldProducts: []
   transform_Scoreboard: {fileID: 8920602949418833783}
   prefab_ScoreboardListing: {fileID: 6263856385427521299, guid: 156475244a923c7489c8e01dc8f6c109,
     type: 3}
-  sbListingsList: []
+  score: 0
+  controller: {fileID: 0}
   storages: []
+  heldProducts: []
+  heldProductModels: []
+  soldProducts: []
+  sbListingsList: []
 --- !u!65 &6388710439779865806
 BoxCollider:
   m_ObjectHideFlags: 0

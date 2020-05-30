@@ -26,19 +26,19 @@ public class Controller : MonoBehaviourPun {
     [Range(0, 90)]
     public float maxVerticalViewAngle = 30, maxHorizontalViewAngle = 80;
 
-    [Space] [Range(0, 90)]
+    [Space][Range(0, 90)]
     public float camInrangeForRotationDegree;
     float xRotationAxisAngle, yRotationAxisAngle;
 
-    [HideInInspector] public float currentWalkSpeed;
     [HideInInspector] public bool canMove;
+    [HideInInspector] public float currentWalkSpeed;
     [HideInInspector] public Vector3 startPosition;
-    [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Quaternion startRotation;
     [HideInInspector] public Rigidbody rigid;
-    [HideInInspector] public CartStorage cartStorage;
     [HideInInspector] public Outline myOutline;
     [HideInInspector] public PowerUp useableProduct;
+    [HideInInspector] public CartStorage cartStorage;
+    [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Collider[] colliders;
     [HideInInspector] public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
 
@@ -64,6 +64,7 @@ public class Controller : MonoBehaviourPun {
                     meshRenderersToDisableLocally[i].enabled = false;
                 }
             }
+            gameObject.layer = Manager.staticInformation.int_LocalPlayerLayer;
         }
         if (PhotonNetwork.IsConnected) {
             photonView.RPC("RPC_SetNicknameTargets", RpcTarget.All);

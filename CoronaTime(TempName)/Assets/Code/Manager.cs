@@ -11,17 +11,14 @@ public class Manager : MonoBehaviourPun {
     public ColorManaging colorManaging;
     public static StaticInformation staticInformation;
     public static ColorManaging staticColorManaging;
-
     private void Awake() {
         DontDestroyOnLoad(gameObject);
         staticInformation = staticInfo;
-
         for (int i = 0; i < colorManaging.amountColorOptions; i++) {
             colorManaging.colorPicks.Add(new ColorPick() {
                 color = Color.HSVToRGB((float)i / colorManaging.amountColorOptions + 1f / colorManaging.amountColorOptions, 1, 1)
             });            
         }
-
         staticColorManaging = colorManaging;
         AudioManager.audioMixer = staticInformation.audioMixer;
     }
@@ -30,7 +27,7 @@ public class Manager : MonoBehaviourPun {
 [Serializable]
 public class StaticInformation {
     public AudioMixer audioMixer;
-    public LayerMask dontShowTheseLayersLocal;
+    public int int_DontShowTheseLayersLocal, int_LocalPlayerLayer;
 }
 
 [Serializable]

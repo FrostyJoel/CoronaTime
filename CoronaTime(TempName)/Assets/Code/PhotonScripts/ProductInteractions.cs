@@ -168,7 +168,7 @@ public class ProductInteractions : MonoBehaviourPun {
     [PunRPC]
     void RPC_DisableLocalVisibility(int index, int id) {
         if (PhotonNetwork.GetPhotonView(id).Owner.IsLocal) {
-            PhotonProductList.staticUseableProductList[index].gameObject.layer = (int)Mathf.Sqrt(Manager.staticInformation.dontShowTheseLayersLocal.value) / 4;
+            PhotonProductList.staticUseableProductList[index].gameObject.layer = Manager.staticInformation.int_DontShowTheseLayersLocal;
         }
     }
 
