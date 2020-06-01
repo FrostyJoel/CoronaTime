@@ -92,6 +92,10 @@ MonoBehaviour:
   - RPC_SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic
   - RPC_SetLocalUseableProductPositionAndRotationAddForceAndSetKinematic
   - RPC_SetAffectedController
+  - RPC_DisableVisibility
+  - RPC_EnableDisableControllerOutline
+  - RPC_MakeKinematicAndSetParentToPhotonView
+  - RPC_StartStopParticle
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

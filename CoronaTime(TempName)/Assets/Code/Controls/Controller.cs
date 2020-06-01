@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Rigidbody))][RequireComponent(typeof(CartStorage))]
+[RequireComponent(typeof(CartStorage))]
 public class Controller : MonoBehaviourPun {
     public PlayerView playerView;
     public Transform transform_Pov, transform_PovHolder, transform_Head, transform_ThrowFromPoint;
@@ -36,21 +36,18 @@ public class Controller : MonoBehaviourPun {
     [HideInInspector] public float currentWalkSpeed;
     [HideInInspector] public Vector3 startPosition;
     [HideInInspector] public Quaternion startRotation;
-    [HideInInspector] public Rigidbody rigid;
     [HideInInspector] public Outline myOutline;
     [HideInInspector] public PowerUp useableProduct;
     [HideInInspector] public CartStorage cartStorage;
     [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Collider[] colliders;
-    [HideInInspector] public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
+    public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
 
     Camera[] cams;
     AudioListener audioListeners;
     float defaultFov, currentSprintValue, currentFovValue, xRotationAxisAngle, yRotationAxisAngle;
 
     private void Awake() {
-        TurnCollidersOnOff(false);
-        rigid = GetComponent<Rigidbody>();
         cams = GetComponentsInChildren<Camera>();
         defaultFov = cams[0].fieldOfView;
         for (int i = 0; i < cams.Length; i++) {
@@ -78,6 +75,8 @@ public class Controller : MonoBehaviourPun {
             }
         }
         cartStorage = GetComponent<CartStorage>();
+        myOutline = GetComponentInChildren<Outline>();
+        myOutline.enabled = false;
     }
 
     private void Start() {
@@ -110,15 +109,6 @@ public class Controller : MonoBehaviourPun {
                 cams[i].enabled = true;
             }
             audioListeners.enabled = true;
-        }
-        rigid.isKinematic = false;
-        TurnCollidersOnOff(true);
-    }
-
-    void TurnCollidersOnOff(bool state) {
-        colliders = GetComponentsInChildren<Collider>();
-        for (int i = 0; i < colliders.Length; i++) {
-            colliders[i].enabled = state;
         }
     }
 
@@ -270,7 +260,6 @@ public class Controller : MonoBehaviourPun {
         transform_PovHolder.transform.localRotation = Quaternion.identity;
         xRotationAxisAngle = 0;
         yRotationAxisAngle = 0;
-        rigid.velocity = Vector3.zero;
     }
 
     [PunRPC]

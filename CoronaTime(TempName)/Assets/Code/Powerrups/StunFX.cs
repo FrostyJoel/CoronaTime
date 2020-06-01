@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using Photon.Pun;
 
 public class StunFX : ThrowPU {
     
     public override void Effect() {
         affectedController.currentWalkSpeed *= newValueDuringFX;
         if (!inUse) {
-            AudioManager.PlaySound(clip, audioGroup);
+            ProductInteractions.pi_Single.DisableVisibility(index, affectedController.photonView.ViewID, 0, RpcTarget.All);
+            if (clip) {
+                AudioManager.PlaySound(clip, audioGroup);
+            }
             StartParticle();
             inUse = true;
         }

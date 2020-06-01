@@ -15,7 +15,11 @@ GameObject:
   - component: {fileID: 114025253425412838}
   - component: {fileID: 1546156900}
   - component: {fileID: 1546156899}
-  m_Layer: 0
+  - component: {fileID: 8661308757707870481}
+  - component: {fileID: 4285570739143856932}
+  - component: {fileID: 1452379908897876380}
+  - component: {fileID: 306392423197680709}
+  m_Layer: 11
   m_Name: Blue Chips
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -32,7 +36,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8167497308645915735}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -92,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15445322, y: 0.07500962, z: 0.24554995}
-  m_Center: {x: 0.0028234534, y: 0.036992263, z: 0.0007528104}
+  m_Size: {x: 0.08, y: 0.07500962, z: 0.186}
+  m_Center: {x: 0, y: 0.0375, z: 0}
 --- !u!114 &114025253425412838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,19 +151,110 @@ MonoBehaviour:
   currentPlace: 0
   newValueDuringFX: 0.5
   durationInSeconds: 4
-  index: 0
+  whatParticleToUse: 3
+  index: 7
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}
   durationSpentInSeconds: 0
   rigid: {fileID: 0}
+  inUse: 0
   thisCollider: {fileID: 0}
   throwForce: 100
   angleUp: 0
   throwChecks: 0
   masterThrown: 0
   extends: {x: 0.2, y: 0.1, z: 0.3}
+  gizmosCenter: {x: 0, y: 0, z: -0.035}
   collidersHit: []
   closestIndex: -1
   onlyCollisionOverlapWith:
     serializedVersion: 2
     m_Bits: 512
+  newCollisionRaycastPositionIfNeeded: {fileID: 8167497308645915735}
+  showGizmos: 0
+--- !u!136 &8661308757707870481
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887482787335050402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.037
+  m_Height: 0.155
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.0375, z: -0.093}
+--- !u!136 &4285570739143856932
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887482787335050402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.037
+  m_Height: 0.155
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.0375, z: 0.093}
+--- !u!136 &1452379908897876380
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887482787335050402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.037
+  m_Height: 0.26
+  m_Direction: 2
+  m_Center: {x: -0.04, y: 0.0375, z: 0}
+--- !u!136 &306392423197680709
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887482787335050402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.037
+  m_Height: 0.26
+  m_Direction: 2
+  m_Center: {x: 0.04, y: 0.0375, z: 0}
+--- !u!1 &4856893349148696971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8167497308645915735}
+  m_Layer: 0
+  m_Name: NewRaycastCollisionPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8167497308645915735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4856893349148696971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.04, z: -0.122}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2887482787335407746}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

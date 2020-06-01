@@ -4,7 +4,7 @@ using UnityEngine;
 public class PowerUp : Interactable {
     public float newValueDuringFX, durationInSeconds;
     [Header("Particle")][Tooltip("Count start 0")]
-    public int whatParticleToUse;
+    public int whatParticleToUse = 1;
     [HideInInspector] public int index;
     [HideInInspector] public Controller affectedController;
     [HideInInspector] public CartStorage affectedCartStorage;
@@ -21,11 +21,9 @@ public class PowerUp : Interactable {
     public virtual void UseEffect() {
         if (durationSpentInSeconds < durationInSeconds) {
             Effect();
-            print("Effect " + durationSpentInSeconds + " / " + durationInSeconds);
             durationSpentInSeconds += Time.deltaTime;
         } else {
             StopUsing();
-            print("Stop using");
         }
     }
 
@@ -34,8 +32,10 @@ public class PowerUp : Interactable {
     }
 
     public void StartParticle() {
-        affectedController.particles[whatParticleToUse].dur = durationInSeconds;
-        affectedController.particles[whatParticleToUse].play = true;
+        if(whatParticleToUse >= 0) {
+            print("Play");
+            ProductInteractions.pi_Single.StartStopParticle(whatParticleToUse, affectedController.photonView.ViewID, true, RpcTarget.All);
+        }
     }
 
     public override void Interact(CartStorage cartStorage) {
@@ -51,6 +51,9 @@ public class PowerUp : Interactable {
 
     public virtual void StopUsing() {
         affectedController.powerups_AffectingMe.Remove(this);
+        if (whatParticleToUse >= 0) {
+            ProductInteractions.pi_Single.StartStopParticle(whatParticleToUse, affectedController.photonView.ViewID, false, RpcTarget.All);
+        }
         ProductInteractions.pi_Single.DestroyUseAbleProduct(index, RpcTarget.All);
     }
 }

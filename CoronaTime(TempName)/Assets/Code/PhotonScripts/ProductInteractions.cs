@@ -52,8 +52,8 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_SetParentToPhotonView", selectedTarget, index, id);
     }
 
-    public void DisableLocalVisibility(int index, int id, RpcTarget selectedTarget) {
-        photonView.RPC("RPC_DisableLocalVisibility", selectedTarget, index, id);
+    public void DisableVisibility(int index, int id, int local, RpcTarget selectedTarget) {
+        photonView.RPC("RPC_DisableVisibility", selectedTarget, index, id, local);
     }
 
     public void ChangeProductPlace(int index, int placeIndex, RpcTarget selectedTarget) {
@@ -71,6 +71,23 @@ public class ProductInteractions : MonoBehaviourPun {
         }
         photonView.RPC("RPC_SetAffectedController", selectedTarget, index, id, wasCapsuleHit);        
     }
+
+    public void EnableDisableControllerOutline(int id, bool enableOutline, RpcTarget selectedTarget) {
+        int enable = 0;
+        if (enableOutline) {
+            enable = 1;
+        }
+        photonView.RPC("RPC_EnableDisableControllerOutline", selectedTarget, id, enable);
+    }
+
+    public void StartStopParticle(int index, int id, bool play, RpcTarget selectedTarget) {
+        int startPlaying = 0;
+        if (play) {
+            startPlaying = 1;
+        }
+        photonView.RPC("RPC_StartStopParticle", selectedTarget, index, id, startPlaying);
+    }
+
 
     [PunRPC]
     void RPC_DestroyProduct(int index) {
@@ -174,8 +191,12 @@ public class ProductInteractions : MonoBehaviourPun {
     }
 
     [PunRPC]
-    void RPC_DisableLocalVisibility(int index, int id) {
-        if (PhotonNetwork.GetPhotonView(id).Owner.IsLocal) {
+    void RPC_DisableVisibility(int index, int id, int local) {
+        if (local == 1) {
+            if (PhotonNetwork.GetPhotonView(id).Owner.IsLocal) {
+                PhotonProductList.staticUseableProductList[index].gameObject.layer = Manager.staticInformation.int_DontShowTheseLayersLocal;
+            }
+        } else {
             PhotonProductList.staticUseableProductList[index].gameObject.layer = Manager.staticInformation.int_DontShowTheseLayersLocal;
         }
     }
@@ -200,6 +221,27 @@ public class ProductInteractions : MonoBehaviourPun {
             pu.affectedCartStorage = pu.affectedController.cartStorage;
             if (capsuleHit == 1) {
                 pu.gameObject.layer = Manager.staticInformation.int_DontShowTheseLayersLocal;
+            }
+        }
+    }
+
+    [PunRPC]
+    void RPC_EnableDisableControllerOutline(int id, int enableOutline) {
+        bool enable = false;
+        if(enableOutline == 1) {
+            enable = true;
+        }
+        PhotonNetwork.GetPhotonView(id).GetComponent<Controller>().myOutline.enabled = enable;
+    }
+
+    [PunRPC]
+    void RPC_StartStopParticle(int index, int id, int play) {
+        ParticleSystem[] ps = PhotonNetwork.GetPhotonView(id).GetComponent<Controller>().particles[index].ps;
+        for (int i = 0; i < ps.Length; i++) {
+            if (play == 1) {
+                ps[i].Play();
+            } else {
+                ps[i].Stop();
             }
         }
     }

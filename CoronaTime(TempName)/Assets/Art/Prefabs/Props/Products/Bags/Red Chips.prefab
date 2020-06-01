@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1847125105712480254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 429908451551048169}
+  m_Layer: 0
+  m_Name: NewRaycastCollisionPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &429908451551048169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847125105712480254}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.04, z: -0.122}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3552617622119824926}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3552617622119457342
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,7 +45,11 @@ GameObject:
   - component: {fileID: 114986389555212678}
   - component: {fileID: 24256324}
   - component: {fileID: 24256323}
-  m_Layer: 0
+  - component: {fileID: 3603778811996348899}
+  - component: {fileID: 7932106687753071564}
+  - component: {fileID: 1090117544656488479}
+  - component: {fileID: 6808685085281211594}
+  m_Layer: 11
   m_Name: Red Chips
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -32,7 +66,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 429908451551048169}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -92,8 +127,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15445322, y: 0.07500962, z: 0.24554995}
-  m_Center: {x: 0.0028234534, y: 0.036992263, z: 0.0007528104}
+  m_Size: {x: 0.08, y: 0.07500962, z: 0.186}
+  m_Center: {x: 0, y: 0.0375, z: 0}
 --- !u!114 &114986389555212678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,19 +181,80 @@ MonoBehaviour:
   currentPlace: 0
   newValueDuringFX: 0.5
   durationInSeconds: 4
-  index: 0
+  whatParticleToUse: 3
+  index: 1
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}
   durationSpentInSeconds: 0
   rigid: {fileID: 0}
+  inUse: 0
   thisCollider: {fileID: 0}
   throwForce: 100
   angleUp: 0
   throwChecks: 0
   masterThrown: 0
   extends: {x: 0.2, y: 0.1, z: 0.3}
+  gizmosCenter: {x: 0, y: 0, z: -0.035}
   collidersHit: []
   closestIndex: -1
   onlyCollisionOverlapWith:
     serializedVersion: 2
     m_Bits: 512
+  newCollisionRaycastPositionIfNeeded: {fileID: 429908451551048169}
+  showGizmos: 0
+--- !u!136 &3603778811996348899
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3552617622119457342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.037
+  m_Height: 0.155
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.0375, z: -0.093}
+--- !u!136 &7932106687753071564
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3552617622119457342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.037
+  m_Height: 0.155
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.0375, z: 0.093}
+--- !u!136 &1090117544656488479
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3552617622119457342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.037
+  m_Height: 0.26
+  m_Direction: 2
+  m_Center: {x: -0.04, y: 0.0375, z: 0}
+--- !u!136 &6808685085281211594
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3552617622119457342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.037
+  m_Height: 0.26
+  m_Direction: 2
+  m_Center: {x: 0.04, y: 0.0375, z: 0}
