@@ -181,8 +181,7 @@ MonoBehaviour:
   currentPlace: 0
   newValueDuringFX: 0.5
   durationInSeconds: 4
-  whatParticleToUse: -1
-  standAloneParticle: {fileID: 5007456220725215299, guid: c0c6a3eb4084b444b9654fe33af1ff00,
+  particleToUse: {fileID: 5007456220725215299, guid: c0c6a3eb4084b444b9654fe33af1ff00,
     type: 3}
   index: 7
   affectedController: {fileID: 0}
@@ -190,7 +189,8 @@ MonoBehaviour:
   durationSpentInSeconds: 0
   rigid: {fileID: 0}
   inUse: 0
-  thisCollider: {fileID: 0}
+  setAsPU: 0
+  theseColliders: []
   throwForce: 100
   angleUp: 0
   throwChecks: 0

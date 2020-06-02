@@ -254,7 +254,7 @@ public class ProductInteractions : MonoBehaviourPun {
     }
 
     void RPC_InstantiateParticle(int index, Vector3 pos) {
-        ParticleDurations pd = Instantiate(PhotonProductList.staticUseableProductList[index].standAloneParticle);
+        ParticleDurations pd = Instantiate(PhotonProductList.staticUseableProductList[index].particleToUse);
         ParticleSystem[] ps = pd.ps;
         for (int i = 0; i < ps.Length; i++) {
             ps[i].Play();

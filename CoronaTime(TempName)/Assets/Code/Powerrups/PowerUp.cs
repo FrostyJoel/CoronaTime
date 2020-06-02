@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class PowerUp : Interactable {
     public float newValueDuringFX, durationInSeconds;
-    [Header("Particle")][Tooltip("Count start 0")]
-    public int whatParticleToUse = -1;
-    [Space]
-    public ParticleDurations standAloneParticle;
+    [Header("Particle")]
+    public ParticleDurations particleToUse;
     [HideInInspector] public int index;
     [HideInInspector] public Controller affectedController;
     [HideInInspector] public CartStorage affectedCartStorage;
@@ -37,8 +35,14 @@ public class PowerUp : Interactable {
 
     }
 
-    public void StartParticle() {
-        if(whatParticleToUse >= 0) {
+    public virtual void StartParticle() {
+        int whatParticleToUse = -1;
+        if (particleToUse) {
+            for (int i = 0; i < affectedController.particles.Length; i++) {
+                if(affectedController.particles[i].name == particleToUse.name) {
+                    whatParticleToUse = i;
+                }
+            }
             ProductInteractions.pi_Single.StartStopParticleOnPlayer(whatParticleToUse, affectedController.photonView.ViewID, true, RpcTarget.All);
         }
     }
@@ -56,9 +60,9 @@ public class PowerUp : Interactable {
 
     public virtual void StopUsing() {
         affectedController.powerups_AffectingMe.Remove(this);
-        if (whatParticleToUse >= 0) {
-            ProductInteractions.pi_Single.StartStopParticleOnPlayer(whatParticleToUse, affectedController.photonView.ViewID, false, RpcTarget.All);
-        }
+        //if (whatParticleToUse >= 0) {
+        //    ProductInteractions.pi_Single.StartStopParticleOnPlayer(whatParticleToUse, affectedController.photonView.ViewID, false, RpcTarget.All);
+        //}
         ProductInteractions.pi_Single.DestroyUseAbleProduct(index, 0, RpcTarget.All);
     }
 }
