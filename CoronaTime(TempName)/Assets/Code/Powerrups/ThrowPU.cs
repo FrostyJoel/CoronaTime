@@ -66,6 +66,7 @@ public class ThrowPU : PowerUp {
         }
         if (Physics.Raycast(raycastPostion.position, raycastPostion.forward, out hit, 1f)) {
             Controller hitController = hit.transform.GetComponent<Controller>();
+            print(hit.transform.gameObject.name);
             if (hitController) {
                 print("Coll");
                 transform.position = hit.point;
