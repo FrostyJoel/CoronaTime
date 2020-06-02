@@ -65,10 +65,10 @@ public class ThrowPU : PowerUp {
             raycastPostion = newCollisionRaycastPositionIfNeeded;
         }
         if (Physics.Raycast(raycastPostion.position, raycastPostion.forward, out hit, 1f)) {
-            print("Coll");
             closestHit = hit;//for possible change when firing multiple rays
             Controller hitController = closestHit.transform.GetComponent<Controller>();
             if (hitController) {
+                print("Coll");
                 transform.position = closestHit.point;
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, closestHit.normal);
                 ProductInteractions.pi_Single.SetParentToPhotonView(index, hitController.photonView.ViewID, RpcTarget.All);
