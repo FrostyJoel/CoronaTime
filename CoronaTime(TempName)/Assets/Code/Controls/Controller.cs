@@ -64,11 +64,21 @@ public class Controller : MonoBehaviourPun {
                 powerups_AffectingMe[i].durationSpentInSeconds = 0f;
                 ProductInteractions.pi_Single.DestroyUseAbleProduct(pu.index, 0, RpcTarget.All);
                 contains = true;
-                print("Contains at : " + i);
                 break;
             }
         }
         return contains;
+    }
+
+    bool CheckForBlockFX() {
+        bool block = false;
+        for (int i = 0; i < powerups_AffectingMe.Count; i++) {
+            if(powerups_AffectingMe[i].GetType() == typeof(BlockFX)) {
+                block = true;
+                break;
+            }
+        }
+        return block;
     }
 
     void TurnCollidersOnOff(bool state) {
