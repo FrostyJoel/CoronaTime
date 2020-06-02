@@ -26,7 +26,7 @@ public class ThrowPU : PowerUp {
 
     public override void Interact(CartStorage cartStorage) {
         base.Interact(cartStorage);
-        if (currentPlace == Place.InShelve) {
+        if (currentPlace != Place.InShelve) {
             ProductInteractions.pi_Single.EnableDisableAllProductColliders(index, false, RpcTarget.All);
         }
     }
