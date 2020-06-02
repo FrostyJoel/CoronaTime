@@ -96,6 +96,7 @@ MonoBehaviour:
   - RPC_EnableDisableControllerOutline
   - RPC_MakeKinematicAndSetParentToPhotonView
   - RPC_StartStopParticle
+  - RPC_StartStopParticleOnPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

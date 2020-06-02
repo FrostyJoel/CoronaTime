@@ -8,12 +8,12 @@ public class ProductInteractions : MonoBehaviourPun {
         pi_Single = this;
     }
 
-    public void DestroyProduct(int index, RpcTarget selectedTarget) {
-        photonView.RPC("RPC_DestroyProduct", selectedTarget, index);
+    public void DestroyProduct(int index, float time, RpcTarget selectedTarget) {
+        photonView.RPC("RPC_DestroyProduct", selectedTarget, index, time);
     }
 
-    public void DestroyUseAbleProduct(int index, RpcTarget selectedTarget) {
-        photonView.RPC("RPC_DestroyUseAbleProduct", selectedTarget, index);
+    public void DestroyUseAbleProduct(int index, float time, RpcTarget selectedTarget) {
+        photonView.RPC("RPC_DestroyUseAbleProduct", selectedTarget, index, time);
     }
 
     public void DestroyAllProductColliders(int index, RpcTarget selectedTarget) {
@@ -52,8 +52,12 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_SetParentToPhotonView", selectedTarget, index, id);
     }
 
-    public void DisableVisibility(int index, int id, int local, RpcTarget selectedTarget) {
-        photonView.RPC("RPC_DisableVisibility", selectedTarget, index, id, local);
+    public void DisableVisibility(int index, int id, bool local, RpcTarget selectedTarget) {
+        int isLocal = 0;
+        if (local) {
+            isLocal = 1;
+        }
+        photonView.RPC("RPC_DisableVisibility", selectedTarget, index, id, isLocal);
     }
 
     public void ChangeProductPlace(int index, int placeIndex, RpcTarget selectedTarget) {
@@ -80,26 +84,28 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_EnableDisableControllerOutline", selectedTarget, id, enable);
     }
 
-    public void StartStopParticle(int index, int id, bool play, RpcTarget selectedTarget) {
+    public void StartStopParticleOnPlayer(int index, int id, bool play, RpcTarget selectedTarget) {
         int startPlaying = 0;
         if (play) {
             startPlaying = 1;
         }
-        photonView.RPC("RPC_StartStopParticle", selectedTarget, index, id, startPlaying);
+        photonView.RPC("RPC_StartStopParticleOnPlayer", selectedTarget, index, id, startPlaying);
     }
 
 
     [PunRPC]
-    void RPC_DestroyProduct(int index) {
+    void RPC_DestroyProduct(int index, float time) {
         try {
-            Destroy(PhotonProductList.staticInteratableProductList[index].gameObject);
+            Destroy(PhotonProductList.staticInteratableProductList[index].gameObject, time);
         } catch { }
     }
 
     [PunRPC]
-    void RPC_DestroyUseAbleProduct(int index) {
+    void RPC_DestroyUseAbleProduct(int index, float time) {
         try {
-            Destroy(PhotonProductList.staticUseableProductList[index].gameObject);
+            if (!PhotonProductList.staticUseableProductList[index].GetComponent<PowerUp>().setAsPU) {
+                Destroy(PhotonProductList.staticUseableProductList[index].gameObject, time);
+            }
         } catch { }
     }
 
@@ -217,7 +223,8 @@ public class ProductInteractions : MonoBehaviourPun {
         if (pv.Owner.IsLocal) {
             PowerUp pu = PhotonProductList.staticUseableProductList[index];
             pu.affectedController = pv.GetComponent<Controller>();
-            pu.affectedController.powerups_AffectingMe.Add(pu);
+            //pu.affectedController.powerups_AffectingMe.Add(pu);
+            pu.affectedController.SetAffectingFX(pu);
             pu.affectedCartStorage = pu.affectedController.cartStorage;
             if (capsuleHit == 1) {
                 pu.gameObject.layer = Manager.staticInformation.int_DontShowTheseLayersLocal;
@@ -235,7 +242,7 @@ public class ProductInteractions : MonoBehaviourPun {
     }
 
     [PunRPC]
-    void RPC_StartStopParticle(int index, int id, int play) {
+    void RPC_StartStopParticleOnPlayer(int index, int id, int play) {
         ParticleSystem[] ps = PhotonNetwork.GetPhotonView(id).GetComponent<Controller>().particles[index].ps;
         for (int i = 0; i < ps.Length; i++) {
             if (play == 1) {
@@ -243,6 +250,14 @@ public class ProductInteractions : MonoBehaviourPun {
             } else {
                 ps[i].Stop();
             }
+        }
+    }
+
+    void RPC_InstantiateParticle(int index, Vector3 pos) {
+        ParticleDurations pd = Instantiate(PhotonProductList.staticUseableProductList[index].standAloneParticle);
+        ParticleSystem[] ps = pd.ps;
+        for (int i = 0; i < ps.Length; i++) {
+            ps[i].Play();
         }
     }
 }

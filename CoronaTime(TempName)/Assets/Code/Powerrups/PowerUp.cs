@@ -1,31 +1,37 @@
 ﻿using Photon.Pun;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerUp : Interactable {
     public float newValueDuringFX, durationInSeconds;
     [Header("Particle")][Tooltip("Count start 0")]
-    public int whatParticleToUse = 1;
+    public int whatParticleToUse = -1;
+    [Space]
+    public ParticleDurations standAloneParticle;
     [HideInInspector] public int index;
     [HideInInspector] public Controller affectedController;
     [HideInInspector] public CartStorage affectedCartStorage;
     [HideInInspector] public float durationSpentInSeconds;
     [HideInInspector] public Rigidbody rigid;
-    [Space]
-    public bool inUse;
+    [HideInInspector] public bool inUse, setAsPU;
 
     public virtual void Use() {
-        affectedController.powerups_AffectingMe.Add(this);
+        affectedController.SetAffectingFX(this);
         affectedController.useableProduct = null;
     }
 
     public virtual void UseEffect() {
-        if (durationSpentInSeconds < durationInSeconds) {
-            Effect();
-            durationSpentInSeconds += Time.deltaTime;
+        if(durationInSeconds >= 0) {
+            if (durationSpentInSeconds < durationInSeconds) {
+                Effect();
+                durationSpentInSeconds += Time.deltaTime;
+            } else {
+                StopUsing();
+            }
         } else {
-            StopUsing();
+            Effect();
         }
-    }
+    }    
 
     public virtual void Effect() {
 
@@ -33,8 +39,7 @@ public class PowerUp : Interactable {
 
     public void StartParticle() {
         if(whatParticleToUse >= 0) {
-            print("Play");
-            ProductInteractions.pi_Single.StartStopParticle(whatParticleToUse, affectedController.photonView.ViewID, true, RpcTarget.All);
+            ProductInteractions.pi_Single.StartStopParticleOnPlayer(whatParticleToUse, affectedController.photonView.ViewID, true, RpcTarget.All);
         }
     }
 
@@ -52,8 +57,8 @@ public class PowerUp : Interactable {
     public virtual void StopUsing() {
         affectedController.powerups_AffectingMe.Remove(this);
         if (whatParticleToUse >= 0) {
-            ProductInteractions.pi_Single.StartStopParticle(whatParticleToUse, affectedController.photonView.ViewID, false, RpcTarget.All);
+            ProductInteractions.pi_Single.StartStopParticleOnPlayer(whatParticleToUse, affectedController.photonView.ViewID, false, RpcTarget.All);
         }
-        ProductInteractions.pi_Single.DestroyUseAbleProduct(index, RpcTarget.All);
+        ProductInteractions.pi_Single.DestroyUseAbleProduct(index, 0, RpcTarget.All);
     }
 }

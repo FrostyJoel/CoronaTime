@@ -1,5 +1,6 @@
 ﻿using Photon.Pun;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,12 +43,50 @@ public class Controller : MonoBehaviourPun {
     [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Collider[] colliders;
     public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
-
     Camera[] cams;
     AudioListener audioListeners;
     float defaultFov, currentSprintValue, currentFovValue, xRotationAxisAngle, yRotationAxisAngle;
 
+    public void SetAffectingFX(PowerUp pu) {
+        if (powerups_AffectingMe.Count > 0) {
+            if (!ContainsPuAt(pu)) {
+                powerups_AffectingMe.Add(pu);
+                print("!Contains");
+            }
+        } else {
+            print("Count <= 0");
+            powerups_AffectingMe.Add(pu);
+        }
+    }
+
+    bool ContainsPuAt(PowerUp pu) {
+        bool contains = false;
+        for (int i = 0; i < powerups_AffectingMe.Count; i++) {
+            if(powerups_AffectingMe[i].GetType() == pu.GetType()) {
+                powerups_AffectingMe[i].durationSpentInSeconds = 0f;
+                ProductInteractions.pi_Single.DestroyUseAbleProduct(pu.index, 0, RpcTarget.All);
+                contains = true;
+                print("Contains at : " + i);
+                break;
+            }
+        }
+        return contains;
+    }
+
+    void TurnCollidersOnOff(bool state) {
+        colliders = GetComponentsInChildren<Collider>();
+        for (int i = 0; i < colliders.Length; i++) {
+            colliders[i].enabled = state;
+        }
+    }
+
+
+
+
+
+
     private void Awake() {
+        TurnCollidersOnOff(false);
         cams = GetComponentsInChildren<Camera>();
         defaultFov = cams[0].fieldOfView;
         for (int i = 0; i < cams.Length; i++) {
@@ -79,7 +118,19 @@ public class Controller : MonoBehaviourPun {
         myOutline.enabled = false;
     }
 
+    public void Init() {
+        startPosition = transform.position;
+        startRotation = transform.rotation;
+        if (photonView.IsMine || playerView.devView) {
+            for (int i = 0; i < cams.Length; i++) {
+                cams[i].enabled = true;
+            }
+            audioListeners.enabled = true;
+        }
+    }
+
     private void Start() {
+        TurnCollidersOnOff(true);
         if (hideCursorOnStart) {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -92,34 +143,10 @@ public class Controller : MonoBehaviourPun {
     private void Update() {
         if (photonView.IsMine || playerView.devView) {
             CheckAndApplyPowerUpFX();
-
             if (Input.GetButtonDown("UsePowerUp")) {
                 if (useableProduct) {
                     useableProduct.Use();
                 }
-            }
-        }
-    }
-
-    public void Init() {
-        startPosition = transform.position;
-        startRotation = transform.rotation;
-        if (photonView.IsMine || playerView.devView) {
-            for (int i = 0; i < cams.Length; i++) {
-                cams[i].enabled = true;
-            }
-            audioListeners.enabled = true;
-        }
-    }
-
-    void CheckAndApplyPowerUpFX() {
-        currentWalkSpeed = defaultWalkSpeed;
-        if (powerups_AffectingMe.Count > 0) {
-            if (photonView.IsMine) {
-                print("Count > 0");
-            }
-            for (int i = 0; i < powerups_AffectingMe.Count; i++) {
-                powerups_AffectingMe[i].UseEffect();
             }
         }
     }
@@ -186,6 +213,15 @@ public class Controller : MonoBehaviourPun {
         if (Input.GetButtonDown("UsePowerUp")) {
             if (useableProduct) {
                 useableProduct.Use();
+            }
+        }
+    }
+
+    void CheckAndApplyPowerUpFX() {
+        currentWalkSpeed = defaultWalkSpeed;
+        if (powerups_AffectingMe.Count > 0) {
+            for (int i = 0; i < powerups_AffectingMe.Count; i++) {
+                powerups_AffectingMe[i].UseEffect();
             }
         }
     }

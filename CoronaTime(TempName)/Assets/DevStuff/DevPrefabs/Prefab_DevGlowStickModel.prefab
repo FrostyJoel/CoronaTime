@@ -143,7 +143,7 @@ MonoBehaviour:
   audioGroup: 2
   currentPlace: 0
   newValueDuringFX: 0
-  durationInSeconds: 15
+  durationInSeconds: -1
   whatParticleToUse: -1
   index: 4
   affectedController: {fileID: 0}
@@ -151,6 +151,7 @@ MonoBehaviour:
   durationSpentInSeconds: 0
   rigid: {fileID: 0}
   inUse: 0
+  stringId: 
   thisCollider: {fileID: 0}
   throwForce: 100
   angleUp: 0
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 1
   outlineColor: {r: 0.132921, g: 0.9716981, b: 0.16454545, a: 1}
-  outlineWidth: 2
+  outlineWidth: 4
   outlineChild: 0
   precomputeOutline: 0
   bakeKeys: []

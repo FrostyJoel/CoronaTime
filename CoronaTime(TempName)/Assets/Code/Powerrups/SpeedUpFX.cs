@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
 
 public class SpeedUpFX : PowerUp {
 
@@ -6,6 +6,7 @@ public class SpeedUpFX : PowerUp {
         affectedController.currentWalkSpeed = newValueDuringFX;
         if (!inUse) {
             StartParticle();
+            ProductInteractions.pi_Single.DisableVisibility(index, affectedController.photonView.ViewID, false, RpcTarget.All);
             inUse = true;
         }
     }

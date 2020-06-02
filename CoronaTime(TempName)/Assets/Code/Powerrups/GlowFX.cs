@@ -5,6 +5,7 @@ public class GlowFX : ThrowPU {
     public override void Effect() {
         if (!inUse) {
             ProductInteractions.pi_Single.EnableDisableControllerOutline(affectedController.photonView.ViewID, true, RpcTarget.All);
+            inUse = true;
         }
     }
 

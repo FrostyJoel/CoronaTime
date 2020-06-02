@@ -19,7 +19,7 @@ public class InteractableCashRegister : Interactable {
                         amount = 1};
                     cartStorage.soldProducts.Add(soldProduct_);
                 }
-                ProductInteractions.pi_Single.DestroyProduct(cartStorage.heldProducts[i].index, RpcTarget.All);
+                ProductInteractions.pi_Single.DestroyProduct(cartStorage.heldProducts[i].index, 0, RpcTarget.All);
             }
             cartStorage.ClearProducts();
             cartStorage.UpdateScore();

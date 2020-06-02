@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5007456219230177667}
   serializedVersion: 6
-  lengthInSec: 3
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -4738,7 +4738,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5007456219519249863}
   serializedVersion: 6
-  lengthInSec: 3
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -9468,7 +9468,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5007456220019132924}
   serializedVersion: 6
-  lengthInSec: 3
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -14166,7 +14166,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5007456220640135361}
   serializedVersion: 6
-  lengthInSec: 3
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -18840,7 +18840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5007456220725215298
 Transform:
   m_ObjectHideFlags: 0
@@ -18870,5 +18870,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbab6608026727045bfac87853fd3eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dur: 5
-  play: 0
+  ps: []
