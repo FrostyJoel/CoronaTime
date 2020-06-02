@@ -433,7 +433,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5992604071259634000}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e79da4206fdde7742a02229083b542e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  devView: 0
+  devView: 1
   ready: 0
   myView: {fileID: 114803700820047226}
 --- !u!114 &8310589338671278652
@@ -1140,7 +1140,7 @@ PrefabInstance:
     - target: {fileID: 5288340490037991934, guid: 9d555c86f0a4bc945af5d11d650223e0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5288340490037991934, guid: 9d555c86f0a4bc945af5d11d650223e0,
         type: 3}
@@ -1304,6 +1304,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5992604071259634003}
     m_Modifications:
+    - target: {fileID: 89340349, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 90572534, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834975900, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834975900, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834975903, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458057560, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458057560, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458057560, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+      propertyPath: ShapeModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458057560, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+      propertyPath: ShapeModule.donutRadius
+      value: 0.2699479
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458057560, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+      propertyPath: ShapeModule.arc.value
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458057560, guid: 47a8c557e57b90a4b804b535a117565c, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198167362224464701, guid: 47a8c557e57b90a4b804b535a117565c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8337234225511198321, guid: 47a8c557e57b90a4b804b535a117565c,
         type: 3}
       propertyPath: m_LocalPosition.x
