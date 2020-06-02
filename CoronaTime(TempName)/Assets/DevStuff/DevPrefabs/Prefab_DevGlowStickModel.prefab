@@ -143,15 +143,16 @@ MonoBehaviour:
   audioGroup: 2
   currentPlace: 0
   newValueDuringFX: 0
-  durationInSeconds: -1
+  durationInSeconds: 15
   whatParticleToUse: -1
+  standAloneParticle: {fileID: 0}
   index: 4
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}
   durationSpentInSeconds: 0
   rigid: {fileID: 0}
   inUse: 0
-  stringId: 
+  setAsPU: 0
   thisCollider: {fileID: 0}
   throwForce: 100
   angleUp: 0

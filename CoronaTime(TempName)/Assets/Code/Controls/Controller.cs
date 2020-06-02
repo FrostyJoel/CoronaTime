@@ -51,10 +51,8 @@ public class Controller : MonoBehaviourPun {
         if (powerups_AffectingMe.Count > 0) {
             if (!ContainsPuAt(pu)) {
                 powerups_AffectingMe.Add(pu);
-                print("!Contains");
             }
         } else {
-            print("Count <= 0");
             powerups_AffectingMe.Add(pu);
         }
     }

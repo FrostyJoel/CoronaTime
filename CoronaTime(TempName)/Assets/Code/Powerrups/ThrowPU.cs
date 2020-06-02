@@ -59,25 +59,24 @@ public class ThrowPU : PowerUp {
     }
 
     public void SetPositionAndRotationToHit() {
-        RaycastHit hit, closestHit;
+        RaycastHit hit;
         Transform raycastPostion = transform;
         if (newCollisionRaycastPositionIfNeeded) {
             raycastPostion = newCollisionRaycastPositionIfNeeded;
         }
         if (Physics.Raycast(raycastPostion.position, raycastPostion.forward, out hit, 1f)) {
-            closestHit = hit;//for possible change when firing multiple rays
-            Controller hitController = closestHit.transform.GetComponent<Controller>();
+            Controller hitController = hit.transform.GetComponent<Controller>();
             if (hitController) {
                 print("Coll");
-                transform.position = closestHit.point;
-                transform.rotation = Quaternion.FromToRotation(Vector3.up, closestHit.normal);
+                transform.position = hit.point;
+                transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                 ProductInteractions.pi_Single.SetParentToPhotonView(index, hitController.photonView.ViewID, RpcTarget.All);
                 Vector3 pos = transform.localPosition;
                 Vector3 force = Vector3.zero;
                 Quaternion rot = transform.localRotation;
                 ProductInteractions.pi_Single.SetLocalUseableProductPositionAndRotationAddForceAndSetKinematic(index, pos, force, 1, rot, RpcTarget.All);
                 bool capsuleHit = false;
-                if (closestHit.collider.GetType() == typeof(CapsuleCollider)) {
+                if (hit.collider.GetType() == typeof(CapsuleCollider)) {
                     capsuleHit = true;
                 }
                 ProductInteractions.pi_Single.SetAffectedController(index, hitController.photonView.ViewID, capsuleHit, RpcTarget.All);                
