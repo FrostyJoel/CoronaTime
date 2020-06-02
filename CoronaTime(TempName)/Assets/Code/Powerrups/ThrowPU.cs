@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ThrowPU : PowerUp {
 
-    [HideInInspector] public Collider thisCollider;
+    [HideInInspector] public Collider[] theseColliders;
     public float throwForce = 100, angleUp;
     public bool throwChecks, masterThrown;
     public Vector3 extends, gizmosCenter;
@@ -13,7 +13,6 @@ public class ThrowPU : PowerUp {
     public int closestIndex = -1;
     public LayerMask onlyCollisionOverlapWith = 512;
     public Transform newCollisionRaycastPositionIfNeeded;
-
     [Space]
     public bool showGizmos;
 
@@ -22,7 +21,7 @@ public class ThrowPU : PowerUp {
         rigid.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
         rigid.isKinematic = true;
         rigid.velocity = Vector3.zero;
-        thisCollider = GetComponent<Collider>();
+        theseColliders = GetComponents<Collider>();
     }
 
     public override void Interact(CartStorage cartStorage) {
@@ -64,7 +63,8 @@ public class ThrowPU : PowerUp {
         if (newCollisionRaycastPositionIfNeeded) {
             raycastPostion = newCollisionRaycastPositionIfNeeded;
         }
-        if (Physics.Raycast(raycastPostion.position, raycastPostion.forward, out hit, 1f)) {
+        LayerMask mask = ~(1 << 11);
+        if (Physics.Raycast(raycastPostion.position, raycastPostion.forward, out hit, 1f, mask)) {
             Controller hitController = hit.transform.GetComponent<Controller>();
             print(hit.transform.gameObject.name);
             if (hitController) {
@@ -83,6 +83,17 @@ public class ThrowPU : PowerUp {
                 ProductInteractions.pi_Single.SetAffectedController(index, hitController.photonView.ViewID, capsuleHit, RpcTarget.All);                
             }
         }
+    }
+
+    bool IsNotMyCollider(Collider collider) {
+        bool itIs = false;
+        for (int i = 0; i < theseColliders.Length; i++) {
+            if(theseColliders[i] == collider) {
+                itIs = true;
+                break;
+            }
+        }
+        return itIs;
     }
 
     private void OnDrawGizmos() {
