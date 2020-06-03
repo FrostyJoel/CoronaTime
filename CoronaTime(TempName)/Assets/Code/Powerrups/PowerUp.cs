@@ -35,7 +35,7 @@ public class PowerUp : Interactable {
 
     }
 
-    public virtual void StartParticle() {
+    public virtual void StartStopParticle(bool start) {
         int whatParticleToUse = -1;
         if (particleToUse) {
             for (int i = 0; i < affectedController.particles.Length; i++) {
@@ -43,7 +43,7 @@ public class PowerUp : Interactable {
                     whatParticleToUse = i;
                 }
             }
-            ProductInteractions.pi_Single.StartStopParticleOnPlayer(whatParticleToUse, affectedController.photonView.ViewID, true, RpcTarget.All);
+            ProductInteractions.pi_Single.StartStopParticleOnPlayer(whatParticleToUse, affectedController.photonView.ViewID, start, RpcTarget.All);
         }
     }
 
@@ -60,9 +60,7 @@ public class PowerUp : Interactable {
 
     public virtual void StopUsing() {
         affectedController.powerups_AffectingMe.Remove(this);
-        //if (whatParticleToUse >= 0) {
-        //    ProductInteractions.pi_Single.StartStopParticleOnPlayer(whatParticleToUse, affectedController.photonView.ViewID, false, RpcTarget.All);
-        //}
+        StartStopParticle(false);
         ProductInteractions.pi_Single.DestroyUseAbleProduct(index, 0, RpcTarget.All);
     }
 }

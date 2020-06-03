@@ -1,6 +1,5 @@
 ﻿using Photon.Pun;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,12 +47,18 @@ public class Controller : MonoBehaviourPun {
     float defaultFov, currentSprintValue, currentFovValue, xRotationAxisAngle, yRotationAxisAngle;
 
     public void SetAffectingFX(PowerUp pu) {
-        if (powerups_AffectingMe.Count > 0) {
-            if (!ContainsPuAt(pu)) {
+        int blockIndex = CheckForBlockFX();
+        if (blockIndex < 0 || pu.GetType() == typeof(BlockFX)) {
+            if (powerups_AffectingMe.Count > 0) {
+                if (!ContainsPuAt(pu)) {
+                    powerups_AffectingMe.Add(pu);
+                }
+            } else {
                 powerups_AffectingMe.Add(pu);
             }
         } else {
-            powerups_AffectingMe.Add(pu);
+            ProductInteractions.pi_Single.DestroyUseAbleProduct(pu.index, 0, RpcTarget.All);
+            powerups_AffectingMe[blockIndex].StopUsing();
         }
     }
 
@@ -70,15 +75,16 @@ public class Controller : MonoBehaviourPun {
         return contains;
     }
 
-    bool CheckForBlockFX() {
-        bool block = false;
+    int CheckForBlockFX() {
+        int blockAt = -1;
         for (int i = 0; i < powerups_AffectingMe.Count; i++) {
             if(powerups_AffectingMe[i].GetType() == typeof(BlockFX)) {
-                block = true;
+                powerups_AffectingMe[i].StopUsing();
+                blockAt = i;
                 break;
             }
         }
-        return block;
+        return blockAt;
     }
 
     void TurnCollidersOnOff(bool state) {
