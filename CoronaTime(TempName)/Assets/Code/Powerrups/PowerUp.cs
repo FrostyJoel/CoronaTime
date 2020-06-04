@@ -5,17 +5,20 @@ using UnityEngine;
 public class PowerUp : Interactable {
     public float newValueDuringFX, durationInSeconds;
     [Header("Particle")]
-    public ParticleDurations particleToUse;
+    public VisualFX particleToUse;
     [HideInInspector] public int index;
     [HideInInspector] public Controller affectedController;
     [HideInInspector] public CartStorage affectedCartStorage;
-    [HideInInspector] public float durationSpentInSeconds;
+    public float durationSpentInSeconds;
     [HideInInspector] public Rigidbody rigid;
     [HideInInspector] public bool inUse, setAsPU;
 
     public virtual void Use() {
-        affectedController.SetAffectingFX(this);
-        affectedController.useableProduct = null;
+        if (affectedController) {
+            Debug.LogWarning("control");
+            affectedController.SetAffectingFX(this);
+            affectedController.useableProduct = null;
+        }
     }
 
     public virtual void UseEffect() {
@@ -36,14 +39,13 @@ public class PowerUp : Interactable {
     }
 
     public virtual void StartStopParticle(bool start) {
-        int whatParticleToUse = -1;
         if (particleToUse) {
             for (int i = 0; i < affectedController.particles.Length; i++) {
                 if(affectedController.particles[i].name == particleToUse.name) {
-                    whatParticleToUse = i;
+                    ProductInteractions.pi_Single.StartStopParticleOnPlayer(i, affectedController.photonView.ViewID, start, RpcTarget.All);
+                    break;
                 }
             }
-            ProductInteractions.pi_Single.StartStopParticleOnPlayer(whatParticleToUse, affectedController.photonView.ViewID, start, RpcTarget.All);
         }
     }
 

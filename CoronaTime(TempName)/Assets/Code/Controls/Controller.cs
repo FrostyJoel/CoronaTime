@@ -12,7 +12,7 @@ public class Controller : MonoBehaviourPun {
     
     [Space]
     public GameObject localInGameHud;
-    public bool hideCursorOnStart;
+    public bool hideCursorOnStart, keepLocalMeshesEnabled;
 
     [Header("Keyboard Movement")]
     public float defaultWalkSpeed;
@@ -30,14 +30,14 @@ public class Controller : MonoBehaviourPun {
     public float camInrangeForRotationDegree;
 
     [Header("Particles")]
-    public ParticleDurations[] particles;
+    public VisualFX[] particles;
 
     [HideInInspector] public bool canMove;
     [HideInInspector] public float currentWalkSpeed;
     [HideInInspector] public Vector3 startPosition;
     [HideInInspector] public Quaternion startRotation;
     [HideInInspector] public Outline myOutline;
-    [HideInInspector] public PowerUp useableProduct;
+    public PowerUp useableProduct;
     [HideInInspector] public CartStorage cartStorage;
     [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Collider[] colliders;
@@ -45,59 +45,6 @@ public class Controller : MonoBehaviourPun {
     Camera[] cams;
     AudioListener audioListeners;
     float defaultFov, currentSprintValue, currentFovValue, xRotationAxisAngle, yRotationAxisAngle;
-
-    public void SetAffectingFX(PowerUp pu) {
-        int blockIndex = CheckForBlockFX();
-        if (blockIndex < 0 || pu.GetType() == typeof(BlockFX)) {
-            if (powerups_AffectingMe.Count > 0) {
-                if (!ContainsPuAt(pu)) {
-                    powerups_AffectingMe.Add(pu);
-                }
-            } else {
-                powerups_AffectingMe.Add(pu);
-            }
-        } else {
-            ProductInteractions.pi_Single.DestroyUseAbleProduct(pu.index, 0, RpcTarget.All);
-            powerups_AffectingMe[blockIndex].StopUsing();
-        }
-    }
-
-    bool ContainsPuAt(PowerUp pu) {
-        bool contains = false;
-        for (int i = 0; i < powerups_AffectingMe.Count; i++) {
-            if(powerups_AffectingMe[i].GetType() == pu.GetType()) {
-                powerups_AffectingMe[i].durationSpentInSeconds = 0f;
-                ProductInteractions.pi_Single.DestroyUseAbleProduct(pu.index, 0, RpcTarget.All);
-                contains = true;
-                break;
-            }
-        }
-        return contains;
-    }
-
-    int CheckForBlockFX() {
-        int blockAt = -1;
-        for (int i = 0; i < powerups_AffectingMe.Count; i++) {
-            if(powerups_AffectingMe[i].GetType() == typeof(BlockFX)) {
-                powerups_AffectingMe[i].StopUsing();
-                blockAt = i;
-                break;
-            }
-        }
-        return blockAt;
-    }
-
-    void TurnCollidersOnOff(bool state) {
-        colliders = GetComponentsInChildren<Collider>();
-        for (int i = 0; i < colliders.Length; i++) {
-            colliders[i].enabled = state;
-        }
-    }
-
-
-
-
-
 
     private void Awake() {
         TurnCollidersOnOff(false);
@@ -202,8 +149,8 @@ public class Controller : MonoBehaviourPun {
             }
 
             transform_Pov.Rotate(Vector3.left * mouseY);
-            Vector3 headRot = new Vector3(0, transform_Pov.rotation.eulerAngles.y, 0);
-            transform_Head.rotation = Quaternion.Euler(headRot);
+            Quaternion headRot = Quaternion.Euler(new Vector3(0, transform_Pov.rotation.eulerAngles.y, 0));
+            photonView.RPC("RPC_RotateHead", RpcTarget.All, photonView.ViewID, headRot);
             transform_PovHolder.Rotate(Vector3.up * mouseX);
 
             SprintCheck();
@@ -228,6 +175,63 @@ public class Controller : MonoBehaviourPun {
             if (useableProduct) {
                 useableProduct.Use();
             }
+        }
+    }
+
+    void TurnCollidersOnOff(bool state) {
+        colliders = GetComponentsInChildren<Collider>();
+        for (int i = 0; i < colliders.Length; i++) {
+            colliders[i].enabled = state;
+        }
+    }
+
+    public void SetAffectingFX(PowerUp pu) {
+        int blockIndex = CheckForBlockFX();
+        if (blockIndex < 0 || pu.GetType() == typeof(BlockFX)) {
+            if (powerups_AffectingMe.Count > 0) {
+                Debug.LogWarning(">");
+                if (!ContainsPuAt(pu)) {
+                    powerups_AffectingMe.Add(pu);
+                    Debug.LogWarning("add pu");
+                }
+            } else {
+                Debug.LogWarning("else add pu");
+                powerups_AffectingMe.Add(pu);
+            }
+        } else if (blockIndex >= 0) {
+            ProductInteractions.pi_Single.DestroyUseAbleProduct(pu.index, 0, RpcTarget.All);
+        }
+    }
+
+    bool ContainsPuAt(PowerUp pu) {
+        bool contains = false;
+        for (int i = 0; i < powerups_AffectingMe.Count; i++) {
+            if(powerups_AffectingMe[i].GetType() == pu.GetType()) {
+                powerups_AffectingMe[i].durationSpentInSeconds = 0f;
+                ProductInteractions.pi_Single.DestroyUseAbleProduct(pu.index, 0, RpcTarget.All);
+                contains = true;
+                break;
+            }
+        }
+        return contains;
+    }
+
+    int CheckForBlockFX() {
+        int blockAt = -1;
+        for (int i = 0; i < powerups_AffectingMe.Count; i++) {
+            if(powerups_AffectingMe[i].GetType() == typeof(BlockFX)) {
+                powerups_AffectingMe[i].StopUsing();
+                blockAt = i;
+                break;
+            }
+        }
+        return blockAt;
+    }
+
+    [PunRPC]
+    void RPC_RotateHead(int id, Quaternion rot) {
+        if(PhotonNetwork.GetPhotonView(id)) {
+            transform_Head.rotation = rot;
         }
     }
 

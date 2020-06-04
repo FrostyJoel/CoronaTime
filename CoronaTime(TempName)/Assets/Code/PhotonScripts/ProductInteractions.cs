@@ -243,21 +243,18 @@ public class ProductInteractions : MonoBehaviourPun {
 
     [PunRPC]
     void RPC_StartStopParticleOnPlayer(int index, int id, int play) {
-        ParticleSystem[] ps = PhotonNetwork.GetPhotonView(id).GetComponent<Controller>().particles[index].ps;
-        for (int i = 0; i < ps.Length; i++) {
-            if (play == 1) {
-                ps[i].Play();
-            } else {
-                ps[i].Stop();
-            }
+        bool shouldPlay = false;
+        if(play == 1) {
+            shouldPlay = true;
         }
+        PhotonNetwork.GetPhotonView(id).GetComponent<Controller>().particles[index].StartStopVisualFX(shouldPlay);
     }
 
     void RPC_InstantiateParticle(int index, Vector3 pos) {
-        ParticleDurations pd = Instantiate(PhotonProductList.staticUseableProductList[index].particleToUse);
-        ParticleSystem[] ps = pd.ps;
-        for (int i = 0; i < ps.Length; i++) {
-            ps[i].Play();
-        }
+        //VisualFX pd = Instantiate(PhotonProductList.staticUseableProductList[index].particleToUse);
+        //ParticleSystem[] ps = pd.ps;
+        //for (int i = 0; i < ps.Length; i++) {
+        //    ps[i].Play();
+        //}
     }
 }

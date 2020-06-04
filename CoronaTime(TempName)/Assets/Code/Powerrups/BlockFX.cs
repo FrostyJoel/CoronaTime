@@ -1,18 +1,27 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class BlockFX : PowerUp {
     public override void Effect() {
         if (!inUse) {
-            List<PowerUp> pus = affectedController.powerups_AffectingMe;
+            Debug.LogWarning("using");
+            List<PowerUp> pus = new List<PowerUp>();
+            for (int i = 0; i < affectedController.powerups_AffectingMe.Count; i++) {
+                pus.Add(affectedController.powerups_AffectingMe[i]);
+            }
+
+
             pus.Remove(this);
-            if(pus.Count > 0) {
-                Debug.LogWarning(">");
+            if (pus.Count > 0) {
+                Debug.LogWarning("using >");
                 pus[0].StopUsing();
                 StopUsing();
+            } else {
+                Debug.LogWarning("using else");
+                StartStopParticle(true);
             }
-            print("Block");
-            StartStopParticle(false);
+            ProductInteractions.pi_Single.DisableVisibility(index, affectedController.photonView.ViewID, false, RpcTarget.All);
             inUse = true;
         }
     }
