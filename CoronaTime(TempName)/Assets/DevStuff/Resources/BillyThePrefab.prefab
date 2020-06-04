@@ -481,7 +481,7 @@ MonoBehaviour:
   mouseSensitivity: 1
   camCartRotationSpeed: 1
   maxVerticalViewAngle: 50
-  maxHorizontalViewAngle: 90
+  maxHorizontalViewAngle: 180
   camInrangeForRotationDegree: 1
   particles:
   - {fileID: 6716812889017035056}
