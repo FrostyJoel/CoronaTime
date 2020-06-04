@@ -91,6 +91,9 @@ public class Controller : MonoBehaviourPun {
     }
 
     private void Start() {
+        if (photonView.IsMine) {
+            transform.position = Spawnpoints.sp_Single.GetSpPosition(PhotonRoomCustomMatchMaking.roomSingle.myNumberInRoom - 1);
+        }
         TurnCollidersOnOff(true);
         if (hideCursorOnStart) {
             Cursor.lockState = CursorLockMode.Locked;

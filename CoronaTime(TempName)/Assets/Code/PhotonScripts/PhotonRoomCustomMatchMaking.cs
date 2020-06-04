@@ -47,12 +47,11 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     }
 
     public override void OnJoinedRoom() {
-        //base.OnJoinedRoom();
         Debug.Log("Joined room");
         photonPlayers = PhotonNetwork.PlayerList;
         playersInRoom = photonPlayers.Length;
         ClearPlayerListings();
-        myNumberInRoom = playersInRoom;
+        myNumberInRoom = playersInRoom + 1;
         ListPlayers();
         if (lobbyGameObject) {
             lobbyGameObject.SetActive(false);
@@ -126,7 +125,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
             if (characterList[iB].ToString() == "#") {
                 break;
             }
-            nickName = nickName + characterList[iB];
+            nickName += characterList[iB];
         }
         return nickName;
     }

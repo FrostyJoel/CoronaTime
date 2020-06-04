@@ -170,7 +170,9 @@ public class ProductInteractions : MonoBehaviourPun {
 
         PhotonProductList.staticUseableProductList[index].transform.position = pos;
         PhotonProductList.staticUseableProductList[index].transform.rotation = rot;
-        PhotonProductList.staticUseableProductList[index].rigid.isKinematic = makeKinematic;
+        if (PhotonProductList.staticUseableProductList[index].rigid) {
+            PhotonProductList.staticUseableProductList[index].rigid.isKinematic = makeKinematic;
+        }
         PhotonProductList.staticUseableProductList[index].rigid.AddForce(force);
     }
 

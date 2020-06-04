@@ -28,7 +28,7 @@ public class PhotonProductListEditor : Editor {
         if (GUILayout.Button("Set product list and powerup list")) {
             SetProductList();
             SetPowerUpList();
-            Debug.Log("Successfully set lists, don't forget to save!");
+            Debug.LogWarning("Successfully set lists, don't forget to save!");
         }
     }
 
