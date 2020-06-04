@@ -236,7 +236,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4096
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -279,7 +279,7 @@ Transform:
   m_Children:
   - {fileID: 4775963022018334051}
   - {fileID: 1705135882771453884}
-  - {fileID: 834975900}
+  - {fileID: 5007456219932211375}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -496,7 +496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0c6a3eb4084b444b9654fe33af1ff00, type: 3}
---- !u!4 &834975900 stripped
+--- !u!4 &5007456219932211375 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5007456220725215298, guid: c0c6a3eb4084b444b9654fe33af1ff00,
     type: 3}

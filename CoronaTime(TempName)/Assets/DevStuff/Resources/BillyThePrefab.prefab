@@ -481,7 +481,7 @@ MonoBehaviour:
   mouseSensitivity: 1
   camCartRotationSpeed: 1
   maxVerticalViewAngle: 50
-  maxHorizontalViewAngle: 180
+  maxHorizontalViewAngle: 90
   camInrangeForRotationDegree: 1
   particles:
   - {fileID: 6716812889017035056}
@@ -1392,6 +1392,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007456219932211317, guid: 47a8c557e57b90a4b804b535a117565c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8337234225511198321, guid: 47a8c557e57b90a4b804b535a117565c,
         type: 3}
