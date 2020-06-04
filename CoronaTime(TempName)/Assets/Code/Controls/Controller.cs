@@ -37,11 +37,11 @@ public class Controller : MonoBehaviourPun {
     [HideInInspector] public Vector3 startPosition;
     [HideInInspector] public Quaternion startRotation;
     [HideInInspector] public Outline myOutline;
-    public PowerUp useableProduct;
+    [HideInInspector] public PowerUp useableProduct;
     [HideInInspector] public CartStorage cartStorage;
     [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Collider[] colliders;
-    public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
+    [HideInInspector] public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
     Camera[] cams;
     AudioListener audioListeners;
     float defaultFov, currentSprintValue, currentFovValue, xRotationAxisAngle, yRotationAxisAngle;
