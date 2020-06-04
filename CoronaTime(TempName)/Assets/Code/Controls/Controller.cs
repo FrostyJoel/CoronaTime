@@ -24,7 +24,9 @@ public class Controller : MonoBehaviourPun {
     public float camCartRotationSpeed = 1;
 
     [Range(0, 90)]
-    public float maxVerticalViewAngle = 30, maxHorizontalViewAngle = 80;
+    public float maxVerticalViewAngle = 30;
+    [Range(0, 180)]
+    public float maxHorizontalViewAngle = 90;
 
     [Space][Range(0, 90)]
     public float camInrangeForRotationDegree;
