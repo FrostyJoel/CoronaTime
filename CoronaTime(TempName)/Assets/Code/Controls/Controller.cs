@@ -58,7 +58,7 @@ public class Controller : MonoBehaviourPun {
         audioListeners.enabled = false;
         if (photonView.IsMine || playerView.devView) {
             text_Nickname.gameObject.SetActive(false);
-            if (meshRenderersToDisableLocally.Length > 0) {
+            if (meshRenderersToDisableLocally.Length > 0 && !keepLocalMeshesEnabled) {
                 for (int i = 0; i < meshRenderersToDisableLocally.Length; i++) {
                     meshRenderersToDisableLocally[i].enabled = false;
                 }
@@ -150,7 +150,8 @@ public class Controller : MonoBehaviourPun {
 
             transform_Pov.Rotate(Vector3.left * mouseY);
             Quaternion headRot = Quaternion.Euler(new Vector3(0, transform_Pov.rotation.eulerAngles.y, 0));
-            photonView.RPC("RPC_RotateHead", RpcTarget.All, photonView.ViewID, headRot);
+            transform_Head.rotation = headRot;
+            //photonView.RPC("RPC_RotateHead", RpcTarget.All, photonView.ViewID, headRot);
             transform_PovHolder.Rotate(Vector3.up * mouseX);
 
             SprintCheck();
