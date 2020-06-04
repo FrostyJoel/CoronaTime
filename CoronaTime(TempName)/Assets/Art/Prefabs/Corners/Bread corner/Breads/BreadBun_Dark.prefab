@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 65235360762705462}
   - component: {fileID: 114456687488517858}
   - component: {fileID: 114437862612589934}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BreadBun_Dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,6 +108,7 @@ MonoBehaviour:
   outlineMode: 1
   outlineColor: {r: 0.8207547, g: 0.6566935, b: 0.112273075, a: 1}
   outlineWidth: 5
+  outlineChild: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -123,7 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
   audioGroup: 2
   currentPlace: 0
   scriptableProduct: {fileID: 0}
-  index: 0
+  index: 336

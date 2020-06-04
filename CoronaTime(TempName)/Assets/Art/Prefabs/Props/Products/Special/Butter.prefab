@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 65585703886532778}
   - component: {fileID: 114779930335014458}
   - component: {fileID: 114576328153446048}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Butter
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -105,9 +105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
   audioGroup: 2
-  scriptableProduct: {fileID: 11400000, guid: 24c8cf166b33e6944a5741a1fa366267, type: 2}
   currentPlace: 0
+  scriptableProduct: {fileID: 0}
+  index: 16
 --- !u!114 &114576328153446048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +125,7 @@ MonoBehaviour:
   outlineMode: 1
   outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
   outlineWidth: 2
+  outlineChild: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []

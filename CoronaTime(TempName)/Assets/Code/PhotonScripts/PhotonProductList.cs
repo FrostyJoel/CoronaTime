@@ -43,8 +43,8 @@ public class PhotonProductListEditor : Editor {
             if (tempProduct.scriptableProduct) {
                 tempProduct.scriptableProduct = Product.MakeInstance(tempProduct.scriptableProduct);
                 tempProduct.scriptableProduct.index = i;
-                tempProduct.gameObject.layer = 11;
             }
+            tempProduct.gameObject.layer = 11;
             EditorUtility.SetDirty(tempProduct);
         }
         photonProductList.interactableProductList = ipList;

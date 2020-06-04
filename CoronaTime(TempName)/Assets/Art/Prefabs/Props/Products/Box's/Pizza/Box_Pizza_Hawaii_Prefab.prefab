@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6616188000492790110}
   - component: {fileID: 8936025389402249165}
   - component: {fileID: 5760035609374589100}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Box_Pizza_Hawaii_Prefab
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -105,9 +105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
   audioGroup: 2
-  scriptableProduct: {fileID: 11400000, guid: 4620c2081a7e7c047b5673e668792e9d, type: 2}
   currentPlace: 0
+  scriptableProduct: {fileID: 0}
+  index: 726
 --- !u!114 &5760035609374589100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +125,7 @@ MonoBehaviour:
   outlineMode: 1
   outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
   outlineWidth: 5
+  outlineChild: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []

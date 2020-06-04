@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4934408120097517822}
   - component: {fileID: 2570157739548430949}
   - component: {fileID: 6538025879570075788}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Box_Normal_BakingSoda_Prefab
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -105,9 +105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
   audioGroup: 2
-  scriptableProduct: {fileID: 11400000, guid: 1e59e92edb0e7ef43b02dddd65989c1d, type: 2}
   currentPlace: 0
+  scriptableProduct: {fileID: 0}
+  index: 1224
 --- !u!114 &6538025879570075788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +125,7 @@ MonoBehaviour:
   outlineMode: 1
   outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
   outlineWidth: 5
+  outlineChild: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
