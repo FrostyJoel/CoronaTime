@@ -151,7 +151,6 @@ public class Controller : MonoBehaviourPun {
             transform_Pov.Rotate(Vector3.left * mouseY);
             Quaternion headRot = Quaternion.Euler(new Vector3(0, transform_Pov.rotation.eulerAngles.y, 0));
             transform_Head.rotation = headRot;
-            //photonView.RPC("RPC_RotateHead", RpcTarget.All, photonView.ViewID, headRot);
             transform_PovHolder.Rotate(Vector3.up * mouseX);
 
             SprintCheck();
@@ -227,13 +226,6 @@ public class Controller : MonoBehaviourPun {
             }
         }
         return blockAt;
-    }
-
-    [PunRPC]
-    void RPC_RotateHead(int id, Quaternion rot) {
-        if(PhotonNetwork.GetPhotonView(id)) {
-            transform_Head.rotation = rot;
-        }
     }
 
     void CheckAndApplyPowerUpFX() {
