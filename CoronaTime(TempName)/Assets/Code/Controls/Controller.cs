@@ -92,7 +92,7 @@ public class Controller : MonoBehaviourPun {
 
     private void Start() {
         if (photonView.IsMine) {
-            transform.position = Spawnpoints.sp_Single.GetSpPosition(PhotonRoomCustomMatchMaking.roomSingle.myNumberInRoom - 1);
+            transform.position = Spawnpoints.sp_Single.GetSpPosition(PhotonRoomCustomMatchMaking.roomSingle.myNumberInRoom);
         }
         TurnCollidersOnOff(true);
         if (hideCursorOnStart) {

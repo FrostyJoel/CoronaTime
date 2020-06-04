@@ -51,7 +51,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         photonPlayers = PhotonNetwork.PlayerList;
         playersInRoom = photonPlayers.Length;
         ClearPlayerListings();
-        myNumberInRoom = playersInRoom + 1;
+        myNumberInRoom = playersInRoom;
         ListPlayers();
         if (lobbyGameObject) {
             lobbyGameObject.SetActive(false);
