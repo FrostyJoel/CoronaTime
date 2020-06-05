@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Zone : MonoBehaviour {
-    public int productsToFind;
+    public int productsToFind = 1;
     [Header("HideInInspector")]
-    public List<Interactable> productsInZone = new List<Interactable>();
-
-    private void Awake() {
-        Interactable[] temp = GetComponentsInChildren<Interactable>();
-    }
+    public List<Product> typesOfProductsInZone = new List<Product>();
+    public List<Product> tempTest = new List<Product>();
+    public List<Groceries> groceryList = new List<Groceries>();
+    public List<string> groceryListStrings = new List<string>();
 }

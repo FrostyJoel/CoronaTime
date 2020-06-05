@@ -6,8 +6,8 @@ using UnityEditor;
 using UnityEngine;
 
 public class PhotonProductList : MonoBehaviour {
-    /*[HideInInspector]*/ public List<InteractableProduct> interactableProductList = new List<InteractableProduct>();
-    /*[HideInInspector]*/ public List<PowerUp> useableProductList = new List<PowerUp>();
+    [HideInInspector] public List<InteractableProduct> interactableProductList = new List<InteractableProduct>();
+    [HideInInspector] public List<PowerUp> useableProductList = new List<PowerUp>();
     public static List<InteractableProduct> staticInteratableProductList = new List<InteractableProduct>();
     public static List<PowerUp> staticUseableProductList = new List<PowerUp>();
     private void Awake() {
@@ -28,6 +28,10 @@ public class PhotonProductListEditor : Editor {
         if (GUILayout.Button("Set product list and powerup list")) {
             SetProductList();
             SetPowerUpList();
+            ZoneControl zc = FindObjectOfType<ZoneControl>();
+            if (zc) {
+                zc.SetProductsInZone();
+            }            
             Debug.LogWarning("Successfully set lists, don't forget to save!");
         }
     }
