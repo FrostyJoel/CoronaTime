@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Box_Ice_Exotic
   m_EditorClassIdentifier: 
+  productName: Mango Ice cream
   prefab: {fileID: 4737859958917986651, guid: 6fdbc8f55b1dac445813e549e1171e62, type: 3}
   scoreValue: 10
   index: 0

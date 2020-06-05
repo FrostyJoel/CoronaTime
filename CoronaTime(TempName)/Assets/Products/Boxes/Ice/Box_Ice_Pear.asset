@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Box_Ice_Pear
   m_EditorClassIdentifier: 
+  productName: Pear Ice cream
   prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
   scoreValue: 10
   index: 0
