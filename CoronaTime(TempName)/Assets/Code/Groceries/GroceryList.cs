@@ -17,9 +17,11 @@ public class GroceryList : MonoBehaviour {
             zone.groceryList = GetRandomizedGroceryList(zone);
             List<string> stringList = new List<string>();
             for (int iB = 0; iB < zone.groceryList.Count; iB++) {
-                string line = zone.groceryList[iB].product.productName;
+                string line = zone.groceryList[iB].product.productName + symbolForMultipleProductUse;
                 if(zone.groceryList[iB].amount > 1) {
-                    line += symbolForMultipleProductUse + zone.groceryList[iB].amount;
+                    line += zone.groceryList[iB].amount;
+                } else {
+                    line += 1;
                 }
                 stringList.Add(line);
             }

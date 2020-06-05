@@ -13,6 +13,10 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     public Transform transform_Scoreboard;
     public GameObject prefab_ScoreboardListing;
 
+    [Header("Grocerylist")]
+    public Transform transform_GroceryList;
+    public GameObject prefab_GroceryListing;
+
     [HideInInspector] public int score;
     [HideInInspector] public Controller controller;
     [HideInInspector] public CartStorage[] storages;
@@ -36,17 +40,28 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             photonView.RPC("RPC_SetScoreboardListings", RpcTarget.All);
         }
         if (photonView.IsMine || controller.playerView.devView) {
-            EnableProductsRelativeToList();
+            EnableProductsRelativeToListAndSetUI();
         }
     }
 
-    void EnableProductsRelativeToList() {
+    void EnableProductsRelativeToListAndSetUI() {
         if (ZoneControl.zc_Single) {
-            groceryList = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].groceryList;
-            for (int i = 0; i < groceryList.Count; i++) {
-
+            Zone zone = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex];
+            if(transform_GroceryList.childCount > 1) {
+                for (int i = transform_GroceryList.childCount; i >= 0 ; i--) {
+                    if (transform_GroceryList.GetChild(i).GetComponent<ScriptGroceryListing>()) {
+                        Destroy(transform_GroceryList.GetChild(i));
+                    }
+                }
+            }
+            Debug.Log(zone);
+            for (int i = 0; i < zone.groceryList.Count; i++) {
+            Debug.Log("A8");
+                GameObject gl = Instantiate(prefab_GroceryListing, transform_GroceryList);
+                gl.GetComponent<ScriptGroceryListing>().text_Grocery.text = zone.groceryListStrings[i];
             }
         }
+        Debug.Log("A10");
     }
 
     private void Update() {
