@@ -41,7 +41,11 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
             {
                 PowerUp pu = hit.transform.gameObject.GetComponent<PowerUp>();
                 bool canShow = true;
-                if (pu && pu.currentPlace != Interactable.Place.InShelve) {
+                if (pu && pu.currentPlace != Interactable.Place.InShelve && !controller.useableProduct && !pu.interactable) {
+                    canShow = false;
+                }
+                InteractableProduct ip = hit.transform.gameObject.GetComponent<InteractableProduct>();
+                if (ip && !ip.interactable && storage.heldProducts.Count < storage.maxItemsHeld - 1) {
                     canShow = false;
                 }
                 if (!outlineObj.enabled && canShow) {

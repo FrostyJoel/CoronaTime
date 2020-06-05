@@ -486,7 +486,7 @@ MonoBehaviour:
   particles:
   - {fileID: 6716812889017035056}
   - {fileID: 931107452407660388}
-  - {fileID: 2030875781889681724}
+  - {fileID: 2030875781889682214}
   - {fileID: 6462443829211807357}
   canMove: 0
   currentWalkSpeed: 0
@@ -766,7 +766,7 @@ Transform:
   m_Children:
   - {fileID: 1241574641127614180}
   - {fileID: 4949406504325558301}
-  - {fileID: 2030875781889681804}
+  - {fileID: 2030875781889682422}
   - {fileID: 6462443829211807465}
   m_Father: {fileID: 5992604071259634003}
   m_RootOrder: 5
@@ -1234,13 +1234,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d555c86f0a4bc945af5d11d650223e0, type: 3}
---- !u!4 &2030875781889681804 stripped
+--- !u!4 &2030875781889682422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5288340490037991934, guid: 9d555c86f0a4bc945af5d11d650223e0,
     type: 3}
   m_PrefabInstance: {fileID: 2030875781889681919}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2030875781889681724 stripped
+--- !u!114 &2030875781889682214 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114920032837321540, guid: 9d555c86f0a4bc945af5d11d650223e0,
     type: 3}

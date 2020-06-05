@@ -1390,7 +1390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1883,6 +1883,7 @@ MonoBehaviour:
   playerListingPrefab: {fileID: 6122551949291716917, guid: 4c51cc64a5b38e34ea29a5a7e193757d,
     type: 3}
   startButton: {fileID: 6697723907711189470}
+  text_Loading: {fileID: 1343791588}
   playersPanel: {fileID: 1725639195}
   PV: {fileID: 0}
   isLoaded: 0
@@ -3098,16 +3099,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1343791588}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1734044608}
+        m_MethodName: EnableRoomLoadingUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &6697723907711189465
 MonoBehaviour:

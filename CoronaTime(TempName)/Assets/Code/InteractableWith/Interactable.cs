@@ -6,6 +6,8 @@ public class Interactable : MonoBehaviourPun {
     public AudioClip clip;
     public AudioManager.AudioGroups audioGroup = AudioManager.AudioGroups.SFX;
 
+    public bool interactable;
+
     public enum Place {
         InShelve,
         InCart,

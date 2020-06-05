@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCallbacks {
     public static PhotonRoomCustomMatchMaking roomSingle;
-    public GameObject playerPrefab, lobbyGameObject, roomGameObject, playerListingPrefab, startButton;
+    public GameObject playerPrefab, lobbyGameObject, roomGameObject, playerListingPrefab, startButton, text_Loading;
     public Transform playersPanel;
     public PhotonView PV;
 
@@ -160,6 +160,18 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         ListPlayers();
     }
 
+    public void EnableRoomLoadingUI() {
+        PV.RPC("RPC_EnableRoomLoadingUI", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RPC_EnableRoomLoadingUI() {
+        Debug.Log("EnableUI");
+        if (text_Loading) {
+            text_Loading.SetActive(true);
+        }
+    }
+
     [PunRPC]
     void RPC_LoadedGameScene() {
         playersInGame++;
@@ -170,9 +182,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
 
     [PunRPC]
     void RPC_CreatePlayer() {
-        Vector3 pos = new Vector3(playersInGame * -2, 0, -1);
-        PhotonNetwork.Instantiate(playerPrefab.name, pos, Quaternion.identity);
-
+        PhotonNetwork.Instantiate(playerPrefab.name, Vector3.zero, Quaternion.identity);
         Outline[] allOutlines = FindObjectsOfType<Outline>();
         foreach (Outline allOLine in allOutlines) {
             allOLine.enabled = false;

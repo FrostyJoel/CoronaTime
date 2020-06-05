@@ -13,7 +13,6 @@ public class Spawnpoints : MonoBehaviourPunCallbacks {
     }
 
     public Vector3 GetSpPosition(int index) {
-        Debug.Log(index);
         return spawnpoints[index].position;
     }
 }
