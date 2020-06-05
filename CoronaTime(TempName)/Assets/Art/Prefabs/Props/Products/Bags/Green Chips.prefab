@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 1
   outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
-  outlineWidth: 2
+  outlineWidth: 5
   outlineChild: 0
   precomputeOutline: 0
   bakeKeys: []
@@ -178,12 +178,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   audioGroup: 2
+  interactable: 0
+  SpecialPosAndRot:
+    use: 0
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
   newValueDuringFX: 0.5
   durationInSeconds: 4
-  particleToUse: {fileID: 5007456220725215299, guid: c0c6a3eb4084b444b9654fe33af1ff00,
-    type: 3}
-  index: 7
+  particleToUse: {fileID: 0}
+  index: 263
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}
   durationSpentInSeconds: 0

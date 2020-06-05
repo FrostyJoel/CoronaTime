@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1601624401157545911}
   - component: {fileID: 3861083727170289905}
   - component: {fileID: 7669945921397053790}
-  m_Layer: 0
+  - component: {fileID: 3898684922019690318}
+  m_Layer: 11
   m_Name: Box_Snacks_Frikandel
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -112,6 +113,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   audioGroup: 2
+  interactable: 0
+  SpecialPosAndRot:
+    use: 0
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 0}
-  index: 0
+  index: 17
+--- !u!65 &3898684922019690318
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601624401159471479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2980578, y: 0.21979842, z: 0.059991747}
+  m_Center: {x: 0, y: 0.10989918, z: -0.00000003911556}

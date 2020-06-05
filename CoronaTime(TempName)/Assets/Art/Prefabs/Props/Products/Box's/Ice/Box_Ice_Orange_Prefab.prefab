@@ -111,10 +111,10 @@ MonoBehaviour:
   SpecialPosAndRot:
     use: 1
     pos: {x: 0, y: 0, z: 0}
-    rot: {x: 0, y: 105, z: 0}
+    rot: {x: 0, y: 110, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 730b71bd860bb0e44bd13c05aa776535, type: 2}
-  index: 1069
+  index: 1044
 --- !u!114 &1082332847320610355
 MonoBehaviour:
   m_ObjectHideFlags: 0

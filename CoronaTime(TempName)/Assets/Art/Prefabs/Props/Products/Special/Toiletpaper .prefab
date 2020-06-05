@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5439985283989279411}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.071, y: 1.2, z: 0.993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -108,12 +108,16 @@ MonoBehaviour:
   clip: {fileID: 0}
   audioGroup: 2
   interactable: 0
+  SpecialPosAndRot:
+    use: 0
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
   newValueDuringFX: 0
   durationInSeconds: 3
   particleToUse: {fileID: 8934361164403526516, guid: d1fa31236f2a48a4cbe9ea856acc9aca,
     type: 3}
-  index: 19
+  index: 43
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}
   durationSpentInSeconds: 0
@@ -133,8 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0.36520195, g: 0, b: 1, a: 1}
-  outlineWidth: 4
+  outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
+  outlineWidth: 5
   outlineChild: 0
   precomputeOutline: 0
   bakeKeys: []

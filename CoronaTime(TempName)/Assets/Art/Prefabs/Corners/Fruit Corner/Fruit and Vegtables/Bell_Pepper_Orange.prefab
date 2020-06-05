@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0.8396226, g: 0.7717859, b: 0.17030083, a: 1}
+  outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
   outlineWidth: 5
   outlineChild: 0
   precomputeOutline: 0
@@ -113,9 +113,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   audioGroup: 2
+  interactable: 0
+  SpecialPosAndRot:
+    use: 0
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 0}
-  index: 476
+  index: 479
 --- !u!1 &8835201520399477545
 GameObject:
   m_ObjectHideFlags: 0

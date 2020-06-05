@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 65176844457341516}
   - component: {fileID: 114248033866023842}
   - component: {fileID: 649904050965442611}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Energy Can
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 1
   outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
-  outlineWidth: 2
+  outlineWidth: 5
   outlineChild: 0
   precomputeOutline: 0
   bakeKeys: []
@@ -126,12 +126,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   audioGroup: 2
+  interactable: 0
+  SpecialPosAndRot:
+    use: 0
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
   newValueDuringFX: 0.12
   durationInSeconds: 10
-  particleToUse: {fileID: 114920032837321540, guid: 9d555c86f0a4bc945af5d11d650223e0,
-    type: 3}
-  index: 0
+  particleToUse: {fileID: 0}
+  index: 129
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}
   durationSpentInSeconds: 0

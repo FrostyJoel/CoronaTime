@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 7161126808102670572}
   - component: {fileID: 114891484183035662}
   - component: {fileID: 114777412839194290}
-  - component: {fileID: 6018717453333239326}
-  - component: {fileID: 6018717453333239327}
   m_Layer: 11
   m_Name: Bread_Light
   m_TagString: Untagged
@@ -108,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0.8207547, g: 0.6566935, b: 0.112273075, a: 1}
+  outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
   outlineWidth: 5
   outlineChild: 0
   precomputeOutline: 0
@@ -128,42 +126,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   audioGroup: 2
+  interactable: 0
+  SpecialPosAndRot:
+    use: 0
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 0}
-  index: 1377
---- !u!114 &6018717453333239326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907280833326859108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  audioGroup: 2
-  currentPlace: 0
-  scriptableProduct: {fileID: 0}
-  index: 1376
---- !u!114 &6018717453333239327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907280833326859108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 0.8584906, g: 0.5788855, b: 0.068841234, a: 1}
-  outlineWidth: 5
-  outlineChild: 0
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
+  index: 105

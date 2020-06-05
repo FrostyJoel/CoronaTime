@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3048029171594848221}
   - component: {fileID: 7878100113207468496}
   - component: {fileID: 3783268841201759656}
-  m_Layer: 0
+  - component: {fileID: 6022674194987524385}
+  m_Layer: 11
   m_Name: Box_Frozen_Fruit_Mango
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -112,6 +113,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   audioGroup: 2
+  interactable: 0
+  SpecialPosAndRot:
+    use: 0
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 0}
-  index: 0
+  index: 2
+--- !u!65 &6022674194987524385
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3048029171592919325}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21979845, y: 0.2980577, z: 0.059991702}
+  m_Center: {x: 0, y: 0.14902885, z: 0}

@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0.8207547, g: 0.6566935, b: 0.112273075, a: 1}
+  outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
   outlineWidth: 5
   outlineChild: 0
   precomputeOutline: 0
@@ -126,6 +126,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   audioGroup: 2
+  interactable: 0
+  SpecialPosAndRot:
+    use: 0
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 0}
-  index: 594
+  index: 596

@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6358161545072614413}
   - component: {fileID: 4469694737634917831}
   - component: {fileID: 7929989855959021681}
-  m_Layer: 0
+  - component: {fileID: 225507549708799253}
+  m_Layer: 11
   m_Name: Bag_MixedVeggie_C&P
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -112,6 +113,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   audioGroup: 2
+  interactable: 0
+  SpecialPosAndRot:
+    use: 0
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 0}
-  index: 0
+  index: 7
+--- !u!65 &225507549708799253
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6358161545074606797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20917198, y: 0.28997558, z: 0.102906175}
+  m_Center: {x: 0.0063114553, y: 0.14640811, z: 0.00016593006}

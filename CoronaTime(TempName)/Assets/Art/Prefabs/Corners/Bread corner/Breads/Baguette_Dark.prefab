@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 7919001605504488984}
   - component: {fileID: 114917859068079756}
   - component: {fileID: 114969311979969082}
-  - component: {fileID: 8529588534634511253}
-  - component: {fileID: 8529588534634511254}
   m_Layer: 11
   m_Name: Baguette_Dark
   m_TagString: Untagged
@@ -108,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0.8207547, g: 0.6566935, b: 0.112273075, a: 1}
+  outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
   outlineWidth: 5
   outlineChild: 0
   precomputeOutline: 0
@@ -128,42 +126,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   audioGroup: 2
+  interactable: 0
+  SpecialPosAndRot:
+    use: 1
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: -90, y: 90, z: 90}
   currentPlace: 0
   scriptableProduct: {fileID: 0}
-  index: 1379
---- !u!114 &8529588534634511253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5986792043230972758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  audioGroup: 2
-  currentPlace: 0
-  scriptableProduct: {fileID: 0}
-  index: 1378
---- !u!114 &8529588534634511254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5986792043230972758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 0.8584906, g: 0.5788855, b: 0.068841234, a: 1}
-  outlineWidth: 5
-  outlineChild: 0
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
+  index: 491

@@ -2072,6 +2072,11 @@ PrefabInstance:
       propertyPath: scriptableProduct
       value: 
       objectReference: {fileID: 2097737549}
+    - target: {fileID: 5847635591297928030, guid: b5313b57be58ac94fb2069c430a094d7,
+        type: 3}
+      propertyPath: interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7,
         type: 3}
       propertyPath: m_Name

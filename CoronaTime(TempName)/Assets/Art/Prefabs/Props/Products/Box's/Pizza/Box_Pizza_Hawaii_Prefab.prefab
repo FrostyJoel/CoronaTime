@@ -113,8 +113,8 @@ MonoBehaviour:
     pos: {x: 0.031, y: 0.15, z: 0}
     rot: {x: -89.5, y: 90, z: 15}
   currentPlace: 0
-  scriptableProduct: {fileID: 11400000, guid: 4620c2081a7e7c047b5673e668792e9d, type: 2}
-  index: 726
+  scriptableProduct: {fileID: 0}
+  index: 721
 --- !u!114 &5760035609374589100
 MonoBehaviour:
   m_ObjectHideFlags: 0

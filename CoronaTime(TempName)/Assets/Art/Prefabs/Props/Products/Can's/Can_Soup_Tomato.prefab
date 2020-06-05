@@ -127,6 +127,10 @@ MonoBehaviour:
   clip: {fileID: 0}
   audioGroup: 2
   interactable: 0
+  SpecialPosAndRot:
+    use: 0
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
-  scriptableProduct: {fileID: 11400000, guid: be0323441b764864da944ec618c63826, type: 2}
-  index: 1359
+  scriptableProduct: {fileID: 0}
+  index: 1313
