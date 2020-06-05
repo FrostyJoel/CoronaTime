@@ -63,4 +63,7 @@ public class GroceryList : MonoBehaviour {
 public class Groceries {
     public Product product;
     public int amount;
+    public int amountGotten;
+
+    public ScriptGroceryListing groceryListing;
 }

@@ -44,26 +44,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         }
     }
 
-    void EnableProductsRelativeToListAndSetUI() {
-        if (ZoneControl.zc_Single) {
-            Zone zone = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex];
-            if(transform_GroceryList.childCount > 1) {
-                for (int i = transform_GroceryList.childCount; i >= 0 ; i--) {
-                    if (transform_GroceryList.GetChild(i).GetComponent<ScriptGroceryListing>()) {
-                        Destroy(transform_GroceryList.GetChild(i));
-                    }
-                }
-            }
-            Debug.Log(zone);
-            for (int i = 0; i < zone.groceryList.Count; i++) {
-            Debug.Log("A8");
-                GameObject gl = Instantiate(prefab_GroceryListing, transform_GroceryList);
-                gl.GetComponent<ScriptGroceryListing>().text_Grocery.text = zone.groceryListStrings[i];
-            }
-        }
-        Debug.Log("A10");
-    }
-
     private void Update() {
         if (photonView.IsMine || controller.playerView.devView) {
             if (Input.GetButtonDown("Interact")) {
@@ -102,13 +82,60 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         }
     }
 
-    public bool AddToCart(int index) {
-        if (heldProducts.Count < maxItemsHeld) {
-            ProductInteractions.pi_Single.AddToCart(index, photonView.ViewID, RpcTarget.All);
+    public bool AddToCart(int indexA) {
+        int indexB = InGroceryListWhere(PhotonProductList.staticInteratableProductList[indexA].scriptableProduct);
+        if (heldProducts.Count < maxItemsHeld && indexB >= 0 && groceryList[indexB].amountGotten < groceryList[indexB].amount) {
+            ProductInteractions.pi_Single.AddToCart(indexA, photonView.ViewID, RpcTarget.All);
+            groceryList[indexB].amountGotten++;
+            if(groceryList[indexB].amountGotten == groceryList[indexB].amount) {
+                groceryList[indexB].groceryListing.text_Grocery.fontStyle = TMPro.FontStyles.Strikethrough;
+                List<InteractableProduct> ip_List = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].allProductsInZone;
+                for (int i = 0; i < ip_List.Count; i++) {
+                    if(ip_List[i].scriptableProduct.productName == groceryList[indexB].product.productName) {
+                        ip_List[i].interactable = false;
+                    }
+                }
+            }
             return true;
         } else {
             return false;
         }
+    }
+
+    void EnableProductsRelativeToListAndSetUI() {
+        if (ZoneControl.zc_Single) {
+            Zone zone = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex];
+            groceryList = zone.groceryList;
+            if(transform_GroceryList.childCount > 1) {
+                for (int i = transform_GroceryList.childCount; i >= 0 ; i--) {
+                    if (transform_GroceryList.GetChild(i).GetComponent<ScriptGroceryListing>()) {
+                        Destroy(transform_GroceryList.GetChild(i));
+                    }
+                }
+            }
+            for (int i = 0; i < groceryList.Count; i++) {
+                GameObject gl = Instantiate(prefab_GroceryListing, transform_GroceryList);
+                groceryList[i].groceryListing = gl.GetComponent<ScriptGroceryListing>();
+                groceryList[i].groceryListing.text_Grocery.text = zone.groceryListStrings[i];
+            }
+            for (int i = 0; i < zone.allProductsInZone.Count; i++) {
+                int index = InGroceryListWhere(zone.allProductsInZone[i].scriptableProduct);
+                if(index >= 0) {
+                    zone.allProductsInZone[i].interactable = true;
+                }
+            }
+        }
+    }
+    
+    int InGroceryListWhere(Product productToCheck) {
+        int index = -1;
+        for (int i = 0; i < groceryList.Count; i++) {
+            if(groceryList[i].product.productName == productToCheck.productName) {
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 
     public int GetCorrespondingSbListing(int id) {
