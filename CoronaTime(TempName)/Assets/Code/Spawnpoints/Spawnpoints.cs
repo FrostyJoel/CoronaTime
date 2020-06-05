@@ -1,7 +1,4 @@
 ﻿using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
-using Photon.Realtime;
 using UnityEngine;
 
 public class Spawnpoints : MonoBehaviourPunCallbacks {
@@ -12,7 +9,8 @@ public class Spawnpoints : MonoBehaviourPunCallbacks {
         sp_Single = this;
     }
 
-    public Vector3 GetSpPosition(int index) {
-        return spawnpoints[index].position;
+    public Vector3[] GetSpPositionAndRotation(int index) {
+        Vector3[] par = new Vector3[] { spawnpoints[index].position, spawnpoints[index].rotation.eulerAngles };
+        return par;
     }
 }
