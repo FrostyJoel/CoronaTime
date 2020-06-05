@@ -734,7 +734,7 @@ MonoBehaviour:
   - {fileID: 6716812889017035056}
   - {fileID: 931107452407660388}
   - {fileID: 2141279010680875707}
-  - {fileID: 6462443829211807357}
+  - {fileID: 2473052652486063592}
   canMove: 0
   currentWalkSpeed: 0
   startPosition: {x: 0, y: 0, z: 0}
@@ -1018,7 +1018,7 @@ Transform:
   - {fileID: 1241574641127614180}
   - {fileID: 4949406504325558301}
   - {fileID: 6146546437631897601}
-  - {fileID: 6462443829211807465}
+  - {fileID: 73693173059079794}
   m_Father: {fileID: 5992604071259634003}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1833,13 +1833,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1fa31236f2a48a4cbe9ea856acc9aca, type: 3}
---- !u!4 &6462443829211807465 stripped
+--- !u!4 &73693173059079794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6389193765061095662, guid: d1fa31236f2a48a4cbe9ea856acc9aca,
     type: 3}
   m_PrefabInstance: {fileID: 6462443829211807388}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6462443829211807357 stripped
+--- !u!114 &2473052652486063592 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8934361164403526516, guid: d1fa31236f2a48a4cbe9ea856acc9aca,
     type: 3}

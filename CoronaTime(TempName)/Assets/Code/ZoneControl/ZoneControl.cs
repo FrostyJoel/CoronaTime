@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GroceryList))]
 public class ZoneControl : MonoBehaviour {
     public static ZoneControl zc_Single;
     public Zone[] zones;
