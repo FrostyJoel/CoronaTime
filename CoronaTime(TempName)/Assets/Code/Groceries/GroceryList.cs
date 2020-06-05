@@ -41,6 +41,7 @@ public class GroceryList : MonoBehaviour {
                 for (int iB = 0; iB < randomizedList.Count; iB++) {
                     if(randomizedList[iB].product.name == zone.typesOfProductsInZone[random].name) {
                         randomizedList[iB].amount++;
+                        break;
                     } else {
                         randomizedList.Add(new Groceries() { product = zone.typesOfProductsInZone[random], amount = 1 });
                         break;
