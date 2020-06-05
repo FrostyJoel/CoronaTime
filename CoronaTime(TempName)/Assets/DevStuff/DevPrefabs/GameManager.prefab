@@ -1736,7 +1736,6 @@ GameObject:
   - component: {fileID: 6082168589429124985}
   - component: {fileID: 7091157567290249982}
   - component: {fileID: 6069729228489387231}
-  - component: {fileID: 8657401703776834050}
   - component: {fileID: 3681861505539929292}
   m_Layer: 0
   m_Name: GameManager
@@ -1804,30 +1803,6 @@ MonoBehaviour:
     colorButtonSprite: {fileID: 21300000, guid: 66efb24ed46044ab8a039599cbc47d7b,
       type: 3}
     colorPicks: []
---- !u!114 &8657401703776834050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6669633781740802333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146aead9794a2c8459d2ce0ae1161f17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  int_MaxRequiredScore: 2000
-  go_VictoryScreen: {fileID: 1434485376184265176}
-  victoryScreenSlots:
-  - text_Name: {fileID: 1434485375497597137}
-    text_Score: {fileID: 1434485374748114016}
-  - text_Name: {fileID: 1434485375279455206}
-    text_Score: {fileID: 1434485375248168244}
-  - text_Name: {fileID: 1434485375996026868}
-    text_Score: {fileID: 1434485375806527953}
-  - text_Name: {fileID: 1434485374932038501}
-    text_Score: {fileID: 1434485374640962439}
-  storages: []
 --- !u!114 &3681861505539929292
 MonoBehaviour:
   m_ObjectHideFlags: 0

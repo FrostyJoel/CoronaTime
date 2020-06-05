@@ -176,14 +176,26 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     void RPC_UpdateScoreboardScore(int id, int newScore) {
+        List<int> scores = new List<int>();
         for (int iB = 0; iB < storages.Length; iB ++) {
-            if (storages[iB].photonView.ViewID == id) {
-                score = newScore;
-                MaxScoreForPresentationCheck.maxScoreFpsSingle.CheckScore(photonView.ViewID);
-            } 
-            for (int i = 0; i < storages[iB].sbListingsList.Count; i++) {
-                if (storages[iB].sbListingsList[i].id == id) {
-                    storages[iB].sbListingsList[i].text_Score.text = newScore.ToString();
+            if (storages[iB]) {
+                if (storages[iB].photonView.ViewID == id) {
+                    score = newScore;
+                } 
+                for (int i = 0; i < storages[iB].sbListingsList.Count; i++) {
+                    if (storages[iB].sbListingsList[i].id == id) {
+                        storages[iB].sbListingsList[i].text_Score.text = newScore.ToString();
+                    }
+                }
+                scores.Add(storages[iB].score);
+            }
+        }
+        scores.Sort();
+        scores.Reverse();
+        for (int i = 0; i < scores.Count; i++) {
+            for (int iB = 0; iB < storages.Length; iB++) {
+                if (storages[iB] && storages[iB].score == scores[i]) {
+                    storages[iB].sbListingsList[i].transform.SetSiblingIndex(i);
                 }
             }
         }
