@@ -120,16 +120,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1884561928}
     m_Modifications:
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 803138518}
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: index
-      value: 34
-      objectReference: {fileID: 0}
     - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -393,21 +383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &46309901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Banana_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
-  scoreValue: 30
-  index: 50
 --- !u!1 &46960589
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,16 +495,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_Ice_Pear_Prefab (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 90035525}
-    - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
-        type: 3}
-      propertyPath: index
-      value: 54
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
 --- !u!4 &79666088 stripped
@@ -617,16 +582,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_Ice_Banana_Prefab (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 969688665}
-    - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
-        type: 3}
-      propertyPath: index
-      value: 56
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
 --- !u!4 &83813714 stripped
@@ -647,36 +602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &90035525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Pear_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
-  scoreValue: 30
-  index: 54
---- !u!114 &93538244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
-  scoreValue: 50
-  index: 40
 --- !u!1 &96687016
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,16 +897,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 233773684}
-    - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
-        type: 3}
-      propertyPath: index
-      value: 58
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
@@ -1520,16 +1435,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 317449158}
-    - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
-        type: 3}
-      propertyPath: index
-      value: 49
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
 --- !u!4 &223478224 stripped
@@ -1703,21 +1608,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232264261}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &233773684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Strawberry_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
-  scoreValue: 30
-  index: 58
 --- !u!1001 &269698110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1810,21 +1700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &272710596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Strawberry_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
-  scoreValue: 30
-  index: 61
 --- !u!1001 &276297369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1832,16 +1707,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1884561928}
     m_Modifications:
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 649461355}
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: index
-      value: 45
-      objectReference: {fileID: 0}
     - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1929,16 +1794,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1884561928}
     m_Modifications:
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 737478320}
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: index
-      value: 46
-      objectReference: {fileID: 0}
     - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1994,16 +1849,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: m_Name
@@ -2029,36 +1874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &317449158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Strawberry_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
-  scoreValue: 30
-  index: 49
---- !u!114 &318749016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
-  scoreValue: 50
-  index: 37
 --- !u!1001 &342699642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2066,16 +1881,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1884561928}
     m_Modifications:
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 318749016}
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: index
-      value: 37
-      objectReference: {fileID: 0}
     - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2270,11 +2075,11 @@ MonoBehaviour:
   - {fileID: 566403128}
   - {fileID: 588332616}
   - {fileID: 658590546}
-  - {fileID: 703811930}
+  - {fileID: 0}
   - {fileID: 916888696}
   - {fileID: 928424983}
-  - {fileID: 995923897}
-  - {fileID: 1065880019}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 1118311322}
   - {fileID: 1153413721}
   - {fileID: 1310716874}
@@ -2283,7 +2088,7 @@ MonoBehaviour:
   - {fileID: 1642569949}
   - {fileID: 1954874318}
   - {fileID: 2014255667}
-  - {fileID: 5904434564339824851}
+  - {fileID: 3568172880318647390}
 --- !u!1001 &351698089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2350,16 +2155,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box_Ice_Banana_Prefab (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 1612890955}
-    - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
-        type: 3}
-      propertyPath: index
-      value: 57
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
@@ -2633,21 +2428,6 @@ Transform:
   m_Father: {fileID: 2111679730}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &446636980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
-  scoreValue: 50
-  index: 43
 --- !u!1001 &464909991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2844,21 +2624,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &483041721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
-  scoreValue: 50
-  index: 39
 --- !u!1 &491147662
 GameObject:
   m_ObjectHideFlags: 0
@@ -3463,16 +3228,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_Ice_Banana_Prefab (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 46309901}
-    - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
-        type: 3}
-      propertyPath: index
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
 --- !u!4 &615355252 stripped
@@ -3520,10 +3275,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 703811931}
-  - {fileID: 995923898}
-  - {fileID: 6950305058618619022}
-  - {fileID: 1065880020}
+  - {fileID: 5904434564339918066}
+  - {fileID: 1110237879}
+  - {fileID: 1156584816}
+  - {fileID: 1638787107}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3800,21 +3555,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636535893}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &649461355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
-  scoreValue: 50
-  index: 45
 --- !u!1 &653236044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3982,21 +3722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5449fa3cc7dfe4a8a4df3d8ea4edae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &661911446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
-  scoreValue: 50
-  index: 44
 --- !u!1 &667938873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4278,16 +4003,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_Ice_Pear_Prefab (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 990479088}
-    - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
-        type: 3}
-      propertyPath: index
-      value: 48
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
 --- !u!4 &691107446 stripped
@@ -4388,113 +4103,6 @@ Transform:
   m_Father: {fileID: 1137574349}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &697451720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Pear_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
-  scoreValue: 30
-  index: 60
---- !u!1001 &703811929
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 617129889}
-    m_Modifications:
-    - target: {fileID: 3568172880318647391, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_Name
-      value: Toiletpaper (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.829
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.993
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5904434564339824851, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: index
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7a6e801aefafa1f4991a57722706e849, type: 3}
---- !u!114 &703811930 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5904434564339824851, guid: 7a6e801aefafa1f4991a57722706e849,
-    type: 3}
-  m_PrefabInstance: {fileID: 703811929}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fdab1b91d3d8c84781578a1d1941b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &703811931 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-    type: 3}
-  m_PrefabInstance: {fileID: 703811929}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &706736300
 GameObject:
   m_ObjectHideFlags: 0
@@ -4647,21 +4255,6 @@ Transform:
   m_Father: {fileID: 2088336669}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &737478320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
-  scoreValue: 50
-  index: 46
 --- !u!1001 &740526235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4975,16 +4568,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1884561928}
     m_Modifications:
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 661911446}
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: index
-      value: 44
-      objectReference: {fileID: 0}
     - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5157,21 +4740,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &803138518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
-  scoreValue: 50
-  index: 34
 --- !u!1 &804188971
 GameObject:
   m_ObjectHideFlags: 0
@@ -5452,16 +5020,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1884561928}
     m_Modifications:
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 1425187303}
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: index
-      value: 38
-      objectReference: {fileID: 0}
     - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5790,16 +5348,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box_Ice_Banana_Prefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 2056286449}
-    - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
-        type: 3}
-      propertyPath: index
-      value: 62
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
@@ -6524,21 +6072,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &969688665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Banana_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
-  scoreValue: 30
-  index: 56
 --- !u!1001 &976598299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6605,16 +6138,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box_Ice_Pear_Prefab (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 1803961814}
-    - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
-        type: 3}
-      propertyPath: index
-      value: 59
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
@@ -6727,113 +6250,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985176299}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &990479088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Pear_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
-  scoreValue: 30
-  index: 48
---- !u!1001 &995923896
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 617129889}
-    m_Modifications:
-    - target: {fileID: 3568172880318647391, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_Name
-      value: Toiletpaper (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.993
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5904434564339824851, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: index
-      value: 9
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7a6e801aefafa1f4991a57722706e849, type: 3}
---- !u!114 &995923897 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5904434564339824851, guid: 7a6e801aefafa1f4991a57722706e849,
-    type: 3}
-  m_PrefabInstance: {fileID: 995923896}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fdab1b91d3d8c84781578a1d1941b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &995923898 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-    type: 3}
-  m_PrefabInstance: {fileID: 995923896}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1010836536
 GameObject:
   m_ObjectHideFlags: 0
@@ -7114,16 +6530,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_Ice_Pear_Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 697451720}
-    - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
-        type: 3}
-      propertyPath: index
-      value: 60
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
 --- !u!4 &1057317448 stripped
@@ -7144,98 +6550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1065880018
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 617129889}
-    m_Modifications:
-    - target: {fileID: 3568172880318647391, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_Name
-      value: Toiletpaper (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.383
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.993
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5904434564339824851, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: index
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7a6e801aefafa1f4991a57722706e849, type: 3}
---- !u!114 &1065880019 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5904434564339824851, guid: 7a6e801aefafa1f4991a57722706e849,
-    type: 3}
-  m_PrefabInstance: {fileID: 1065880018}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fdab1b91d3d8c84781578a1d1941b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1065880020 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-    type: 3}
-  m_PrefabInstance: {fileID: 1065880018}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1069042026
 GameObject:
   m_ObjectHideFlags: 0
@@ -7274,36 +6588,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1076124076
-MonoBehaviour:
+--- !u!1001 &1110237878
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 617129889}
+    m_Modifications:
+    - target: {fileID: 5439985283989279411, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_Name
+      value: Toiletpaper (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.993
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f251a74e8876cf449a5d3e4faf5a134, type: 3}
+--- !u!4 &1110237879 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+    type: 3}
+  m_PrefabInstance: {fileID: 1110237878}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Pear_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
-  scoreValue: 30
-  index: 53
---- !u!114 &1086714736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Strawberry_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
-  scoreValue: 30
-  index: 55
 --- !u!1001 &1118311320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7592,6 +6951,81 @@ Transform:
   m_Father: {fileID: 1322241909}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1156584815
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 617129889}
+    m_Modifications:
+    - target: {fileID: 5439985283989279411, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_Name
+      value: Toiletpaper (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.837
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.993
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f251a74e8876cf449a5d3e4faf5a134, type: 3}
+--- !u!4 &1156584816 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+    type: 3}
+  m_PrefabInstance: {fileID: 1156584815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1175594536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7751,16 +7185,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 1086714736}
-    - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
-        type: 3}
-      propertyPath: index
-      value: 55
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
 --- !u!4 &1179660042 stripped
@@ -7847,16 +7271,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 272710596}
-    - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
-        type: 3}
-      propertyPath: index
-      value: 61
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
@@ -8254,16 +7668,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 1282372312}
-    - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
-        type: 3}
-      propertyPath: index
-      value: 52
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
 --- !u!4 &1260804889 stripped
@@ -8383,16 +7787,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1884561928}
     m_Modifications:
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 93538244}
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: index
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8473,21 +7867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1282372312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Strawberry_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
-  scoreValue: 30
-  index: 52
 --- !u!1001 &1296303201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9049,16 +8428,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1884561928}
     m_Modifications:
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 483041721}
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: index
-      value: 39
-      objectReference: {fileID: 0}
     - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9339,21 +8708,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408148969}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1425187303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
-  scoreValue: 50
-  index: 38
 --- !u!1 &1436494550
 GameObject:
   m_ObjectHideFlags: 0
@@ -9990,16 +9344,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_Ice_Pear_Prefab (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 1076124076}
-    - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
-        type: 3}
-      propertyPath: index
-      value: 53
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
 --- !u!4 &1609039743 stripped
@@ -10020,21 +9364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1612890955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Banana_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
-  scoreValue: 30
-  index: 57
 --- !u!1 &1631722145
 GameObject:
   m_ObjectHideFlags: 0
@@ -10098,6 +9427,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productsToFind: 1
   productsInZone: []
+--- !u!1001 &1638787106
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 617129889}
+    m_Modifications:
+    - target: {fileID: 5439985283989279411, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_Name
+      value: Toiletpaper (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.297
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.993
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f251a74e8876cf449a5d3e4faf5a134, type: 3}
+--- !u!4 &1638787107 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+    type: 3}
+  m_PrefabInstance: {fileID: 1638787106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1642569947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10588,16 +9992,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1884561928}
     m_Modifications:
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 446636980}
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: index
-      value: 43
-      objectReference: {fileID: 0}
     - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10716,16 +10110,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1884561928}
     m_Modifications:
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 2031884474}
-    - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
-        type: 3}
-      propertyPath: index
-      value: 33
-      objectReference: {fileID: 0}
     - target: {fileID: 6499565874854325929, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10806,21 +10190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1803961814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Pear_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
-  scoreValue: 30
-  index: 59
 --- !u!1 &1806921256
 GameObject:
   m_ObjectHideFlags: 0
@@ -11942,21 +11311,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2014255666}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2031884474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
-  scoreValue: 50
-  index: 33
 --- !u!1001 &2032274819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12049,21 +11403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2056286449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Banana_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
-  scoreValue: 30
-  index: 62
 --- !u!1 &2058474954
 GameObject:
   m_ObjectHideFlags: 0
@@ -12400,21 +11739,6 @@ Transform:
   m_Father: {fileID: 1322241909}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2133780013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Banana_SOBJ
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
-  scoreValue: 30
-  index: 51
 --- !u!1 &2135068152
 GameObject:
   m_ObjectHideFlags: 0
@@ -12665,16 +11989,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_Ice_Banana_Prefab (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
-        type: 3}
-      propertyPath: scriptableProduct
-      value: 
-      objectReference: {fileID: 2133780013}
-    - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
-        type: 3}
-      propertyPath: index
-      value: 51
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
 --- !u!4 &2146128222 stripped
@@ -12790,11 +12104,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1702764479556788110}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5904434564339824851 stripped
+--- !u!1001 &1913596905247205985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 617129889}
+    m_Modifications:
+    - target: {fileID: 5439985283989279411, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_Name
+      value: 'Toiletpaper '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.071
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.993
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f251a74e8876cf449a5d3e4faf5a134, type: 3}
+--- !u!114 &3568172880318647390 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5904434564339824851, guid: 7a6e801aefafa1f4991a57722706e849,
+  m_CorrespondingSourceObject: {fileID: 3101507258313909823, guid: 1f251a74e8876cf449a5d3e4faf5a134,
     type: 3}
-  m_PrefabInstance: {fileID: 6950305058618619021}
+  m_PrefabInstance: {fileID: 1913596905247205985}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -12802,88 +12185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fdab1b91d3d8c84781578a1d1941b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &6950305058618619021
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 617129889}
-    m_Modifications:
-    - target: {fileID: 3568172880318647391, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_Name
-      value: 'Toiletpaper '
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.071
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.993
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5904434564339824851, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: index
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 5904434564339824851, guid: 7a6e801aefafa1f4991a57722706e849,
-        type: 3}
-      propertyPath: durationInSeconds
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7a6e801aefafa1f4991a57722706e849, type: 3}
---- !u!4 &6950305058618619022 stripped
+--- !u!4 &5904434564339918066 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3568172880318746751, guid: 7a6e801aefafa1f4991a57722706e849,
+  m_CorrespondingSourceObject: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
     type: 3}
-  m_PrefabInstance: {fileID: 6950305058618619021}
+  m_PrefabInstance: {fileID: 1913596905247205985}
   m_PrefabAsset: {fileID: 0}

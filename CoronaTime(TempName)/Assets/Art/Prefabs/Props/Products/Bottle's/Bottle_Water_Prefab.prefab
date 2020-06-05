@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   audioGroup: 2
+  interactable: 0
   currentPlace: 0
-  scriptableProduct: {fileID: 0}
+  scriptableProduct: {fileID: 11400000, guid: 758896ed43d306e4d9d711dab3d87390, type: 2}
   index: 304

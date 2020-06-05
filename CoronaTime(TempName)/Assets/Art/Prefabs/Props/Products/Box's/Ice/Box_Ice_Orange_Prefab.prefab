@@ -107,8 +107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
   audioGroup: 2
+  interactable: 0
   currentPlace: 0
-  scriptableProduct: {fileID: 0}
+  scriptableProduct: {fileID: 11400000, guid: 730b71bd860bb0e44bd13c05aa776535, type: 2}
   index: 1069
 --- !u!114 &1082332847320610355
 MonoBehaviour:
