@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114994348496919560}
   - component: {fileID: 114632456872133216}
   m_Layer: 11
-  m_Name: Beer Bottle
+  m_Name: Bottle_Beer_Brown_Prefab
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,9 +128,12 @@ MonoBehaviour:
   audioGroup: 2
   interactable: 0
   SpecialPosAndRot:
-    use: 0
+    use: 1
     pos: {x: 0, y: 0, z: 0}
-    rot: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 90, z: 0}
+    productScaling:
+      useNewScale: 0
+      scale: {x: 0, y: 0, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 1ee676bfedaff6e498283afcff6b6a44, type: 2}
   index: 540

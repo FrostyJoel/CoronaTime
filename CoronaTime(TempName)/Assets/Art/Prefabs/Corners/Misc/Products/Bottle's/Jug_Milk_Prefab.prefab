@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114566133046593926}
   - component: {fileID: 114243870171494240}
   m_Layer: 11
-  m_Name: Special_Milk_Prefab
+  m_Name: Jug_Milk_Prefab
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,6 +131,9 @@ MonoBehaviour:
     use: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0}
+    productScaling:
+      useNewScale: 0
+      scale: {x: 0, y: 0, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 103f06f17f1951d4fbd9c6f92db5584e, type: 2}
   index: 1184

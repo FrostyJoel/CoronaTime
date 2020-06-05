@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114327176902670234}
   - component: {fileID: 114179052790046286}
   m_Layer: 11
-  m_Name: Banana_Cluster
+  m_Name: Fruit_Banana_Cluster_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,6 +131,9 @@ MonoBehaviour:
     use: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0}
+    productScaling:
+      useNewScale: 1
+      scale: {x: 0.63223, y: 0.63223, z: 0.63223}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 2e8dc9dfc855c454eaaf3927366a2f5f, type: 2}
   index: 430

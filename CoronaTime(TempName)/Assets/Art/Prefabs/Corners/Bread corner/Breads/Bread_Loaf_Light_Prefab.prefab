@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114891484183035662}
   - component: {fileID: 114777412839194290}
   m_Layer: 11
-  m_Name: Bread_Light
+  m_Name: Bread_Loaf_Light_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,9 +128,12 @@ MonoBehaviour:
   audioGroup: 2
   interactable: 0
   SpecialPosAndRot:
-    use: 0
+    use: 1
     pos: {x: 0, y: 0, z: 0}
-    rot: {x: 0, y: 0, z: 0}
+    rot: {x: -1.09, y: 18.553, z: -0.178}
+    productScaling:
+      useNewScale: 1
+      scale: {x: 0.7145704, y: 0.7145704, z: 0.7145704}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 03431c1ab5240f341a15b8c874257c99, type: 2}
   index: 105

@@ -130,7 +130,7 @@ MonoBehaviour:
   SpecialPosAndRot:
     use: 1
     pos: {x: 0, y: 0, z: 0}
-    rot: {x: 0, y: 110, z: 0}
+    rot: {x: 0, y: -130, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 265ba2b9d38cc0240a5eff2671a411d8, type: 2}
   index: 901

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1375882889496348471}
   - component: {fileID: 1726458375}
   m_Layer: 9
-  m_Name: Can_CoffeeBeans
+  m_Name: Can_CoffeeBeans_Prefab
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6383855755871722226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.361, y: 0.86852026, z: 5.827}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,6 +108,7 @@ MonoBehaviour:
   outlineMode: 1
   outlineColor: {r: 0.9528302, g: 0.8549411, b: 0.049439307, a: 1}
   outlineWidth: 5
+  outlineChild: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -123,6 +124,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
   audioGroup: 2
-  scriptableProduct: {fileID: 11400000, guid: ef3e2a2c2e76a954eaf7d96194885ec7, type: 2}
+  interactable: 0
+  SpecialPosAndRot:
+    use: 0
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 0, z: 0}
+    productScaling:
+      useNewScale: 1
+      scale: {x: 0.5, y: 0.5, z: 0.5}
   currentPlace: 0
+  scriptableProduct: {fileID: 11400000, guid: ef3e2a2c2e76a954eaf7d96194885ec7, type: 2}
+  index: 0

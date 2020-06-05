@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114917859068079756}
   - component: {fileID: 114969311979969082}
   m_Layer: 11
-  m_Name: Baguette_Dark_Prefab
+  m_Name: Bread_Baguette_Dark_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   SpecialPosAndRot:
     use: 1
     pos: {x: 0, y: 0, z: 0}
-    rot: {x: -90, y: 90, z: 90}
+    rot: {x: -90, y: 0, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: e25d47a9f42f4a941a687e6644251e54, type: 2}
   index: 491

@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7330561712346354153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04779339, y: -0.21298462, z: -3.6094027}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,9 +128,12 @@ MonoBehaviour:
   audioGroup: 2
   interactable: 0
   SpecialPosAndRot:
-    use: 0
+    use: 1
     pos: {x: 0, y: 0, z: 0}
-    rot: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 90, z: 0}
+    productScaling:
+      useNewScale: 0
+      scale: {x: 0, y: 0, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 987795a9e9192774c900986f7ba6f209, type: 2}
   index: 326
