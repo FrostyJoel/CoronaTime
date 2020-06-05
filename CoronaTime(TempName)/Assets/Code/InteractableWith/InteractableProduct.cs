@@ -11,7 +11,7 @@ public class InteractableProduct : Interactable {
     [HideInInspector] public int index;
 
     public override void Interact(CartStorage cartStorage) {
-        if (currentPlace == Place.InShelve && cartStorage.AddToCart(index)) {
+        if (interactable && currentPlace == Place.InShelve && cartStorage.AddToCart(index)) {
             ProductInteractions.pi_Single.ChangeProductPlace(index, (int)Place.InCart, RpcTarget.All);
             if (SpecialPosAndRot.use) {
                 ProductInteractions.pi_Single.SetLocalInteractableProductPositionAndRotation(index, SpecialPosAndRot.pos, Quaternion.Euler(SpecialPosAndRot.rot), RpcTarget.All);

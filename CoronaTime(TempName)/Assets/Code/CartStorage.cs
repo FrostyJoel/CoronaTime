@@ -8,7 +8,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     public int interactRange, maxItemsHeld;
 
     public List<Transform> itemHolders = new List<Transform>();
-    
+
     [Header("Scoreboard")]
     public Transform transform_Scoreboard;
     public GameObject prefab_ScoreboardListing;
@@ -20,6 +20,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     [HideInInspector] public List<GameObject> heldProductModels = new List<GameObject>();
     [HideInInspector] public List<SoldProduct> soldProducts = new List<SoldProduct>();
     [HideInInspector] public List<ScriptScoreboardListing> sbListingsList = new List<ScriptScoreboardListing>();
+    public List<Groceries> groceryList = new List<Groceries>();
 
     private void Awake() {
         if (holder) {
@@ -33,6 +34,18 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     private void Start() {
         if (PhotonNetwork.IsConnected) {
             photonView.RPC("RPC_SetScoreboardListings", RpcTarget.All);
+        }
+        if (photonView.IsMine || controller.playerView.devView) {
+            EnableProductsRelativeToList();
+        }
+    }
+
+    void EnableProductsRelativeToList() {
+        if (ZoneControl.zc_Single) {
+            groceryList = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].groceryList;
+            for (int i = 0; i < groceryList.Count; i++) {
+
+            }
         }
     }
 
@@ -113,6 +126,10 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     public void ClearProducts() {
         photonView.RPC("RPC_ClearProducts", RpcTarget.All);
+    }
+
+    void RPC_NextZone() {
+        
     }
 
     [PunRPC]

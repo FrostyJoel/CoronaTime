@@ -11,12 +11,6 @@ public class GroceryList : MonoBehaviour {
         Randomize();
     }
 
-    private void Update() {
-        if (Input.GetButtonDown("Jump")) {
-            Randomize();
-        }
-    }
-
     void Randomize() {
         for (int i = 0; i < zoneControl.zones.Length; i++) {
             Zone zone = zoneControl.zones[i];
@@ -38,20 +32,28 @@ public class GroceryList : MonoBehaviour {
         for (int i = 0; i < zone.productsToFind; i++) {
             int random = Random.Range(0, zone.typesOfProductsInZone.Count);
             if(randomizedList.Count > 0) {
-                for (int iB = 0; iB < randomizedList.Count; iB++) {
-                    if(randomizedList[iB].product.name == zone.typesOfProductsInZone[random].name) {
-                        randomizedList[iB].amount++;
-                        break;
-                    } else {
-                        randomizedList.Add(new Groceries() { product = zone.typesOfProductsInZone[random], amount = 1 });
-                        break;
-                    }
+                int index = ContainsInGroceryListWhere(randomizedList, zone.typesOfProductsInZone[random]);
+                if(index >= 0) {
+                    randomizedList[index].amount++;
+                } else {
+                    randomizedList.Add(new Groceries() { product = zone.typesOfProductsInZone[random], amount = 1 });
                 }
             } else {
                randomizedList.Add(new Groceries() { product = zone.typesOfProductsInZone[random], amount = 1 });
             }
         }
         return randomizedList;
+    }
+
+    int ContainsInGroceryListWhere(List<Groceries> gList, Product product) {
+        int index = -1;
+        for (int iB = 0; iB < gList.Count; iB++) {
+            if (gList[iB].product.productName  == product.productName) {
+                index = iB;
+                break;
+            }
+        }
+        return index;
     }
 }
 

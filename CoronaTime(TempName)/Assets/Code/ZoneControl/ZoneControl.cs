@@ -3,7 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ZoneControl : MonoBehaviour {
+    public static ZoneControl zc_Single;
     public Zone[] zones;
+
+    public int currentZoneIndex;
+
+    private void Awake() {
+        currentZoneIndex = 0;
+        zc_Single = this;
+    }
 
     public void SetProductsInZone() {
         for (int i = 0; i < zones.Length; i++) {

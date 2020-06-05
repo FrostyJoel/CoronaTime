@@ -63,7 +63,9 @@ public class Controller : MonoBehaviourPun {
                     meshRenderersToDisableLocally[i].enabled = false;
                 }
             }
-            gameObject.layer = Manager.staticInformation.int_LocalPlayerLayer;
+            if (GameObject.Find("GameManager")) {
+                gameObject.layer = Manager.staticInformation.int_LocalPlayerLayer;
+            }
         }
         if (PhotonNetwork.IsConnected) {
             photonView.RPC("RPC_SetNicknameTargets", RpcTarget.All);
