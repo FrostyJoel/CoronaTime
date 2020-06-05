@@ -108,6 +108,10 @@ MonoBehaviour:
   clip: {fileID: 0}
   audioGroup: 2
   interactable: 0
+  SpecialPosAndRot:
+    use: 1
+    pos: {x: 0.031, y: 0.15, z: 0}
+    rot: {x: -89.5, y: 90, z: 15}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 52c5139ecc8044f4c9804847e0001f40, type: 2}
   index: 822

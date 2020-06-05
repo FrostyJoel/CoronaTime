@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu][System.Serializable]
+[CreateAssetMenu, System.Serializable]
 public class Product : ScriptableObject {
     public GameObject prefab;
     public int scoreValue, index;

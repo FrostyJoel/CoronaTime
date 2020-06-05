@@ -98,6 +98,7 @@ MonoBehaviour:
   - RPC_StartStopParticle
   - RPC_StartStopParticleOnPlayer
   - RPC_EnableRoomLoadingUI
+  - RPC_SetLocalInteractableProductPositionAndRotation
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

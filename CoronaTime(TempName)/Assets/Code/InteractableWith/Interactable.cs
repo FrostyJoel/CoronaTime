@@ -7,6 +7,8 @@ public class Interactable : MonoBehaviourPun {
     public AudioManager.AudioGroups audioGroup = AudioManager.AudioGroups.SFX;
 
     public bool interactable;
+    [Space]
+    public SpecialPosAndRot SpecialPosAndRot;
 
     public enum Place {
         InShelve,
@@ -29,4 +31,10 @@ public class Interactable : MonoBehaviourPun {
             AudioManager.PlaySound(clip, audioGroup);
         }
     }
+}
+
+[System.Serializable]
+public class SpecialPosAndRot {
+    public bool use;
+    public Vector3 pos, rot;
 }

@@ -105,9 +105,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
   audioGroup: 2
-  scriptableProduct: {fileID: 11400000, guid: c040cc2fa6d0c054daca281e4e152053, type: 2}
+  interactable: 0
+  SpecialPosAndRot:
+    use: 1
+    pos: {x: 0, y: 0, z: 0}
+    rot: {x: 0, y: 105, z: 0}
   currentPlace: 0
+  scriptableProduct: {fileID: 11400000, guid: c040cc2fa6d0c054daca281e4e152053, type: 2}
+  index: 0
 --- !u!114 &9090359314346203441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +130,7 @@ MonoBehaviour:
   outlineMode: 1
   outlineColor: {r: 0.9528302, g: 0.8549411, b: 0.049439307, a: 1}
   outlineWidth: 5
+  outlineChild: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
