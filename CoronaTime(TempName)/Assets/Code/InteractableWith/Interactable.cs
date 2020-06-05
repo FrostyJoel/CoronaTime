@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviourPun {
 
     public bool interactable;
     [Space]
-    public SpecialPosAndRot SpecialPosAndRot;
+    public ProductManipulation SpecialPosAndRot;
 
     public enum Place {
         InShelve,
@@ -34,7 +34,14 @@ public class Interactable : MonoBehaviourPun {
 }
 
 [System.Serializable]
-public class SpecialPosAndRot {
+public class ProductManipulation {
     public bool use;
     public Vector3 pos, rot;
+    public ProductScaling productScaling;
+}
+
+[System.Serializable]
+public class ProductScaling {
+    public bool useNewScale;
+    public Vector3 scale;
 }

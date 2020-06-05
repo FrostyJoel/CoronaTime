@@ -40,6 +40,10 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_SetLocalInteractableProductPositionAndRotation", selectedTarget, index, pos, rot);
     }
 
+    public void SetLocalInteractableProductScale(int index, Vector3 scale, RpcTarget selectedTarget) {
+        photonView.RPC("RPC_SetLocalInteractableProductScale", selectedTarget, index, scale);
+    }
+
     public void SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic(int index, Vector3 pos, Vector3 force, int kinematicState, Quaternion rot, RpcTarget selectedTarget) { 
         photonView.RPC("RPC_SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic", selectedTarget, index, pos, force, kinematicState, rot);
     }
@@ -157,6 +161,11 @@ public class ProductInteractions : MonoBehaviourPun {
     void RPC_SetLocalInteractableProductPositionAndRotation(int index, Vector3 pos, Quaternion rot) {
         PhotonProductList.staticInteratableProductList[index].transform.localPosition = pos;
         PhotonProductList.staticInteratableProductList[index].transform.localRotation = rot;
+    }
+
+    [PunRPC]
+    void RPC_SetLocalInteractableProductScale(int index, Vector3 scale) {
+        PhotonProductList.staticInteratableProductList[index].transform.localScale = scale;
     }
 
     [PunRPC]

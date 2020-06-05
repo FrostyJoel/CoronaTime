@@ -16,6 +16,9 @@ public class InteractableProduct : Interactable {
             if (SpecialPosAndRot.use) {
                 ProductInteractions.pi_Single.SetLocalInteractableProductPositionAndRotation(index, SpecialPosAndRot.pos, Quaternion.Euler(SpecialPosAndRot.rot), RpcTarget.All);
             }
+            if (SpecialPosAndRot.productScaling.useNewScale) {
+                ProductInteractions.pi_Single.SetLocalInteractableProductScale(index, SpecialPosAndRot.productScaling.scale, RpcTarget.All);
+            }
             if (GetComponent<Outline>()) {
                 GetComponent<Outline>().enabled = false;
             }
