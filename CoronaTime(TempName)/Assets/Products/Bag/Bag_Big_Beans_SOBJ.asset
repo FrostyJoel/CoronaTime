@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Bag_Big_Beans_SOBJ
   m_EditorClassIdentifier: 
+  productName: Bag of Beans
   prefab: {fileID: 2214180531388904830, guid: 2e0271821c793c045ae200d54af885be, type: 3}
   scoreValue: 10
   index: 0

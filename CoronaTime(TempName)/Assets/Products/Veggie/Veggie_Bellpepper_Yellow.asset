@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Veggie_Bellpepper_Yellow
+  m_EditorClassIdentifier: 
+  productName: Yellow Bell Pepper
+  prefab: {fileID: 7979707853657204293, guid: b8db0ff1a4ca7be429447e056e7a2d7a, type: 3}
+  scoreValue: 10
+  index: 0

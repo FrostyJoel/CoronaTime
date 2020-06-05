@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2309434189997907139}
   - component: {fileID: 2309434189997907138}
   - component: {fileID: 7082816197653909668}
-  - component: {fileID: 8043849567754412109}
   - component: {fileID: 7773451351678958457}
+  - component: {fileID: 8043849567754412109}
   m_Layer: 11
   m_Name: Box_Normal_Soap_Prefab
   m_TagString: Interact
@@ -93,6 +93,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21979845, y: 0.2980577, z: 0.05999164}
   m_Center: {x: 0, y: 0.14902885, z: 0}
+--- !u!114 &7773451351678958457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309434189997907165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
+  outlineWidth: 5
+  outlineChild: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!114 &8043849567754412109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,24 +132,5 @@ MonoBehaviour:
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
-  scriptableProduct: {fileID: 0}
+  scriptableProduct: {fileID: 11400000, guid: a4878aaeb3bfe3c4fbc6a9a7930c62d5, type: 2}
   index: 900
---- !u!114 &7773451351678958457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2309434189997907165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
-  outlineWidth: 5
-  outlineChild: 0
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []

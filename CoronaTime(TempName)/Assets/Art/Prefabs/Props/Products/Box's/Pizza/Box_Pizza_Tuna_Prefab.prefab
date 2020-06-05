@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8808614651396826333}
   - component: {fileID: 8808614651396826332}
   - component: {fileID: 5728021550016154958}
-  - component: {fileID: 2176721753493413804}
   - component: {fileID: 6069818292783345895}
+  - component: {fileID: 2176721753493413804}
   m_Layer: 11
   m_Name: Box_Pizza_Tuna_Prefab
   m_TagString: Interact
@@ -93,6 +93,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.32038993, y: 0.03208352, z: 0.29954126}
   m_Center: {x: 0.000000007450581, y: 0.016041748, z: 0}
+--- !u!114 &6069818292783345895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808614651396826335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
+  outlineWidth: 5
+  outlineChild: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!114 &2176721753493413804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,24 +132,5 @@ MonoBehaviour:
     pos: {x: 0.031, y: 0.15, z: 0}
     rot: {x: -89.5, y: 90, z: 15}
   currentPlace: 0
-  scriptableProduct: {fileID: 0}
+  scriptableProduct: {fileID: 11400000, guid: 2f593871afff1c546a9b513b70c0d8ae, type: 2}
   index: 1312
---- !u!114 &6069818292783345895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8808614651396826335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
-  outlineWidth: 5
-  outlineChild: 0
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []

@@ -132,5 +132,5 @@ MonoBehaviour:
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0}
   currentPlace: 0
-  scriptableProduct: {fileID: 0}
+  scriptableProduct: {fileID: 11400000, guid: 0798ffbcce34631418208453094e29dc, type: 2}
   index: 152

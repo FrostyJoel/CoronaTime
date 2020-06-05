@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Bag_Big_Flour_SOBJ
   m_EditorClassIdentifier: 
+  productName: Bag of Flour
   prefab: {fileID: 7796676360800813566, guid: 2251343cd61a99741a538a59f370d695, type: 3}
   scoreValue: 10
   index: 0

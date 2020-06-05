@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Veggie_Eggplant
+  m_EditorClassIdentifier: 
+  productName: Eggplant
+  prefab: {fileID: 6587138014929668980, guid: 4d6e12ec33ffca64da8752aa4d4e77b0, type: 3}
+  scoreValue: 10
+  index: 0
