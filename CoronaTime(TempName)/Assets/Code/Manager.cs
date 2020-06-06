@@ -24,6 +24,11 @@ public class Manager : MonoBehaviourPun {
     }
 }
 
+[System.Serializable]
+public class GameOver {
+
+}
+
 [Serializable]
 public class StaticInformation {
     public AudioMixer audioMixer;
