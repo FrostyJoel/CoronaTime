@@ -110,6 +110,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     void EnableProductsRelativeToListAndSetUI() {
         if (ZoneControl.zc_Single) {
+            print("ad");
             int zoneIndex = ZoneControl.zc_Single.currentZoneIndex;
             if (zoneIndex < ZoneControl.zc_Single.zones.Length) {
                 Zone zone = ZoneControl.zc_Single.zones[zoneIndex];
@@ -117,6 +118,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 productsGotten = 0;
                 groceryList = zone.groceryList;
                 if(transform_GroceryList.childCount > 1) {
+                    print("destroy");
                     for (int i = transform_GroceryList.childCount - 1; i > 0 ; i--) {
                         Destroy(transform_GroceryList.GetChild(i).gameObject);
                     }
