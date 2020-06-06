@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Bottle_Soda_7Up
   m_EditorClassIdentifier: 
-  productName: Green Soda
+  productName: Bottle of 7Up
   prefab: {fileID: 5080732008849404568, guid: 5a2ad64e030645c429687980fc966110, type: 3}
   scoreValue: 10
   index: 0

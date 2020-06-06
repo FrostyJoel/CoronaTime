@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Bottle_Soda_Sinas
   m_EditorClassIdentifier: 
-  productName: Orange/Yellow Soda
+  productName: Bottle of Sinas
   prefab: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c, type: 3}
   scoreValue: 10
   index: 0

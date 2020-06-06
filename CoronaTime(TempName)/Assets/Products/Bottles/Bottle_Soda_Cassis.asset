@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Bottle_Soda_Cassis
   m_EditorClassIdentifier: 
-  productName: Purple Soda
+  productName: Bottle of Cassis
   prefab: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7, type: 3}
   scoreValue: 10
   index: 0

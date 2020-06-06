@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Jug_Purple_Juice
   m_EditorClassIdentifier: 
-  productName: Jug of Purple Juice
+  productName: Jug of Grape Juice
   prefab: {fileID: 637299059771989016, guid: 25d6e02d3f1cfa548a5423e80d658f1b, type: 3}
   scoreValue: 10
   index: 0

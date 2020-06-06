@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Bottle_Beer_Yellow
   m_EditorClassIdentifier: 
-  productName: Bottle of Yellow Beer
+  productName: Bottle of Corona
   prefab: {fileID: 7324169118529522527, guid: 1de12d308eae4ef4cb513ae49c4268d0, type: 3}
   scoreValue: 10
   index: 0

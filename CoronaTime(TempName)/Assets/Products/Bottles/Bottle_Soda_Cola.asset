@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Bottle_Soda_Cola
   m_EditorClassIdentifier: 
-  productName: Brown Soda
+  productName: Bottle of Cola
   prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
   scoreValue: 10
   index: 0
