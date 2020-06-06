@@ -40,6 +40,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             photonView.RPC("RPC_SetScoreboardListings", RpcTarget.All);
         }
         if (photonView.IsMine || controller.playerView.devView) {
+            transform_GroceryList.gameObject.SetActive(true);
             EnableProductsRelativeToListAndSetUI();
         }
     }
