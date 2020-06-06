@@ -4709,7 +4709,7 @@ GameObject:
   - component: {fileID: 5288340490037991934}
   - component: {fileID: 114920032837321540}
   m_Layer: 0
-  m_Name: Par_Speed
+  m_Name: Par_Speed_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4743,7 +4743,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbab6608026727045bfac87853fd3eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: []
+  fxObjects:
+  - {fileID: 5288340489731179705}
+  - {fileID: 5288340490848242286}
+  anim: {fileID: 0}
 --- !u!1 &5288340490848242286
 GameObject:
   m_ObjectHideFlags: 0

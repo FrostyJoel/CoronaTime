@@ -9407,7 +9407,7 @@ GameObject:
   - component: {fileID: 577084311520660331}
   - component: {fileID: 4903904517189829823}
   m_Layer: 0
-  m_Name: Par_Bubble
+  m_Name: Par_Bubble_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9443,8 +9443,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbab6608026727045bfac87853fd3eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dur: 20
-  play: 0
+  fxObjects:
+  - {fileID: 577084312718465914}
+  - {fileID: 577084311111011135}
+  - {fileID: 577084311162589121}
+  - {fileID: 577084311683433659}
+  anim: {fileID: 0}
 --- !u!1 &577084311683433659
 GameObject:
   m_ObjectHideFlags: 0

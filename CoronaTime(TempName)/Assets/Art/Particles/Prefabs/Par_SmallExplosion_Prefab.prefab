@@ -4767,7 +4767,7 @@ GameObject:
   - component: {fileID: 5556573532548322116}
   - component: {fileID: 385283741281311805}
   m_Layer: 0
-  m_Name: Par_SmallExplosion
+  m_Name: Par_SmallExplosion_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4801,8 +4801,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbab6608026727045bfac87853fd3eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dur: 0.5
-  play: 0
+  fxObjects:
+  - {fileID: 5556573532242792447}
+  - {fileID: 5556573533933280108}
+  anim: {fileID: 0}
 --- !u!1 &5556573533933280108
 GameObject:
   m_ObjectHideFlags: 0
