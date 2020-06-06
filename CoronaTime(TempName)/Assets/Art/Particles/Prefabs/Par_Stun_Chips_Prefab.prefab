@@ -10199,7 +10199,7 @@ GameObject:
   - component: {fileID: 5007456220725215298}
   - component: {fileID: 5007456220725215299}
   m_Layer: 0
-  m_Name: Par_Stun_Chips
+  m_Name: Par_Stun_Chips_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10233,7 +10233,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbab6608026727045bfac87853fd3eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: []
+  fxObjects:
+  - {fileID: 5007456219979448674}
+  - {fileID: 1620447690786376501}
+  anim: {fileID: 0}
 --- !u!1 &5288969494164332841
 GameObject:
   m_ObjectHideFlags: 0

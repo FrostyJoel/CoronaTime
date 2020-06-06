@@ -66,6 +66,8 @@ public class Controller : MonoBehaviourPun {
             if (GameObject.Find("GameManager")) {
                 gameObject.layer = Manager.staticInformation.int_LocalPlayerLayer;
             }
+        } else {
+            localInGameHud.SetActive(false);
         }
         if (PhotonNetwork.IsConnected) {
             photonView.RPC("RPC_SetNicknameTargets", RpcTarget.All);

@@ -60,6 +60,12 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
                     outlineObj.enabled = true;
                 }
             }
+            if (storage.productsNeededInCurrentList == storage.productsGotten) {
+                InteractableCashRegister icr = hit.transform.GetComponent<InteractableCashRegister>();
+                if (icr) {
+                    text_ProductName.text = icr.hoverText;
+                }
+            }
         }
     }
 }

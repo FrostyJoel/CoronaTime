@@ -43,8 +43,8 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         }
         if (photonView.IsMine || controller.playerView.devView) {
             transform_GroceryList.gameObject.SetActive(true);
-            EnableProductsRelativeToListAndSetUI();
         }
+            EnableProductsRelativeToListAndSetUI(-1);
     }
 
     private void Update() {
@@ -61,8 +61,9 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     public void UpdateScore() {
-        print("score : " + score);
-        photonView.RPC("RPC_UpdateScoreboardScore", RpcTarget.All, photonView.ViewID, productsGotten, productsNeededInCurrentList, score);
+        if (photonView.IsMine) {
+            photonView.RPC("RPC_UpdateScoreboardScore", RpcTarget.All, photonView.ViewID, productsGotten, productsNeededInCurrentList, score);
+        }
     }
 
     void ClearListing() {
@@ -90,8 +91,8 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         int indexB = InGroceryListWhere(PhotonProductList.staticInteratableProductList[indexA].scriptableProduct);
         if (heldProducts.Count < maxItemsHeld && indexB >= 0 && groceryList[indexB].amountGotten < groceryList[indexB].amount) {
             ProductInteractions.pi_Single.AddToCart(indexA, photonView.ViewID, RpcTarget.All);
-            groceryList[indexB].amountGotten++;
-            productsGotten++;
+            groceryList[indexB].amountGotten += 1;
+            productsGotten += 1;
             if(groceryList[indexB].amountGotten == groceryList[indexB].amount) {
                 groceryList[indexB].groceryListing.text_Grocery.fontStyle = TMPro.FontStyles.Strikethrough;
                 List<InteractableProduct> ip_List = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].allProductsInZone;
@@ -108,27 +109,34 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         }
     }
 
-    void EnableProductsRelativeToListAndSetUI() {
+    void EnableProductsRelativeToListAndSetUI(int newIndex) {
         if (ZoneControl.zc_Single) {
-            print("ad");
-            int zoneIndex = ZoneControl.zc_Single.currentZoneIndex;
+            int zoneIndex;
+
+            if(newIndex > 0) {
+                ZoneControl.zc_Single.currentZoneIndex = newIndex;
+            }
+
+            zoneIndex = ZoneControl.zc_Single.currentZoneIndex;
+
+            if (transform_GroceryList.childCount > 1) {
+                for (int i = transform_GroceryList.childCount - 1; i > 0; i--) {
+                    Destroy(transform_GroceryList.GetChild(i).gameObject);
+                }
+            }
+
             if (zoneIndex < ZoneControl.zc_Single.zones.Length) {
-                    print("zc");
                 Zone zone = ZoneControl.zc_Single.zones[zoneIndex];
                 productsNeededInCurrentList = zone.productsToFind;
                 productsGotten = 0;
                 groceryList = zone.groceryList;
-                if(transform_GroceryList.childCount > 1) {
-                    print("destroy");
-                    for (int i = transform_GroceryList.childCount - 1; i > 0 ; i--) {
-                        Destroy(transform_GroceryList.GetChild(i).gameObject);
-                    }
-                }
+
                 for (int i = 0; i < groceryList.Count; i++) {
                     GameObject gl = Instantiate(prefab_GroceryListing, transform_GroceryList);
                     groceryList[i].groceryListing = gl.GetComponent<ScriptGroceryListing>();
                     groceryList[i].groceryListing.text_Grocery.text = zone.groceryListStrings[i];
                 }
+
                 for (int i = 0; i < zone.allProductsInZone.Count; i++) {
                     int index = InGroceryListWhere(zone.allProductsInZone[i].scriptableProduct);
                     if(index >= 0) {
@@ -153,65 +161,39 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         return index;
     }
 
-    public int GetCorrespondingSbListing(int id) {
-        int index = -1;
-        for (int i = 0; i < sbListingsList.Count; i++) {
-            if(sbListingsList[i].id == id) {
-                index = i;
-                break;
-            }
-        }
-        return index;
-    }
-
-    int GetScore() {
-        int scoreB = 0;
-        if(soldProducts.Count > 0) {
-            for (int i = 0; i < soldProducts.Count; i++) {
-                scoreB += soldProducts[i].parentProduct.scoreValue * soldProducts[i].amount;
-            }
-        }
-        return scoreB;
-    }
-
-    Product MakeDirtyNewInstanceOfProduct(Product product) {
-        Product tempProduct = ScriptableObject.CreateInstance(product.GetType().Name) as Product;
-        tempProduct.prefab = product.prefab;
-        tempProduct.scoreValue = product.scoreValue;
-        return tempProduct;
-    }
-
     public void ClearProducts() {
         photonView.RPC("RPC_ClearProducts", RpcTarget.All);
     }
 
-    void RPC_NextZone() {
-        
-    }
-
-    public void PhotonUpdateGroceryList(RpcTarget selectedTarget) {
-        photonView.RPC("RPC_UpdateGroceryList", selectedTarget);
+    public void PhotonUpdateGroceryList(int zoneIndex, RpcTarget selectedTarget) {
+        photonView.RPC("RPC_UpdateGroceryList", selectedTarget, zoneIndex);
     }
 
     [PunRPC]
-    void RPC_UpdateGroceryList() {
-        if (photonView.Owner.IsLocal) {
-            ZoneControl.zc_Single.currentZoneIndex++;
-            EnableProductsRelativeToListAndSetUI();
+    void RPC_UpdateGroceryList(int zoneIndex) {
+        for (int i = 0; i < storages.Length; i++) {
+            if (storages[i]) {
+                storages[i].EnableProductsRelativeToListAndSetUI(zoneIndex);
+            }
         }
     }
 
     [PunRPC]
     void RPC_UpdateScoreboardScore(int id, int gotten, int needed, int newScore) {
-        for (int iB = 0; iB < storages.Length; iB ++) {
+        CartStorage stor = PhotonNetwork.GetPhotonView(id).GetComponent<CartStorage>();
+        if (stor) {
+            stor.score = newScore;
+            stor.productsGotten = gotten;
+            stor.productsNeededInCurrentList = needed;
+        }
+        for (int iB = 0; iB < storages.Length; iB++) {
             if (storages[iB]) {
-                if (storages[iB].photonView.ViewID == id) {
-                    score = newScore;
-                } 
                 for (int i = 0; i < storages[iB].sbListingsList.Count; i++) {
                     if (storages[iB].sbListingsList[i].id == id) {
-                        storages[iB].sbListingsList[i].text_Score.text = storages[iB].score.ToString();
+                        Debug.LogWarning("exe");
+                        storages[iB].sbListingsList[i].text_Score.text = newScore.ToString();
                         storages[iB].sbListingsList[i].text_ItemsInCart.text = gotten + "/" + needed;
+                        break;
                     }
                 }
             }
@@ -234,7 +216,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             PhotonView pv = storages[i].photonView;
             sbListingsList.Add(sbListing);
             sbListing.text_Username.text = PhotonRoomCustomMatchMaking.roomSingle.RemoveIdFromNickname(pv.Owner.NickName);
-            sbListing.text_Score.text = "0";
+            sbListing.text_Score.text = score.ToString();
             sbListing.id = pv.ViewID;
         }
     }

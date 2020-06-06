@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 1090117544656488479}
   - component: {fileID: 6808685085281211594}
   m_Layer: 11
-  m_Name: Red Chips
+  m_Name: Special_Red_Chips_Prefab
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,11 +167,15 @@ MonoBehaviour:
     use: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0}
+    productScaling:
+      useNewScale: 0
+      scale: {x: 0, y: 0, z: 0}
   currentPlace: 0
   newValueDuringFX: 0.5
   durationInSeconds: 4
-  particleToUse: {fileID: 0}
-  index: 118
+  particleToUse: {fileID: 5007456220725215299, guid: c0c6a3eb4084b444b9654fe33af1ff00,
+    type: 3}
+  index: 0
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}
   durationSpentInSeconds: 0

@@ -7,7 +7,7 @@ public class ZoneControl : MonoBehaviour {
     public static ZoneControl zc_Single;
     public Zone[] zones;
 
-    public int currentZoneIndex;
+    public int currentZoneIndex = 0;
 
     private void Awake() {
         currentZoneIndex = 0;
