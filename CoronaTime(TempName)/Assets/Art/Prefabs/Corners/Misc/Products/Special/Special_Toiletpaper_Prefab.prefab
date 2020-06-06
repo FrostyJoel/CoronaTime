@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3101507258313909823}
   - component: {fileID: 4675465018221431345}
   m_Layer: 11
-  m_Name: 'Toiletpaper '
+  m_Name: Special_Toiletpaper_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,9 +112,12 @@ MonoBehaviour:
     use: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0}
+    productScaling:
+      useNewScale: 0
+      scale: {x: 0, y: 0, z: 0}
   currentPlace: 0
   newValueDuringFX: 0
-  durationInSeconds: 3
+  durationInSeconds: 20
   particleToUse: {fileID: 8934361164403526516, guid: d1fa31236f2a48a4cbe9ea856acc9aca,
     type: 3}
   index: 43

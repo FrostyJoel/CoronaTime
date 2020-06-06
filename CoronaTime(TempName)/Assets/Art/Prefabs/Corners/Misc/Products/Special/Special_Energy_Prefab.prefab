@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114248033866023842}
   - component: {fileID: 649904050965442611}
   m_Layer: 11
-  m_Name: Energy Can
+  m_Name: Special_Energy_Prefab
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,10 +131,14 @@ MonoBehaviour:
     use: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0}
+    productScaling:
+      useNewScale: 0
+      scale: {x: 0, y: 0, z: 0}
   currentPlace: 0
   newValueDuringFX: 0.12
   durationInSeconds: 10
-  particleToUse: {fileID: 0}
+  particleToUse: {fileID: 114920032837321540, guid: 9d555c86f0a4bc945af5d11d650223e0,
+    type: 3}
   index: 129
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}

@@ -5,7 +5,6 @@ using Photon.Pun;
 public class BlockFX : PowerUp {
     public override void Effect() {
         if (!inUse) {
-            Debug.LogWarning("using");
             List<PowerUp> pus = new List<PowerUp>();
             for (int i = 0; i < affectedController.powerups_AffectingMe.Count; i++) {
                 pus.Add(affectedController.powerups_AffectingMe[i]);
@@ -14,11 +13,9 @@ public class BlockFX : PowerUp {
 
             pus.Remove(this);
             if (pus.Count > 0) {
-                Debug.LogWarning("using >");
                 pus[0].StopUsing();
                 StopUsing();
             } else {
-                Debug.LogWarning("using else");
                 StartStopParticle(true);
             }
             ProductInteractions.pi_Single.DisableVisibility(index, affectedController.photonView.ViewID, false, RpcTarget.All);

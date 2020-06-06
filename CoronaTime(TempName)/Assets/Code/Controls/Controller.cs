@@ -190,13 +190,10 @@ public class Controller : MonoBehaviourPun {
         int blockIndex = CheckForBlockFX();
         if (blockIndex < 0 || pu.GetType() == typeof(BlockFX)) {
             if (powerups_AffectingMe.Count > 0) {
-                Debug.LogWarning(">");
                 if (!ContainsPuAt(pu)) {
                     powerups_AffectingMe.Add(pu);
-                    Debug.LogWarning("add pu");
                 }
             } else {
-                Debug.LogWarning("else add pu");
                 powerups_AffectingMe.Add(pu);
             }
         } else if (blockIndex >= 0) {

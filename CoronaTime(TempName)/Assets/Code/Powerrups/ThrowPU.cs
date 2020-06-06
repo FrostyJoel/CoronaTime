@@ -38,6 +38,7 @@ public class ThrowPU : PowerUp {
         Vector3 pos = affectedController.transform_ThrowFromPoint.position;
         Quaternion rot = affectedController.transform_ThrowFromPoint.rotation;
         Vector3 force = affectedController.transform_Pov.forward * throwForce;
+        ProductInteractions.pi_Single.EnableDisableAllProductColliders(index, true, RpcTarget.All);
         ProductInteractions.pi_Single.SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic(index, pos, force, 0, rot, RpcTarget.All);
         throwChecks = true;
         masterThrown = true;
