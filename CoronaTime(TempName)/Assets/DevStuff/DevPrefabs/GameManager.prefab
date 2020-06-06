@@ -1757,10 +1757,7 @@ Transform:
   m_Children:
   - {fileID: 5390587206496320148}
   - {fileID: 3551343925649143878}
-<<<<<<< HEAD
   - {fileID: 419313609192547772}
-=======
->>>>>>> parent of 6a0cc59... PP
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
