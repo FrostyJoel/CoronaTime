@@ -61,6 +61,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     public void UpdateScore() {
+        print("score : " + score);
         photonView.RPC("RPC_UpdateScoreboardScore", RpcTarget.All, photonView.ViewID, productsGotten, productsNeededInCurrentList, score);
     }
 
@@ -109,29 +110,32 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     void EnableProductsRelativeToListAndSetUI() {
         if (ZoneControl.zc_Single) {
-            Zone zone = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex];
-            productsNeededInCurrentList = zone.productsToFind;
-            productsGotten = 0;
-            groceryList = zone.groceryList;
-            if(transform_GroceryList.childCount > 1) {
-                for (int i = transform_GroceryList.childCount; i >= 0 ; i--) {
-                    if (transform_GroceryList.GetChild(i).GetComponent<ScriptGroceryListing>()) {
-                        Destroy(transform_GroceryList.GetChild(i));
+            int zoneIndex = ZoneControl.zc_Single.currentZoneIndex;
+            if (zoneIndex < ZoneControl.zc_Single.zones.Length) {
+                Zone zone = ZoneControl.zc_Single.zones[zoneIndex];
+                productsNeededInCurrentList = zone.productsToFind;
+                productsGotten = 0;
+                groceryList = zone.groceryList;
+                if(transform_GroceryList.childCount > 1) {
+                    for (int i = transform_GroceryList.childCount - 1; i > 0 ; i--) {
+                        Destroy(transform_GroceryList.GetChild(i).gameObject);
                     }
                 }
-            }
-            for (int i = 0; i < groceryList.Count; i++) {
-                GameObject gl = Instantiate(prefab_GroceryListing, transform_GroceryList);
-                groceryList[i].groceryListing = gl.GetComponent<ScriptGroceryListing>();
-                groceryList[i].groceryListing.text_Grocery.text = zone.groceryListStrings[i];
-            }
-            for (int i = 0; i < zone.allProductsInZone.Count; i++) {
-                int index = InGroceryListWhere(zone.allProductsInZone[i].scriptableProduct);
-                if(index >= 0) {
-                    zone.allProductsInZone[i].interactable = true;
+                for (int i = 0; i < groceryList.Count; i++) {
+                    GameObject gl = Instantiate(prefab_GroceryListing, transform_GroceryList);
+                    groceryList[i].groceryListing = gl.GetComponent<ScriptGroceryListing>();
+                    groceryList[i].groceryListing.text_Grocery.text = zone.groceryListStrings[i];
                 }
+                for (int i = 0; i < zone.allProductsInZone.Count; i++) {
+                    int index = InGroceryListWhere(zone.allProductsInZone[i].scriptableProduct);
+                    if(index >= 0) {
+                        zone.allProductsInZone[i].interactable = true;
+                    }
+                }
+                UpdateScore();
+            } else {
+                GameOverCheck.goc_Single.GameOver();
             }
-            UpdateScore();
         }
     }
     
@@ -182,6 +186,16 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         
     }
 
+    public void PhotonUpdateGroceryList(RpcTarget selectedTarget) {
+        photonView.RPC("RPC_UpdateGroceryList", selectedTarget);
+    }
+
+    [PunRPC]
+    void RPC_UpdateGroceryList() {
+        ZoneControl.zc_Single.currentZoneIndex++;
+        EnableProductsRelativeToListAndSetUI();
+    }
+
     [PunRPC]
     void RPC_UpdateScoreboardScore(int id, int gotten, int needed, int newScore) {
         for (int iB = 0; iB < storages.Length; iB ++) {
@@ -191,6 +205,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 } 
                 for (int i = 0; i < storages[iB].sbListingsList.Count; i++) {
                     if (storages[iB].sbListingsList[i].id == id) {
+                        storages[iB].sbListingsList[i].text_Score.text = storages[iB].score.ToString();
                         storages[iB].sbListingsList[i].text_ItemsInCart.text = gotten + "/" + needed;
                     }
                 }

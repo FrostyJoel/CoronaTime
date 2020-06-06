@@ -24,6 +24,11 @@ public class Manager : MonoBehaviourPun {
     }
 }
 
+[System.Serializable]
+public class GameOver {
+
+}
+
 [Serializable]
 public class StaticInformation {
     public AudioMixer audioMixer;
@@ -58,6 +63,7 @@ public class ColorManaging {
         }
         return index;
     }
+
     [PunRPC]
     public static void UseColor(Material[] materials, Color color) {
         int index = WhereInList(color);

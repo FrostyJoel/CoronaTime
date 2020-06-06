@@ -10133,7 +10133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099c2374221f6e44dab32494a6622dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productsToFind: 2
+  productsToFind: 3
   groceryListStrings: []
   allProductsInZone:
   - {fileID: 2060191873}

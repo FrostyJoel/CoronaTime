@@ -10,6 +10,10 @@ public class InteractableCashRegister : Interactable {
         if (cartStorage.heldProducts.Count > 0 && cartStorage.productsGotten == cartStorage.productsNeededInCurrentList) {
             PlaySound();
             cartStorage.score++;
+            cartStorage.PhotonUpdateGroceryList(RpcTarget.All);
+            for (int i = 0; i < cartStorage.heldProductModels.Count; i++) {
+                ProductInteractions.pi_Single.DestroyProduct(cartStorage.heldProducts[i].index, 0, RpcTarget.All);
+            }
             cartStorage.ClearProducts();
             cartStorage.UpdateScore();
         }
