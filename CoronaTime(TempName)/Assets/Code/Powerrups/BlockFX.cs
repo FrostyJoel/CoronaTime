@@ -9,8 +9,6 @@ public class BlockFX : PowerUp {
             for (int i = 0; i < affectedController.powerups_AffectingMe.Count; i++) {
                 pus.Add(affectedController.powerups_AffectingMe[i]);
             }
-
-
             pus.Remove(this);
             if (pus.Count > 0) {
                 pus[0].StopUsing();

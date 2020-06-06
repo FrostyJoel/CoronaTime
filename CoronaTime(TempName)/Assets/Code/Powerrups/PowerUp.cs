@@ -39,11 +39,8 @@ public class PowerUp : Interactable {
 
     public virtual void StartStopParticle(bool start) {
         if (particleToUse) {
-            print("has par");
             for (int i = 0; i < affectedController.particles.Length; i++) {
-                print("For");
                 if(affectedController.particles[i].name == particleToUse.name) {
-                print("if");
                     ProductInteractions.pi_Single.StartStopParticleOnPlayer(i, affectedController.photonView.ViewID, start, RpcTarget.All);
                     break;
                 }

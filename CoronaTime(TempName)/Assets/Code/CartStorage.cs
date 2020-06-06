@@ -26,6 +26,8 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     [HideInInspector] public List<ScriptScoreboardListing> sbListingsList = new List<ScriptScoreboardListing>();
     public List<Groceries> groceryList = new List<Groceries>();
 
+    public int productsGotten, productsNeededInCurrentList;
+
     private void Awake() {
         if (holder) {
             for (int i = 0; i < holder.childCount; i++) {
@@ -59,7 +61,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     public void UpdateScore() {
-        photonView.RPC("RPC_UpdateScoreboardScore", RpcTarget.All, photonView.ViewID, GetScore());
+        photonView.RPC("RPC_UpdateScoreboardScore", RpcTarget.All, photonView.ViewID, productsGotten, productsNeededInCurrentList, score);
     }
 
     void ClearListing() {
@@ -88,6 +90,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         if (heldProducts.Count < maxItemsHeld && indexB >= 0 && groceryList[indexB].amountGotten < groceryList[indexB].amount) {
             ProductInteractions.pi_Single.AddToCart(indexA, photonView.ViewID, RpcTarget.All);
             groceryList[indexB].amountGotten++;
+            productsGotten++;
             if(groceryList[indexB].amountGotten == groceryList[indexB].amount) {
                 groceryList[indexB].groceryListing.text_Grocery.fontStyle = TMPro.FontStyles.Strikethrough;
                 List<InteractableProduct> ip_List = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].allProductsInZone;
@@ -97,6 +100,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                     }
                 }
             }
+            UpdateScore();
             return true;
         } else {
             return false;
@@ -106,6 +110,8 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     void EnableProductsRelativeToListAndSetUI() {
         if (ZoneControl.zc_Single) {
             Zone zone = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex];
+            productsNeededInCurrentList = zone.productsToFind;
+            productsGotten = 0;
             groceryList = zone.groceryList;
             if(transform_GroceryList.childCount > 1) {
                 for (int i = transform_GroceryList.childCount; i >= 0 ; i--) {
@@ -125,6 +131,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                     zone.allProductsInZone[i].interactable = true;
                 }
             }
+            UpdateScore();
         }
     }
     
@@ -176,8 +183,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     [PunRPC]
-    void RPC_UpdateScoreboardScore(int id, int newScore) {
-        List<int> scores = new List<int>();
+    void RPC_UpdateScoreboardScore(int id, int gotten, int needed, int newScore) {
         for (int iB = 0; iB < storages.Length; iB ++) {
             if (storages[iB]) {
                 if (storages[iB].photonView.ViewID == id) {
@@ -185,18 +191,8 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 } 
                 for (int i = 0; i < storages[iB].sbListingsList.Count; i++) {
                     if (storages[iB].sbListingsList[i].id == id) {
-                        storages[iB].sbListingsList[i].text_Score.text = newScore.ToString();
+                        storages[iB].sbListingsList[i].text_ItemsInCart.text = gotten + "/" + needed;
                     }
-                }
-                scores.Add(storages[iB].score);
-            }
-        }
-        scores.Sort();
-        scores.Reverse();
-        for (int i = 0; i < scores.Count; i++) {
-            for (int iB = 0; iB < storages.Length; iB++) {
-                if (storages[iB] && storages[iB].score == scores[i]) {
-                    storages[iB].sbListingsList[i].transform.SetSiblingIndex(i);
                 }
             }
         }
