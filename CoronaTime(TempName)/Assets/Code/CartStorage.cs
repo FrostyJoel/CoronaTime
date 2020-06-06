@@ -113,6 +113,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             print("ad");
             int zoneIndex = ZoneControl.zc_Single.currentZoneIndex;
             if (zoneIndex < ZoneControl.zc_Single.zones.Length) {
+                    print("zc");
                 Zone zone = ZoneControl.zc_Single.zones[zoneIndex];
                 productsNeededInCurrentList = zone.productsToFind;
                 productsGotten = 0;
@@ -194,8 +195,10 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     void RPC_UpdateGroceryList() {
-        ZoneControl.zc_Single.currentZoneIndex++;
-        EnableProductsRelativeToListAndSetUI();
+        if (photonView.Owner.IsLocal) {
+            ZoneControl.zc_Single.currentZoneIndex++;
+            EnableProductsRelativeToListAndSetUI();
+        }
     }
 
     [PunRPC]
