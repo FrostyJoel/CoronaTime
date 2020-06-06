@@ -118,6 +118,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 groceryList = zone.groceryList;
                 if(transform_GroceryList.childCount > 1) {
                     for (int i = transform_GroceryList.childCount - 1; i > 0 ; i--) {
+                        print("destroy");
                         Destroy(transform_GroceryList.GetChild(i).gameObject);
                     }
                 }
@@ -182,17 +183,13 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         photonView.RPC("RPC_ClearProducts", RpcTarget.All);
     }
 
-    void RPC_NextZone() {
-        
-    }
-
     public void PhotonUpdateGroceryList(RpcTarget selectedTarget) {
         photonView.RPC("RPC_UpdateGroceryList", selectedTarget);
     }
 
     [PunRPC]
     void RPC_UpdateGroceryList() {
-        ZoneControl.zc_Single.currentZoneIndex++;
+        ZoneControl.zc_Single.currentZoneIndex += 1;
         EnableProductsRelativeToListAndSetUI();
     }
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using Photon.Pun;
 
@@ -10,14 +11,18 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
     private Controller controller;
     private CartStorage storage;
     private PlayerView pView;
+
+    public Text text_ProductName;
+
     private void Start()
     {
         controller = GetComponent<Controller>();
         storage = GetComponent<CartStorage>();
         pView = GetComponent<PlayerView>();
+        text_ProductName.text = "";
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (photonView.IsMine || pView.devView)
         {
@@ -36,6 +41,7 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
 
     private void DistanceCheck(Outline outlineObj)
     {
+        text_ProductName.text = "";
         if (hit.distance < storage.interactRange) {
             if (outlineObj)
             {
@@ -45,8 +51,11 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
                     canShow = false;
                 }
                 InteractableProduct ip = hit.transform.gameObject.GetComponent<InteractableProduct>();
-                if (ip && !ip.interactable && storage.heldProducts.Count < storage.maxItemsHeld - 1) {
-                    canShow = false;
+                if (ip) {
+                    text_ProductName.text = ip.scriptableProduct.productName;
+                    if (!ip.interactable && storage.heldProducts.Count < storage.maxItemsHeld - 1) {
+                        canShow = false;
+                    }
                 }
                 if (!outlineObj.enabled && canShow) {
                     lastOutline = outlineObj;
