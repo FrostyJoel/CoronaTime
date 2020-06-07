@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 361334495355147094}
   - component: {fileID: 361334495351755638}
   - component: {fileID: 361334495352721846}
+  - component: {fileID: 3342360437747174602}
   m_Layer: 0
   m_Name: Butcher Island 1
   m_TagString: Untagged
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3342360437747174602
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361334495354982262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.000001, y: 0.828409, z: 2}
+  m_Center: {x: -0.000002861023, y: 0.4142045, z: -0.00000023841858}
