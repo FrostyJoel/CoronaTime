@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class VisualFX : MonoBehaviour { 
 
-    ParticleSystem[] ps;
+    [HideInInspector] public ParticleSystem[] ps;
     public GameObject[] fxObjects;
     public Animator anim;
 
-    void Start() {
+    void Awake() {
         ps = GetComponentsInChildren<ParticleSystem>();
         if (anim) {
             anim.enabled = false;
@@ -16,10 +16,8 @@ public class VisualFX : MonoBehaviour {
     }
 
     public virtual void StartStopVisualFX(bool play) {
-        print(play);
         if (fxObjects.Length > 0) {
             for (int i = 0; i < fxObjects.Length; i++) {
-                fxObjects[i].SetActive(play);
                 fxObjects[i].SetActive(play);
             }
             if (anim) {

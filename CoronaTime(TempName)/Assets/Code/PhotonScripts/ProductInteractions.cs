@@ -270,12 +270,4 @@ public class ProductInteractions : MonoBehaviourPun {
         }
         PhotonNetwork.GetPhotonView(id).GetComponent<Controller>().particles[index].StartStopVisualFX(shouldPlay);
     }
-
-    void RPC_InstantiateParticle(int index, Vector3 pos) {
-        //VisualFX pd = Instantiate(PhotonProductList.staticUseableProductList[index].particleToUse);
-        //ParticleSystem[] ps = pd.ps;
-        //for (int i = 0; i < ps.Length; i++) {
-        //    ps[i].Play();
-        //}
-    }
 }

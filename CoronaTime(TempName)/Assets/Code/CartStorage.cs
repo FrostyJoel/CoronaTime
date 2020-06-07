@@ -190,7 +190,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             if (storages[iB]) {
                 for (int i = 0; i < storages[iB].sbListingsList.Count; i++) {
                     if (storages[iB].sbListingsList[i].id == id) {
-                        Debug.LogWarning("exe");
                         storages[iB].sbListingsList[i].text_Score.text = newScore.ToString();
                         storages[iB].sbListingsList[i].text_ItemsInCart.text = gotten + "/" + needed;
                         break;
@@ -217,6 +216,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             sbListingsList.Add(sbListing);
             sbListing.text_Username.text = PhotonRoomCustomMatchMaking.roomSingle.RemoveIdFromNickname(pv.Owner.NickName);
             sbListing.text_Score.text = score.ToString();
+            sbListing.text_ItemsInCart.text = productsGotten + "/" + productsNeededInCurrentList;
             sbListing.id = pv.ViewID;
         }
     }
