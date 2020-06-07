@@ -32,7 +32,7 @@ public class Controller : MonoBehaviourPun {
     [Header("Particles")]
     public VisualFX[] particles;
 
-    [HideInInspector] public bool canMove;
+    /*[HideInInspector]*/ public bool canMove;
     [HideInInspector] public float currentWalkSpeed;
     [HideInInspector] public Vector3 startPosition;
     [HideInInspector] public Quaternion startRotation;
