@@ -41,7 +41,7 @@ public class PowerUp : Interactable {
         if (particleToUse) {
             for (int i = 0; i < affectedController.particles.Length; i++) {
                 if(affectedController.particles[i].name == particleToUse.name) {
-                    ProductInteractions.pi_Single.StartStopParticleOnPlayer(i, affectedController.photonView.ViewID, start, RpcTarget.All);
+                    ProductInteractions.pi_Single.StartStopParticleOnPlayer(i, affectedController.photonView.ViewID, Vector3.zero, start, RpcTarget.All);
                     break;
                 }
             }

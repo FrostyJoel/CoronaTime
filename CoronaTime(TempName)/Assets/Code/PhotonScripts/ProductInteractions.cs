@@ -92,12 +92,12 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_EnableDisableControllerOutline", selectedTarget, id, enable);
     }
 
-    public void StartStopParticleOnPlayer(int index, int id, bool play, RpcTarget selectedTarget) {
+    public void StartStopParticleOnPlayer(int index, int id, Vector3 pos, bool play, RpcTarget selectedTarget) {
         int startPlaying = 0;
         if (play) {
             startPlaying = 1;
         }
-        photonView.RPC("RPC_StartStopParticleOnPlayer", selectedTarget, index, id, startPlaying);
+        photonView.RPC("RPC_StartStopParticleOnPlayer", selectedTarget, index, id, pos, startPlaying);
     }
 
 
@@ -263,11 +263,11 @@ public class ProductInteractions : MonoBehaviourPun {
     }
 
     [PunRPC]
-    void RPC_StartStopParticleOnPlayer(int index, int id, int play) {
+    void RPC_StartStopParticleOnPlayer(int index, int id, Vector3 pos, int play) {
         bool shouldPlay = false;
         if(play == 1) {
             shouldPlay = true;
         }
-        PhotonNetwork.GetPhotonView(id).GetComponent<Controller>().particles[index].StartStopVisualFX(shouldPlay);
+        PhotonNetwork.GetPhotonView(id).GetComponent<Controller>().particles[index].StartStopVisualFX(shouldPlay, pos);
     }
 }

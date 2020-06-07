@@ -8,14 +8,14 @@ public class VisualFX : MonoBehaviour {
     public GameObject[] fxObjects;
     public Animator anim;
 
-    void Awake() {
+    public virtual void Start() {
         ps = GetComponentsInChildren<ParticleSystem>();
         if (anim) {
             anim.enabled = false;
         }
     }
 
-    public virtual void StartStopVisualFX(bool play) {
+    public virtual void StartStopVisualFX(bool play, Vector3 pos) {
         if (fxObjects.Length > 0) {
             for (int i = 0; i < fxObjects.Length; i++) {
                 fxObjects[i].SetActive(play);

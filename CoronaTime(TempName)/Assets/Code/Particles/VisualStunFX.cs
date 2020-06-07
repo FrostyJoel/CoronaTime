@@ -6,7 +6,9 @@ using Photon.Pun;
 
 public class VisualStunFX : VisualFX {
 
-    private void Start() {
+     public override void Start() {
+        base.Start();
+        anim.enabled = false;
         anim.gameObject.SetActive(false);
         if (GetComponentInParent<PhotonView>().Owner.IsLocal) {
             for (int i = 0; i < ps.Length; i++) {
@@ -15,7 +17,7 @@ public class VisualStunFX : VisualFX {
         }
     }
 
-    public override void StartStopVisualFX(bool play) {
+    public override void StartStopVisualFX(bool play, Vector3 pos) {
         for (int i = 0; i < fxObjects.Length; i++) {
             fxObjects[i].SetActive(play);
         }
@@ -29,8 +31,9 @@ public class VisualStunFX : VisualFX {
             }
         }
         if (anim) {
+            anim.gameObject.SetActive(play);
+            anim.enabled = !play;
             if (!play) {
-                anim.gameObject.SetActive(true);
                 Invoke("DisableOverTime", ps[0].main.duration);
             }
         }
