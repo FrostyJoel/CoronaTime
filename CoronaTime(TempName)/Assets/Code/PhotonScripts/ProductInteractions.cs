@@ -108,7 +108,6 @@ public class ProductInteractions : MonoBehaviourPun {
     [PunRPC]
     void RPC_DestroyProduct(int index, float time) {
         try {
-            Debug.LogWarning(index + " " + PhotonProductList.staticInteratableProductList[index].GetComponent<InteractableProduct>().scriptableProduct.productName);
             Destroy(PhotonProductList.staticInteratableProductList[index].gameObject, time);
         } catch { }
     }
