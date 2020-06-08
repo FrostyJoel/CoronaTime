@@ -33,6 +33,6 @@ public class Pausescript : MonoBehaviour
             Cursor.visible = false;
         }
         pauseMenu.SetActive(!currentState);
-        p.canMove = !currentState;
+        p.canMove = currentState;
     }
 }
