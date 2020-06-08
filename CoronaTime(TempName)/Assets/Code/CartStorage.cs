@@ -202,6 +202,9 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     [PunRPC]
     void RPC_ClearProducts() {
         heldProducts.Clear();
+        for (int i = 0; i < heldProductModels.Count; i++) {
+            Destroy(heldProductModels[i]);
+        }
         heldProductModels.Clear();
     }
 
