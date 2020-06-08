@@ -8,7 +8,7 @@ public class Pausescript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Cancel"))
+        if (Input.GetButtonDown("Cancel"))
         {
             PauseOrUnpause();
         }

@@ -44,6 +44,11 @@ public class GameOverCheck : MonoBehaviourPun {
         photonView.RPC("RPC_EndGame", RpcTarget.All);
     }
 
+    public void QuitApp()
+    {
+        Application.Quit();
+    }
+
     [PunRPC]
     void RPC_EndGame() {
         go_VictoryScreen.SetActive(true);
