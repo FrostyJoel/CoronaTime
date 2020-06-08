@@ -17,7 +17,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     public Transform transform_GroceryList;
     public GameObject prefab_GroceryListing;
 
-    [HideInInspector] public int score;
+    /*[HideInInspector]*/ public int score;
     [HideInInspector] public Controller controller;
     [HideInInspector] public CartStorage[] storages;
     [HideInInspector] public List<Product> heldProducts = new List<Product>();
@@ -122,6 +122,13 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             if (transform_GroceryList.childCount > 1) {
                 for (int i = transform_GroceryList.childCount - 1; i > 0; i--) {
                     Destroy(transform_GroceryList.GetChild(i).gameObject);
+                }
+            }
+
+            if(groceryList.Count > 0) {
+                Zone tempZone = ZoneControl.zc_Single.zones[zoneIndex - 1];
+                for (int i = 0; i < tempZone.allProductsInZone.Count; i++) {
+                    tempZone.allProductsInZone[i].interactable = false;
                 }
             }
 
