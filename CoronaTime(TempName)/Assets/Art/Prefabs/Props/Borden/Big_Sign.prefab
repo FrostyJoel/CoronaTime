@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8191845638245280714}
   - component: {fileID: 8191845638242380778}
   - component: {fileID: 8191845638243379498}
+  - component: {fileID: 7681789835709040866}
   m_Layer: 0
   m_Name: Big_Sign
   m_TagString: Untagged
@@ -78,6 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7681789835709040866
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8191845638245644266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 2, z: 0.07168066}
+  m_Center: {x: 0, y: 0, z: 0.07533859}
 --- !u!1 &8366681317656922475
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +120,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8366681317656922475}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.078}
+  m_LocalPosition: {x: 0, y: 0, z: 0.063}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8191845638245280714}
