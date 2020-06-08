@@ -65,8 +65,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Grocerylisting[PH(D)]
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d4a444b68185176419fca7b5ea377a0e, type: 2}
-  m_sharedMaterial: {fileID: 21009094793469950, guid: d4a444b68185176419fca7b5ea377a0e,
+  m_fontAsset: {fileID: 11400000, guid: 67c97535a278d1949b6e9c1d3f68f492, type: 2}
+  m_sharedMaterial: {fileID: 21520728459068880, guid: 67c97535a278d1949b6e9c1d3f68f492,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
