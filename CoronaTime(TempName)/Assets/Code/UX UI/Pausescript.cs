@@ -5,7 +5,12 @@ using UnityEngine;
 public class Pausescript : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public Controller p;
 
+    private void Start()
+    {
+        p = GetComponentInParent<Controller>();
+    }
     void Update()
     {
         if (Input.GetButtonDown("Cancel"))
@@ -28,5 +33,6 @@ public class Pausescript : MonoBehaviour
             Cursor.visible = false;
         }
         pauseMenu.SetActive(!currentState);
+        p.canMove = !currentState;
     }
 }
