@@ -47,6 +47,7 @@ public class Controller : MonoBehaviourPun {
     float defaultFov, currentSprintValue, currentFovValue, xRotationAxisAngle, yRotationAxisAngle;
 
     private void Awake() {
+        localInGameHud.SetActive(false);
         TurnCollidersOnOff(false);
         cams = GetComponentsInChildren<Camera>();
         defaultFov = cams[0].fieldOfView;
@@ -66,8 +67,7 @@ public class Controller : MonoBehaviourPun {
             if (GameObject.Find("GameManager")) {
                 gameObject.layer = Manager.staticInformation.int_LocalPlayerLayer;
             }
-        } else {
-            localInGameHud.SetActive(false);
+            localInGameHud.SetActive(true);
         }
         if (PhotonNetwork.IsConnected) {
             photonView.RPC("RPC_SetNicknameTargets", RpcTarget.All);
