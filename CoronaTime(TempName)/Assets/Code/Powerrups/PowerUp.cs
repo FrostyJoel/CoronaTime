@@ -1,5 +1,4 @@
 ﻿using Photon.Pun;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerUp : Interactable {
@@ -7,12 +6,12 @@ public class PowerUp : Interactable {
     [Header("Particle")]
     public VisualFX particleToUse;
     [HideInInspector] public int index;
-    [HideInInspector] public Controller affectedController;
-    [HideInInspector] public CartStorage affectedCartStorage;
-    public float durationSpentInSeconds;
+    [HideInInspector] public Vector3 hitPos;
     [HideInInspector] public Rigidbody rigid;
     [HideInInspector] public bool inUse, setAsPU;
-
+    [HideInInspector] public float durationSpentInSeconds;
+    [HideInInspector] public Controller affectedController;
+    [HideInInspector] public CartStorage affectedCartStorage;
     public virtual void Use() {
         if (affectedController) {
             affectedController.SetAffectingFX(this);
@@ -41,7 +40,7 @@ public class PowerUp : Interactable {
         if (particleToUse) {
             for (int i = 0; i < affectedController.particles.Length; i++) {
                 if(affectedController.particles[i].name == particleToUse.name) {
-                    ProductInteractions.pi_Single.StartStopParticleOnPlayer(i, affectedController.photonView.ViewID, Vector3.zero, start, RpcTarget.All);
+                    ProductInteractions.pi_Single.StartStopParticleOnPlayer(i, affectedController.photonView.ViewID, hitPos, start, true, RpcTarget.All);
                     break;
                 }
             }

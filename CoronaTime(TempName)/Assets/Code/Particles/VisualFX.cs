@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class VisualFX : MonoBehaviour { 
 
@@ -15,7 +13,7 @@ public class VisualFX : MonoBehaviour {
         }
     }
 
-    public virtual void StartStopVisualFX(bool play, Vector3 pos) {
+    public virtual void StartStopVisualFX(bool play, Vector3 pos, bool posIsLocal) {
         if (fxObjects.Length > 0) {
             for (int i = 0; i < fxObjects.Length; i++) {
                 fxObjects[i].SetActive(play);

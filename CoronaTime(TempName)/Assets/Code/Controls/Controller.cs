@@ -32,7 +32,7 @@ public class Controller : MonoBehaviourPun {
     [Header("Particles")]
     public VisualFX[] particles;
 
-    /*[HideInInspector]*/ public bool canMove;
+    [HideInInspector] public bool canMove;
     [HideInInspector] public float currentWalkSpeed;
     [HideInInspector] public Vector3 startPosition;
     [HideInInspector] public Quaternion startRotation;
@@ -41,7 +41,7 @@ public class Controller : MonoBehaviourPun {
     [HideInInspector] public CartStorage cartStorage;
     [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Collider[] colliders;
-    [HideInInspector] public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
+    /*[HideInInspector]*/ public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
     Camera[] cams;
     AudioListener audioListeners;
     float defaultFov, currentSprintValue, currentFovValue, xRotationAxisAngle, yRotationAxisAngle;
@@ -232,7 +232,9 @@ public class Controller : MonoBehaviourPun {
         currentWalkSpeed = defaultWalkSpeed;
         if (powerups_AffectingMe.Count > 0) {
             for (int i = 0; i < powerups_AffectingMe.Count; i++) {
-                powerups_AffectingMe[i].UseEffect();
+                if (powerups_AffectingMe[i]) {
+                    powerups_AffectingMe[i].UseEffect();
+                }
             }
         }
     }

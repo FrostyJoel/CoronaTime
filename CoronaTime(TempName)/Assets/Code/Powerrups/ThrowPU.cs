@@ -5,16 +5,15 @@ using UnityEngine;
 
 public class ThrowPU : PowerUp {
 
-    [HideInInspector] public Collider[] theseColliders;
-    public float throwForce = 100, angleUp;
-    public bool throwChecks, masterThrown;
+    public float throwForce = 100;
     public Vector3 extends, gizmosCenter;
-    public Collider[] collidersHit;
-    public int closestIndex = -1;
     public LayerMask onlyCollisionOverlapWith = 512;
     public Transform newCollisionRaycastPositionIfNeeded;
     [Space]
     public bool showGizmos;
+    [HideInInspector] public Collider[] collidersHit;
+    [HideInInspector] public Collider[] theseColliders;
+    [HideInInspector] public bool throwChecks, masterThrown;
 
     private void Awake() {
         rigid = GetComponent<Rigidbody>();
@@ -69,10 +68,10 @@ public class ThrowPU : PowerUp {
             Controller hitController = hit.transform.GetComponent<Controller>();
             print(hit.transform.gameObject.name);
             if (hitController) {
-                print("Coll");
                 transform.position = hit.point;
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
                 ProductInteractions.pi_Single.SetParentToPhotonView(index, hitController.photonView.ViewID, RpcTarget.All);
+                hitPos = transform.localPosition;
                 Vector3 pos = transform.localPosition;
                 Vector3 force = Vector3.zero;
                 Quaternion rot = transform.localRotation;
@@ -84,17 +83,6 @@ public class ThrowPU : PowerUp {
                 ProductInteractions.pi_Single.SetAffectedController(index, hitController.photonView.ViewID, capsuleHit, RpcTarget.All);                
             }
         }
-    }
-
-    bool IsNotMyCollider(Collider collider) {
-        bool itIs = false;
-        for (int i = 0; i < theseColliders.Length; i++) {
-            if(theseColliders[i] == collider) {
-                itIs = true;
-                break;
-            }
-        }
-        return itIs;
     }
 
     private void OnDrawGizmos() {

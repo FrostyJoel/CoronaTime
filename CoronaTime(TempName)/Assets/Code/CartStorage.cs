@@ -24,9 +24,8 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     [HideInInspector] public List<GameObject> heldProductModels = new List<GameObject>();
     [HideInInspector] public List<SoldProduct> soldProducts = new List<SoldProduct>();
     [HideInInspector] public List<ScriptScoreboardListing> sbListingsList = new List<ScriptScoreboardListing>();
-    public List<Groceries> groceryList = new List<Groceries>();
-
-    public int productsGotten, productsNeededInCurrentList;
+    [HideInInspector] public List<Groceries> groceryList = new List<Groceries>();
+    [HideInInspector] public int productsGotten, productsNeededInCurrentList;
 
     private void Awake() {
         if (holder) {
