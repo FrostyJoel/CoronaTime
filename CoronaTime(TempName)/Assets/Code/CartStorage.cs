@@ -156,7 +156,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             }
         }
     }
-    
+
     int InGroceryListWhere(Product productToCheck) {
         int index = -1;
         for (int i = 0; i < groceryList.Count; i++) {
@@ -209,9 +209,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     [PunRPC]
     void RPC_ClearProducts() {
         heldProducts.Clear();
-        for (int i = 0; i < heldProductModels.Count; i++) {
-            Destroy(heldProductModels[i]);
-        }
         heldProductModels.Clear();
     }
 
