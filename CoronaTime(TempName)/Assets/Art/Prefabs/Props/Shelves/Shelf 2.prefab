@@ -103,7 +103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4517092454090605586}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5235148, y: 1.6124182, z: -1.396379}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1398638366485369382}
@@ -118,8 +118,7 @@ LightProbeGroup:
   m_GameObject: {fileID: 4517092454090605586}
   m_Enabled: 1
   m_SourcePositions:
-  - {x: 0.5243902, y: 2.35, z: 1.8264687}
-  - {x: 0.5243902, y: -1.1707318, z: 1.8264687}
-  - {x: 0.5243902, y: -0.4329269, z: 1.8264687}
-  - {x: 0.5243902, y: 0.2865851, z: 1.8264687}
+  - {x: 0, y: 0.37788057, z: 0.37306464}
+  - {x: 0, y: 1.1156855, z: 0.37306464}
+  - {x: 0, y: 1.8351977, z: 0.37306464}
   m_Dering: 0

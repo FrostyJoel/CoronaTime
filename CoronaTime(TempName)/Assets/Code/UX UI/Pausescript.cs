@@ -5,18 +5,28 @@ using UnityEngine;
 public class Pausescript : MonoBehaviour
 {
     public GameObject pauseMenu;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButton("Cancel"))
         {
-            pauseMenu.SetActive(true);
+            PauseOrUnpause();
         }
+    }
+
+    public void PauseOrUnpause()
+    {
+        bool currentState = pauseMenu.activeSelf;
+        if (currentState)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = false;
+        }
+        pauseMenu.SetActive(!currentState);
     }
 }

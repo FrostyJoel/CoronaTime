@@ -594,9 +594,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 956530836153754084}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8751454838391292202}
+        m_MethodName: PauseOrUnpause
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3569,7 +3569,7 @@ MonoBehaviour:
   - {fileID: 6197583561501435758}
   - {fileID: 9008278894732861340}
   - {fileID: 4482983921462721469}
-  - {fileID: 1978978345018652619}
+  - {fileID: 3691958208831637811}
   canMove: 0
   currentWalkSpeed: 0
   startPosition: {x: 0, y: 0, z: 0}
@@ -4345,7 +4345,7 @@ Transform:
   - {fileID: 1877474770178320570}
   - {fileID: 6797082104887337990}
   - {fileID: 8560622294673481991}
-  - {fileID: 1978978345018652248}
+  - {fileID: 6775859940102993589}
   m_Father: {fileID: 5992604071259634003}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4809,7 +4809,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8761697599047530914}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8845235905849590670}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3120091136745829753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5834,13 +5845,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0c6a3eb4084b444b9654fe33af1ff00, type: 3}
---- !u!4 &1978978345018652248 stripped
+--- !u!4 &6775859940102993589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5007456220725215298, guid: c0c6a3eb4084b444b9654fe33af1ff00,
     type: 3}
   m_PrefabInstance: {fileID: 1978978345018652407}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1978978345018652619 stripped
+--- !u!114 &3691958208831637811 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2903350886966869956, guid: c0c6a3eb4084b444b9654fe33af1ff00,
     type: 3}
@@ -6412,6 +6423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982533697001862609, guid: 289b0ebeeb81203459f70d6d007b4b33,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.20059204
       objectReference: {fileID: 0}
     - target: {fileID: 6304506328391708957, guid: 289b0ebeeb81203459f70d6d007b4b33,
         type: 3}

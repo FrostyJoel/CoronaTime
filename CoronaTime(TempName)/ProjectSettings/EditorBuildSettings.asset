@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Functional Reference/Scene_ZoneReference.unity
     guid: becbeba16d37f4b42818d96b88dd75de
+  - enabled: 0
+    path: Assets/Scenes/Work Scenes/Scene_Stan.unity
+    guid: 1c2bf08cb3faa6f47968a6078303495b
   m_configObjects: {}
