@@ -128,9 +128,12 @@ MonoBehaviour:
   audioGroup: 2
   interactable: 0
   SpecialPosAndRot:
-    use: 0
+    use: 1
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: -130, z: 0}
+    productScaling:
+      useNewScale: 0
+      scale: {x: 0, y: 0, z: 0}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 0347a2a791bb1af45bdb8ef9f5528b2e, type: 2}
   index: 11
