@@ -147,13 +147,14 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 productsNeededInCurrentList = zone.productsToFind;
                 productsGotten = 0;
                 groceryList = zone.groceryList;
-
-                for (int i = 0; i < groceryList.Count; i++) {
-                    GameObject gl = Instantiate(prefab_GroceryListing, transform_GroceryList);
-                    groceryList[i].groceryListing = gl.GetComponent<ScriptGroceryListing>();
-                    groceryList[i].groceryListing.text_Grocery.text = zone.groceryListStrings[i];
+                if (photonView.IsMine)
+                {
+                    for (int i = 0; i < groceryList.Count; i++) {
+                        GameObject gl = Instantiate(prefab_GroceryListing, transform_GroceryList);
+                        groceryList[i].groceryListing = gl.GetComponent<ScriptGroceryListing>();
+                        groceryList[i].groceryListing.text_Grocery.text = zone.groceryListStrings[i];
+                    }
                 }
-
                 for (int i = 0; i < zone.allProductsInZone.Count; i++) {
                     int index = InGroceryListWhere(zone.allProductsInZone[i].scriptableProduct);
                     if(index >= 0) {
