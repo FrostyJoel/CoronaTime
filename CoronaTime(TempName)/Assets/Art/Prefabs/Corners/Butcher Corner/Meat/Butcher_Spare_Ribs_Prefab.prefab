@@ -132,7 +132,7 @@ MonoBehaviour:
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: -54.217, z: 0}
     productScaling:
-      useNewScale: 0
+      useNewScale: 1
       scale: {x: 0.25, y: 0.25, z: 0.25}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 9c2bf517d5333a344984c3b4840337a6, type: 2}
