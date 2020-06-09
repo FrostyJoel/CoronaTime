@@ -1,6 +1,7 @@
 ﻿using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CartStorage : MonoBehaviourPunCallbacks {
     public static CartStorage cartStorageSingle;
@@ -95,7 +96,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             productsGotten += 1;
             if(groceryList[indexB].amountGotten == groceryList[indexB].amount) {
                 Debug.LogWarning("It Do The StrikeThrough");
-                groceryList[indexB].groceryListing.text_Grocery.fontStyle = TMPro.FontStyles.Strikethrough;
+                groceryList[indexB].groceryListing.text_Grocery.fontStyle = FontStyles.Strikethrough;
                 Debug.LogWarning(groceryList[indexB].groceryListing.text_Grocery.fontStyle);
                 Debug.LogWarning(indexB);
                 Debug.LogWarning(groceryList[indexB].product.name);
