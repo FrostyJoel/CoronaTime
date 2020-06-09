@@ -7,7 +7,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     public static CartStorage cartStorageSingle;
     public Transform holder, transform_PowerUpHolder;
     public int interactRange, maxItemsHeld;
-
+    public GameObject texMeshPro;
     public List<Transform> itemHolders = new List<Transform>();
 
     [Header("Scoreboard")]
