@@ -415,7 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7524093741282443406}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +733,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4726995818557622186}
   - component: {fileID: 6053854121268245167}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Colliders (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,7 +980,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8395194507582263828}
   - component: {fileID: 6100875821343537989}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Colliders (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

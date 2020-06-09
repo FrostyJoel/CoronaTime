@@ -116,12 +116,12 @@ MonoBehaviour:
   audioGroup: 2
   interactable: 0
   SpecialPosAndRot:
-    use: 0
-    pos: {x: 0, y: 0, z: 0}
-    rot: {x: 0, y: 0, z: 0}
+    use: 1
+    pos: {x: 0, y: 0.011, z: 0}
+    rot: {x: 0, y: -90.373, z: 0}
     productScaling:
-      useNewScale: 0
-      scale: {x: 0, y: 0, z: 0}
+      useNewScale: 1
+      scale: {x: 0.35, y: 0.35, z: 0.35}
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 39b241faca451bb44bc7ebfca0377063, type: 2}
   index: 0
