@@ -7,7 +7,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     public static CartStorage cartStorageSingle;
     public Transform holder, transform_PowerUpHolder;
     public int interactRange, maxItemsHeld;
-    public GameObject texMeshPro;
     public List<Transform> itemHolders = new List<Transform>();
 
     [Header("Scoreboard")]
@@ -95,16 +94,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             groceryList[indexB].amountGotten += 1;
             productsGotten += 1;
             if(groceryList[indexB].amountGotten == groceryList[indexB].amount) {
-                Debug.LogWarning("It Do The StrikeThrough");
                 groceryList[indexB].groceryListing.text_Grocery.fontStyle = FontStyles.Strikethrough;
-                texMeshPro = groceryList[indexB].groceryListing.text_Grocery.gameObject;
-                groceryList[indexB].groceryListing.gameObject.SetActive(false);
-                groceryList[indexB].groceryListing.gameObject.SetActive(true);
-                groceryList[indexB].groceryListing.text_Grocery.enabled = false;
-                groceryList[indexB].groceryListing.text_Grocery.enabled = true;
-                Debug.LogWarning(groceryList[indexB].groceryListing.text_Grocery.fontStyle);
-                Debug.LogWarning(indexB);
-                Debug.LogWarning(groceryList[indexB].product.name);
                 List<InteractableProduct> ip_List = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].allProductsInZone;
                 for (int i = 0; i < ip_List.Count; i++) {
                     if(ip_List[i].scriptableProduct.productName == groceryList[indexB].product.productName) {

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Pausescript : MonoBehaviour
 {
-    public GameObject pauseMenu;
-    public Controller p;
+    public GameObject pauseMenu, optionsMenu;
+    Controller controller;
 
     private void Start()
     {
-        p = GetComponentInParent<Controller>();
+        controller = GetComponentInParent<Controller>();
     }
     void Update()
     {
@@ -25,14 +25,22 @@ public class Pausescript : MonoBehaviour
         if (currentState)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = true;
+            Cursor.visible = false;
+            pauseMenu.SetActive(false);
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = false;
+            if (optionsMenu.activeSelf) {
+                optionsMenu.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                currentState = !currentState;
+            } else {
+                pauseMenu.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
-        pauseMenu.SetActive(!currentState);
-        p.canMove = currentState;
+        controller.canMove = currentState;
     }
 }

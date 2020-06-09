@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5706729125083009207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7470220113410879606
 RectTransform:
   m_ObjectHideFlags: 0
@@ -759,7 +759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c0b9ae94c93a14c8521a651ef3046d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 956530836153754084}
+  pauseMenu: {fileID: 149071657457083270}
+  optionsMenu: {fileID: 8521594703373962652}
 --- !u!1 &1445805620373531528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,7 +2389,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 4321645554642894587}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 368504516472709498}
@@ -3050,7 +3051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 31.21}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &5748548048398827223
@@ -3611,6 +3612,7 @@ MonoBehaviour:
   transform_PowerUpHolder: {fileID: 2891051539034649692}
   interactRange: 6
   maxItemsHeld: 8
+  texMeshPro: {fileID: 0}
   itemHolders: []
   transform_Scoreboard: {fileID: 8920602949418833783}
   prefab_ScoreboardListing: {fileID: 6263856385427521299, guid: 156475244a923c7489c8e01dc8f6c109,
@@ -6379,6 +6381,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: In game HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 1667463419470194424, guid: 289b0ebeeb81203459f70d6d007b4b33,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1667463420370787663, guid: 289b0ebeeb81203459f70d6d007b4b33,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6427,7 +6434,7 @@ PrefabInstance:
     - target: {fileID: 5982533697001862609, guid: 289b0ebeeb81203459f70d6d007b4b33,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.20059204
+      value: -0.20056152
       objectReference: {fileID: 0}
     - target: {fileID: 6304506328391708957, guid: 289b0ebeeb81203459f70d6d007b4b33,
         type: 3}
