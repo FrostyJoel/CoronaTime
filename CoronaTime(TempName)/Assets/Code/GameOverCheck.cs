@@ -15,8 +15,8 @@ public class GameOverCheck : MonoBehaviourPun {
         goc_Single = this;
         go_VictoryScreen.SetActive(false);
         for (int i = 0; i < victoryScreenSlots.Length; i++) {
-            victoryScreenSlots[i].text_Name.text = "";
-            victoryScreenSlots[i].text_Score.text = "";
+            victoryScreenSlots[i].text_Name.text = "TestText";
+            victoryScreenSlots[i].text_Score.text = "TestScore";
         }
     }
 
@@ -28,6 +28,7 @@ public class GameOverCheck : MonoBehaviourPun {
         storages = FindObjectsOfType<CartStorage>();
         List<int> scores = new List<int>();
         for (int i = 0; i < storages.Length; i++) {
+            Debug.LogWarning(storages[i].score + " " + storages[i].photonView.Owner.NickName);
             scores.Add(storages[i].score);
         }
         scores.Sort();

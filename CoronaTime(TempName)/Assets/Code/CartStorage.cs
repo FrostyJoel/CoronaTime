@@ -153,7 +153,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 }
                 UpdateScore();
             } else {
-                UpdateScore();
                 GameOverCheck.goc_Single.GameOver();
             }
         }
