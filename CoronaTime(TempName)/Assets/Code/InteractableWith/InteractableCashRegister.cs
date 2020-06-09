@@ -10,7 +10,7 @@ public class InteractableCashRegister : Interactable {
             cartStorage.score++;
             CartStorage[] storages = FindObjectsOfType<CartStorage>();
             for (int i = 0; i < storages.Length; i++) {
-                if (storages[i] /*&& storages[i].photonView.Owner.IsLocal*/) {
+                if (storages[i]) {
                     for (int iB = 0; iB < storages[i].heldProductModels.Count; iB++) {
                         ProductInteractions.pi_Single.DestroyProduct(storages[i].heldProducts[iB].index, 0, RpcTarget.All);
                     }
