@@ -97,6 +97,10 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             if(groceryList[indexB].amountGotten == groceryList[indexB].amount) {
                 Debug.LogWarning("It Do The StrikeThrough");
                 groceryList[indexB].groceryListing.text_Grocery.fontStyle = FontStyles.Strikethrough;
+                groceryList[indexB].groceryListing.gameObject.SetActive(false);
+                groceryList[indexB].groceryListing.gameObject.SetActive(true);
+                groceryList[indexB].groceryListing.text_Grocery.enabled = false;
+                groceryList[indexB].groceryListing.text_Grocery.enabled = true;
                 Debug.LogWarning(groceryList[indexB].groceryListing.text_Grocery.fontStyle);
                 Debug.LogWarning(indexB);
                 Debug.LogWarning(groceryList[indexB].product.name);
