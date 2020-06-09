@@ -94,6 +94,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             groceryList[indexB].amountGotten += 1;
             productsGotten += 1;
             if(groceryList[indexB].amountGotten == groceryList[indexB].amount) {
+                Debug.LogWarning("It Do The StrikeThrough");
                 groceryList[indexB].groceryListing.text_Grocery.fontStyle = TMPro.FontStyles.Strikethrough;
                 List<InteractableProduct> ip_List = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].allProductsInZone;
                 for (int i = 0; i < ip_List.Count; i++) {
