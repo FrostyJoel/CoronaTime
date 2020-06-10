@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5449fa3cc7dfe4a8a4df3d8ea4edae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  interactClip: {fileID: 8300000, guid: 1b1c972dab1439e42a7012a39e3bd563, type: 3}
   audioGroup: 2
   interactable: 0
   SpecialPosAndRot:
@@ -134,15 +134,19 @@ MonoBehaviour:
     productScaling:
       useNewScale: 0
       scale: {x: 0, y: 0, z: 0}
+  interactParticle: {fileID: 0}
+  interactParticleDestroyTime: 0
   currentPlace: 0
   newValueDuringFX: 0.12
   durationInSeconds: 10
   particleToUse: {fileID: 114920032837321540, guid: 9d555c86f0a4bc945af5d11d650223e0,
     type: 3}
+  fxClip: {fileID: 8300000, guid: 5e996ce6b21f65e46b02a4a42ce1fb2e, type: 3}
   index: 129
-  affectedController: {fileID: 0}
-  affectedCartStorage: {fileID: 0}
-  durationSpentInSeconds: 0
+  hitPos: {x: 0, y: 0, z: 0}
   rigid: {fileID: 0}
   inUse: 0
   setAsPU: 0
+  durationSpentInSeconds: 0
+  affectedController: {fileID: 0}
+  affectedCartStorage: {fileID: 0}
