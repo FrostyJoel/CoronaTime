@@ -20,4 +20,9 @@ public class BlockFX : PowerUp {
             inUse = true;
         }
     }
+
+    public override void StopUsing() {
+        PlayFXSound();
+        base.StopUsing();
+    }
 }

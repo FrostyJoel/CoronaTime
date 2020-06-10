@@ -8,9 +8,6 @@ public class InteractableProduct : Interactable {
 
     public Product scriptableProduct;
 
-    [Header("Pickup Sound")]
-    public AudioClip pickup;
-
     [HideInInspector] public int index;
 
     public override void Interact(CartStorage cartStorage) {
@@ -26,12 +23,6 @@ public class InteractableProduct : Interactable {
             if (GetComponent<Outline>()) {
                 GetComponent<Outline>().enabled = false;
             }
-        }
-    }
-
-    public void PlayPickUpSound() {
-        if (pickup) {
-            AudioManager.PlaySound(pickup, audioGroup, transform.position);
         }
     }
 }

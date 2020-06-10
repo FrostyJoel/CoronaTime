@@ -7,7 +7,7 @@ public class StunFX : ThrowPU {
         if (!inUse) {
             StartStopParticle(true);
             ProductInteractions.pi_Single.DisableVisibility(index, affectedController.photonView.ViewID, false, RpcTarget.All);
-            PlayInteractSound();
+            PlayFXSound();
             inUse = true;
         }
     }

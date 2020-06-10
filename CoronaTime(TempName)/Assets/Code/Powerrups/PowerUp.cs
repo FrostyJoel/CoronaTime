@@ -6,8 +6,8 @@ public class PowerUp : Interactable {
     [Header("Particle")]
     public VisualFX particleToUse;
 
-    [Header("Pickup Sound")]
-    public AudioClip pickup;
+    [Header("FX Sound")]
+    public AudioClip fxClip;
 
     [HideInInspector] public int index;
     [HideInInspector] public Vector3 hitPos;
@@ -53,7 +53,7 @@ public class PowerUp : Interactable {
 
     public override void Interact(CartStorage cartStorage) {
         if (currentPlace == Place.InShelve && cartStorage.SetPowerUp(index)) {
-            ProductInteractions.pi_Single.PlaypickUpSoundAndInstantiateParticleOnUseableProduct(index, interactParticleDestroyTime, true, transform.position, RpcTarget.All);
+            ProductInteractions.pi_Single.PlaypickUpSoundAndInstantiateParticleOnUseableProduct(index, interactParticleDestroyTime, true, false, transform.position, RpcTarget.All);
             ProductInteractions.pi_Single.ChangePowerUpPlace(index, (int)Place.InCart, RpcTarget.All);
             affectedCartStorage = cartStorage;
             affectedController = cartStorage.controller;
@@ -63,9 +63,9 @@ public class PowerUp : Interactable {
         }
     }
 
-    public void PlayPickUpSound() {
-        if (pickup) {
-            AudioManager.PlaySound(pickup, audioGroup, transform.position);
+    public void PlayFXSound() {
+        if (fxClip) {
+            AudioManager.PlaySound(fxClip, audioGroup, transform.position);
         }
     }
 

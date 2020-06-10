@@ -104,13 +104,16 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_StartStopParticleOnPlayer", selectedTarget, index, id, pos, startPlaying, local);
     }
 
-    public void PlaypickUpSoundAndInstantiateParticleOnUseableProduct(int index, float destroyTime, bool playSound, Vector3 pos, RpcTarget selectedTarget) {
+    public void PlaypickUpSoundAndInstantiateParticleOnUseableProduct(int index, float destroyTime, bool playSound, bool isInteractOrFx, Vector3 pos, RpcTarget selectedTarget) {
         int sound = 0;
         if (playSound) {
             sound = 1;
         }
-        Debug.LogWarning("yes");
-        photonView.RPC("RPC_PlaypickUpSoundAndInstantiateParticleOnUseableProduct", selectedTarget, index, sound, destroyTime, pos);
+        int interactOrFX = 0;
+        if (isInteractOrFx) {
+            interactOrFX = 1;
+        }
+        photonView.RPC("RPC_PlaypickUpSoundAndInstantiateParticleOnUseableProduct", selectedTarget, index, sound, interactOrFX, destroyTime, pos);
     }
 
     public void PlaypickUpSoundAndInstantiateParticleOnInteractableProduct(int index, float destroyTime, bool playSound, Vector3 pos, RpcTarget selectedTarget) {
@@ -299,7 +302,7 @@ public class ProductInteractions : MonoBehaviourPun {
     void RPC_PlaypickUpSoundAndInstantiateParticleOnInteractableProduct(int index, int playSound, float destroyTime, Vector3 pos) {
         InteractableProduct ip = PhotonProductList.staticInteratableProductList[index];
         if(playSound == 1) {
-            ip.PlayPickUpSound();
+            ip.PlayInteractSound();
         }
         if (ip.interactParticle) {
             GameObject ps = Instantiate(ip.interactParticle, pos, Quaternion.identity);
@@ -308,10 +311,14 @@ public class ProductInteractions : MonoBehaviourPun {
     }
 
     [PunRPC]
-    void RPC_PlaypickUpSoundAndInstantiateParticleOnUseableProduct(int index, int playSound, float destroyTime, Vector3 pos) {
+    void RPC_PlaypickUpSoundAndInstantiateParticleOnUseableProduct(int index, int playSound, int interactOrFX, float destroyTime, Vector3 pos) {
         PowerUp pu = PhotonProductList.staticUseableProductList[index];
-        if(playSound == 1) {
-            pu.PlayPickUpSound();
+        if (playSound == 1) {
+            if (interactOrFX == 0) {
+                pu.PlayInteractSound();
+            } else {
+                pu.PlayFXSound();
+            }
         }
 
         if (pu.interactParticle) {
