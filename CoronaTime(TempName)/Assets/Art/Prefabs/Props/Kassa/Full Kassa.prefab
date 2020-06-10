@@ -71,7 +71,8 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 0
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -92,6 +93,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2263068081663152325, guid: 9b5bfbe617e365d4392cc626fab259da,
+        type: 3}
+      propertyPath: interactClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 802a19e8de20c1e44b55ca3dd0ae17cc, type: 3}
     - target: {fileID: 2938191563716438751, guid: 9b5bfbe617e365d4392cc626fab259da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -205,6 +211,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4531019307841276462}
     m_Modifications:
+    - target: {fileID: 617979563239513619, guid: c8ea5e5e075a1e04281dafaff20ab0d0,
+        type: 3}
+      propertyPath: interactClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 802a19e8de20c1e44b55ca3dd0ae17cc, type: 3}
     - target: {fileID: 1781680446232361243, guid: c8ea5e5e075a1e04281dafaff20ab0d0,
         type: 3}
       propertyPath: m_LocalPosition.x
