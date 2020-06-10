@@ -12,6 +12,7 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
     private CartStorage storage;
     private PlayerView pView;
     public Text text_ProductName;
+    public LayerMask mask;
     private void Start()
     {
         controller = GetComponent<Controller>();
@@ -24,7 +25,6 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine || pView.devView)
         {
-            LayerMask mask = ~(1 << 14);
             if (Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, Mathf.Infinity, mask))
             {
                 Outline outlineObj = hit.transform.gameObject.GetComponent<Outline>();
@@ -52,7 +52,7 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
                 InteractableProduct ip = hit.transform.gameObject.GetComponent<InteractableProduct>();
                 if (ip) {
                     text_ProductName.text = ip.scriptableProduct.productName;
-                    if (!ip.interactable && storage.heldProducts.Count < storage.maxItemsHeld - 1) {
+                    if (!ip.interactable) {
                         canShow = false;
                     }
                 }

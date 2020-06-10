@@ -3680,6 +3680,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastOutline: {fileID: 0}
   text_ProductName: {fileID: 4884943817080932484}
+  mask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!136 &842007689598229669
 CapsuleCollider:
   m_ObjectHideFlags: 0

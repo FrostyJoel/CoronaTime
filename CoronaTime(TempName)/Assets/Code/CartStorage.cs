@@ -209,6 +209,15 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     void RPC_ClearProducts() {
+        if (photonView.IsMine) {
+            if(heldProducts.Count > 0) {
+                for (int i = 0; i < heldProducts.Count; i++) {
+                    if (heldProductModels[i]) {
+                        ProductInteractions.pi_Single.DestroyProduct(heldProducts[i].index, 0, RpcTarget.All);
+                    }
+                }
+            }
+        }
         heldProducts.Clear();
         heldProductModels.Clear();
     }
