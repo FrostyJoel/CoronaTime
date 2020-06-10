@@ -26,7 +26,7 @@ TagManager:
   - InnerShelfLayer
   - OuterShelfLayer
   - ExtraShelfColliders
-  - 
+  - InteractableCollider
   - 
   - 
   - 

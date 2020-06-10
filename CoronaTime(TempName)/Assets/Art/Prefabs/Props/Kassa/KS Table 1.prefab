@@ -508,7 +508,6 @@ GameObject:
   - component: {fileID: 437648021148007256}
   - component: {fileID: 8402117905572192798}
   - component: {fileID: 1342743822833007699}
-  - component: {fileID: 3462006196826925561}
   m_Layer: 15
   m_Name: SchermSchuin
   m_TagString: Untagged
@@ -569,30 +568,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23982763, y: 0.05294186, z: 0.024131477}
   m_Center: {x: -0.25080228, y: 0.15173545, z: -0.44205585}
---- !u!114 &3462006196826925561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108499614290921845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3cc322dbdd0dd84ba46f131c7b995fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 9e92b45b04487b04a8ea15b7c7e669a9, type: 3}
-  audioGroup: 2
-  interactable: 0
-  SpecialPosAndRot:
-    use: 0
-    pos: {x: 0, y: 0, z: 0}
-    rot: {x: 0, y: 0, z: 0}
-    productScaling:
-      useNewScale: 0
-      scale: {x: 0, y: 0, z: 0}
-  currentPlace: 0
-  hoverText: Press [E] To Buy
 --- !u!1 &6293233523065632632
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +578,6 @@ GameObject:
   m_Component:
   - component: {fileID: 445736817250426844}
   - component: {fileID: 7512895820099195766}
-  - component: {fileID: 380706327259598249}
   m_Layer: 15
   m_Name: Pin
   m_TagString: Untagged
@@ -638,30 +612,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07074334, y: 0.06667774, z: 0.16064833}
   m_Center: {x: 0.02452599, y: 0.2600321, z: -0.42217538}
---- !u!114 &380706327259598249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6293233523065632632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3cc322dbdd0dd84ba46f131c7b995fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 9e92b45b04487b04a8ea15b7c7e669a9, type: 3}
-  audioGroup: 2
-  interactable: 1
-  SpecialPosAndRot:
-    use: 0
-    pos: {x: 0, y: 0, z: 0}
-    rot: {x: 0, y: 0, z: 0}
-    productScaling:
-      useNewScale: 0
-      scale: {x: 0, y: 0, z: 0}
-  currentPlace: 0
-  hoverText: Press [E] To Buy
 --- !u!1 &7089793304708124848
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,9 +623,9 @@ GameObject:
   - component: {fileID: 8753516804133983299}
   - component: {fileID: 9186354892396656085}
   - component: {fileID: 4739597467161758015}
-  m_Layer: 15
+  m_Layer: 16
   m_Name: Interactable
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -716,8 +666,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6542866, y: 0.49835175, z: 0.63893795}
-  m_Center: {x: -0.20207179, y: -0.0706636, z: -0.16592336}
+  m_Size: {x: 0.6542866, y: 0.7830784, z: 0.63893795}
+  m_Center: {x: -0.20207179, y: 0.07169971, z: -0.16592336}
 --- !u!114 &4739597467161758015
 MonoBehaviour:
   m_ObjectHideFlags: 0
