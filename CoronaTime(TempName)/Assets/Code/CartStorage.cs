@@ -53,18 +53,12 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         if (photonView.IsMine || controller.playerView.devView) {
             if (Input.GetButtonDown("Interact")) {
                 RaycastHit hit;
-                    Debug.LogWarning("interact 4ray");
-
                 if(Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, interactRange/*, mask*/)){
                     Debug.LogWarning(hit.transform.gameObject.layer);
                 }
-
                 if (Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, interactRange, mask)) {
-                    Debug.LogWarning("interact ray");
-
                     if (hit.transform.CompareTag("Interact")) {
                         hit.transform.GetComponent<Interactable>().Interact(this);
-                        Debug.LogWarning("interact");
                     }
                 }
             }
@@ -72,9 +66,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     public void UpdateScore() {
-        Debug.LogWarning("updatescore");
         if (photonView.IsMine) {
-        Debug.LogWarning("updatescore ismine");
             photonView.RPC("RPC_UpdateScoreboardScore", RpcTarget.All, photonView.ViewID, productsGotten, productsNeededInCurrentList, score);
         }
     }
@@ -102,14 +94,11 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     public bool AddToCart(int indexA) {
         int indexB = InGroceryListWhere(PhotonProductList.staticInteratableProductList[indexA].scriptableProduct);
-        Debug.LogWarning("add to cart");
         if (heldProducts.Count < maxItemsHeld && indexB >= 0 && groceryList[indexB].amountGotten < groceryList[indexB].amount) {
-            Debug.LogWarning("Added to cart");
             ProductInteractions.pi_Single.AddToCart(indexA, photonView.ViewID, RpcTarget.All);
             groceryList[indexB].amountGotten += 1;
             productsGotten += 1;
             if(groceryList[indexB].amountGotten == groceryList[indexB].amount) {
-                Debug.LogWarning("gotten");
                 groceryList[indexB].groceryListing.text_Grocery.fontStyle = FontStyles.Strikethrough;
                 List<InteractableProduct> ip_List = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].allProductsInZone;
                 for (int i = 0; i < ip_List.Count; i++) {

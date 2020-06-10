@@ -32,11 +32,11 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_SetPowerUp", selectedTarget, index, id);
     }
 
-    public void SetGlobalUseableProductPositionAndRotation(int index, Vector3 pos, Quaternion rot, RpcTarget selectedTarget) { 
+    public void SetGlobalUseableProductPositionAndRotation(int index, Vector3 pos, Quaternion rot, RpcTarget selectedTarget) {
         photonView.RPC("RPC_SetGlobalUseableProductPositionAndRotation", selectedTarget, index, pos, rot);
     }
 
-    public void SetLocalInteractableProductPositionAndRotation(int index, Vector3 pos, Quaternion rot, RpcTarget selectedTarget) { 
+    public void SetLocalInteractableProductPositionAndRotation(int index, Vector3 pos, Quaternion rot, RpcTarget selectedTarget) {
         photonView.RPC("RPC_SetLocalInteractableProductPositionAndRotation", selectedTarget, index, pos, rot);
     }
 
@@ -44,15 +44,15 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_SetLocalInteractableProductScale", selectedTarget, index, scale);
     }
 
-    public void SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic(int index, Vector3 pos, Vector3 force, int kinematicState, Quaternion rot, RpcTarget selectedTarget) { 
+    public void SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic(int index, Vector3 pos, Vector3 force, int kinematicState, Quaternion rot, RpcTarget selectedTarget) {
         photonView.RPC("RPC_SetGlobalUseableProductPositionAndRotationAddForceAndSetKinematic", selectedTarget, index, pos, force, kinematicState, rot);
     }
 
-    public void SetLocalUseableProductPositionAndRotationAddForceAndSetKinematic(int index, Vector3 pos, Vector3 force, int kinematicState, Quaternion rot, RpcTarget selectedTarget) { 
+    public void SetLocalUseableProductPositionAndRotationAddForceAndSetKinematic(int index, Vector3 pos, Vector3 force, int kinematicState, Quaternion rot, RpcTarget selectedTarget) {
         photonView.RPC("RPC_SetLocalUseableProductPositionAndRotationAddForceAndSetKinematic", selectedTarget, index, pos, force, kinematicState, rot);
     }
 
-    public void SetLocalUseableProductPositionAndRotation(int index, Vector3 pos, Quaternion rot, RpcTarget selectedTarget) { 
+    public void SetLocalUseableProductPositionAndRotation(int index, Vector3 pos, Quaternion rot, RpcTarget selectedTarget) {
         photonView.RPC("RPC_SetLocalUseableProductPositionAndRotation", selectedTarget, index, pos, rot);
     }
 
@@ -69,11 +69,11 @@ public class ProductInteractions : MonoBehaviourPun {
     }
 
     public void ChangeProductPlace(int index, int placeIndex, RpcTarget selectedTarget) {
-        photonView.RPC("RPC_ChangeProductPlace", selectedTarget, index, placeIndex);        
+        photonView.RPC("RPC_ChangeProductPlace", selectedTarget, index, placeIndex);
     }
 
     public void ChangePowerUpPlace(int index, int placeIndex, RpcTarget selectedTarget) {
-        photonView.RPC("RPC_ChangePowerUpPlace", selectedTarget, index, placeIndex);        
+        photonView.RPC("RPC_ChangePowerUpPlace", selectedTarget, index, placeIndex);
     }
 
     public void SetAffectedController(int index, int id, bool capsuleHit, RpcTarget selectedTarget) {
@@ -81,7 +81,7 @@ public class ProductInteractions : MonoBehaviourPun {
         if (capsuleHit) {
             wasCapsuleHit = 1;
         }
-        photonView.RPC("RPC_SetAffectedController", selectedTarget, index, id, wasCapsuleHit);        
+        photonView.RPC("RPC_SetAffectedController", selectedTarget, index, id, wasCapsuleHit);
     }
 
     public void EnableDisableControllerOutline(int id, bool enableOutline, RpcTarget selectedTarget) {
@@ -104,6 +104,22 @@ public class ProductInteractions : MonoBehaviourPun {
         photonView.RPC("RPC_StartStopParticleOnPlayer", selectedTarget, index, id, pos, startPlaying, local);
     }
 
+    public void PlaypickUpSoundAndInstantiateParticleOnUseableProduct(int index, float destroyTime, bool playSound, Vector3 pos, RpcTarget selectedTarget) {
+        int sound = 0;
+        if (playSound) {
+            sound = 1;
+        }
+        Debug.LogWarning("yes");
+        photonView.RPC("RPC_PlaypickUpSoundAndInstantiateParticleOnUseableProduct", selectedTarget, index, sound, destroyTime, pos);
+    }
+
+    public void PlaypickUpSoundAndInstantiateParticleOnInteractableProduct(int index, float destroyTime, bool playSound, Vector3 pos, RpcTarget selectedTarget) {
+        int sound = 0;
+        if (playSound) {
+            sound = 1;
+        }
+        photonView.RPC("RPC_PlaypickUpSoundAndInstantiateParticleOnInteractableProduct", selectedTarget, index, sound, destroyTime, pos);
+    }
 
     [PunRPC]
     void RPC_DestroyProduct(int index, float time) {
@@ -277,5 +293,30 @@ public class ProductInteractions : MonoBehaviourPun {
             local = true;
         }
         PhotonNetwork.GetPhotonView(id).GetComponent<Controller>().particles[index].StartStopVisualFX(shouldPlay, pos, local);
+    }
+
+    [PunRPC]
+    void RPC_PlaypickUpSoundAndInstantiateParticleOnInteractableProduct(int index, int playSound, float destroyTime, Vector3 pos) {
+        InteractableProduct ip = PhotonProductList.staticInteratableProductList[index];
+        if(playSound == 1) {
+            ip.PlayPickUpSound();
+        }
+        if (ip.interactParticle) {
+            GameObject ps = Instantiate(ip.interactParticle, pos, Quaternion.identity);
+            Destroy(ps, destroyTime);
+        }
+    }
+
+    [PunRPC]
+    void RPC_PlaypickUpSoundAndInstantiateParticleOnUseableProduct(int index, int playSound, float destroyTime, Vector3 pos) {
+        PowerUp pu = PhotonProductList.staticUseableProductList[index];
+        if(playSound == 1) {
+            pu.PlayPickUpSound();
+        }
+
+        if (pu.interactParticle) {
+            GameObject ps = Instantiate(pu.interactParticle, pos, Quaternion.identity);
+            Destroy(ps, destroyTime);
+        }
     }
 }

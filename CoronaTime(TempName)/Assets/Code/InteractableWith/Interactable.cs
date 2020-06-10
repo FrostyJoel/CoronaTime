@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviourPun {
 
-    public AudioClip clip;
+    public AudioClip interactClip;
     public AudioManager.AudioGroups audioGroup = AudioManager.AudioGroups.SFX;
-
     public bool interactable;
     [Space]
     public ProductManipulation SpecialPosAndRot;
+
+    [Header("Interact particle")]
+    public GameObject interactParticle;
+    public float interactParticleDestroyTime;
 
     public enum Place {
         InShelve,
@@ -26,9 +29,9 @@ public class Interactable : MonoBehaviourPun {
         
     }
 
-    public void PlaySound() {
-        if (clip) {
-            AudioManager.PlaySound(clip, transform.position, audioGroup);
+    public void PlayInteractSound() {
+        if (interactClip) {
+            AudioManager.PlaySound(interactClip, transform.position, audioGroup);
         }
     }
 }

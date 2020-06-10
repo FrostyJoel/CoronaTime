@@ -618,7 +618,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element:
-  - ThisType: 0
+  - eus: {fileID: 0}
+    ThisType: 0
     audioClip: {fileID: 8300000, guid: e2a2b9095304bec44af30f82e3c89c93, type: 3}
     audioGroup: 2
     button: {fileID: 0}
@@ -862,7 +863,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element:
-  - ThisType: 2
+  - eus: {fileID: 0}
+    ThisType: 2
     audioClip: {fileID: 8300000, guid: 9e92b45b04487b04a8ea15b7c7e669a9, type: 3}
     audioGroup: 2
     button: {fileID: 0}
@@ -970,7 +972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element:
-  - ThisType: 2
+  - eus: {fileID: 0}
+    ThisType: 2
     audioClip: {fileID: 8300000, guid: 9e92b45b04487b04a8ea15b7c7e669a9, type: 3}
     audioGroup: 2
     button: {fileID: 0}
@@ -2774,7 +2777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element:
-  - ThisType: 0
+  - eus: {fileID: 0}
+    ThisType: 0
     audioClip: {fileID: 8300000, guid: e2a2b9095304bec44af30f82e3c89c93, type: 3}
     audioGroup: 2
     button: {fileID: 0}
@@ -2882,7 +2886,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element:
-  - ThisType: 2
+  - eus: {fileID: 0}
+    ThisType: 2
     audioClip: {fileID: 8300000, guid: 9e92b45b04487b04a8ea15b7c7e669a9, type: 3}
     audioGroup: 2
     button: {fileID: 0}
@@ -3368,7 +3373,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element:
-  - ThisType: 0
+  - eus: {fileID: 0}
+    ThisType: 0
     audioClip: {fileID: 8300000, guid: e2a2b9095304bec44af30f82e3c89c93, type: 3}
     audioGroup: 2
     button: {fileID: 0}
@@ -4838,7 +4844,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element:
-  - ThisType: 0
+  - eus: {fileID: 0}
+    ThisType: 0
     audioClip: {fileID: 8300000, guid: e2a2b9095304bec44af30f82e3c89c93, type: 3}
     audioGroup: 2
     button: {fileID: 0}

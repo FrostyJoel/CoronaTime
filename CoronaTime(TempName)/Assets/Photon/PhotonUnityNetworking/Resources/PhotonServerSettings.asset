@@ -102,6 +102,8 @@ MonoBehaviour:
   - RPC_SetLocalInteractableProductScale
   - RPC_UpdateGroceryList
   - RPC_DestroyHeldProduct
+  - RPC_PlaypickUpSoundAndInstantiateParticleOnInteractableProduct
+  - RPC_PlaypickUpSoundAndInstantiateParticleOnUseableProduct
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

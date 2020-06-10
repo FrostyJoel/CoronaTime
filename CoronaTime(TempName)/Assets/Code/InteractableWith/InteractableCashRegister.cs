@@ -6,7 +6,7 @@ public class InteractableCashRegister : Interactable {
 
     public override void Interact(CartStorage cartStorage) {
         if (cartStorage.heldProducts.Count > 0 && cartStorage.productsGotten == cartStorage.productsNeededInCurrentList) {
-            PlaySound();
+            PlayInteractSound();
             cartStorage.score++;
             photonView.RPC("RPC_DestroyHeldProduct", RpcTarget.MasterClient);
             //cartStorage.ClearProducts();
