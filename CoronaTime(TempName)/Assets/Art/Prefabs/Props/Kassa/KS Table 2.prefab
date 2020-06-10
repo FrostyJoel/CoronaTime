@@ -208,6 +208,7 @@ Transform:
   - {fileID: 6344168389773612116}
   - {fileID: 8491788301581526499}
   - {fileID: 1726896461638610473}
+  - {fileID: 7147952930580252908}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -470,7 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cc322dbdd0dd84ba46f131c7b995fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 9e92b45b04487b04a8ea15b7c7e669a9, type: 3}
+  interactClip: {fileID: 0}
   audioGroup: 2
   interactable: 1
   SpecialPosAndRot:
@@ -480,6 +481,8 @@ MonoBehaviour:
     productScaling:
       useNewScale: 0
       scale: {x: 0, y: 0, z: 0}
+  interactParticle: {fileID: 0}
+  interactParticleDestroyTime: 0
   currentPlace: 0
   hoverText: Press [E] To Buy
 --- !u!1 &2154131005906369693
@@ -852,6 +855,63 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.032037977, y: 0.10235138, z: 0.035534948}
   m_Center: {x: -0.31787527, y: 0.22797759, z: -0.36430138}
+--- !u!1 &7320774188571505877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7147952930580252908}
+  - component: {fileID: 225606428206239476}
+  m_Layer: 0
+  m_Name: Light Probe Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7147952930580252908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7320774188571505877}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1063962444247960362}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!220 &225606428206239476
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7320774188571505877}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: 2.5031836, y: 1, z: 0.44402802}
+  - {x: 2.5031836, y: 1, z: -0.5881691}
+  - {x: 2.5031836, y: 0.26670468, z: 0.44402802}
+  - {x: 2.5031836, y: 0.26670468, z: -0.5881691}
+  - {x: -0.7940845, y: 1, z: 0.44402802}
+  - {x: -0.7940845, y: 0.26670468, z: 0.44402802}
+  - {x: -0.7940845, y: 1, z: -0.50580263}
+  - {x: -0.7940845, y: 0.26670468, z: -0.50580263}
+  - {x: -0.04249215, y: 1, z: -0.50580263}
+  - {x: -0.04249215, y: 0.26670468, z: -0.50580263}
+  - {x: -0.04249215, y: 1, z: -1.0205917}
+  - {x: -0.04249215, y: 0.26670468, z: -1.0205917}
+  - {x: 0.8223539, y: 1, z: -1.0205917}
+  - {x: 0.8223539, y: 0.26670468, z: -1.0205917}
+  - {x: 0.8223539, y: 1, z: -0.5160985}
+  - {x: 0.8223539, y: 0.26670468, z: -0.5160985}
+  m_Dering: 0
 --- !u!1 &8577503685641123278
 GameObject:
   m_ObjectHideFlags: 0

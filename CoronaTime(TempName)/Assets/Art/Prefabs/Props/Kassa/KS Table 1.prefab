@@ -568,6 +568,63 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23982763, y: 0.05294186, z: 0.024131477}
   m_Center: {x: -0.25080228, y: 0.15173545, z: -0.44205585}
+--- !u!1 &5585793847159471413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7148049162952412634}
+  - component: {fileID: 1327770870239813375}
+  m_Layer: 0
+  m_Name: Light Probe Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7148049162952412634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5585793847159471413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8532327939748148005}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!220 &1327770870239813375
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5585793847159471413}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: 2.5031836, y: 1, z: 0.62867796}
+  - {x: 2.5031836, y: 1, z: -0.40351915}
+  - {x: 2.5031836, y: 0.26670468, z: 0.62867796}
+  - {x: 2.5031836, y: 0.26670468, z: -0.40351915}
+  - {x: -0.7940845, y: 1, z: 0.54789364}
+  - {x: -0.7940845, y: 0.26670468, z: 0.54789364}
+  - {x: -0.7940845, y: 1, z: -0.401937}
+  - {x: -0.7940845, y: 0.26670468, z: -0.401937}
+  - {x: -0.04249215, y: 1, z: 0.93157434}
+  - {x: -0.04249215, y: 0.26670468, z: 0.93157434}
+  - {x: -0.04249215, y: 1, z: 0.41678524}
+  - {x: -0.04249215, y: 0.26670468, z: 0.41678524}
+  - {x: 0.8223539, y: 1, z: 0.41678524}
+  - {x: 0.8223539, y: 0.26670468, z: 0.41678524}
+  - {x: 0.8223539, y: 1, z: 0.9212785}
+  - {x: 0.8223539, y: 0.26670468, z: 0.9212785}
+  m_Dering: 0
 --- !u!1 &6293233523065632632
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cc322dbdd0dd84ba46f131c7b995fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 9e92b45b04487b04a8ea15b7c7e669a9, type: 3}
+  interactClip: {fileID: 0}
   audioGroup: 2
   interactable: 1
   SpecialPosAndRot:
@@ -690,6 +747,8 @@ MonoBehaviour:
     productScaling:
       useNewScale: 0
       scale: {x: 0, y: 0, z: 0}
+  interactParticle: {fileID: 0}
+  interactParticleDestroyTime: 0
   currentPlace: 0
   hoverText: Press [E] To Buy
 --- !u!1 &7370636063355018621
@@ -862,6 +921,7 @@ Transform:
   - {fileID: 7229125855886886802}
   - {fileID: 8476967087575404188}
   - {fileID: 6639703312820558082}
+  - {fileID: 7148049162952412634}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
