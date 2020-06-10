@@ -3619,6 +3619,9 @@ MonoBehaviour:
   transform_GroceryList: {fileID: 1285477880270921367}
   prefab_GroceryListing: {fileID: 7009248154110841017, guid: ee7a50f66dea72342b071d1b788fbacf,
     type: 3}
+  mask:
+    serializedVersion: 2
+    m_Bits: 110135
   score: 0
   controller: {fileID: 0}
   storages: []
@@ -3680,9 +3683,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastOutline: {fileID: 0}
   text_ProductName: {fileID: 4884943817080932484}
-  mask:
-    serializedVersion: 2
-    m_Bits: 2048
 --- !u!136 &842007689598229669
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -101,6 +101,7 @@ MonoBehaviour:
   - RPC_SetLocalInteractableProductPositionAndRotation
   - RPC_SetLocalInteractableProductScale
   - RPC_UpdateGroceryList
+  - RPC_DestroyHeldProduct
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

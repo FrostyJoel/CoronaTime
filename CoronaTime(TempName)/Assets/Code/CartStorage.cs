@@ -17,6 +17,9 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     public Transform transform_GroceryList;
     public GameObject prefab_GroceryListing;
 
+    [Header("Interact Mask")]
+    public LayerMask mask;
+
     /*[HideInInspector]*/ public int score;
     [HideInInspector] public Controller controller;
     [HideInInspector] public CartStorage[] storages;
@@ -50,10 +53,18 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         if (photonView.IsMine || controller.playerView.devView) {
             if (Input.GetButtonDown("Interact")) {
                 RaycastHit hit;
-                LayerMask mask = ~(1 << 14);
+                    Debug.LogWarning("interact 4ray");
+
+                if(Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, interactRange/*, mask*/)){
+                    Debug.LogWarning(hit.transform.gameObject.layer);
+                }
+
                 if (Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, interactRange, mask)) {
+                    Debug.LogWarning("interact ray");
+
                     if (hit.transform.CompareTag("Interact")) {
                         hit.transform.GetComponent<Interactable>().Interact(this);
+                        Debug.LogWarning("interact");
                     }
                 }
             }
@@ -61,7 +72,9 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     }
 
     public void UpdateScore() {
+        Debug.LogWarning("updatescore");
         if (photonView.IsMine) {
+        Debug.LogWarning("updatescore ismine");
             photonView.RPC("RPC_UpdateScoreboardScore", RpcTarget.All, photonView.ViewID, productsGotten, productsNeededInCurrentList, score);
         }
     }
@@ -89,11 +102,14 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     public bool AddToCart(int indexA) {
         int indexB = InGroceryListWhere(PhotonProductList.staticInteratableProductList[indexA].scriptableProduct);
+        Debug.LogWarning("add to cart");
         if (heldProducts.Count < maxItemsHeld && indexB >= 0 && groceryList[indexB].amountGotten < groceryList[indexB].amount) {
+            Debug.LogWarning("Added to cart");
             ProductInteractions.pi_Single.AddToCart(indexA, photonView.ViewID, RpcTarget.All);
             groceryList[indexB].amountGotten += 1;
             productsGotten += 1;
             if(groceryList[indexB].amountGotten == groceryList[indexB].amount) {
+                Debug.LogWarning("gotten");
                 groceryList[indexB].groceryListing.text_Grocery.fontStyle = FontStyles.Strikethrough;
                 List<InteractableProduct> ip_List = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].allProductsInZone;
                 for (int i = 0; i < ip_List.Count; i++) {
@@ -209,13 +225,9 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     void RPC_ClearProducts() {
-        if (photonView.IsMine) {
-            if(heldProducts.Count > 0) {
-                for (int i = 0; i < heldProducts.Count; i++) {
-                    if (heldProductModels[i]) {
-                        ProductInteractions.pi_Single.DestroyProduct(heldProducts[i].index, 0, RpcTarget.All);
-                    }
-                }
+        if(heldProductModels.Count > 0 && heldProducts.Count > 0) {
+            for (int iB = 0; iB < heldProductModels.Count; iB++) {
+                ProductInteractions.pi_Single.DestroyProduct(heldProducts[iB].index, 0, RpcTarget.All);
             }
         }
         heldProducts.Clear();
