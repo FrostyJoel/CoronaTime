@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1702764479890701561}
   - component: {fileID: 1702764479890701558}
   m_Layer: 11
-  m_Name: Prefab_DevGlowStickModel
+  m_Name: Special_DevGlowStickModel_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702764479890602586}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.058, y: 1.2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1702764479565023098}
@@ -162,31 +162,33 @@ MonoBehaviour:
     use: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0}
+    productScaling:
+      useNewScale: 0
+      scale: {x: 0, y: 0, z: 0}
   currentPlace: 0
   newValueDuringFX: 0
   durationInSeconds: 15
   particleToUse: {fileID: 0}
   index: 314
-  affectedController: {fileID: 0}
-  affectedCartStorage: {fileID: 0}
-  durationSpentInSeconds: 0
+  hitPos: {x: 0, y: 0, z: 0}
   rigid: {fileID: 0}
   inUse: 0
   setAsPU: 0
-  theseColliders: []
+  durationSpentInSeconds: 0
+  affectedController: {fileID: 0}
+  affectedCartStorage: {fileID: 0}
   throwForce: 100
-  angleUp: 0
-  throwChecks: 0
-  masterThrown: 0
   extends: {x: 0.1, y: 0.1, z: 0.45}
   gizmosCenter: {x: 0, y: 0, z: 0}
-  collidersHit: []
-  closestIndex: -1
   onlyCollisionOverlapWith:
     serializedVersion: 2
     m_Bits: 512
   newCollisionRaycastPositionIfNeeded: {fileID: 1702764479565023098}
   showGizmos: 0
+  collidersHit: []
+  theseColliders: []
+  throwChecks: 0
+  masterThrown: 0
 --- !u!114 &1702764479890701558
 MonoBehaviour:
   m_ObjectHideFlags: 0
