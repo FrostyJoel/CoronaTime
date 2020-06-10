@@ -13,6 +13,7 @@ public class UiElementSounds : MonoBehaviour {
             foreach(UiElement uiElement in element)
             {
                 uiElement.AddSoundListener(gameObject);
+                uiElement.eus = this;
             }
         }
     }
@@ -20,6 +21,7 @@ public class UiElementSounds : MonoBehaviour {
 
 [System.Serializable]
 public class UiElement {
+    [HideInInspector] public UiElementSounds eus;
     public enum type {
         button,
         toggle,
@@ -44,7 +46,7 @@ public class UiElement {
                 button = elementObject.GetComponent<Button>();
             }
             if (button) {
-                button.onClick.AddListener(() => AudioManager.PlaySound(audioClip, audioGroup));
+                button.onClick.AddListener(() => AudioManager.PlaySound(audioClip, eus.transform.position, audioGroup));
             } 
             break;
             case type.toggle:
@@ -76,10 +78,10 @@ public class UiElement {
     }
 
     void OnToggleChange(bool b) {
-        AudioManager.PlaySound(audioClip, audioGroup);
+        AudioManager.PlaySound(audioClip, eus.transform.position, audioGroup);
     }
 
     public void OnDropDownChanged(int i) {
-        AudioManager.PlaySound(audioClip, audioGroup);
+        AudioManager.PlaySound(audioClip, eus.transform.position, audioGroup);
     }
 }

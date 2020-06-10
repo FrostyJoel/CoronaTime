@@ -13,8 +13,8 @@ public static class AudioManager {
         SFX,
     }
 
-    public static void PlaySound(AudioClip audioClipToPlay, AudioGroups audioGroups) {
-        AudioManager.PlaySound(audioClipToPlay, audioGroups, Vector3.zero);
+    public static void PlaySound(AudioClip audioClipToPlay, Vector3 position, AudioGroups audioGroups) {
+        AudioManager.PlaySound(audioClipToPlay, audioGroups, position);
     }
 
     public static void PlaySound(AudioClip audioClipToPlay, AudioGroups audioGroups, Vector3 position) {

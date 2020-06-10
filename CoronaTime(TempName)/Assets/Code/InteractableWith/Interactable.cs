@@ -28,7 +28,7 @@ public class Interactable : MonoBehaviourPun {
 
     public void PlaySound() {
         if (clip) {
-            AudioManager.PlaySound(clip, audioGroup);
+            AudioManager.PlaySound(clip, transform.position, audioGroup);
         }
     }
 }

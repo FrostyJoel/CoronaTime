@@ -19,6 +19,9 @@ public class InteractableProduct : Interactable {
             if (SpecialPosAndRot.productScaling.useNewScale) {
                 ProductInteractions.pi_Single.SetLocalInteractableProductScale(index, SpecialPosAndRot.productScaling.scale, RpcTarget.All);
             }
+            if (clip) {
+                AudioManager.PlaySound(clip, transform.position, audioGroup);
+            }
             if (GetComponent<Outline>()) {
                 GetComponent<Outline>().enabled = false;
             }
