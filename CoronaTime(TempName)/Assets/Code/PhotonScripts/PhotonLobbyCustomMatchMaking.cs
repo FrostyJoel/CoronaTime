@@ -13,7 +13,7 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
 
     public string roomName, nickName;
     public int maxPlayers = 4;
-    public GameObject roomListingPrefab, go_MultiplayerPanel;
+    public GameObject roomListingPrefab;
     public Transform roomsPanel;
 
     bool enteredNickname, enteredRoomName, connectedToMaster = false;
@@ -39,15 +39,11 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
         PhotonNetwork.AutomaticallySyncScene = true;
         EnableDisableRelativeButtons();
         input_Nickname.text = PlayerPrefs.GetString("NickName");
-        if (go_MultiplayerPanel) {
-            go_MultiplayerPanel.SetActive(true);
-        }
         Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public void LeaveMultiplayer() {
         PhotonNetwork.Disconnect();
-        go_MultiplayerPanel.SetActive(false);
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList) {
