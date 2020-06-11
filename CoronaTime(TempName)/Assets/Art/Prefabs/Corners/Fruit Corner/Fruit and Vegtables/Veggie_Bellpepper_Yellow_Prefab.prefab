@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114585461275706112}
   - component: {fileID: 114184886350958832}
   m_Layer: 0
-  m_Name: Bell_Pepper_Yellow
+  m_Name: Veggie_Bellpepper_Yellow_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,13 +125,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  interactClip: {fileID: 8300000, guid: 1b1c972dab1439e42a7012a39e3bd563, type: 3}
   audioGroup: 2
   interactable: 0
   SpecialPosAndRot:
     use: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0}
+    productScaling:
+      useNewScale: 0
+      scale: {x: 0, y: 0, z: 0}
+  interactParticle: {fileID: 0}
+  interactParticleDestroyTime: 0
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 9fa45a435b2020e4aa32aed9abbb66e0, type: 2}
   index: 0
