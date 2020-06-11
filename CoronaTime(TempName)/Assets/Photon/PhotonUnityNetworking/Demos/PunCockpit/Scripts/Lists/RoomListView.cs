@@ -54,11 +54,14 @@ namespace Photon.Pun.Demo.Cockpit
 
         public void OnRoomCellJoinButtonClick(string roomName)
         {
+            Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
             OnJoinRoom.Invoke(roomName);
+            Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         }
 
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
+            Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
 			UpdateStatusText.text = "Updated";
 
 			if (roomList.Count == 0 && !PhotonNetwork.InLobby) {
@@ -98,24 +101,30 @@ namespace Photon.Pun.Demo.Cockpit
             StartCoroutine("clearStatus");
 
             _firstUpdate = false;
+            Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         }
 
         IEnumerator clearStatus()
         {
+            Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
             yield return new WaitForSeconds(1f);
 
             UpdateStatusText.text = string.Empty;
+            Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         }
 
         public void OnJoinedLobbyCallBack()
         {
+            Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
             _firstUpdate = true;
 			ContentFeedback.text = string.Empty;
+            Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         }
 
         public void GetRoomList()
         {
-			ResetList ();
+            Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
+            ResetList ();
 
 		
 			TypedLobby sqlLobby = new TypedLobby(LobbyNameInputField.text, LobbyType.SqlLobby);
@@ -125,11 +134,13 @@ namespace Photon.Pun.Demo.Cockpit
 			PhotonNetwork.GetCustomRoomList(sqlLobby, SqlQueryInputField.text ); //"C0 = 'Hello'"
 
 			ContentFeedback.text = "looking for Rooms in Lobby '"+LobbyNameInputField.text+"' Matching: '"+SqlQueryInputField.text;
+            Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         }
 
 
         public void ResetList()
         {
+            Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
             _firstUpdate = true;
 
             foreach (KeyValuePair<string, RoomListCell> entry in roomCellList)
@@ -142,6 +153,7 @@ namespace Photon.Pun.Demo.Cockpit
 
             }
             roomCellList = new Dictionary<string, RoomListCell>();
+            Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         }
     }
 }

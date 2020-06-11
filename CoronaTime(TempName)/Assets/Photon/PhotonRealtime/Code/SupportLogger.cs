@@ -253,9 +253,10 @@ namespace Photon.Realtime
 			Debug.Log(this.GetFormattedTimestamp() + " SupportLogger OnCreateRoomFailed(" + returnCode+","+message+").");
         }
 
-        public void OnJoinedRoom()
-        {
+        public void OnJoinedRoom() {
+            Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
             Debug.Log(this.GetFormattedTimestamp() + " SupportLogger OnJoinedRoom(" + this.client.CurrentRoom + "). " + this.client.CurrentLobby + " GameServer:" + this.client.GameServerAddress);
+            Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         }
 
         public void OnJoinRoomFailed(short returnCode, string message)
@@ -293,9 +294,10 @@ namespace Photon.Realtime
             this.LogBasics();
         }
 
-        public void OnRoomListUpdate(List<RoomInfo> roomList)
-        {
-			Debug.Log(this.GetFormattedTimestamp() + " SupportLogger OnRoomListUpdate(roomList). roomList.Count: " + roomList.Count);
+        public void OnRoomListUpdate(List<RoomInfo> roomList) {
+            Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
+            Debug.Log(this.GetFormattedTimestamp() + " SupportLogger OnRoomListUpdate(roomList). roomList.Count: " + roomList.Count);
+            Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         }
 
         public void OnPlayerEnteredRoom(Player newPlayer)
