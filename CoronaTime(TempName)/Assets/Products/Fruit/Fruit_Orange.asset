@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Fruit_Orange
   m_EditorClassIdentifier: 
-  productName: Yellow Melon
+  productName: Orange
   prefab: {fileID: 6646871558748363431, guid: d8442e0fbd7d1384e96e074fc3f75a44, type: 3}
   scoreValue: 10
   index: 0

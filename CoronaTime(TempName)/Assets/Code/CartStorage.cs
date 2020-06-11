@@ -53,7 +53,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         if (photonView.IsMine || controller.playerView.devView) {
             if (Input.GetButtonDown("Interact")) {
                 RaycastHit hit;
-                if(Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, interactRange/*, mask*/)){
+                if(Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, interactRange, mask)){
                     Debug.LogWarning(hit.transform.gameObject.layer);
                 }
                 if (Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, interactRange, mask)) {

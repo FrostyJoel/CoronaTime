@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 695524364687624776}
   - component: {fileID: 695524364688394856}
   - component: {fileID: 695524364689393832}
-  - component: {fileID: 5637832235952348742}
   m_Layer: 0
   m_Name: KS Pin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &695524364687624776
 Transform:
@@ -78,16 +77,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5637832235952348742
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695524364687398504}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.07249518, y: 0.19096275, z: 0.13447219}
-  m_Center: {x: 0.0001901947, y: 0.09548137, z: 0.052496128}

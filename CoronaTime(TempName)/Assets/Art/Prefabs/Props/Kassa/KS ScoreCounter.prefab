@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 8085035087305588512}
   - component: {fileID: 8085035087304818432}
   - component: {fileID: 8085035087303687616}
-  - component: {fileID: 4884565524674187677}
   m_Layer: 0
   m_Name: KS ScoreCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8085035087305588512
 Transform:
@@ -78,16 +77,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4884565524674187677
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8085035087305679616}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.11274433, y: 0.28355658, z: 0.020094436}
-  m_Center: {x: 0, y: 0.14177829, z: -0.0020481334}
