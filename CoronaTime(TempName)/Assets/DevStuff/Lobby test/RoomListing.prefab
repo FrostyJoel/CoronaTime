@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 642785750048475329}
   sizeText: {fileID: 1996348121524581682}
+  button: {fileID: 642785749550148682}
   roomName: 
   roomSize: 0
 --- !u!1 &642785750048475359
