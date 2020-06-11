@@ -113,16 +113,10 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
                 ScriptPlayerListing spl = tempNickNameObject.GetComponent<ScriptPlayerListing>();
                 string nickname = RemoveIdFromNickname(PhotonNetwork.PlayerList[i].NickName);
                 spl.text_Nickname.text = nickname;
-                if(i == myNumberInRoom-1) {
-                    readyToggle.onValueChanged.RemoveAllListeners();
-                    readyToggle.onValueChanged.AddListener(spl.SetReadyState);
-                }
             }
         }
         Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
-
-    public Toggle readyToggle;
 
     public string RemoveIdFromNickname(string nickname) {
         return RemoveIdFromNickname(CharArrayToList(nickname.ToCharArray()));
