@@ -717,12 +717,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
---- !u!224 &129379828 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6314721557942240785, guid: 16a0aa75df24f1f4291bf58a024e1ddb,
-    type: 3}
-  m_PrefabInstance: {fileID: 6314721556989547742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &131004859
 GameObject:
   m_ObjectHideFlags: 0
@@ -12619,7 +12613,7 @@ MonoBehaviour:
   maxPlayers: 4
   roomListingPrefab: {fileID: 642785749550148679, guid: cf50fda99fe2f834a97fdcfd297707ac,
     type: 3}
-  roomsPanel: {fileID: 129379828}
+  roomsPanel: {fileID: 6314721556989547743}
   devLobby:
     dev: 0
 --- !u!4 &1988823298
@@ -13848,6 +13842,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16a0aa75df24f1f4291bf58a024e1ddb, type: 3}
+--- !u!224 &6314721556989547743 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4226552657154899102, guid: 16a0aa75df24f1f4291bf58a024e1ddb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6314721556989547742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7356928990365939561
 PrefabInstance:
   m_ObjectHideFlags: 0
