@@ -327,7 +327,7 @@ MonoBehaviour:
     value: 0
   mixerBlueOutBlueIn:
     overrideState: 1
-    value: 115
+    value: 140
   lift:
     overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}
