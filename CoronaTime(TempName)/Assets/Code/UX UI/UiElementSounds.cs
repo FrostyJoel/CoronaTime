@@ -46,7 +46,9 @@ public class UiElement {
                 button = elementObject.GetComponent<Button>();
             }
             if (button) {
-                button.onClick.AddListener(() => AudioManager.PlaySound(audioClip, eus.transform.position, audioGroup));
+                if (audioClip) {
+                    button.onClick.AddListener(() => AudioManager.PlaySound(audioClip, eus.transform.position, audioGroup));
+                }
             } 
             break;
             case type.toggle:
