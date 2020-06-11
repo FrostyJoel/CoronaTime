@@ -32,17 +32,13 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     }
 
     public override void OnEnable() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         PhotonNetwork.AddCallbackTarget(this);
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public override void OnDisable() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         PhotonNetwork.RemoveCallbackTarget(this);
         SceneManager.sceneLoaded -= OnSceneFinishedLoading;
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     private void Start() {
@@ -50,7 +46,6 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     }
 
     public override void OnJoinedRoom() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         photonPlayers = PhotonNetwork.PlayerList;
         playersInRoom = photonPlayers.Length;
         ClearPlayerListings();
@@ -69,11 +64,9 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
                 startButton.SetActive(false);
             }
         }
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer) {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         if (lobbyGameObject) {
             lobbyGameObject.SetActive(false);
         }
@@ -92,21 +85,17 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         ListPlayers();
 
         playersInRoom++;
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     void ClearPlayerListings() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         if (playersPanel) {
             for (int i = playersPanel.childCount - 1; i >= 0; i--) {
                 Destroy(playersPanel.GetChild(i).gameObject);
             }
         }
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     void ListPlayers() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         if (PhotonNetwork.InRoom) {
             for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
                 GameObject tempNickNameObject = Instantiate(playerListingPrefab, playersPanel);
@@ -115,7 +104,6 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
                 spl.text_Nickname.text = nickname;
             }
         }
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public string RemoveIdFromNickname(string nickname) {
@@ -156,13 +144,11 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer) {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         base.OnPlayerLeftRoom(otherPlayer);
         Debug.Log(otherPlayer.NickName + " left the game");
         playersInRoom--;
         ClearPlayerListings();
         ListPlayers();
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public void EnableRoomLoadingUI() {

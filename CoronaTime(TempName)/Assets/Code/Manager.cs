@@ -11,6 +11,7 @@ public class Manager : MonoBehaviourPun {
     public ColorManaging colorManaging;
     public static StaticInformation staticInformation;
     public static ColorManaging staticColorManaging;
+    public Options options;
     private void Awake() {
         DontDestroyOnLoad(gameObject);
         staticInformation = staticInfo;
@@ -21,7 +22,7 @@ public class Manager : MonoBehaviourPun {
         }
         staticColorManaging = colorManaging;
         AudioManager.audioMixer = staticInformation.audioMixer;
-        FindObjectOfType<Test>().options.OptionsInit();
+        options.OptionsInit();
     }
 }
 

@@ -33,21 +33,17 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     }
 
     private void Start() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         if (devLobby.dev) {
             OpenMultiplayer();
             input_Roomname.text = PlayerPrefs.GetString("Roomname");
         }
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public void OpenMultiplayer() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.AutomaticallySyncScene = true;
         EnableDisableRelativeButtons();
         input_Nickname.text = PlayerPrefs.GetString("NickName");
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public void LeaveMultiplayer() {
@@ -95,15 +91,12 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     //}
 
     void RemoveRoomListings() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod() + ", Amount of Roomlistings" + roomsPanel.childCount);
         while (roomsPanel.childCount > 0) {
             Destroy(roomsPanel.GetChild(0).gameObject);
         }
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     void ListRoom(RoomInfo room) {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         if (room.IsOpen && room.IsVisible) {
             GameObject tempListing = Instantiate(roomListingPrefab, roomsPanel);
             RoomButton tempButton = tempListing.GetComponent<RoomButton>();
@@ -111,22 +104,17 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
             tempButton.roomSize = room.MaxPlayers;
             //tempButton.SetRoom();
         }
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public override void OnConnectedToMaster() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         //PhotonNetwork.NickName = nickName + " " + Random.Range(0, 1000);
         connectedToMaster = true;
         EnableDisableRelativeButtons();
         PhotonNetwork.JoinLobby();
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public override void OnJoinedRoom() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         Debug.Log("Joined room");
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public void CreateRoom() {
