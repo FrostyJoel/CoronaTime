@@ -21,7 +21,15 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     public DevLobby devLobby;
 
     private void Awake() {
-        lobbySingle = this;
+        if (PhotonLobbyCustomMatchMaking.lobbySingle == null) {
+            lobbySingle = this;
+        } else {
+            if (PhotonLobbyCustomMatchMaking.lobbySingle != this) {
+                Destroy(PhotonLobbyCustomMatchMaking.lobbySingle.gameObject);
+                PhotonLobbyCustomMatchMaking.lobbySingle = this;
+            }
+        }
+        //lobbySingle = this;
     }
 
     private void Start() {

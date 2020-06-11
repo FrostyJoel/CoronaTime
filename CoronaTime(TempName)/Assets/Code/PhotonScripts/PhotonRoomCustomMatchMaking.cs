@@ -21,7 +21,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     public bool dev;
     private void Awake() {
         if (PhotonRoomCustomMatchMaking.roomSingle == null) {
-            roomSingle = this;
+            PhotonRoomCustomMatchMaking.roomSingle = this;
         } else {
             if(PhotonRoomCustomMatchMaking.roomSingle != this) {
                 Destroy(PhotonRoomCustomMatchMaking.roomSingle.gameObject);

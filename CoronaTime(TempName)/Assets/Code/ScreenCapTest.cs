@@ -16,5 +16,4 @@ public class ScreenCapTest : MonoBehaviour {
             i++;
         }
     }
-
 }
