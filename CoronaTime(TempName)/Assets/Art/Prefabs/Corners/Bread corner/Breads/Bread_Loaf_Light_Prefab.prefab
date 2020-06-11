@@ -134,8 +134,9 @@ MonoBehaviour:
     productScaling:
       useNewScale: 1
       scale: {x: 0.7145704, y: 0.7145704, z: 0.7145704}
-  interactParticle: {fileID: 0}
-  interactParticleDestroyTime: 0
+  interactParticle: {fileID: 2789985261591100939, guid: 2274d0fe95dbbb64d9d8836649a35f81,
+    type: 3}
+  interactParticleDestroyTime: 0.5
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 03431c1ab5240f341a15b8c874257c99, type: 2}
   index: 105

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114971435192575260}
   - component: {fileID: 114441650191392176}
   m_Layer: 11
-  m_Name: Banana
+  m_Name: Special_Banana_Prefab
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,13 +124,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  interactClip: {fileID: 0}
   audioGroup: 2
   interactable: 0
   SpecialPosAndRot:
     use: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0}
+    productScaling:
+      useNewScale: 0
+      scale: {x: 0, y: 0, z: 0}
+  interactParticle: {fileID: 2789985261591100939, guid: 2274d0fe95dbbb64d9d8836649a35f81,
+    type: 3}
+  interactParticleDestroyTime: 0.5
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 656cd546c3e9092458de5adce31f607a, type: 2}
   index: 1276

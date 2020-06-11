@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0.8396226, g: 0.7717859, b: 0.17030083, a: 1}
+  outlineColor: {r: 1, g: 0.8296584, b: 0, a: 1}
   outlineWidth: 5
   outlineChild: 0
   precomputeOutline: 0
@@ -121,8 +121,9 @@ MonoBehaviour:
     productScaling:
       useNewScale: 1
       scale: {x: 0.7005033, y: 0.7005033, z: 0.7005033}
-  interactParticle: {fileID: 0}
-  interactParticleDestroyTime: 0
+  interactParticle: {fileID: 2789985261591100939, guid: 2274d0fe95dbbb64d9d8836649a35f81,
+    type: 3}
+  interactParticleDestroyTime: 0.5
   currentPlace: 0
   scriptableProduct: {fileID: 11400000, guid: 1d2d340266581a240a0851d76eeecb62, type: 2}
   index: 0

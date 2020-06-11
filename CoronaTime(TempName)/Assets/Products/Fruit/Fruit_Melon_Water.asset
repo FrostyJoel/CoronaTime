@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Fruit_Melon_Water
   m_EditorClassIdentifier: 
-  productName: Green Melon
+  productName: Water Melon
   prefab: {fileID: 1460142773810838358, guid: 1871cc18032e3ea468c8e46e231c2bb0, type: 3}
   scoreValue: 10
   index: 0
