@@ -18,8 +18,6 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
 
     bool enteredNickname, enteredRoomName, connectedToMaster = false;
 
-    public DevLobby devLobby;
-
     private void Awake() {
         lobbySingle = this;
     }
@@ -130,9 +128,4 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
         }
         Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
-}
-
-[System.Serializable]
-public class DevLobby {
-    public bool dev;
 }
