@@ -29,7 +29,6 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
                 PhotonLobbyCustomMatchMaking.lobbySingle = this;
             }
         }
-        //lobbySingle = this;
     }
 
     private void Start() {
@@ -80,15 +79,6 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
         m_roomPanelList.Remove(room.Name);
         Destroy(panel.gameObject);
     }
-    //public override void OnRoomListUpdate(List<RoomInfo> roomList) {
-    //    Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
-    //    //base.OnRoomListUpdate(roomList);
-    //    RemoveRoomListings();
-    //    for (int i = 0; i < roomList.Count; i++) {
-    //        ListRoom(roomList[i]);
-    //    }
-    //    Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
-    //}
 
     void RemoveRoomListings() {
         while (roomsPanel.childCount > 0) {
@@ -102,12 +92,10 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
             RoomButton tempButton = tempListing.GetComponent<RoomButton>();
             tempButton.roomName = room.Name;
             tempButton.roomSize = room.MaxPlayers;
-            //tempButton.SetRoom();
         }
     }
 
     public override void OnConnectedToMaster() {
-        //PhotonNetwork.NickName = nickName + " " + Random.Range(0, 1000);
         connectedToMaster = true;
         EnableDisableRelativeButtons();
         PhotonNetwork.JoinLobby();
@@ -118,16 +106,12 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     }
 
     public void CreateRoom() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         RoomOptions options = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = (byte)maxPlayers };
         PhotonNetwork.CreateRoom(roomName, options);
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message) {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         Debug.Log("Room already exist");
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 
     public void OnNickNameChange(string name) {
@@ -147,14 +131,12 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     }
     
     void EnableDisableRelativeButtons() {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
         button_CreateRoom.interactable = false;
         if (connectedToMaster && enteredNickname) {
             if (enteredRoomName) {
                 button_CreateRoom.interactable = true;
             }
         }
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
 }
 
