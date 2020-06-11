@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Options : MonoBehaviour
-{
+public class Options : MonoBehaviour {
     public Toggle fullscreenToggle;
     public Dropdown resolutionsDropdown;
     Resolution[] resolutions;
@@ -12,9 +11,7 @@ public class Options : MonoBehaviour
 
     delegate void onValueChanged(float value);
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    public void OptionsInit() {
         ApplyMasterListener();
         ApplyMusicListener();
         ApplySFXListener();
@@ -24,15 +21,13 @@ public class Options : MonoBehaviour
         int index = 0;
         resolutions = Screen.resolutions;
         List<string> resolutionStringList = new List<string>();
-        List<Resolution> tempResolutions = new List<Resolution>();        
+        List<Resolution> tempResolutions = new List<Resolution>();
 
-        for(int i = resolutions.Length-1; i > 0; i--)
-        {
+        for (int i = resolutions.Length - 1; i > 0; i--) {
             tempResolutions.Add(resolutions[i]);
             string option = resolutions[i].width + " x " + resolutions[i].height;
             resolutionStringList.Add(option);
-            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
-            {
+            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height) {
                 index = resolutions.Length - 1 - i;
             }
         }
@@ -43,7 +38,6 @@ public class Options : MonoBehaviour
         resolutionsDropdown.AddOptions(resolutionStringList);
         resolutionsDropdown.value = index;
         resolutionsDropdown.RefreshShownValue();
-        //print(resolutions[resolutions.Length-1].height + " x " + resolutions[resolutions.Length-1].width);
     }
 
     public void OnResolutionDropdownChange(int index)

@@ -21,6 +21,7 @@ public class Manager : MonoBehaviourPun {
         }
         staticColorManaging = colorManaging;
         AudioManager.audioMixer = staticInformation.audioMixer;
+        FindObjectOfType<Test>().options.OptionsInit();
     }
 }
 
