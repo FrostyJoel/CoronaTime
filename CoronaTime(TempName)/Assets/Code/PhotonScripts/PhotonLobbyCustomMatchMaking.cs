@@ -54,15 +54,46 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
         PhotonNetwork.Disconnect();
     }
 
+    Dictionary<string, RoomButton> m_roomPanelList = new Dictionary<string, RoomButton>();
+
     public override void OnRoomListUpdate(List<RoomInfo> roomList) {
-        Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
-        //base.OnRoomListUpdate(roomList);
-        RemoveRoomListings();
-        for (int i = 0; i < roomList.Count; i++) {
-            ListRoom(roomList[i]);
+        foreach (var entry in roomList) {
+            if (m_roomPanelList.ContainsKey(entry.Name)) {
+
+                if (entry.RemovedFromList) {
+                    RemoveRoomPanel(entry);
+                }
+            } else {
+                if (!entry.RemovedFromList) {
+                    AddRoomPanel(entry);
+                }
+            }
         }
-        Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }
+
+    void AddRoomPanel(RoomInfo room) {
+        GameObject gbj = Instantiate(roomListingPrefab, roomsPanel, false);
+        RoomButton rb = gbj.GetComponent<RoomButton>();
+
+        rb.SetRoom(room);
+        rb.button.onClick.AddListener(() => rb.JoinRoomOnClick(/*panel.RoomName, room*/));
+        m_roomPanelList.Add(room.Name, rb);
+    }
+
+    private void RemoveRoomPanel(RoomInfo room) {
+        var panel = m_roomPanelList[room.Name];
+        m_roomPanelList.Remove(room.Name);
+        Destroy(panel.gameObject);
+    }
+    //public override void OnRoomListUpdate(List<RoomInfo> roomList) {
+    //    Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
+    //    //base.OnRoomListUpdate(roomList);
+    //    RemoveRoomListings();
+    //    for (int i = 0; i < roomList.Count; i++) {
+    //        ListRoom(roomList[i]);
+    //    }
+    //    Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
+    //}
 
     void RemoveRoomListings() {
         Debug.LogWarning("[start]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod() + ", Amount of Roomlistings" + roomsPanel.childCount);
@@ -79,7 +110,7 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
             RoomButton tempButton = tempListing.GetComponent<RoomButton>();
             tempButton.roomName = room.Name;
             tempButton.roomSize = room.MaxPlayers;
-            tempButton.SetRoom();
+            //tempButton.SetRoom();
         }
         Debug.LogWarning("[end]" + GetType() + " " + System.Reflection.MethodInfo.GetCurrentMethod());
     }

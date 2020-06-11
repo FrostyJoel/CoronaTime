@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class RoomButton : MonoBehaviour {
     public Text nameText, sizeText;
-
+    public Button button;
     public string roomName;
     public int roomSize;
 
-    public void SetRoom() {
+    public void SetRoom(RoomInfo room) {
+        roomName = room.Name;
         nameText.text = roomName;
-        sizeText.text = roomSize.ToString();
+        sizeText.text = room.PlayerCount.ToString() + "/" + room.MaxPlayers.ToString();
     }
 
     public void JoinRoomOnClick() {
