@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
   m_Name: Butcher_Leg
   m_EditorClassIdentifier: 
-  productName: Leg
+  productName: Mutton
   prefab: {fileID: 4553871316319645895, guid: 34678cf4c6655b846bed8da0985d98d9, type: 3}
   scoreValue: 10
   index: 0
