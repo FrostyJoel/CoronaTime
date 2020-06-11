@@ -9,7 +9,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     public static PhotonRoomCustomMatchMaking roomSingle;
     public GameObject playerPrefab, lobbyGameObject, roomGameObject, playerListingPrefab, startButton, text_Loading;
     public Transform playersPanel;
-    public PhotonView PV;
+    [HideInInspector] public PhotonView PV;
 
     public bool isLoaded;
     public int currentScene;
