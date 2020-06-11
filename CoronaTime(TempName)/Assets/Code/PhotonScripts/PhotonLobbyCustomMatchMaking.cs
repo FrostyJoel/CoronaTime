@@ -76,7 +76,6 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
         RoomButton rb = gbj.GetComponent<RoomButton>();
 
         rb.SetRoom(room);
-        rb.button.onClick.AddListener(() => rb.JoinRoomOnClick(/*panel.RoomName, room*/));
         m_roomPanelList.Add(room.Name, rb);
     }
 

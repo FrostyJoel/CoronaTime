@@ -15,6 +15,7 @@ public class RoomButton : MonoBehaviour {
         roomName = room.Name;
         nameText.text = roomName;
         sizeText.text = room.PlayerCount.ToString() + "/" + room.MaxPlayers.ToString();
+        button.onClick.AddListener(JoinRoomOnClick);
     }
 
     public void JoinRoomOnClick() {
