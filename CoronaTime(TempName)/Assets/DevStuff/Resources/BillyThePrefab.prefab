@@ -6310,6 +6310,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6181046888465746119}
     m_Modifications:
+    - target: {fileID: 373426213504548988, guid: 289b0ebeeb81203459f70d6d007b4b33,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.29803923
+      objectReference: {fileID: 0}
     - target: {fileID: 436345214477649315, guid: 289b0ebeeb81203459f70d6d007b4b33,
         type: 3}
       propertyPath: m_AnchorMin.y
