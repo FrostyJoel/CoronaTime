@@ -88,6 +88,12 @@ public class PowerUp : Interactable {
 
     public virtual void StopUsing() {
         affectedController.powerups_AffectingMe.Remove(this);
+        for (int i = 0; i < affectedCartStorage.visualPuFXList.Count; i++) {
+            if(affectedCartStorage.visualPuFXList[i].thisFX == thisFx) {
+
+            }
+
+        }
         StartStopParticle(false);
         ProductInteractions.pi_Single.DestroyUseAbleProduct(index, 0, RpcTarget.All);
     }
