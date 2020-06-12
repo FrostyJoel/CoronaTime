@@ -6,4 +6,5 @@ using UnityEngine;
 public class VisualPuFX : MonoBehaviour {
     public PowerUp.FX thisFX;
     public Text timerText;
+    public Image fxImage;
 }
