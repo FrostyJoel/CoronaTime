@@ -26,6 +26,10 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     [Header("Powerup FX")]
     public List<VisualPuFX> visualPuFXList = new List<VisualPuFX>();
 
+    [Header("Zones")]
+    public Animator nextZoneAnim;
+    public Text nextZoneText;
+
     [HideInInspector] public int score;
     [HideInInspector] public Controller controller;
     [HideInInspector] public CartStorage[] storages;
@@ -119,12 +123,19 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         }
     }
 
+    [PunRPC]
+    void RPC_DisplayNextZone() {
+        nextZoneAnim.SetTrigger("NextZone");
+        nextZoneText.text = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].zoneName;
+    }
+
     void EnableProductsRelativeToListAndSetUI(int newIndex) {
         if (ZoneControl.zc_Single) {
             int zoneIndex;
 
             if(newIndex > 0) {
                 ZoneControl.zc_Single.currentZoneIndex = newIndex;
+                photonView.RPC("RPC_DisplayNextZone", RpcTarget.All);
             }
 
             zoneIndex = ZoneControl.zc_Single.currentZoneIndex;

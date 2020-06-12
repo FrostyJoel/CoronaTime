@@ -4422,6 +4422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productsToFind: 2
+  zoneName: zone 1
   groceryListStrings: []
   allProductsInZone:
   - {fileID: 2105436257}
@@ -8515,6 +8516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productsToFind: 2
+  zoneName: zone 3
   groceryListStrings: []
   allProductsInZone:
   - {fileID: 873066896}
@@ -9434,6 +9436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productsToFind: 2
+  zoneName: zone 4
   groceryListStrings: []
   allProductsInZone:
   - {fileID: 562602322}
@@ -10396,6 +10399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productsToFind: 3
+  zoneName: zone 2
   groceryListStrings: []
   allProductsInZone:
   - {fileID: 2060191873}

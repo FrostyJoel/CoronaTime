@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Zone : MonoBehaviour {
     public int productsToFind = 8;
+    public string zoneName;
     public List<string> groceryListStrings = new List<string>();
     [HideInInspector] public List<InteractableProduct> allProductsInZone = new List<InteractableProduct>();
     [HideInInspector] public List<Product> typesOfProductsInZone = new List<Product>();
