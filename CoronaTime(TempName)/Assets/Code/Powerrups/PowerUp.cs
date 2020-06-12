@@ -1,5 +1,6 @@
 ﻿using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PowerUp : Interactable {
     public float newValueDuringFX, durationInSeconds;
@@ -9,6 +10,9 @@ public class PowerUp : Interactable {
     [Header("FX Sound")]
     public AudioClip fxClip;
 
+    [Header("Images")]
+    public Image puImage, puFxImage;
+
     [HideInInspector] public int index;
     [HideInInspector] public Vector3 hitPos;
     [HideInInspector] public Rigidbody rigid;
@@ -16,6 +20,7 @@ public class PowerUp : Interactable {
     [HideInInspector] public float durationSpentInSeconds;
     [HideInInspector] public Controller affectedController;
     [HideInInspector] public CartStorage affectedCartStorage;
+
     public virtual void Use() {
         if (affectedController) {
             affectedController.SetAffectingFX(this);
