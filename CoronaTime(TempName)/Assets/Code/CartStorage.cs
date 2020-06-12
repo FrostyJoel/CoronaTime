@@ -128,14 +128,15 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         nextZoneAnim.SetTrigger("NextZone");
         nextZoneText.text = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].zoneName;
     }
-
-    void EnableProductsRelativeToListAndSetUI(int newIndex) {
+   void EnableProductsRelativeToListAndSetUI(int newIndex) {
         if (ZoneControl.zc_Single) {
             int zoneIndex;
 
             if(newIndex > 0) {
                 ZoneControl.zc_Single.currentZoneIndex = newIndex;
-                photonView.RPC("RPC_DisplayNextZone", RpcTarget.All);
+                if(PhotonNetwork.IsMasterClient && photonView.IsMine) {
+                    photonView.RPC("RPC_DisplayNextZone", RpcTarget.All);
+                }
             }
 
             zoneIndex = ZoneControl.zc_Single.currentZoneIndex;
