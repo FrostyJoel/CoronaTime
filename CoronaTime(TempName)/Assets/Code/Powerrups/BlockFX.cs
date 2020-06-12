@@ -10,6 +10,7 @@ public class BlockFX : PowerUp {
             }
             pus.Remove(this);
             if (pus.Count > 0) {
+                HideFX();
                 pus[0].StopUsing();
                 StopUsing();
             } else {
@@ -23,7 +24,6 @@ public class BlockFX : PowerUp {
 
     public override void StopUsing() {
         PlayFXSound();
-        HideFX();
         base.StopUsing();
     }
 }
