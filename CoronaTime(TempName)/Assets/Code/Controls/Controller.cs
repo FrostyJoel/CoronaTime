@@ -41,6 +41,7 @@ public class Controller : MonoBehaviourPun {
     [HideInInspector] public CartStorage cartStorage;
     [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Collider[] colliders;
+    [HideInInspector] public Options options;
     /*[HideInInspector]*/ public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
     Camera[] cams;
     AudioListener audioListeners;
@@ -86,6 +87,8 @@ public class Controller : MonoBehaviourPun {
             }
             audioListeners.enabled = true;
         }
+        options = GetComponent<Options>();
+        options.OptionsInit();
     }
 
     private void Start() {
