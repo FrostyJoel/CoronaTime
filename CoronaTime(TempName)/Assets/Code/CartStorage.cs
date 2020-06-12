@@ -1,5 +1,6 @@
 ﻿using Photon.Pun;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
@@ -20,7 +21,12 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     [Header("Interact Mask")]
     public LayerMask mask;
 
-    /*[HideInInspector]*/ public int score;
+    public Image heldPUImageHolder;
+
+    [Header("Powerup FX")]
+    public List<VisualPuFX> visualPuFXeList = new List<VisualPuFX>();
+
+    [HideInInspector] public int score;
     [HideInInspector] public Controller controller;
     [HideInInspector] public CartStorage[] storages;
     [HideInInspector] public List<Product> heldProducts = new List<Product>();
@@ -46,7 +52,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         if (photonView.IsMine || controller.playerView.devView) {
             transform_GroceryList.gameObject.SetActive(true);
         }
-            EnableProductsRelativeToListAndSetUI(-1);
+        EnableProductsRelativeToListAndSetUI(-1);
     }
 
     private void Update() {
@@ -82,6 +88,8 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     public bool SetPowerUp(int index) {
         if (!controller.useableProduct) {
             controller.useableProduct = PhotonProductList.staticUseableProductList[index];
+            heldPUImageHolder.sprite = controller.useableProduct.puImage;
+            heldPUImageHolder.color = Vector4.one;
             ProductInteractions.pi_Single.SetPowerUp(index, photonView.ViewID, RpcTarget.All);
             return true;
         } else {

@@ -31,6 +31,8 @@ public class ThrowPU : PowerUp {
     public override void Use() {
         ProductInteractions.pi_Single.ChangePowerUpPlace(index, (int)Place.None, RpcTarget.All);
         affectedController.useableProduct = null;
+        affectedCartStorage.heldPUImageHolder.sprite = null;
+        affectedCartStorage.heldPUImageHolder.color = Vector4.zero;
         ProductInteractions.pi_Single.SetParentToPhotonView(index, -1, RpcTarget.All);
         Vector3 pos = affectedController.transform_ThrowFromPoint.position;
         Quaternion rot = affectedController.transform_ThrowFromPoint.rotation;

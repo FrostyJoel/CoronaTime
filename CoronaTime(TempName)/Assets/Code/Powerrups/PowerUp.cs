@@ -9,9 +9,18 @@ public class PowerUp : Interactable {
 
     [Header("FX Sound")]
     public AudioClip fxClip;
+    
+    public enum FX {
+        Speed,
+        Stun,
+        Glow,
+        Block
+    }
+
+    public FX thisFx;
 
     [Header("Images")]
-    public Image puImage, puFxImage;
+    public Sprite puImage;
 
     [HideInInspector] public int index;
     [HideInInspector] public Vector3 hitPos;
@@ -25,6 +34,8 @@ public class PowerUp : Interactable {
         if (affectedController) {
             affectedController.SetAffectingFX(this);
             affectedController.useableProduct = null;
+            affectedCartStorage.heldPUImageHolder.sprite = null;
+            affectedCartStorage.heldPUImageHolder.color = Vector4.zero;
         }
     }
 

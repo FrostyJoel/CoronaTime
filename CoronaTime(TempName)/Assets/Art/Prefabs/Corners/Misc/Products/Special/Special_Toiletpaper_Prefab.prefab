@@ -125,6 +125,8 @@ MonoBehaviour:
   particleToUse: {fileID: 8934361164403526516, guid: d1fa31236f2a48a4cbe9ea856acc9aca,
     type: 3}
   fxClip: {fileID: 8300000, guid: ded33ec85182ec74c8d8092e892f8f6f, type: 3}
+  thisFx: 3
+  puImage: {fileID: 0}
   index: 43
   hitPos: {x: 0, y: 0, z: 0}
   rigid: {fileID: 0}
