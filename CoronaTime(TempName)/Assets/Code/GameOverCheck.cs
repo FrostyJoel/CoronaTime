@@ -20,12 +20,6 @@ public class GameOverCheck : MonoBehaviourPun {
         }
     }
 
-    private void Update() {
-        if (Input.GetButtonDown("Jump")) {
-            GameOver();
-        }
-    }
-
     public void GameOver() {
         CheckScore();
     }
