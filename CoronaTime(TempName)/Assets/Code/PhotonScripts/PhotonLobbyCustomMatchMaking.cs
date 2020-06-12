@@ -1,6 +1,5 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
@@ -15,6 +14,7 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     public int maxPlayers = 4;
     public GameObject roomListingPrefab;
     public Transform roomsPanel;
+    public Text roomNameText;
 
     bool enteredNickname, enteredRoomName, connectedToMaster = false;
 
@@ -103,6 +103,9 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
 
     public override void OnJoinedRoom() {
         Debug.Log("Joined room");
+        if (roomNameText) {
+            roomNameText.text = PhotonNetwork.CurrentRoom.Name;
+        }
     }
 
     public void CreateRoom() {
@@ -129,7 +132,7 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
         PlayerPrefs.SetString("Roomname", name);
         EnableDisableRelativeButtons();
     }
-    
+
     void EnableDisableRelativeButtons() {
         button_CreateRoom.interactable = false;
         if (connectedToMaster && enteredNickname) {
