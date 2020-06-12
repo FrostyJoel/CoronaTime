@@ -124,7 +124,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1096778881}
+      objectReference: {fileID: 639257394}
     - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: index
@@ -210,6 +210,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7457908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Pizza_Chicken
+  m_EditorClassIdentifier: 
+  productName: Box of Chicken Pizza
+  prefab: {fileID: 7721119248108127311, guid: cc3a06b6223ddbd4a95560326d050f42, type: 3}
+  scoreValue: 10
+  index: 17
+--- !u!114 &17491840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Pizza_Salami
+  m_EditorClassIdentifier: 
+  productName: Box of Salami Pizza
+  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
+  scoreValue: 10
+  index: 46
 --- !u!1001 &24256321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,6 +253,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Red Chips
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552617622119457342, guid: 7566ea698b3c44046b88a21a9653d74c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3552617622119824926, guid: 7566ea698b3c44046b88a21a9653d74c,
         type: 3}
@@ -297,6 +334,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83f5f972af572347878cfed778742d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &25492506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Ice_Pear
+  m_EditorClassIdentifier: 
+  productName: Pear Ice cream
+  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
+  scoreValue: 10
+  index: 30
+--- !u!114 &34543540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Ice_Strawberry
+  m_EditorClassIdentifier: 
+  productName: Strawberry Ice cream
+  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
+  scoreValue: 10
+  index: 32
 --- !u!1001 &36061815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,7 +377,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1965998733}
+      objectReference: {fileID: 1225087333}
     - target: {fileID: 6203640654488981462, guid: 3df63a09c5477ba45a8e781056630c1c,
         type: 3}
       propertyPath: index
@@ -469,54 +538,6 @@ Transform:
   m_Father: {fileID: 399365833}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &52646319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Water
-  m_EditorClassIdentifier: 
-  productName: Water Bottle
-  prefab: {fileID: 3393707373797263123, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
-  scoreValue: 10
-  index: 44
---- !u!114 &56734848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Cassis
-  m_EditorClassIdentifier: 
-  productName: Bottle of Cassis
-  prefab: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7, type: 3}
-  scoreValue: 10
-  index: 51
---- !u!114 &66547078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Jug_Purple_Juice
-  m_EditorClassIdentifier: 
-  productName: Jug of Grape Juice
-  prefab: {fileID: 637299059771989016, guid: 25d6e02d3f1cfa548a5423e80d658f1b, type: 3}
-  scoreValue: 10
-  index: 41
 --- !u!1001 &79666087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -588,7 +609,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1736005761}
+      objectReference: {fileID: 1523300831}
     - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
         type: 3}
       propertyPath: index
@@ -685,7 +706,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1836594015}
+      objectReference: {fileID: 678234829}
     - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
         type: 3}
       propertyPath: index
@@ -869,22 +890,6 @@ Transform:
   m_Father: {fileID: 1137574349}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
---- !u!114 &117269355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Sinas
-  m_EditorClassIdentifier: 
-  productName: Bottle of Sinas
-  prefab: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c, type: 3}
-  scoreValue: 10
-  index: 50
 --- !u!1001 &123690217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -956,7 +961,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1728779682}
+      objectReference: {fileID: 990705316}
     - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
         type: 3}
       propertyPath: index
@@ -1191,7 +1196,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1578269261}
+      objectReference: {fileID: 1195793214}
     - target: {fileID: 2129633506798062192, guid: 2ffaa817e4c37984a90198511aeeaadc,
         type: 3}
       propertyPath: index
@@ -1288,7 +1293,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1946726478}
+      objectReference: {fileID: 1779816263}
     - target: {fileID: 114519302562494366, guid: c32cb983c4dddb548b48bd669235dc69,
         type: 3}
       propertyPath: index
@@ -1484,7 +1489,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 207287531}
+      objectReference: {fileID: 332986401}
     - target: {fileID: 114245836960988510, guid: 25d6e02d3f1cfa548a5423e80d658f1b,
         type: 3}
       propertyPath: index
@@ -1615,22 +1620,6 @@ Transform:
   m_Father: {fileID: 399365833}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &207287531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Jug_Purple_Juice
-  m_EditorClassIdentifier: 
-  productName: Jug of Grape Juice
-  prefab: {fileID: 637299059771989016, guid: 25d6e02d3f1cfa548a5423e80d658f1b, type: 3}
-  scoreValue: 10
-  index: 7
 --- !u!1001 &223478223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1702,7 +1691,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1330194642}
+      objectReference: {fileID: 1664299395}
     - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
         type: 3}
       propertyPath: index
@@ -1728,7 +1717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &225215686
+--- !u!114 &239903796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1953,6 +1942,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0ce1991985240943935fc20c4faf789, type: 3}
+--- !u!114 &249980231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Pizza_Classic
+  m_EditorClassIdentifier: 
+  productName: Box of Cheese Pizza
+  prefab: {fileID: 2336970854310920597, guid: 2ffaa817e4c37984a90198511aeeaadc, type: 3}
+  scoreValue: 10
+  index: 18
 --- !u!1001 &269698110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1964,7 +1969,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1911169716}
+      objectReference: {fileID: 1157609549}
     - target: {fileID: 5847635591297928030, guid: b5313b57be58ac94fb2069c430a094d7,
         type: 3}
       propertyPath: index
@@ -2127,7 +2132,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 496604216}
+      objectReference: {fileID: 2034739742}
     - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: index
@@ -2213,7 +2218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &299238496
+--- !u!114 &290911555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2223,12 +2228,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Chicken
+  m_Name: Bottle_Water
   m_EditorClassIdentifier: 
-  productName: Box of Chicken Pizza
-  prefab: {fileID: 7721119248108127311, guid: cc3a06b6223ddbd4a95560326d050f42, type: 3}
+  productName: Water Bottle
+  prefab: {fileID: 3393707373797263123, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
   scoreValue: 10
-  index: 17
+  index: 22
+--- !u!114 &317769279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Ice_Pear
+  m_EditorClassIdentifier: 
+  productName: Pear Ice cream
+  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
+  scoreValue: 10
+  index: 21
 --- !u!1001 &319978665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2341,6 +2362,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &332928784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Bottle_Soda_Cassis
+  m_EditorClassIdentifier: 
+  productName: Bottle of Cassis
+  prefab: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7, type: 3}
+  scoreValue: 10
+  index: 20
+--- !u!114 &332986401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Jug_Purple_Juice
+  m_EditorClassIdentifier: 
+  productName: Jug of Grape Juice
+  prefab: {fileID: 637299059771989016, guid: 25d6e02d3f1cfa548a5423e80d658f1b, type: 3}
+  scoreValue: 10
+  index: 7
+--- !u!114 &336319635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Ice_Banana
+  m_EditorClassIdentifier: 
+  productName: Banana Ice cream
+  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
+  scoreValue: 10
+  index: 12
 --- !u!1001 &342699642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2352,7 +2421,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1625283233}
+      objectReference: {fileID: 1215032028}
     - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: index
@@ -2438,6 +2507,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &344431161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Bottle_Soda_Sinas
+  m_EditorClassIdentifier: 
+  productName: Bottle of Sinas
+  prefab: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c, type: 3}
+  scoreValue: 10
+  index: 50
 --- !u!1 &348439646
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,7 +2716,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 847869975}
+      objectReference: {fileID: 336319635}
     - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
         type: 3}
       propertyPath: index
@@ -2668,7 +2753,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1771427358}
+      objectReference: {fileID: 1690099824}
     - target: {fileID: 5847635591297928030, guid: b5313b57be58ac94fb2069c430a094d7,
         type: 3}
       propertyPath: index
@@ -2829,22 +2914,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 367328435}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &392910486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Banana
-  m_EditorClassIdentifier: 
-  productName: Banana Ice cream
-  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
-  scoreValue: 10
-  index: 19
 --- !u!1 &399365832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2881,7 +2950,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &412559953
+--- !u!114 &416109086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2896,8 +2965,8 @@ MonoBehaviour:
   productName: Pear Ice cream
   prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
   scoreValue: 10
-  index: 30
---- !u!114 &455288380
+  index: 31
+--- !u!114 &432883165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2907,12 +2976,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Chicken
+  m_Name: Box_Pizza_Classic
   m_EditorClassIdentifier: 
-  productName: Box of Chicken Pizza
-  prefab: {fileID: 7721119248108127311, guid: cc3a06b6223ddbd4a95560326d050f42, type: 3}
+  productName: Box of Cheese Pizza
+  prefab: {fileID: 2336970854310920597, guid: 2ffaa817e4c37984a90198511aeeaadc, type: 3}
   scoreValue: 10
-  index: 38
+  index: 45
 --- !u!1001 &464909991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2924,7 +2993,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 940435417}
+      objectReference: {fileID: 2039103194}
     - target: {fileID: 114519302562494366, guid: c32cb983c4dddb548b48bd669235dc69,
         type: 3}
       propertyPath: index
@@ -3033,7 +3102,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1539542901}
+      objectReference: {fileID: 2111007854}
     - target: {fileID: 114519302562494366, guid: c32cb983c4dddb548b48bd669235dc69,
         type: 3}
       propertyPath: index
@@ -3119,7 +3188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &496604216
+--- !u!114 &485525094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3129,12 +3198,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami
+  m_Name: Bottle_Water
   m_EditorClassIdentifier: 
-  productName: Box of Salami Pizza
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
+  productName: Water Bottle
+  prefab: {fileID: 3393707373797263123, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
   scoreValue: 10
-  index: 10
+  index: 35
 --- !u!1 &497074164
 GameObject:
   m_ObjectHideFlags: 0
@@ -3165,22 +3234,6 @@ Transform:
   m_Father: {fileID: 2088336669}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &518521824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Water
-  m_EditorClassIdentifier: 
-  productName: Water Bottle
-  prefab: {fileID: 3393707373797263123, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
-  scoreValue: 10
-  index: 35
 --- !u!1001 &526305778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3196,6 +3249,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Red Chips (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552617622119457342, guid: 7566ea698b3c44046b88a21a9653d74c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3552617622119824926, guid: 7566ea698b3c44046b88a21a9653d74c,
         type: 3}
@@ -3272,7 +3330,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 526305778}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &529430730
+--- !u!114 &532586052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3282,12 +3340,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Chicken
+  m_Name: Box_Ice_Banana
   m_EditorClassIdentifier: 
-  productName: Box of Chicken Pizza
-  prefab: {fileID: 7721119248108127311, guid: cc3a06b6223ddbd4a95560326d050f42, type: 3}
+  productName: Banana Ice cream
+  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
   scoreValue: 10
-  index: 53
+  index: 19
 --- !u!1001 &562602320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3299,7 +3357,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 668645635}
+      objectReference: {fileID: 1153282423}
     - target: {fileID: 6203640654488981462, guid: 3df63a09c5477ba45a8e781056630c1c,
         type: 3}
       propertyPath: index
@@ -3396,6 +3454,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DevGlowStickModel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702764479890602586, guid: 968670db89c64e14e84d4d9312737a91,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1702764479890701561, guid: 968670db89c64e14e84d4d9312737a91,
         type: 3}
@@ -3503,7 +3566,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 299238496}
+      objectReference: {fileID: 7457908}
     - target: {fileID: 7532740261898851827, guid: cc3a06b6223ddbd4a95560326d050f42,
         type: 3}
       propertyPath: index
@@ -3600,7 +3663,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1877116510}
+      objectReference: {fileID: 249980231}
     - target: {fileID: 2129633506798062192, guid: 2ffaa817e4c37984a90198511aeeaadc,
         type: 3}
       propertyPath: index
@@ -3753,6 +3816,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yellow Chips (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5851564009204327265, guid: f26dc19c2bda4d544866a5fa641c0359,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f26dc19c2bda4d544866a5fa641c0359, type: 3}
 --- !u!4 &588332615 stripped
@@ -3773,7 +3841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83f5f972af572347878cfed778742d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &590265608
+--- !u!114 &607116046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3783,28 +3851,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Jug_Orange_Juice
+  m_Name: Bottle_Water
   m_EditorClassIdentifier: 
-  productName: Jug of Orange Juice
-  prefab: {fileID: 3202480593377063772, guid: c32cb983c4dddb548b48bd669235dc69, type: 3}
+  productName: Water Bottle
+  prefab: {fileID: 3393707373797263123, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
   scoreValue: 10
-  index: 28
---- !u!114 &612466047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Pear
-  m_EditorClassIdentifier: 
-  productName: Pear Ice cream
-  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
-  scoreValue: 10
-  index: 21
+  index: 37
 --- !u!1001 &615355251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3876,7 +3928,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 392910486}
+      objectReference: {fileID: 532586052}
     - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
         type: 3}
       propertyPath: index
@@ -3902,22 +3954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &616820831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Cola
-  m_EditorClassIdentifier: 
-  productName: Bottle of Cola
-  prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
-  scoreValue: 10
-  index: 34
 --- !u!1 &617129888
 GameObject:
   m_ObjectHideFlags: 0
@@ -4134,6 +4170,22 @@ Transform:
   m_Father: {fileID: 1137574349}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &639257394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Pizza_Salami
+  m_EditorClassIdentifier: 
+  productName: Box of Salami Pizza
+  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
+  scoreValue: 10
+  index: 0
 --- !u!1 &653236044
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,9 +4263,9 @@ MonoBehaviour:
   - {fileID: 478412999}
   - {fileID: 1265303391}
   typesOfProductsInZone:
-  - {fileID: 1565325848}
-  - {fileID: 590265608}
-  - {fileID: 2045503747}
+  - {fileID: 1826608791}
+  - {fileID: 1020445718}
+  - {fileID: 1625190033}
   groceryList: []
 --- !u!1001 &658590544
 PrefabInstance:
@@ -4322,6 +4374,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5449fa3cc7dfe4a8a4df3d8ea4edae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &659659321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Bottle_Soda_Cassis
+  m_EditorClassIdentifier: 
+  productName: Bottle of Cassis
+  prefab: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7, type: 3}
+  scoreValue: 10
+  index: 51
 --- !u!1001 &668290616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4333,7 +4401,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1487021688}
+      objectReference: {fileID: 332928784}
     - target: {fileID: 5847635591297928030, guid: b5313b57be58ac94fb2069c430a094d7,
         type: 3}
       propertyPath: index
@@ -4419,7 +4487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &668645635
+--- !u!114 &678234829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4429,12 +4497,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Sinas
+  m_Name: Box_Ice_Banana
   m_EditorClassIdentifier: 
-  productName: Bottle of Sinas
-  prefab: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c, type: 3}
+  productName: Banana Ice cream
+  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
   scoreValue: 10
-  index: 16
+  index: 3
+--- !u!114 &678767717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Pizza_Classic
+  m_EditorClassIdentifier: 
+  productName: Box of Cheese Pizza
+  prefab: {fileID: 2336970854310920597, guid: 2ffaa817e4c37984a90198511aeeaadc, type: 3}
+  scoreValue: 10
+  index: 24
+--- !u!114 &689891112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Bottle_Soda_Cassis
+  m_EditorClassIdentifier: 
+  productName: Bottle of Cassis
+  prefab: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7, type: 3}
+  scoreValue: 10
+  index: 42
 --- !u!1001 &691107445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4506,7 +4606,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 612466047}
+      objectReference: {fileID: 317769279}
     - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
         type: 3}
       propertyPath: index
@@ -4642,6 +4742,22 @@ Transform:
   m_Father: {fileID: 2088336669}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &709066086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Jug_Purple_Juice
+  m_EditorClassIdentifier: 
+  productName: Jug of Grape Juice
+  prefab: {fileID: 637299059771989016, guid: 25d6e02d3f1cfa548a5423e80d658f1b, type: 3}
+  scoreValue: 10
+  index: 41
 --- !u!1001 &709105406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4713,7 +4829,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1792141489}
+      objectReference: {fileID: 290911555}
     - target: {fileID: 5580454132397203186, guid: c9c2fc177817c5141af0a032b10cef88,
         type: 3}
       propertyPath: index
@@ -4855,7 +4971,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 225215686}
+      objectReference: {fileID: 239903796}
     - target: {fileID: 114245836960988510, guid: 25d6e02d3f1cfa548a5423e80d658f1b,
         type: 3}
       propertyPath: index
@@ -4952,7 +5068,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1651110428}
+      objectReference: {fileID: 678767717}
     - target: {fileID: 2129633506798062192, guid: 2ffaa817e4c37984a90198511aeeaadc,
         type: 3}
       propertyPath: index
@@ -5109,7 +5225,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1878719596}
+      objectReference: {fileID: 1699362466}
     - target: {fileID: 8492434832979267230, guid: 3d284131077634f47bcc31eb1d7fad94,
         type: 3}
       propertyPath: index
@@ -5212,22 +5328,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762668496}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &788940082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Pear
-  m_EditorClassIdentifier: 
-  productName: Pear Ice cream
-  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
-  scoreValue: 10
-  index: 43
 --- !u!1001 &789450265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5299,7 +5399,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 839046361}
+      objectReference: {fileID: 2060438525}
     - target: {fileID: 8492434832979267230, guid: 3d284131077634f47bcc31eb1d7fad94,
         type: 3}
       propertyPath: index
@@ -5325,22 +5425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &804726849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Banana
-  m_EditorClassIdentifier: 
-  productName: Banana Ice cream
-  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
-  scoreValue: 10
-  index: 56
 --- !u!1001 &810234054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5416,38 +5500,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 810234054}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &839046361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Cola
-  m_EditorClassIdentifier: 
-  productName: Bottle of Cola
-  prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
-  scoreValue: 10
-  index: 26
---- !u!114 &847869975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Banana
-  m_EditorClassIdentifier: 
-  productName: Banana Ice cream
-  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
-  scoreValue: 10
-  index: 12
 --- !u!1 &850590935
 GameObject:
   m_ObjectHideFlags: 0
@@ -5610,7 +5662,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1489265111}
+      objectReference: {fileID: 1669633023}
     - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
         type: 3}
       propertyPath: index
@@ -5798,6 +5850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DevGlowStickModel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1702764479890602586, guid: 968670db89c64e14e84d4d9312737a91,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1702764479890701561, guid: 968670db89c64e14e84d4d9312737a91,
         type: 3}
       propertyPath: index
@@ -5960,6 +6017,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Chips
       objectReference: {fileID: 0}
+    - target: {fileID: 8666193312795110902, guid: 169d6bace92819a418a1adf09a97fc2b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 169d6bace92819a418a1adf09a97fc2b, type: 3}
 --- !u!4 &928424982 stripped
@@ -5980,38 +6042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83f5f972af572347878cfed778742d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &940435417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Jug_Orange_Juice
-  m_EditorClassIdentifier: 
-  productName: Jug of Orange Juice
-  prefab: {fileID: 3202480593377063772, guid: c32cb983c4dddb548b48bd669235dc69, type: 3}
-  scoreValue: 10
-  index: 14
---- !u!114 &942422309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Jug_Purple_Juice
-  m_EditorClassIdentifier: 
-  productName: Jug of Grape Juice
-  prefab: {fileID: 637299059771989016, guid: 25d6e02d3f1cfa548a5423e80d658f1b, type: 3}
-  scoreValue: 10
-  index: 48
 --- !u!1001 &946500720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6023,7 +6053,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 590265608}
+      objectReference: {fileID: 1020445718}
     - target: {fileID: 114519302562494366, guid: c32cb983c4dddb548b48bd669235dc69,
         type: 3}
       propertyPath: index
@@ -6109,6 +6139,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &956978447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Pizza_Chicken
+  m_EditorClassIdentifier: 
+  productName: Box of Chicken Pizza
+  prefab: {fileID: 7721119248108127311, guid: cc3a06b6223ddbd4a95560326d050f42, type: 3}
+  scoreValue: 10
+  index: 38
 --- !u!1001 &963226182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6120,7 +6166,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1975511764}
+      objectReference: {fileID: 1664271661}
     - target: {fileID: 6203640654488981462, guid: 3df63a09c5477ba45a8e781056630c1c,
         type: 3}
       propertyPath: index
@@ -6321,7 +6367,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 412559953}
+      objectReference: {fileID: 25492506}
     - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
         type: 3}
       propertyPath: index
@@ -6347,7 +6393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &983526269
+--- !u!114 &990705316
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6362,7 +6408,55 @@ MonoBehaviour:
   productName: Strawberry Ice cream
   prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
   scoreValue: 10
-  index: 33
+  index: 4
+--- !u!114 &999778200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Ice_Strawberry
+  m_EditorClassIdentifier: 
+  productName: Strawberry Ice cream
+  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
+  scoreValue: 10
+  index: 36
+--- !u!114 &1011301369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Bottle_Soda_Sinas
+  m_EditorClassIdentifier: 
+  productName: Bottle of Sinas
+  prefab: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c, type: 3}
+  scoreValue: 10
+  index: 39
+--- !u!114 &1020445718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Jug_Orange_Juice
+  m_EditorClassIdentifier: 
+  productName: Jug of Orange Juice
+  prefab: {fileID: 3202480593377063772, guid: c32cb983c4dddb548b48bd669235dc69, type: 3}
+  scoreValue: 10
+  index: 28
 --- !u!1 &1055855279
 GameObject:
   m_ObjectHideFlags: 0
@@ -6511,7 +6605,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1869834232}
+      objectReference: {fileID: 416109086}
     - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
         type: 3}
       propertyPath: index
@@ -6575,22 +6669,6 @@ Transform:
   m_Father: {fileID: 1417798734}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1096778881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami
-  m_EditorClassIdentifier: 
-  productName: Box of Salami Pizza
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
-  scoreValue: 10
-  index: 0
 --- !u!1001 &1110237878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6607,6 +6685,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Toiletpaper (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989279411, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
         type: 3}
@@ -6790,7 +6873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5449fa3cc7dfe4a8a4df3d8ea4edae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1135943436
+--- !u!114 &1119513304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6800,12 +6883,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Chicken
+  m_Name: Bottle_Soda_Cola
   m_EditorClassIdentifier: 
-  productName: Box of Chicken Pizza
-  prefab: {fileID: 7721119248108127311, guid: cc3a06b6223ddbd4a95560326d050f42, type: 3}
+  productName: Bottle of Cola
+  prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
   scoreValue: 10
-  index: 40
+  index: 47
 --- !u!1 &1137574348
 GameObject:
   m_ObjectHideFlags: 0
@@ -6842,7 +6925,7 @@ Transform:
   m_Father: {fileID: 399365833}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1152503717
+--- !u!114 &1153282423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6852,12 +6935,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Classic
+  m_Name: Bottle_Soda_Sinas
   m_EditorClassIdentifier: 
-  productName: Box of Cheese Pizza
-  prefab: {fileID: 2336970854310920597, guid: 2ffaa817e4c37984a90198511aeeaadc, type: 3}
+  productName: Bottle of Sinas
+  prefab: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c, type: 3}
   scoreValue: 10
-  index: 45
+  index: 16
 --- !u!1001 &1153413720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6869,6 +6952,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DevGlowStickModel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702764479890602586, guid: 968670db89c64e14e84d4d9312737a91,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1702764479890701561, guid: 968670db89c64e14e84d4d9312737a91,
         type: 3}
@@ -6982,6 +7070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Toiletpaper (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989279411, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7057,7 +7150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fdab1b91d3d8c84781578a1d1941b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1160631193
+--- !u!114 &1157609549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7067,12 +7160,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami
+  m_Name: Bottle_Soda_Cassis
   m_EditorClassIdentifier: 
-  productName: Box of Salami Pizza
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
+  productName: Bottle of Cassis
+  prefab: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7, type: 3}
   scoreValue: 10
-  index: 46
+  index: 9
 --- !u!1001 &1179660041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7144,7 +7237,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1930440316}
+      objectReference: {fileID: 34543540}
     - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
         type: 3}
       propertyPath: index
@@ -7170,6 +7263,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1195793214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Pizza_Classic
+  m_EditorClassIdentifier: 
+  productName: Box of Cheese Pizza
+  prefab: {fileID: 2336970854310920597, guid: 2ffaa817e4c37984a90198511aeeaadc, type: 3}
+  scoreValue: 10
+  index: 5
+--- !u!114 &1215032028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Pizza_Salami
+  m_EditorClassIdentifier: 
+  productName: Box of Salami Pizza
+  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
+  scoreValue: 10
+  index: 11
 --- !u!1001 &1216462383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7241,7 +7366,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 983526269}
+      objectReference: {fileID: 1833478512}
     - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
         type: 3}
       propertyPath: index
@@ -7267,6 +7392,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1224007960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Bottle_Soda_Cola
+  m_EditorClassIdentifier: 
+  productName: Bottle of Cola
+  prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
+  scoreValue: 10
+  index: 34
+--- !u!114 &1225087333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Bottle_Soda_Sinas
+  m_EditorClassIdentifier: 
+  productName: Bottle of Sinas
+  prefab: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c, type: 3}
+  scoreValue: 10
+  index: 1
 --- !u!1001 &1234461128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7338,7 +7495,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 616820831}
+      objectReference: {fileID: 1224007960}
     - target: {fileID: 8492434832979267230, guid: 3d284131077634f47bcc31eb1d7fad94,
         type: 3}
       propertyPath: index
@@ -7364,6 +7521,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1237003971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Bottle_Water
+  m_EditorClassIdentifier: 
+  productName: Water Bottle
+  prefab: {fileID: 3393707373797263123, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
+  scoreValue: 10
+  index: 44
 --- !u!1001 &1258015802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7435,7 +7608,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 518521824}
+      objectReference: {fileID: 485525094}
     - target: {fileID: 5580454132397203186, guid: c9c2fc177817c5141af0a032b10cef88,
         type: 3}
       propertyPath: index
@@ -7532,7 +7705,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1693344574}
+      objectReference: {fileID: 999778200}
     - target: {fileID: 8195314445756344696, guid: e803f09420744ac4495c6e0ae8fea09e,
         type: 3}
       propertyPath: index
@@ -7629,7 +7802,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1462134067}
+      objectReference: {fileID: 607116046}
     - target: {fileID: 5580454132397203186, guid: c9c2fc177817c5141af0a032b10cef88,
         type: 3}
       propertyPath: index
@@ -7666,7 +7839,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 455288380}
+      objectReference: {fileID: 956978447}
     - target: {fileID: 7532740261898851827, guid: cc3a06b6223ddbd4a95560326d050f42,
         type: 3}
       propertyPath: index
@@ -7763,7 +7936,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1514425782}
+      objectReference: {fileID: 1011301369}
     - target: {fileID: 6203640654488981462, guid: 3df63a09c5477ba45a8e781056630c1c,
         type: 3}
       propertyPath: index
@@ -7849,6 +8022,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1306025420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Pizza_Chicken
+  m_EditorClassIdentifier: 
+  productName: Box of Chicken Pizza
+  prefab: {fileID: 7721119248108127311, guid: cc3a06b6223ddbd4a95560326d050f42, type: 3}
+  scoreValue: 10
+  index: 53
 --- !u!1001 &1310716872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7920,6 +8109,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yellow Chips
       objectReference: {fileID: 0}
+    - target: {fileID: 5851564009204327265, guid: f26dc19c2bda4d544866a5fa641c0359,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f26dc19c2bda4d544866a5fa641c0359, type: 3}
 --- !u!4 &1310716873 stripped
@@ -7951,7 +8145,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1135943436}
+      objectReference: {fileID: 1825379405}
     - target: {fileID: 7532740261898851827, guid: cc3a06b6223ddbd4a95560326d050f42,
         type: 3}
       propertyPath: index
@@ -8037,38 +8231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1330194642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Strawberry
-  m_EditorClassIdentifier: 
-  productName: Strawberry Ice cream
-  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
-  scoreValue: 10
-  index: 8
---- !u!114 &1332022841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Jug_Orange_Juice
-  m_EditorClassIdentifier: 
-  productName: Jug of Orange Juice
-  prefab: {fileID: 3202480593377063772, guid: c32cb983c4dddb548b48bd669235dc69, type: 3}
-  scoreValue: 10
-  index: 55
 --- !u!1 &1333252451
 GameObject:
   m_ObjectHideFlags: 0
@@ -8180,9 +8342,9 @@ MonoBehaviour:
   - {fileID: 691107447}
   - {fileID: 223478225}
   typesOfProductsInZone:
-  - {fileID: 1489265111}
-  - {fileID: 1869834232}
-  - {fileID: 983526269}
+  - {fileID: 1669633023}
+  - {fileID: 416109086}
+  - {fileID: 1833478512}
   groceryList: []
 --- !u!1 &1356713288
 GameObject:
@@ -8282,7 +8444,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 66547078}
+      objectReference: {fileID: 709066086}
     - target: {fileID: 114245836960988510, guid: 25d6e02d3f1cfa548a5423e80d658f1b,
         type: 3}
       propertyPath: index
@@ -8477,7 +8639,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1426062056
+--- !u!114 &1450008762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8487,12 +8649,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Cola
+  m_Name: Box_Ice_Banana
   m_EditorClassIdentifier: 
-  productName: Bottle of Cola
-  prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
+  productName: Banana Ice cream
+  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
   scoreValue: 10
-  index: 47
+  index: 56
 --- !u!1001 &1454877815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8600,7 +8762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5449fa3cc7dfe4a8a4df3d8ea4edae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1462134067
+--- !u!114 &1457131871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8610,60 +8772,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Water
+  m_Name: Bottle_Soda_Cola
   m_EditorClassIdentifier: 
-  productName: Water Bottle
-  prefab: {fileID: 3393707373797263123, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
+  productName: Bottle of Cola
+  prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
   scoreValue: 10
-  index: 37
---- !u!114 &1487021688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Cassis
-  m_EditorClassIdentifier: 
-  productName: Bottle of Cassis
-  prefab: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7, type: 3}
-  scoreValue: 10
-  index: 20
---- !u!114 &1489265111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Banana
-  m_EditorClassIdentifier: 
-  productName: Banana Ice cream
-  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
-  scoreValue: 10
-  index: 27
---- !u!114 &1514425782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Sinas
-  m_EditorClassIdentifier: 
-  productName: Bottle of Sinas
-  prefab: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c, type: 3}
-  scoreValue: 10
-  index: 39
+  index: 52
 --- !u!1 &1522746736
 GameObject:
   m_ObjectHideFlags: 0
@@ -8698,7 +8812,7 @@ Transform:
   m_Father: {fileID: 1417798734}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1539542901
+--- !u!114 &1523300831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8708,12 +8822,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Jug_Orange_Juice
+  m_Name: Box_Ice_Pear
   m_EditorClassIdentifier: 
-  productName: Jug of Orange Juice
-  prefab: {fileID: 3202480593377063772, guid: c32cb983c4dddb548b48bd669235dc69, type: 3}
+  productName: Pear Ice cream
+  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
   scoreValue: 10
-  index: 15
+  index: 2
 --- !u!1001 &1546156897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8725,6 +8839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blue Chips
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887482787335050402, guid: 166b8ecaf2b99eb4dbb53d3a6eb47127,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2887482787335407746, guid: 166b8ecaf2b99eb4dbb53d3a6eb47127,
         type: 3}
@@ -8812,7 +8931,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1710945188}
+      objectReference: {fileID: 689891112}
     - target: {fileID: 5847635591297928030, guid: b5313b57be58ac94fb2069c430a094d7,
         type: 3}
       propertyPath: index
@@ -8898,38 +9017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1565325848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Jug_Purple_Juice
-  m_EditorClassIdentifier: 
-  productName: Jug of Grape Juice
-  prefab: {fileID: 637299059771989016, guid: 25d6e02d3f1cfa548a5423e80d658f1b, type: 3}
-  scoreValue: 10
-  index: 54
---- !u!114 &1578269261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Classic
-  m_EditorClassIdentifier: 
-  productName: Box of Cheese Pizza
-  prefab: {fileID: 2336970854310920597, guid: 2ffaa817e4c37984a90198511aeeaadc, type: 3}
-  scoreValue: 10
-  index: 5
 --- !u!1001 &1609039742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9001,7 +9088,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 788940082}
+      objectReference: {fileID: 1834243971}
     - target: {fileID: 7743611773312392110, guid: 643947382ec7ee5459fb53ccf25d12ea,
         type: 3}
       propertyPath: index
@@ -9027,7 +9114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1625283233
+--- !u!114 &1625190033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9037,12 +9124,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Salami
+  m_Name: Bottle_Water
   m_EditorClassIdentifier: 
-  productName: Box of Salami Pizza
-  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
+  productName: Water Bottle
+  prefab: {fileID: 3393707373797263123, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
   scoreValue: 10
-  index: 11
+  index: 49
 --- !u!1 &1631722145
 GameObject:
   m_ObjectHideFlags: 0
@@ -9120,9 +9207,9 @@ MonoBehaviour:
   - {fileID: 752268057}
   - {fileID: 1556322934}
   typesOfProductsInZone:
-  - {fileID: 668645635}
-  - {fileID: 616820831}
-  - {fileID: 1487021688}
+  - {fileID: 1153282423}
+  - {fileID: 1224007960}
+  - {fileID: 332928784}
   groceryList: []
 --- !u!1001 &1638787106
 PrefabInstance:
@@ -9140,6 +9227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Toiletpaper (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989279411, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
         type: 3}
@@ -9370,7 +9462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cc322dbdd0dd84ba46f131c7b995fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactClip: {fileID: 0}
+  interactClip: {fileID: 8300000, guid: 9e92b45b04487b04a8ea15b7c7e669a9, type: 3}
   audioGroup: 2
   interactable: 1
   SpecialPosAndRot:
@@ -9419,7 +9511,7 @@ MonoBehaviour:
   viewIdField: 996
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &1651110428
+--- !u!114 &1658967046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9429,12 +9521,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Classic
+  m_Name: Jug_Purple_Juice
   m_EditorClassIdentifier: 
-  productName: Box of Cheese Pizza
-  prefab: {fileID: 2336970854310920597, guid: 2ffaa817e4c37984a90198511aeeaadc, type: 3}
+  productName: Jug of Grape Juice
+  prefab: {fileID: 637299059771989016, guid: 25d6e02d3f1cfa548a5423e80d658f1b, type: 3}
   scoreValue: 10
-  index: 24
+  index: 48
+--- !u!114 &1664271661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Bottle_Soda_Sinas
+  m_EditorClassIdentifier: 
+  productName: Bottle of Sinas
+  prefab: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c, type: 3}
+  scoreValue: 10
+  index: 29
+--- !u!114 &1664299395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Ice_Strawberry
+  m_EditorClassIdentifier: 
+  productName: Strawberry Ice cream
+  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
+  scoreValue: 10
+  index: 8
 --- !u!1001 &1668097425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9506,7 +9630,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 52646319}
+      objectReference: {fileID: 1237003971}
     - target: {fileID: 5580454132397203186, guid: c9c2fc177817c5141af0a032b10cef88,
         type: 3}
       propertyPath: index
@@ -9532,6 +9656,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1669633023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Ice_Banana
+  m_EditorClassIdentifier: 
+  productName: Banana Ice cream
+  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
+  scoreValue: 10
+  index: 27
 --- !u!1001 &1687843746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9543,7 +9683,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1152503717}
+      objectReference: {fileID: 432883165}
     - target: {fileID: 2129633506798062192, guid: 2ffaa817e4c37984a90198511aeeaadc,
         type: 3}
       propertyPath: index
@@ -9629,23 +9769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1693344574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Strawberry
-  m_EditorClassIdentifier: 
-  productName: Strawberry Ice cream
-  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
-  scoreValue: 10
-  index: 36
---- !u!114 &1710945188
+--- !u!114 &1690099824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9660,7 +9784,23 @@ MonoBehaviour:
   productName: Bottle of Cassis
   prefab: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7, type: 3}
   scoreValue: 10
-  index: 42
+  index: 13
+--- !u!114 &1699362466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Bottle_Soda_Cola
+  m_EditorClassIdentifier: 
+  productName: Bottle of Cola
+  prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
+  scoreValue: 10
+  index: 25
 --- !u!1 &1720696626
 GameObject:
   m_ObjectHideFlags: 0
@@ -9706,54 +9846,6 @@ Transform:
   m_Father: {fileID: 399365833}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1728779682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Strawberry
-  m_EditorClassIdentifier: 
-  productName: Strawberry Ice cream
-  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
-  scoreValue: 10
-  index: 4
---- !u!114 &1736005761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Pear
-  m_EditorClassIdentifier: 
-  productName: Pear Ice cream
-  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
-  scoreValue: 10
-  index: 2
---- !u!114 &1771427358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Cassis
-  m_EditorClassIdentifier: 
-  productName: Bottle of Cassis
-  prefab: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7, type: 3}
-  scoreValue: 10
-  index: 13
 --- !u!1001 &1777796820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9765,7 +9857,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1160631193}
+      objectReference: {fileID: 17491840}
     - target: {fileID: 6269338845533768686, guid: 165f4a249ffc2894caf5e8cf84af0ac8,
         type: 3}
       propertyPath: index
@@ -9851,7 +9943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1792141489
+--- !u!114 &1779816263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9861,12 +9953,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Water
+  m_Name: Jug_Orange_Juice
   m_EditorClassIdentifier: 
-  productName: Water Bottle
-  prefab: {fileID: 3393707373797263123, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
+  productName: Jug of Orange Juice
+  prefab: {fileID: 3202480593377063772, guid: c32cb983c4dddb548b48bd669235dc69, type: 3}
   scoreValue: 10
-  index: 22
+  index: 6
 --- !u!1001 &1811177747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9938,7 +10030,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1426062056}
+      objectReference: {fileID: 1119513304}
     - target: {fileID: 8492434832979267230, guid: 3d284131077634f47bcc31eb1d7fad94,
         type: 3}
       propertyPath: index
@@ -9964,7 +10056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1836594015
+--- !u!114 &1825379405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9974,12 +10066,60 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Banana
+  m_Name: Box_Pizza_Chicken
   m_EditorClassIdentifier: 
-  productName: Banana Ice cream
-  prefab: {fileID: 6529941909951121971, guid: c6e88090190fd0a429e0f72f12d39c52, type: 3}
+  productName: Box of Chicken Pizza
+  prefab: {fileID: 7721119248108127311, guid: cc3a06b6223ddbd4a95560326d050f42, type: 3}
   scoreValue: 10
-  index: 3
+  index: 40
+--- !u!114 &1826608791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Jug_Purple_Juice
+  m_EditorClassIdentifier: 
+  productName: Jug of Grape Juice
+  prefab: {fileID: 637299059771989016, guid: 25d6e02d3f1cfa548a5423e80d658f1b, type: 3}
+  scoreValue: 10
+  index: 54
+--- !u!114 &1833478512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Ice_Strawberry
+  m_EditorClassIdentifier: 
+  productName: Strawberry Ice cream
+  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
+  scoreValue: 10
+  index: 33
+--- !u!114 &1834243971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Box_Ice_Pear
+  m_EditorClassIdentifier: 
+  productName: Pear Ice cream
+  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
+  scoreValue: 10
+  index: 43
 --- !u!1001 &1839781437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9991,7 +10131,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 942422309}
+      objectReference: {fileID: 1658967046}
     - target: {fileID: 114245836960988510, guid: 25d6e02d3f1cfa548a5423e80d658f1b,
         type: 3}
       propertyPath: index
@@ -10077,7 +10217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1857506366
+--- !u!114 &1855002850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10087,60 +10227,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Cola
+  m_Name: Jug_Orange_Juice
   m_EditorClassIdentifier: 
-  productName: Bottle of Cola
-  prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
+  productName: Jug of Orange Juice
+  prefab: {fileID: 3202480593377063772, guid: c32cb983c4dddb548b48bd669235dc69, type: 3}
   scoreValue: 10
-  index: 52
---- !u!114 &1869834232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Pear
-  m_EditorClassIdentifier: 
-  productName: Pear Ice cream
-  prefab: {fileID: 5479966859940495981, guid: 643947382ec7ee5459fb53ccf25d12ea, type: 3}
-  scoreValue: 10
-  index: 31
---- !u!114 &1877116510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Pizza_Classic
-  m_EditorClassIdentifier: 
-  productName: Box of Cheese Pizza
-  prefab: {fileID: 2336970854310920597, guid: 2ffaa817e4c37984a90198511aeeaadc, type: 3}
-  scoreValue: 10
-  index: 18
---- !u!114 &1878719596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Cola
-  m_EditorClassIdentifier: 
-  productName: Bottle of Cola
-  prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
-  scoreValue: 10
-  index: 25
+  index: 55
 --- !u!1 &1884561927
 GameObject:
   m_ObjectHideFlags: 0
@@ -10212,9 +10304,9 @@ MonoBehaviour:
   - {fileID: 1687843748}
   - {fileID: 751928838}
   typesOfProductsInZone:
-  - {fileID: 529430730}
-  - {fileID: 496604216}
-  - {fileID: 1877116510}
+  - {fileID: 1306025420}
+  - {fileID: 2034739742}
+  - {fileID: 249980231}
   groceryList: []
 --- !u!1 &1892818695
 GameObject:
@@ -10249,22 +10341,6 @@ Transform:
   m_Father: {fileID: 328915819}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1911169716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Cassis
-  m_EditorClassIdentifier: 
-  productName: Bottle of Cassis
-  prefab: {fileID: 6171211964164351673, guid: b5313b57be58ac94fb2069c430a094d7, type: 3}
-  scoreValue: 10
-  index: 9
 --- !u!1001 &1925432093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10336,7 +10412,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 2045503747}
+      objectReference: {fileID: 1625190033}
     - target: {fileID: 5580454132397203186, guid: c9c2fc177817c5141af0a032b10cef88,
         type: 3}
       propertyPath: index
@@ -10362,38 +10438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1930440316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Box_Ice_Strawberry
-  m_EditorClassIdentifier: 
-  productName: Strawberry Ice cream
-  prefab: {fileID: 1470132600569049873, guid: e803f09420744ac4495c6e0ae8fea09e, type: 3}
-  scoreValue: 10
-  index: 32
---- !u!114 &1946726478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Jug_Orange_Juice
-  m_EditorClassIdentifier: 
-  productName: Jug of Orange Juice
-  prefab: {fileID: 3202480593377063772, guid: c32cb983c4dddb548b48bd669235dc69, type: 3}
-  scoreValue: 10
-  index: 6
 --- !u!1001 &1954874317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10465,6 +10509,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green Chips (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8666193312795110902, guid: 169d6bace92819a418a1adf09a97fc2b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 169d6bace92819a418a1adf09a97fc2b, type: 3}
 --- !u!114 &1954874318 stripped
@@ -10485,38 +10534,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1954874317}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1965998733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Sinas
-  m_EditorClassIdentifier: 
-  productName: Bottle of Sinas
-  prefab: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c, type: 3}
-  scoreValue: 10
-  index: 1
---- !u!114 &1975511764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Soda_Sinas
-  m_EditorClassIdentifier: 
-  productName: Bottle of Sinas
-  prefab: {fileID: 8773099734783614611, guid: 3df63a09c5477ba45a8e781056630c1c, type: 3}
-  scoreValue: 10
-  index: 29
 --- !u!1001 &1980149942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10528,7 +10545,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 117269355}
+      objectReference: {fileID: 344431161}
     - target: {fileID: 6203640654488981462, guid: 3df63a09c5477ba45a8e781056630c1c,
         type: 3}
       propertyPath: index
@@ -10625,7 +10642,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 56734848}
+      objectReference: {fileID: 659659321}
     - target: {fileID: 5847635591297928030, guid: b5313b57be58ac94fb2069c430a094d7,
         type: 3}
       propertyPath: index
@@ -10726,6 +10743,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Blue Chips (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2887482787335050402, guid: 166b8ecaf2b99eb4dbb53d3a6eb47127,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2887482787335407746, guid: 166b8ecaf2b99eb4dbb53d3a6eb47127,
         type: 3}
@@ -10873,7 +10895,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1857506366}
+      objectReference: {fileID: 1457131871}
     - target: {fileID: 8492434832979267230, guid: 3d284131077634f47bcc31eb1d7fad94,
         type: 3}
       propertyPath: index
@@ -10899,7 +10921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2045503747
+--- !u!114 &2034739742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10909,12 +10931,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
-  m_Name: Bottle_Water
+  m_Name: Box_Pizza_Salami
   m_EditorClassIdentifier: 
-  productName: Water Bottle
-  prefab: {fileID: 3393707373797263123, guid: c9c2fc177817c5141af0a032b10cef88, type: 3}
+  productName: Box of Salami Pizza
+  prefab: {fileID: 6499565874854325930, guid: 165f4a249ffc2894caf5e8cf84af0ac8, type: 3}
   scoreValue: 10
-  index: 49
+  index: 10
+--- !u!114 &2039103194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Jug_Orange_Juice
+  m_EditorClassIdentifier: 
+  productName: Jug of Orange Juice
+  prefab: {fileID: 3202480593377063772, guid: c32cb983c4dddb548b48bd669235dc69, type: 3}
+  scoreValue: 10
+  index: 14
 --- !u!1001 &2060191871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10926,7 +10964,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 529430730}
+      objectReference: {fileID: 1306025420}
     - target: {fileID: 7532740261898851827, guid: cc3a06b6223ddbd4a95560326d050f42,
         type: 3}
       propertyPath: index
@@ -11012,6 +11050,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2060438525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Bottle_Soda_Cola
+  m_EditorClassIdentifier: 
+  productName: Bottle of Cola
+  prefab: {fileID: 7330561712346354153, guid: 3d284131077634f47bcc31eb1d7fad94, type: 3}
+  scoreValue: 10
+  index: 26
 --- !u!1001 &2082584532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11194,7 +11248,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1565325848}
+      objectReference: {fileID: 1826608791}
     - target: {fileID: 114245836960988510, guid: 25d6e02d3f1cfa548a5423e80d658f1b,
         type: 3}
       propertyPath: index
@@ -11280,6 +11334,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf83e57cc7744ba46ae8d8af2c5bb7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2111007854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b36fe6fa27b9d4d8951572224e0770, type: 3}
+  m_Name: Jug_Orange_Juice
+  m_EditorClassIdentifier: 
+  productName: Jug of Orange Juice
+  prefab: {fileID: 3202480593377063772, guid: c32cb983c4dddb548b48bd669235dc69, type: 3}
+  scoreValue: 10
+  index: 15
 --- !u!1001 &2137221609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11291,7 +11361,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 1332022841}
+      objectReference: {fileID: 1855002850}
     - target: {fileID: 114519302562494366, guid: c32cb983c4dddb548b48bd669235dc69,
         type: 3}
       propertyPath: index
@@ -11448,7 +11518,7 @@ PrefabInstance:
         type: 3}
       propertyPath: scriptableProduct
       value: 
-      objectReference: {fileID: 804726849}
+      objectReference: {fileID: 1450008762}
     - target: {fileID: 7312452250973640803, guid: c6e88090190fd0a429e0f72f12d39c52,
         type: 3}
       propertyPath: index
@@ -11485,6 +11555,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DevGlowStickModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702764479890602586, guid: 968670db89c64e14e84d4d9312737a91,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1702764479890701561, guid: 968670db89c64e14e84d4d9312737a91,
         type: 3}
@@ -11585,6 +11660,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 'Toiletpaper '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439985283989279411, guid: 1f251a74e8876cf449a5d3e4faf5a134,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5439985283989704339, guid: 1f251a74e8876cf449a5d3e4faf5a134,
         type: 3}

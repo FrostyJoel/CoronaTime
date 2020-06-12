@@ -57,7 +57,7 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         if (roomGameObject) {
             roomGameObject.SetActive(true);
         }
-        if (startButton && dev) {
+        if (startButton) {
             if (PhotonNetwork.IsMasterClient) {
                 startButton.SetActive(true);
             } else {
