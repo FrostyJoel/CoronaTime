@@ -52,8 +52,9 @@ public class PowerUp : Interactable {
     }
 
     public override void Interact(CartStorage cartStorage) {
+        Vector3 interactPos = transform.position;
         if (currentPlace == Place.InShelve && cartStorage.SetPowerUp(index)) {
-            ProductInteractions.pi_Single.PlaypickUpSoundAndInstantiateParticleOnUseableProduct(index, interactParticleDestroyTime, true, false, transform.position, RpcTarget.All);
+            ProductInteractions.pi_Single.PlaypickUpSoundAndInstantiateParticleOnUseableProduct(index, interactParticleDestroyTime, true, false, interactPos, RpcTarget.All);
             ProductInteractions.pi_Single.ChangePowerUpPlace(index, (int)Place.InCart, RpcTarget.All);
             affectedCartStorage = cartStorage;
             affectedController = cartStorage.controller;
