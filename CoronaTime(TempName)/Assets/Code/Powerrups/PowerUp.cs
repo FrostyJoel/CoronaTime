@@ -36,11 +36,14 @@ public class PowerUp : Interactable {
             affectedController.useableProduct = null;
             affectedCartStorage.heldPUImageHolder.sprite = null;
             affectedCartStorage.heldPUImageHolder.color = Vector4.zero;
-            for (int i = 0; i < affectedCartStorage.visualPuFXList.Count; i++) {
-                if (affectedCartStorage.visualPuFXList[i].thisFX == thisFx) {
-                    affectedCartStorage.visualPuFXList[i].fxImage.color = Vector4.one;
-                    break;
-                }
+        }
+    }
+
+    public void ShowFX() {
+        for (int i = 0; i < affectedCartStorage.visualPuFXList.Count; i++) {
+            if (affectedCartStorage.visualPuFXList[i].thisFX == thisFx) {
+                affectedCartStorage.visualPuFXList[i].fxImage.color = Vector4.one;
+                break;
             }
         }
     }
@@ -92,16 +95,20 @@ public class PowerUp : Interactable {
         }
     }
 
-    public virtual void StopUsing() {
-        affectedController.powerups_AffectingMe.Remove(this);
+    public void HideFX() {
         for (int i = 0; i < affectedCartStorage.visualPuFXList.Count; i++) {
-            if(affectedCartStorage.visualPuFXList[i].thisFX == thisFx) {
+            if (affectedCartStorage.visualPuFXList[i].thisFX == thisFx) {
                 Color defCol = affectedCartStorage.visualPuFXList[i].fxImage.color;
                 defCol.a = affectedCartStorage.visualPuFXList[i].defaultTransparency;
                 affectedCartStorage.visualPuFXList[i].fxImage.color = defCol;
                 break;
             }
         }
+    }
+
+    public virtual void StopUsing() {
+        affectedController.powerups_AffectingMe.Remove(this);
+        HideFX();
         StartStopParticle(false);
         ProductInteractions.pi_Single.DestroyUseAbleProduct(index, 0, RpcTarget.All);
     }

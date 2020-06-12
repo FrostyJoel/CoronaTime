@@ -6,6 +6,7 @@ public class GlowFX : ThrowPU {
         if (!inUse) {
             ProductInteractions.pi_Single.EnableDisableControllerOutline(affectedController.photonView.ViewID, true, RpcTarget.All);
             PlayFXSound();
+            ShowFX();
             inUse = true;
         }
     }

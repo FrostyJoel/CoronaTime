@@ -8,6 +8,7 @@ public class SpeedUpFX : PowerUp {
             StartStopParticle(true);
             PlayFXSound();
             ProductInteractions.pi_Single.DisableVisibility(index, affectedController.photonView.ViewID, false, RpcTarget.All);
+            ShowFX();
             inUse = true;
         }
     }

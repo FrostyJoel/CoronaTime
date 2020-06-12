@@ -15,6 +15,7 @@ public class BlockFX : PowerUp {
             } else {
                 StartStopParticle(true);
             }
+            ShowFX();
             ProductInteractions.pi_Single.DisableVisibility(index, affectedController.photonView.ViewID, false, RpcTarget.All);
             inUse = true;
         }

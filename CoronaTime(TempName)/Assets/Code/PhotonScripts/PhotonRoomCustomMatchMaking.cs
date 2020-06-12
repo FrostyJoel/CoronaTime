@@ -132,10 +132,6 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         isLoaded = true;
         PhotonNetwork.LoadLevel(currentScene + 1);
         PhotonNetwork.CurrentRoom.IsOpen = false;
-        Player[] pir = PhotonNetwork.PlayerList;
-        for (int i = 0; i < pir.Length; i++) {
-            Debug.LogWarning(pir[i].UserId);
-        }
     }
 
     void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode) {
