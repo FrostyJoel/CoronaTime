@@ -147,7 +147,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                     tempZone.allProductsInZone[i].interactable = false;
                 }
             }
-
+            Debug.LogWarning(zoneIndex + " " + ZoneControl.zc_Single.zones.Length);
             if (zoneIndex < ZoneControl.zc_Single.zones.Length) {
                 Zone zone = ZoneControl.zc_Single.zones[zoneIndex];
                 productsNeededInCurrentList = zone.productsToFind;
