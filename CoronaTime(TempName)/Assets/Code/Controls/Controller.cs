@@ -42,7 +42,7 @@ public class Controller : MonoBehaviourPun {
     [HideInInspector] public Transform localPlayerTarget;
     [HideInInspector] public Collider[] colliders;
     [HideInInspector] public Options options;
-    /*[HideInInspector]*/ public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
+    [HideInInspector] public List<PowerUp> powerups_AffectingMe = new List<PowerUp>();
     Camera[] cams;
     AudioListener audioListeners;
     float defaultFov, currentSprintValue, currentFovValue, xRotationAxisAngle, yRotationAxisAngle;

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCallbacks {
     public static PhotonRoomCustomMatchMaking roomSingle;
-    public GameObject playerPrefab, lobbyGameObject, roomGameObject, playerListingPrefab, startButton;
+    public GameObject playerPrefab, lobbyGameObject, roomGameObject, playerListingPrefab, startButton, loadingTextObject;
     public Transform playersPanel;
     [HideInInspector] public PhotonView PV;
 
@@ -46,9 +46,6 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
 
     public override void OnJoinedRoom() {
         photonPlayers = PhotonNetwork.PlayerList;
-        //if (roomNameText) {
-        //    roomNameText.text = PhotonNetwork.CurrentRoom.Name;
-        //}
         playersInRoom = photonPlayers.Length;
         ClearPlayerListings();
         myNumberInRoom = playersInRoom;
@@ -69,9 +66,6 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer) {
-        //if (roomNameText) {
-        //    roomNameText.text = PhotonNetwork.CurrentRoom.Name;
-        //}
         if (lobbyGameObject) {
             lobbyGameObject.SetActive(false);
         }
@@ -138,6 +132,10 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         isLoaded = true;
         PhotonNetwork.LoadLevel(currentScene + 1);
         PhotonNetwork.CurrentRoom.IsOpen = false;
+        Player[] pir = PhotonNetwork.PlayerList;
+        for (int i = 0; i < pir.Length; i++) {
+            Debug.LogWarning(pir[i].UserId);
+        }
     }
 
     void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode) {
