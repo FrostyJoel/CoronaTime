@@ -19,7 +19,8 @@ GameObject:
   - component: {fileID: 4285570739143856932}
   - component: {fileID: 1452379908897876380}
   - component: {fileID: 306392423197680709}
-  m_Layer: 11
+  - component: {fileID: 114987521300669834}
+  m_Layer: 18
   m_Name: Special_Blue_Chips_Prefab
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -241,6 +242,19 @@ CapsuleCollider:
   m_Height: 0.26
   m_Direction: 2
   m_Center: {x: 0.04, y: 0.0375, z: 0}
+--- !u!114 &114987521300669834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887482787335050402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a6235d3a0b2a04a8ca1b56e921c2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverText: Chips
 --- !u!1 &4856893349148696971
 GameObject:
   m_ObjectHideFlags: 0

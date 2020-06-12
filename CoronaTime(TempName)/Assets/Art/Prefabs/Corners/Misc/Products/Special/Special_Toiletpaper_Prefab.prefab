@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3101507258313909816}
   - component: {fileID: 3101507258313909823}
   - component: {fileID: 4675465018221431345}
-  m_Layer: 11
+  - component: {fileID: 114550284953723370}
+  m_Layer: 18
   m_Name: Special_Toiletpaper_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,3 +152,16 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &114550284953723370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439985283989279411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a6235d3a0b2a04a8ca1b56e921c2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverText: Toilet Paper

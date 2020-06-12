@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 65176844457341516}
   - component: {fileID: 114248033866023842}
   - component: {fileID: 649904050965442611}
-  m_Layer: 11
+  - component: {fileID: 114727169217608652}
+  m_Layer: 18
   m_Name: Special_Energy_Prefab
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -151,3 +152,16 @@ MonoBehaviour:
   durationSpentInSeconds: 0
   affectedController: {fileID: 0}
   affectedCartStorage: {fileID: 0}
+--- !u!114 &114727169217608652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342928221171545824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a6235d3a0b2a04a8ca1b56e921c2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverText: Energy
