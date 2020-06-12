@@ -127,7 +127,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         if (ZoneControl.zc_Single) {
             int zoneIndex;
 
-            if (newIndex > 0) {
+            if (newIndex > 0 && newIndex < ZoneControl.zc_Single.zones.Length) {
                 ZoneControl.zc_Single.currentZoneIndex = newIndex;
                 nextZoneAnim.SetTrigger("NextZone");
                 nextZoneText.text = ZoneControl.zc_Single.zones[newIndex].zoneName;
