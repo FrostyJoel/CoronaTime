@@ -19,11 +19,6 @@ public class VisualStunFX : VisualFX {
     public override void StartStopVisualFX(bool play, Vector3 pos, bool posIsLocal) {
         for (int i = 0; i < fxObjects.Length; i++) {
             fxObjects[i].SetActive(play);
-            //if (posIsLocal) {
-            //    fxObjects[i].transform.localPosition = pos;
-            //} else {
-            //    fxObjects[i].transform.position = pos;
-            //}
         }
         if (ps.Length > 0) {
             for (int i = 0; i < ps.Length; i++) {
@@ -34,14 +29,6 @@ public class VisualStunFX : VisualFX {
                 }
             }
         }
-        //if (anim) {
-        //    anim.gameObject.SetActive(play);
-        //    anim.enabled = !play;
-        //        Debug.LogWarning(fadeTime + " " + play);
-        //    if (!play) {
-        //        Invoke("DisableOverTime", fadeTime);
-        //    } 
-        //}
     }
 
     void DisableOverTime() {

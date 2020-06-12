@@ -80,7 +80,13 @@ public class ThrowPU : PowerUp {
                 if (hit.collider.GetType() == typeof(CapsuleCollider)) {
                     capsuleHit = true;
                 }
-                ProductInteractions.pi_Single.SetAffectedController(index, hitController.photonView.ViewID, capsuleHit, RpcTarget.All);                
+                ProductInteractions.pi_Single.SetAffectedController(index, hitController.photonView.ViewID, capsuleHit, RpcTarget.All);
+                for (int i = 0; i < affectedCartStorage.visualPuFXList.Count; i++) {
+                    if (affectedCartStorage.visualPuFXList[i].thisFX == thisFx) {
+                        affectedCartStorage.visualPuFXList[i].fxImage.color = Vector4.one;
+                        break;
+                    }
+                }
             }
         }
     }

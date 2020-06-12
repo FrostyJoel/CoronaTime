@@ -36,6 +36,12 @@ public class PowerUp : Interactable {
             affectedController.useableProduct = null;
             affectedCartStorage.heldPUImageHolder.sprite = null;
             affectedCartStorage.heldPUImageHolder.color = Vector4.zero;
+            for (int i = 0; i < affectedCartStorage.visualPuFXList.Count; i++) {
+                if (affectedCartStorage.visualPuFXList[i].thisFX == thisFx) {
+                    affectedCartStorage.visualPuFXList[i].fxImage.color = Vector4.one;
+                    break;
+                }
+            }
         }
     }
 
@@ -93,6 +99,7 @@ public class PowerUp : Interactable {
                 Color defCol = affectedCartStorage.visualPuFXList[i].fxImage.color;
                 defCol.a = affectedCartStorage.visualPuFXList[i].defaultTransparency;
                 affectedCartStorage.visualPuFXList[i].fxImage.color = defCol;
+                break;
             }
         }
         StartStopParticle(false);
