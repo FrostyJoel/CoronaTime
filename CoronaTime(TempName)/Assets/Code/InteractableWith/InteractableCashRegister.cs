@@ -8,10 +8,8 @@ public class InteractableCashRegister : Interactable {
         if (cartStorage.heldProducts.Count > 0 && cartStorage.productsGotten == cartStorage.productsNeededInCurrentList) {
             PlayInteractSound();
             cartStorage.score++;
-            photonView.RPC("RPC_DestroyHeldProduct", RpcTarget.MasterClient);
-            //cartStorage.ClearProducts();
             cartStorage.PhotonUpdateGroceryList(ZoneControl.zc_Single.currentZoneIndex + 1, RpcTarget.All);
-            //cartStorage.UpdateScore();
+            photonView.RPC("RPC_DestroyHeldProduct", RpcTarget.MasterClient);
         }
     }
 
@@ -23,9 +21,6 @@ public class InteractableCashRegister : Interactable {
                 if (storages[i]) {
                     storages[i].ClearProducts();
                     storages[i].UpdateScore();
-                    //for (int iB = 0; iB < storages[i].heldProductModels.Count; iB++) {
-                    //    ProductInteractions.pi_Single.DestroyProduct(storages[i].heldProducts[iB].index, 0, RpcTarget.All);
-                    //}
                 }
             }
         }

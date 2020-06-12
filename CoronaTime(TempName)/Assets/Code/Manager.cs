@@ -22,7 +22,9 @@ public class Manager : MonoBehaviourPun {
         }
         staticColorManaging = colorManaging;
         AudioManager.audioMixer = staticInformation.audioMixer;
-        options.OptionsInit();
+        if (options) {
+            options.OptionsInit();
+        }
     }
 }
 

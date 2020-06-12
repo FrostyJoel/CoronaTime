@@ -12,6 +12,7 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
     private CartStorage storage;
     private PlayerView pView;
     public Text text_ProductName;
+
     private void Start()
     {
         controller = GetComponent<Controller>();
@@ -27,17 +28,18 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
             if (Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, Mathf.Infinity, storage.mask))
             {
                 Outline outlineObj = hit.transform.gameObject.GetComponent<Outline>();
+                SpecialLookAtTxt slat = hit.transform.gameObject.GetComponent<SpecialLookAtTxt>();
 
                 if (lastOutline != outlineObj && lastOutline != null)
                 {
                     lastOutline.enabled = false;
                 }
-                DistanceCheck(outlineObj);
+                DistanceCheck(outlineObj, slat);
             }
         }
     }
 
-    private void DistanceCheck(Outline outlineObj)
+    private void DistanceCheck(Outline outlineObj, SpecialLookAtTxt slat)
     {
         text_ProductName.text = "";
         if (hit.distance < storage.interactRange) {
@@ -59,6 +61,9 @@ public class OutlineCheck : MonoBehaviourPunCallbacks
                     lastOutline = outlineObj;
                     outlineObj.enabled = true;
                 }
+            }
+            if (slat) {
+                text_ProductName.text = slat.hoverText;
             }
             if (storage.productsNeededInCurrentList == storage.productsGotten) {
                 InteractableCashRegister icr = hit.transform.GetComponent<InteractableCashRegister>();

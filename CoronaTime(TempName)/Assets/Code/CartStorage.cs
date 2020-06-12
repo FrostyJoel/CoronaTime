@@ -53,9 +53,6 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         if (photonView.IsMine || controller.playerView.devView) {
             if (Input.GetButtonDown("Interact")) {
                 RaycastHit hit;
-                if(Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, interactRange, mask)){
-                    Debug.LogWarning(hit.transform.gameObject.layer);
-                }
                 if (Physics.Raycast(controller.transform_Pov.position, controller.transform_Pov.forward, out hit, interactRange, mask)) {
                     if (hit.transform.CompareTag("Interact")) {
                         hit.transform.GetComponent<Interactable>().Interact(this);
@@ -158,6 +155,10 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 }
                 UpdateScore();
             } else {
+                CartStorage[] test = FindObjectsOfType<CartStorage>();
+                for (int i = 0; i < test.Length; i++) {
+                    Debug.LogWarning(test[i].score);
+                }
                 GameOverCheck.goc_Single.GameOver();
             }
         }

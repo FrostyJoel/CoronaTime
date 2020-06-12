@@ -1761,6 +1761,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1339369616197313166, guid: d0ce1991985240943935fc20c4faf789,
+        type: 3}
+      propertyPath: devView
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4210686427205194765, guid: d0ce1991985240943935fc20c4faf789,
         type: 3}
       propertyPath: viewIdField
@@ -1769,17 +1774,17 @@ PrefabInstance:
     - target: {fileID: 4293697501861332479, guid: d0ce1991985240943935fc20c4faf789,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4293697501861332479, guid: d0ce1991985240943935fc20c4faf789,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4293697501861332479, guid: d0ce1991985240943935fc20c4faf789,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 149.29999
       objectReference: {fileID: 0}
     - target: {fileID: 5171396144981214075, guid: d0ce1991985240943935fc20c4faf789,
         type: 3}
@@ -1820,6 +1825,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BillyThePrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992604071259634000, guid: d0ce1991985240943935fc20c4faf789,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5992604071259634003, guid: d0ce1991985240943935fc20c4faf789,
         type: 3}
@@ -1874,6 +1884,11 @@ PrefabInstance:
     - target: {fileID: 5992604071259634003, guid: d0ce1991985240943935fc20c4faf789,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181046888465746119, guid: d0ce1991985240943935fc20c4faf789,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6187796074430712508, guid: d0ce1991985240943935fc20c4faf789,
@@ -5678,7 +5693,8 @@ GameObject:
   - component: {fileID: 875514006}
   - component: {fileID: 875514005}
   - component: {fileID: 875514004}
-  m_Layer: 0
+  - component: {fileID: 875514008}
+  m_Layer: 18
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5757,6 +5773,19 @@ Transform:
   m_Father: {fileID: 1137574349}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &875514008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875514003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a6235d3a0b2a04a8ca1b56e921c2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverText: look
 --- !u!1001 &916888695
 PrefabInstance:
   m_ObjectHideFlags: 0
