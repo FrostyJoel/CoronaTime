@@ -101,6 +101,7 @@ public class PowerUp : Interactable {
                 Color defCol = affectedCartStorage.visualPuFXList[i].fxImage.color;
                 defCol.a = affectedCartStorage.visualPuFXList[i].defaultTransparency;
                 affectedCartStorage.visualPuFXList[i].fxImage.color = defCol;
+                affectedCartStorage.visualPuFXList[i].timerText.text = "";
                 break;
             }
         }
