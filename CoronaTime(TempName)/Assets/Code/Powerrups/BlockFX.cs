@@ -23,6 +23,7 @@ public class BlockFX : PowerUp {
 
     public override void StopUsing() {
         PlayFXSound();
+        HideFX();
         base.StopUsing();
     }
 }
