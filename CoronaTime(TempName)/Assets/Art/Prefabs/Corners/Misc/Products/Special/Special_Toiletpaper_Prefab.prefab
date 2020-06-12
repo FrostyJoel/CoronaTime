@@ -126,7 +126,7 @@ MonoBehaviour:
     type: 3}
   fxClip: {fileID: 8300000, guid: ded33ec85182ec74c8d8092e892f8f6f, type: 3}
   thisFx: 3
-  puImage: {fileID: 0}
+  puImage: {fileID: 21300000, guid: ed3f3a60595814d4789f29c0f496273a, type: 3}
   index: 43
   hitPos: {x: 0, y: 0, z: 0}
   rigid: {fileID: 0}

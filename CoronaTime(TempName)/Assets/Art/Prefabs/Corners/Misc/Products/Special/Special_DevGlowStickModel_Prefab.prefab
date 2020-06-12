@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04187143b21a18a41a230340d84fd24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactClip: {fileID: 0}
+  interactClip: {fileID: 8300000, guid: 1b1c972dab1439e42a7012a39e3bd563, type: 3}
   audioGroup: 2
   interactable: 0
   SpecialPosAndRot:
@@ -173,9 +173,9 @@ MonoBehaviour:
   newValueDuringFX: 0
   durationInSeconds: 15
   particleToUse: {fileID: 0}
-  fxClip: {fileID: 0}
+  fxClip: {fileID: 8300000, guid: cc1228bc2e34b0f41888579b16ed045d, type: 3}
   thisFx: 2
-  puImage: {fileID: 0}
+  puImage: {fileID: 21300000, guid: dd4e77cb2ab8a81499b4a194f3874d87, type: 3}
   index: 314
   hitPos: {x: 0, y: 0, z: 0}
   rigid: {fileID: 0}
