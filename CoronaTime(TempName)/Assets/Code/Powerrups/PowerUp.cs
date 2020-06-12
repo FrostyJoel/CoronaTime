@@ -90,9 +90,10 @@ public class PowerUp : Interactable {
         affectedController.powerups_AffectingMe.Remove(this);
         for (int i = 0; i < affectedCartStorage.visualPuFXList.Count; i++) {
             if(affectedCartStorage.visualPuFXList[i].thisFX == thisFx) {
-
+                Color defCol = affectedCartStorage.visualPuFXList[i].fxImage.color;
+                defCol.a = affectedCartStorage.visualPuFXList[i].defaultTransparency;
+                affectedCartStorage.visualPuFXList[i].fxImage.color = defCol;
             }
-
         }
         StartStopParticle(false);
         ProductInteractions.pi_Single.DestroyUseAbleProduct(index, 0, RpcTarget.All);
