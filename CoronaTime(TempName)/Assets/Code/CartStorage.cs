@@ -107,11 +107,11 @@ public class CartStorage : MonoBehaviourPunCallbacks {
             ProductInteractions.pi_Single.AddToCart(indexA, photonView.ViewID, RpcTarget.All);
             groceryList[indexB].amountGotten += 1;
             productsGotten += 1;
-            if(groceryList[indexB].amountGotten == groceryList[indexB].amount) {
+            if (groceryList[indexB].amountGotten == groceryList[indexB].amount) {
                 groceryList[indexB].groceryListing.text_Grocery.fontStyle = FontStyles.Strikethrough;
                 List<InteractableProduct> ip_List = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].allProductsInZone;
                 for (int i = 0; i < ip_List.Count; i++) {
-                    if(ip_List[i].scriptableProduct.productName == groceryList[indexB].product.productName) {
+                    if (ip_List[i].scriptableProduct.productName == groceryList[indexB].product.productName) {
                         ip_List[i].interactable = false;
                     }
                 }
@@ -123,20 +123,14 @@ public class CartStorage : MonoBehaviourPunCallbacks {
         }
     }
 
-    [PunRPC]
-    void RPC_DisplayNextZone() {
-        nextZoneAnim.SetTrigger("NextZone");
-        nextZoneText.text = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].zoneName;
-    }
-   void EnableProductsRelativeToListAndSetUI(int newIndex) {
+    void EnableProductsRelativeToListAndSetUI(int newIndex) {
         if (ZoneControl.zc_Single) {
             int zoneIndex;
 
-            if(newIndex > 0) {
+            if (newIndex > 0) {
                 ZoneControl.zc_Single.currentZoneIndex = newIndex;
-                if(PhotonNetwork.IsMasterClient && photonView.IsMine) {
-                    photonView.RPC("RPC_DisplayNextZone", RpcTarget.All);
-                }
+                nextZoneAnim.SetTrigger("NextZone");
+                nextZoneText.text = ZoneControl.zc_Single.zones[ZoneControl.zc_Single.currentZoneIndex].zoneName;
             }
 
             zoneIndex = ZoneControl.zc_Single.currentZoneIndex;
@@ -147,7 +141,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 }
             }
 
-            if(groceryList.Count > 0) {
+            if (groceryList.Count > 0) {
                 Zone tempZone = ZoneControl.zc_Single.zones[zoneIndex - 1];
                 for (int i = 0; i < tempZone.allProductsInZone.Count; i++) {
                     tempZone.allProductsInZone[i].interactable = false;
@@ -159,8 +153,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 productsNeededInCurrentList = zone.productsToFind;
                 productsGotten = 0;
                 groceryList = zone.groceryList;
-                if (photonView.IsMine)
-                {
+                if (photonView.IsMine) {
                     for (int i = 0; i < groceryList.Count; i++) {
                         GameObject gl = Instantiate(prefab_GroceryListing, transform_GroceryList);
                         groceryList[i].groceryListing = gl.GetComponent<ScriptGroceryListing>();
@@ -169,7 +162,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
                 }
                 for (int i = 0; i < zone.allProductsInZone.Count; i++) {
                     int index = InGroceryListWhere(zone.allProductsInZone[i].scriptableProduct);
-                    if(index >= 0) {
+                    if (index >= 0) {
                         zone.allProductsInZone[i].interactable = true;
                     }
                 }
@@ -187,7 +180,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     int InGroceryListWhere(Product productToCheck) {
         int index = -1;
         for (int i = 0; i < groceryList.Count; i++) {
-            if(groceryList[i].product.productName == productToCheck.productName) {
+            if (groceryList[i].product.productName == productToCheck.productName) {
                 index = i;
                 break;
             }
@@ -235,7 +228,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
 
     [PunRPC]
     void RPC_ClearProducts() {
-        if(heldProductModels.Count > 0 && heldProducts.Count > 0) {
+        if (heldProductModels.Count > 0 && heldProducts.Count > 0) {
             for (int iB = 0; iB < heldProductModels.Count; iB++) {
                 ProductInteractions.pi_Single.DestroyProduct(heldProducts[iB].index, 0, RpcTarget.All);
             }
