@@ -196,7 +196,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     void RPC_UpdateScoreboardScore(int id, int gotten, int needed, int newScore) {
         CartStorage stor = PhotonNetwork.GetPhotonView(id).GetComponent<CartStorage>();
         if (stor) {
-            stor.score = newScore;
+            //stor.score = newScore;
             stor.productsGotten = gotten;
             stor.productsNeededInCurrentList = needed;
         }

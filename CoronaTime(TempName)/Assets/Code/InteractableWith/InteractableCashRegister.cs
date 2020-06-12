@@ -7,10 +7,16 @@ public class InteractableCashRegister : Interactable {
     public override void Interact(CartStorage cartStorage) {
         if (cartStorage.heldProducts.Count > 0 && cartStorage.productsGotten == cartStorage.productsNeededInCurrentList) {
             PlayInteractSound();
-            cartStorage.score++;
+            photonView.RPC("RPC_ChangeSpecificScore", RpcTarget.All, cartStorage.photonView.ViewID, cartStorage.score + 1);
+            //cartStorage.score++;
             cartStorage.PhotonUpdateGroceryList(ZoneControl.zc_Single.currentZoneIndex + 1, RpcTarget.All);
             photonView.RPC("RPC_DestroyHeldProduct", RpcTarget.MasterClient);
         }
+    }
+
+    [PunRPC]
+    void RPC_ChangeSpecificScore(int id, int newScore) {
+        PhotonNetwork.GetPhotonView(id).GetComponent<CartStorage>().score = newScore;
     }
 
     [PunRPC]
