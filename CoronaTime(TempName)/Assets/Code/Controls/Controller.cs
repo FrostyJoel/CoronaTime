@@ -236,6 +236,11 @@ public class Controller : MonoBehaviourPun {
         if (powerups_AffectingMe.Count > 0) {
             for (int i = 0; i < powerups_AffectingMe.Count; i++) {
                 if (powerups_AffectingMe[i]) {
+                    for (int iB = 0; iB < cartStorage.visualPuFXList.Count; iB++) {
+                        if(cartStorage.visualPuFXList[iB].thisFX == powerups_AffectingMe[i].thisFx) {
+                            cartStorage.visualPuFXList[iB].timerText.text = (powerups_AffectingMe[i].durationInSeconds - powerups_AffectingMe[i].durationSpentInSeconds).ToString();
+                        }
+                    }
                     powerups_AffectingMe[i].UseEffect();
                 }
             }

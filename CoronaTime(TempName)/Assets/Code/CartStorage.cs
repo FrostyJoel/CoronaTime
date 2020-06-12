@@ -24,7 +24,7 @@ public class CartStorage : MonoBehaviourPunCallbacks {
     public Image heldPUImageHolder;
 
     [Header("Powerup FX")]
-    public List<VisualPuFX> visualPuFXeList = new List<VisualPuFX>();
+    public List<VisualPuFX> visualPuFXList = new List<VisualPuFX>();
 
     [HideInInspector] public int score;
     [HideInInspector] public Controller controller;
