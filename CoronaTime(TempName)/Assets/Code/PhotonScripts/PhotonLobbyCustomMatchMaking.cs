@@ -10,11 +10,12 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     public InputField input_Nickname, input_Roomname;
     public Button button_CreateRoom;
 
-    public string roomName, nickName;
+    [HideInInspector] public string roomName, nickName;
     public int maxPlayers = 4;
     public GameObject roomListingPrefab;
     public Transform roomsPanel;
     public Text roomNameText;
+    public string beforeRoomName;
 
     bool enteredNickname, enteredRoomName, connectedToMaster = false;
 
@@ -104,7 +105,7 @@ public class PhotonLobbyCustomMatchMaking : MonoBehaviourPunCallbacks, ILobbyCal
     public override void OnJoinedRoom() {
         Debug.Log("Joined room");
         if (roomNameText) {
-            roomNameText.text = PhotonNetwork.CurrentRoom.Name;
+            roomNameText.text = beforeRoomName + PhotonNetwork.CurrentRoom.Name;
         }
     }
 
