@@ -142,12 +142,21 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
         }
     }
 
+    public void EnableRoomLoadingUI() {
+        PV.RPC("RPC_EnableRoomLoadingUI", RpcTarget.All);
+    }
+
     public override void OnPlayerLeftRoom(Player otherPlayer) {
         base.OnPlayerLeftRoom(otherPlayer);
         Debug.Log(otherPlayer.NickName + " left the game");
         playersInRoom--;
         ClearPlayerListings();
         ListPlayers();
+    }
+
+    [PunRPC]
+    void RPC_EnableRoomLoadingUI() {
+        loadingTextObject.SetActive(true);
     }
 
     [PunRPC]
