@@ -1,5 +1,102 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1890179171071030520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 583261340703880193}
+  - component: {fileID: 2250551595880257515}
+  - component: {fileID: 7834067316733328477}
+  - component: {fileID: 5818605180746204917}
+  m_Layer: 5
+  m_Name: Text_RoomNotAvailable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &583261340703880193
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890179171071030520}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6314721557530969878}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.20360416, y: 0.33170372}
+  m_AnchorMax: {x: 0.41183332, y: 0.33170372}
+  m_AnchoredPosition: {x: 0, y: 30}
+  m_SizeDelta: {x: -80, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2250551595880257515
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890179171071030520}
+  m_CullTransparentMesh: 0
+--- !u!114 &7834067316733328477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890179171071030520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c1f6d4d512670e4408b87672a6c414a1, type: 3}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Try a different room name
+--- !u!95 &5818605180746204917
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890179171071030520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 622b80917b1d55141b68c730fb11f0aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2726621408088166065
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +256,7 @@ GameObject:
   - component: {fileID: 6314721556522556112}
   - component: {fileID: 6314721556522556115}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text_QuitToMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,7 +350,7 @@ GameObject:
   - component: {fileID: 6314721557057566587}
   - component: {fileID: 6314721557057566586}
   m_Layer: 5
-  m_Name: Quit to menu
+  m_Name: Button_QuitToMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -272,7 +369,7 @@ RectTransform:
   m_Children:
   - {fileID: 6314721556522556114}
   m_Father: {fileID: 6314721557530969878}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.005729167, y: 0.014}
   m_AnchorMax: {x: 0.18712501, y: 0.086851835}
@@ -493,7 +590,7 @@ GameObject:
   - component: {fileID: 6314721557173579922}
   - component: {fileID: 1156187749}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text_RoomName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -758,6 +855,7 @@ RectTransform:
   m_Children:
   - {fileID: 6314721557123220947}
   - {fileID: 6314721557899851818}
+  - {fileID: 583261340703880193}
   - {fileID: 6314721557560584625}
   - {fileID: 6314721558041648516}
   - {fileID: 6314721558424713112}
@@ -819,7 +917,7 @@ GameObject:
   - component: {fileID: 6314721557560584623}
   - component: {fileID: 6314721557560584622}
   m_Layer: 5
-  m_Name: NickName
+  m_Name: Input_Nickname
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,7 +937,7 @@ RectTransform:
   - {fileID: 6314721557233308496}
   - {fileID: 6314721558211339971}
   m_Father: {fileID: 6314721557530969878}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20360416, y: 0.45600003}
   m_AnchorMax: {x: 0.41183332, y: 0.55}
@@ -976,7 +1074,7 @@ GameObject:
   - component: {fileID: 6314721557666720126}
   - component: {fileID: 555123099}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text_CreateRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1069,7 +1167,7 @@ GameObject:
   - component: {fileID: 6314721557899851816}
   - component: {fileID: 6314721557899851819}
   m_Layer: 5
-  m_Name: Lobby Titel
+  m_Name: Text_LobbyTitel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1162,7 +1260,7 @@ GameObject:
   - component: {fileID: 6314721557942240783}
   - component: {fileID: 6253222836106472837}
   m_Layer: 5
-  m_Name: Rooms
+  m_Name: ScrollRect_RoomListings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1181,7 +1279,7 @@ RectTransform:
   m_Children:
   - {fileID: 6626133364001822253}
   m_Father: {fileID: 6314721557530969878}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1266,7 +1364,7 @@ GameObject:
   - component: {fileID: 6314721558041648514}
   - component: {fileID: 6314721558041648517}
   m_Layer: 5
-  m_Name: RoomName
+  m_Name: Input_RoomName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1286,7 +1384,7 @@ RectTransform:
   - {fileID: 6314721557389677222}
   - {fileID: 6314721557173579925}
   m_Father: {fileID: 6314721557530969878}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20360416, y: 0.23885188}
   m_AnchorMax: {x: 0.41183332, y: 0.33170372}
@@ -1423,7 +1521,7 @@ GameObject:
   - component: {fileID: 6314721558211339968}
   - component: {fileID: 928536720}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text_Nickname
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1516,7 +1614,7 @@ GameObject:
   - component: {fileID: 6314721558424713110}
   - component: {fileID: 6314721558424713113}
   m_Layer: 5
-  m_Name: CreateRoom
+  m_Name: Button_CreateRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1535,7 +1633,7 @@ RectTransform:
   m_Children:
   - {fileID: 6314721557666720065}
   m_Father: {fileID: 6314721557530969878}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20360416, y: 0.13685186}
   m_AnchorMax: {x: 0.41183332, y: 0.22685187}
