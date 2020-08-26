@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class SteamTest : MonoBehaviour {
 
+    public void Awake() {
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start() {
         if(!SteamManager.Initialized) { return; }
         string myName = SteamFriends.GetPersonaName();
