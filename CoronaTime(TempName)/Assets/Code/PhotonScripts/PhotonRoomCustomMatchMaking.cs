@@ -14,10 +14,10 @@ public class PhotonRoomCustomMatchMaking : MonoBehaviourPunCallbacks, IInRoomCal
     public int currentScene;
     [Space]
     Player[] photonPlayers;
-    public int playersInRoom, myNumberInRoom;
-    [Space]
-    public int playersInGame;
-    public bool dev;
+     
+    [Header("HideInInspector")]
+    public int playersInGame, playersInRoom, myNumberInRoom;
+
     private void Awake() {
         if (PhotonRoomCustomMatchMaking.roomSingle == null) {
             PhotonRoomCustomMatchMaking.roomSingle = this;
